@@ -36,6 +36,11 @@ Options All -Indexes
 	# Ensure Authorization header is passed along
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+	RewriteCond $1 !^(index\.php|images|assets|doc|data|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
 
 <IfModule !mod_rewrite.c>
@@ -48,10 +53,10 @@ Options All -Indexes
     ServerSignature Off
 # Disable server signature end
 
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteCond $1 !^(index\.php|images|assets|doc|data|robots\.txt)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
-</IfModule>
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteCond $1 !^(index\.php|images|assets|doc|data|robots\.txt)
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php/$1 [L]
+# </IfModule>
