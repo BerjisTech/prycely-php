@@ -14,11 +14,11 @@ class Wallet extends BaseController
 		echo 'add wallet';
 	}
 
-	public function delete(){
+	public function delete($wallet_id = ""){
 		echo 'delete wallet';
 	}
 
-	public function edit(){
+	public function edit($wallet_id = ""){
 		echo 'edit wallet';
 	}
 }
