@@ -7,7 +7,7 @@ class Wallet extends BaseController
 	public function index($wallet_id = "")
 	{
         if($wallet_id != ""){
-            echo '<script>alert('.$wallet_id.')</script>';
+            echo '<script>alert("'.$wallet_id.'")</script>';
         }
         $data['page_name'] = 'page name';
 		return view('welcome_message', $data);
