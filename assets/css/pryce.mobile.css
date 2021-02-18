@@ -1,15 +1,14 @@
 @media only screen and (max-width: 600px) {
+
+    .side_bar {
+        left: 2%;
+    }
+
     .main-content {
         display: table;
         margin-left: 20vw;
-        padding-left: 1%;
-        padding-right: 2%;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        border-radius: 10px 0px 0px 10px;
-        background: #FFFFFF;
+        padding: 20px;
         width: 80vw;
         right: 0vw;
-        min-height: 100vh;
     }
 }
