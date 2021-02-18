@@ -26,7 +26,7 @@
                 <table class="table table-responsive transaction-table">
                     <tr>
                         <td>
-                            <span class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></span>
+                            <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
                         </td>
                         <td class="transaction-details">
                             <span class="transaction-title">Netflix</span>
