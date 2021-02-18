@@ -43,10 +43,6 @@ body {
     display: table;
 }
 
-.balance-card .balance-account, .balance-card .balance-amount {
-    display: inline-block;
-}
-
 .balance-card .balance-amount {
     font-size: 50px;
     font-weight: 800;
