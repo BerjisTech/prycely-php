@@ -56,7 +56,7 @@
                         </td>
                         <td class="transaction-details">
                             <span class="transaction-title">App Payouts</span>
-                            <span class="transaction-status">complete</span>
+                            <span class="transaction-status">Complete</span>
                         </td>
                         <td class="transaction-td">
                             <span class="transaction-amount complete">+ $ 13,000</span>
