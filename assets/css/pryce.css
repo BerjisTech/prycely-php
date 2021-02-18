@@ -65,6 +65,10 @@ body {
     width: 100%;
 }
 
+.t-img{
+    width: 50px;
+}
+
 .transaction-table, .transaction-table tr, .transaction-table td {
     border: none;
 }
