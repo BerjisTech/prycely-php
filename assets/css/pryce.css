@@ -1,3 +1,15 @@
 body {
     background: #FAFAFA;
 }
+
+/* Side Bar */
+.side_bar{
+    display: flex;
+    height: 80vh;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 50px;
+    border-radius: 10px;
+    border: 2px solid #969191;
+}
