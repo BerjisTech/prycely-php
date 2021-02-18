@@ -64,7 +64,7 @@ body {
     background-position: 50% 50% !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
-    box-shadow: 0px 0px 10px #eeeeee;
+    border: 1px solid #eeeeee;
 }
 
 .transaction-table, .transaction-table tr, .transaction-table td {
