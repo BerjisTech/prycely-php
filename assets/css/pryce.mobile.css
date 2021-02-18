@@ -12,10 +12,14 @@
         right: 0vw;
     }
 
+    .slide-icons-parent{
+        margin: 0px !important;
+        padding: 0px !important;
+    }
     .slide-icons {
         display: flex;
         flex-direction: row;
-        max-width: 75vw;
+        width: 68vw;
         height: 70px;
         align-items: center;
         justify-content: flex-start;
