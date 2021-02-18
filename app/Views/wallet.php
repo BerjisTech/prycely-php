@@ -20,7 +20,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 transactions-card">
                 <p>Transactions</p>
                 <p>15th February, 2021</p>
                 <table class="table table-responsive transaction-table">
