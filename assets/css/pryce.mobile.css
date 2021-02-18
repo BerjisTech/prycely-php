@@ -24,6 +24,7 @@
         align-items: center !important;
         justify-content: flex-start !important;
         overflow-x: auto !important;
+        padding-left: 0px !important;
     }
     .balance-card .balance-amount {
         font-size: 35px;
