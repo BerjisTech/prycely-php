@@ -21,7 +21,7 @@ body {
 .main-content {
     display: table;
     margin-left: 10vw;
-    padding: 20px;
+    padding: 20px 50px;
     border-radius: 10px 0px 0px 10px;
     background: #FFFFFF;
     width: 90vw;
