@@ -26,7 +26,7 @@
                 <table class="table transaction-table">
                     <tr>
                         <td class="t-img">
-                            <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
+                            <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
                         </td>
                         <td class="transaction-details">
                             <span class="transaction-title">Shopify</span>
@@ -39,7 +39,7 @@
                     </tr>
                     <tr>
                         <td class="t-img">
-                            <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
+                            <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/689518720998252544/mOobZd_8.png');"></p>
                         </td>
                         <td class="transaction-details">
                             <span class="transaction-title">Heroku</span>
@@ -52,7 +52,7 @@
                     </tr>
                     <tr>
                         <td class="t-img">
-                            <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
+                            <p class="transaction-image" style="background: url('https://cdn.shopify.com/assets/images/logos/shopify-bag.png');"></p>
                         </td>
                         <td class="transaction-details">
                             <span class="transaction-title">App Payouts</span>
