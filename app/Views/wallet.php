@@ -76,7 +76,6 @@
                 <div class="balance-card">
                     <span class="balance-title">Account Balance</span>
                     <span class="balance-amount">$25,386</span>
-                    <span class="balance-account">Primary</span>
                 </div>
             </div>
         </div>

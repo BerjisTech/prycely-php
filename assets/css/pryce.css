@@ -48,18 +48,8 @@ body {
 .balance-card .balance-amount {
     font-size: 50px;
     font-weight: 800;
-    display: inline-table;
 }
 
-.balance-card .balance-account {
-    border: 1px solid #fff;
-    border-radius: 7px;
-    padding: 4px;
-    font-size: 12px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    display: inline-table;
-}
 
 .transactions-card {
     border-right: 1px solid #dddddd;
