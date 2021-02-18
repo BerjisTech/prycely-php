@@ -70,9 +70,11 @@ body {
 }
 
 .transaction-title, .transaction-amount {
+    display: table;
     font-weight: 800;
 }
 
 .transaction-status, .transaction-time {
+    display: table;
     font-weight: 50;
 }
