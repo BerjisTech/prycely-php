@@ -84,6 +84,7 @@ body {
 .transaction-table, .transaction-table tr, .transaction-table td {
     border: none !important;
     border-top: none !important;
+    vertical-align: middle;
 }
 
 .transaction-table td {
