@@ -19,10 +19,10 @@
 
         <div class="row">
             <div class="col-sm-6">
-                row
+                <p>row</p>
             </div>
             <div class="col-sm-6">
-                row
+                <div>row</div>
             </div>
         </div>
     </div>
