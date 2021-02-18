@@ -31,7 +31,7 @@
     <div class="col-sm-4">
         <div class="card balance-card">
             <span class="balance-title">Account Balance</span>
-            <span class="balance-value">$25,386</span>
+            <span class="balance-amount">$25,386</span>
             <span class="balance-account">Primary</span>
         </div>
     </div>

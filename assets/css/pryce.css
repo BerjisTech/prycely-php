@@ -43,11 +43,16 @@ body {
     display: table;
 }
 
-.balance-card .balance-amount {
-    font-size: 20px;
+.balance-card .balance-account, .balance-card .balance-amount {
+    display: inline-block;
 }
 
-.balance-card .balance-account{
+.balance-card .balance-amount {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.balance-card .balance-account {
     border: 1px solid #fff;
     border-radius: 7px;
     padding: 4px;
