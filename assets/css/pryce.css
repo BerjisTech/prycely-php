@@ -34,7 +34,7 @@ body {
     box-shadow: -5px 0px 10px #dddddd;
 }
 
-.wallet-panel{
+.wallet-panel {
     min-height: 75vh !important;
 }
 
@@ -47,7 +47,7 @@ body {
 }
 
 .balance-card {
-    margin-top:10px;
+    margin-top: 10px;
     display: table;
     color: #ffffff;
     border-radius: 20px;
@@ -99,6 +99,10 @@ body {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     border: 1px solid #dddddd;
+}
+
+.transaction-td {
+    text-align: right;
 }
 
 .transaction-title, .transaction-amount {

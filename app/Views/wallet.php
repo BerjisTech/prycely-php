@@ -32,7 +32,7 @@
                             <span class="transaction-title">Shopify</span>
                             <span class="transaction-status">Processing</span>
                         </td>
-                        <td>
+                        <td class="transaction-td">
                             <span class="transaction-amount">15</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
@@ -45,7 +45,7 @@
                             <span class="transaction-title">Heroku</span>
                             <span class="transaction-status">Processing</span>
                         </td>
-                        <td>
+                        <td class="transaction-td">
                             <span class="transaction-amount">16.99</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
@@ -58,7 +58,7 @@
                             <span class="transaction-title">App Payouts</span>
                             <span class="transaction-status">complete</span>
                         </td>
-                        <td>
+                        <td class="transaction-td">
                             <span class="transaction-amount complete">+ 13,000</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
