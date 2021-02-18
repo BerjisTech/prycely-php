@@ -2,6 +2,8 @@
     .side_bar {
         left: 2%;
         position: fixed !important;
+        left: 2.5%;
+        top: 7.5vh;
     }
     .main-content {
         display: table;
