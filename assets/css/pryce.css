@@ -76,11 +76,3 @@ body {
 .transaction-status, .transaction-time {
     font-weight: 50;
 }
-
-.transaction-details p {
-    display: flex;
-}
-
-.transaction-amount, .transaction-time {
-    flex-grow: 4;
-}

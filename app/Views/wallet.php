@@ -29,14 +29,12 @@
                             <span class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></span>
                         </td>
                         <td class="transaction-details">
-                            <p>
-                                <span class="transaction-title">Netflix</span>
-                                <span class="transaction-amount">13,000</span>
-                            </p>
-                            <p>
-                                <span class="transaction-status">Netflix</span>
-                                <span class="transaction-time">13,000</span>
-                            </p>
+                            <span class="transaction-title">Netflix</span>
+                            <span class="transaction-status">Processing</span>
+                        </td>
+                        <td>
+                            <span class="transaction-amount">13,000</span>
+                            <span class="transaction-time">3:49 pm</span>
                         </td>
                     </tr>
                 </table>
