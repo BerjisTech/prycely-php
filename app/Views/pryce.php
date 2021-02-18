@@ -12,7 +12,9 @@
 
 <body>
     <?php include('nav.php'); ?>
-    <?php include($page_name . '.php'); ?>
+    <div class="main-content">
+        <?php include($page_name . '.php'); ?>
+    </div>
     <?php include('modals.php'); ?>
     <?php include('footer.php'); ?>
 
