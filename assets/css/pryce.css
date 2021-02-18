@@ -61,16 +61,20 @@ body {
     border-right: 1px solid #dddddd;
 }
 
-.transaction-table, .transaction-table tr{
+.transaction-table, .transaction-table tr {
     width: 100%;
 }
 
-.t-img{
+.t-img {
     width: 40px;
 }
 
 .transaction-table, .transaction-table tr, .transaction-table td {
     border: none;
+}
+
+.transaction-table td {
+    padding-bottom: 0px !important;
 }
 
 .transaction-image {
@@ -95,6 +99,6 @@ body {
     color: #c0c0c0;
 }
 
-.transaction-amount .complete{
-    color: #8AE3B7;
+.transaction-amount .complete {
+    color: #8AE3B7 !important;
 }
