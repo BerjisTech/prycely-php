@@ -61,7 +61,7 @@ body {
     border-right: 1px solid #dddddd;
 }
 
-.transaction-table{
+.transaction-table, .transaction-table tr{
     width: 100%;
 }
 
