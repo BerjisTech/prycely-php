@@ -6,8 +6,8 @@ class Wallet extends BaseController
 {
 	public function index()
 	{
-        $data['page_name'] = 'page name';
-		return view('welcome_message', $data);
+        $data['page_name'] = 'wallet';
+		return view('pryce', $data);
 	}
 
 	public function add(){
