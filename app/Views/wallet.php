@@ -1,8 +1,10 @@
 <div class="row">
     <div class="col-sm-8">
         <div class="row">
-            <h3>Overview</h3>
-            <small>Hi Fraser, some unneccesary greetings text here</small>
+            <div class="col-sm-12">
+                <h3>Overview</h3>
+                <small>Hi Fraser, some unneccesary greetings text here</small>
+            </div>
         </div>
 
         <div class="row slide-icons-parent">
