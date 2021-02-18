@@ -16,12 +16,12 @@
         padding: 0px !important;
     }
     .slide-icons {
-        display: flex;
-        flex-direction: row;
-        width: 68vw;
-        height: 70px;
-        align-items: center;
-        justify-content: flex-start;
-        overflow-x: auto;
+        display: flex !important;
+        flex-direction: row !important;
+        width: 68vw !important;
+        height: 70px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
     }
 }
