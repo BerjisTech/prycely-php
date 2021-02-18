@@ -35,7 +35,7 @@ body {
 .slide-icons {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    max-width: 100%;
     height: 70px;
     align-items: center;
     justify-content: flex-start;
