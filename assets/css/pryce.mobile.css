@@ -2,6 +2,7 @@
 
     .side_bar {
         left: 2%;
+        position: fixed !important;
     }
 
     .main-content {
