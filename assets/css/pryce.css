@@ -29,3 +29,19 @@ body {
     min-height: 100vh;
     box-shadow: -5px 0px 10px #dddddd;
 }
+
+.balance-card {
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #dddddd;
+    padding: 10px 30px;
+    background-image: linear-gradient(to left bottom, #3455ff, #006bff, #007dff, #008dff, #169cff, #00a9ff, #00b6ff, #00c1fc, #00cdf5, #00d8e9, #20e1d7, #5ee8c4);
+}
+
+.balance-card .balance-title {
+    display: table;
+}
+
+.balance-card .balance-amount {
+    font-size: 20px;
+}
