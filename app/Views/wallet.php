@@ -23,7 +23,7 @@
             <div class="col-sm-6">
                 <p>Transactions</p>
                 <p>15th February, 2021</p>
-                <table class="transaction-table">
+                <table class="table table-responsive transaction-table">
                     <tr>
                         <td>
                             <span class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></span>
