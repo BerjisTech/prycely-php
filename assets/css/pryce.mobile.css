@@ -26,7 +26,10 @@
         overflow-x: auto !important;
     }
     .balance-card .balance-amount {
-        font-size: 30px;
-        font-weight: 400;
+        font-size: 35px;
+        font-weight: 800;
+    }
+    .balance-card .balance-account{
+        display: table;
     }
 }
