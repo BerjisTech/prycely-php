@@ -3,6 +3,7 @@
     .side_bar {
         left: 2%;
         position: fixed !important;
+        -webkit-backface-visibility: hidden;
     }
 
     .main-content {
