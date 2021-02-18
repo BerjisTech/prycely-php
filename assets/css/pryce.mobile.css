@@ -1,4 +1,4 @@
-@media only screens and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .main-content {
         display: table;
         margin-left: 20vw;
