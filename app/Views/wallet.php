@@ -29,11 +29,37 @@
                             <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
                         </td>
                         <td class="transaction-details">
-                            <span class="transaction-title">Netflix</span>
+                            <span class="transaction-title">Shopify</span>
                             <span class="transaction-status">Processing</span>
                         </td>
                         <td>
                             <span class="transaction-amount">13,000</span>
+                            <span class="transaction-time">3:49 pm</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
+                        </td>
+                        <td class="transaction-details">
+                            <span class="transaction-title">Heroku</span>
+                            <span class="transaction-status">Processing</span>
+                        </td>
+                        <td>
+                            <span class="transaction-amount">13,000</span>
+                            <span class="transaction-time">3:49 pm</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="transaction-image" style="background: url(https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp);"></p>
+                        </td>
+                        <td class="transaction-details">
+                            <span class="transaction-title">App Payouts</span>
+                            <span class="transaction-status">complete</span>
+                        </td>
+                        <td>
+                            <span class="transaction-amount complete">13,000</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
                     </tr>

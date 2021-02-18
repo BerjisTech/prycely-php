@@ -87,4 +87,10 @@ body {
 .transaction-status, .transaction-time {
     display: table;
     font-weight: 50;
+    font-size: 12px;
+    color: #c0c0c0;
+}
+
+.transaction-amount .complete{
+    color: #8AE3B7;
 }
