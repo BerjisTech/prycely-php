@@ -70,7 +70,7 @@ body {
 }
 
 .transaction-table, .transaction-table tr, .transaction-table td {
-    border: none;
+    border: none !important;
 }
 
 .transaction-table td {
