@@ -25,4 +25,8 @@
         justify-content: flex-start !important;
         overflow-x: auto !important;
     }
+    .balance-card .balance-amount {
+        font-size: 30px;
+        font-weight: 400;
+    }
 }
