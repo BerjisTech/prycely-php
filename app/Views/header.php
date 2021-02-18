@@ -1,1 +1,1 @@
-this is header
+<link rel="stylesheet" href="<?php echo base_url('assets/js/pryce'); ?>" />
