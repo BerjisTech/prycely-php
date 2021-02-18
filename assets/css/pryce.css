@@ -35,6 +35,10 @@ body {
     box-shadow: -5px 0px 10px #dddddd;
 }
 
+.wallet-panel{
+    min-height: 90vh;
+}
+
 .right-card {
     background: rgba( 255, 255, 255, 0.30);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
