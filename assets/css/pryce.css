@@ -63,6 +63,7 @@ body {
     border-radius: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .transaction-table, .transaction-table tr, .transaction-table td {
