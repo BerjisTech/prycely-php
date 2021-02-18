@@ -20,7 +20,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6 transactions-card  left-card">
+            <div class="col-sm-6">
                 <p>Transactions</p>
                 <p>15th February, 2021</p>
                 <table class="transaction-table">
@@ -65,7 +65,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-sm-6  mid-card">
+            <div class="col-sm-6">
                 <div>row</div>
             </div>
         </div>
