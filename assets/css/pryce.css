@@ -55,6 +55,8 @@ body {
     border-radius: 7px;
     padding: 4px;
     font-size: 12px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .transactions-card {
