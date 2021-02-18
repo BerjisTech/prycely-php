@@ -9,7 +9,7 @@ function loadDoc(time) {
 
 	localStorage.setItem('debugbar-time-new', time);
 
-	var url = "<?= rtrim(site_url(), '/') ?>";
+	var url = "<?= rtrim(base_url(), '/') ?>";
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
