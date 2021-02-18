@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="<?php echo base_url('assets/js/pryce'); ?>" />
+<link rel="stylesheet" href="<?php echo base_url('assets/css/pryce.css'); ?>" />
