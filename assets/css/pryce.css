@@ -117,6 +117,11 @@ body {
     color: #c0c0c0;
 }
 
+.transaction-amount, .transaction-time {
+    width: 100%;
+    text-align: right;
+}
+
 .complete {
     color: #8AE3B7 !important;
 }
