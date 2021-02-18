@@ -1,19 +1,15 @@
 @media only screen and (max-width: 600px) {
-
     .side_bar {
         left: 2%;
         position: fixed !important;
-        -webkit-backface-visibility: hidden;
     }
-
     .main-content {
         display: table;
         margin-left: 20vw;
         width: 80vw;
         right: 0vw;
     }
-
-    .slide-icons-parent{
+    .slide-icons-parent {
         margin: 0px !important;
         padding: 0px !important;
     }
