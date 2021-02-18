@@ -29,10 +29,12 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="balance-card">
-            <span class="balance-title">Account Balance</span>
-            <span class="balance-amount">$25,386</span>
-            <span class="balance-account">Primary</span>
+        <div class="row">
+            <div class="col-sm-12 balance-card">
+                <span class="balance-title">Account Balance</span>
+                <span class="balance-amount">$25,386</span>
+                <span class="balance-account">Primary</span>
+            </div>
         </div>
     </div>
 </div>
