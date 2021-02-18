@@ -13,7 +13,7 @@
 <body>
     <?php include('nav.php'); ?>
     <?php include($page_name . '.php'); ?>
-    <?php include('modal.php'); ?>
+    <?php include('modals.php'); ?>
     <?php include('footer.php'); ?>
 
 </body>
