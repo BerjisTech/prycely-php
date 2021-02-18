@@ -33,7 +33,7 @@
                             <span class="transaction-status">Processing</span>
                         </td>
                         <td class="transaction-td">
-                            <span class="transaction-amount">15</span>
+                            <span class="transaction-amount">$ 15</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
                     </tr>
@@ -46,7 +46,7 @@
                             <span class="transaction-status">Processing</span>
                         </td>
                         <td class="transaction-td">
-                            <span class="transaction-amount">16.99</span>
+                            <span class="transaction-amount">$ 16.99</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
                     </tr>
@@ -59,7 +59,7 @@
                             <span class="transaction-status">complete</span>
                         </td>
                         <td class="transaction-td">
-                            <span class="transaction-amount complete">+ 13,000</span>
+                            <span class="transaction-amount complete">+ $ 13,000</span>
                             <span class="transaction-time">3:49 pm</span>
                         </td>
                     </tr>
