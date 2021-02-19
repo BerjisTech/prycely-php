@@ -138,7 +138,7 @@
                         </div>
                         <div class="holder">
                             <span class="name">Holder Name</span>
-                            <span class="number">**** - **** - **** - 3456</span>
+                            <span class="number">************3456</span>
                         </div>
                     </div>
 
@@ -156,7 +156,7 @@
                         </div>
                         <div class="holder">
                             <span class="name">Holder Name</span>
-                            <span class="number">**** - **** - **** - 3456</span>
+                            <span class="number">************3456</span>
                         </div>
                     </div>
 
