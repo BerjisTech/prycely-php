@@ -126,34 +126,26 @@ body {
     color: #8AE3B7 !important;
 }
 
-
-
-
-
-.wrapper {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .wrapper .cc {
+.cc {
     position: relative;
     font-family: "Maven Pro", sans-serif;
     font-size: 16px;
     color: white;
-    width: 295px;
+    width: 100%;
     height: 174px;
     border-radius: 16px;
     box-shadow: 0px 0px 18px -1px #2E2E2E;
-  }
-  .wrapper .cc.visa {
+}
+
+.cc.visa {
     background-image: linear-gradient(to top right, #52B6FE, #6154FE);
-  }
-  .wrapper .cc.mastercard {
+}
+
+.cc.mastercard {
     background-image: linear-gradient(to top right, #843E3D, #040B2E);
-  }
-  .wrapper .cc:after {
+}
+
+.cc:after {
     content: "";
     position: absolute;
     width: 100%;
@@ -161,18 +153,21 @@ body {
     border-radius: 16px;
     background-image: linear-gradient(to top, transparent, #FFFFFF);
     opacity: 30%;
-  }
-  .wrapper .cc svg {
+}
+
+.cc svg {
     position: absolute;
     top: 80px;
-  }
-  .wrapper .cc svg path {
+}
+
+.cc svg path {
     fill: transparent;
     stroke: #FFFFFF;
     stroke-width: 2px;
     stroke-linecap: round;
-  }
-  .wrapper .cc .container {
+}
+
+.cc .container {
     position: absolute;
     top: 25px;
     left: 25px;
@@ -180,19 +175,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  .wrapper .cc .holder {
+}
+
+.cc .holder {
     position: absolute;
     bottom: 25px;
     left: 25px;
-  }
-  .wrapper .cc .holder span {
+}
+
+.cc .holder span {
     display: block;
-  }
-  .wrapper .cc .holder span.name {
+}
+
+.cc .holder span.name {
     font-size: 14px;
     color: #CCCCCC;
-  }
-  .wrapper .cc .holder span.number {
+}
+
+.cc .holder span.number {
     font-weight: 500;
-  }
+}

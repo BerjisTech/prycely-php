@@ -124,7 +124,6 @@
 
                 </div>
 
-                <div class="wrapper">
                     <div class="cc visa">
                         <svg width="295" height="87">
                             <path d="M 0 0 C 50 50 250 0 300 87"></path>
@@ -160,7 +159,6 @@
                             <span class="number">1234 - 5678 - 9012 - 3456</span>
                         </div>
                     </div>
-                </div>
 
             </div>
         </div>
