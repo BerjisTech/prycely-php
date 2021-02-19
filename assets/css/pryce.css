@@ -143,22 +143,7 @@ body {
 
 
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-.inspiration {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-family: 'Gill Sans', sans-serif;
-  font-size: 12px;
-  color: #fff;
-}
+
 .left {
   position: absolute;
   left: 0;

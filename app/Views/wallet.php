@@ -120,14 +120,6 @@
                     <span class="balance-amount">$25,386</span>
                 </div>
 
-
-                <div class="backgound">
-                    <div class="left"></div>
-                    <div class="right">
-                        <div class="strip-bottom"></div>
-                        <div class="strip-top"></div>
-                    </div>
-                </div>
                 <div class="center">
                     <div class="card">
                         <div class="flip">
