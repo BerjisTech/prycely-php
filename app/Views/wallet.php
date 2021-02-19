@@ -121,8 +121,47 @@
                 </div>
 
                 <div class="credit-card">
-                    
+
                 </div>
+
+                <div class="wrapper">
+                    <div class="cc visa">
+                        <svg width="295" height="87">
+                            <path d="M 0 0 C 50 50 250 0 300 87"></path>
+                        </svg>
+                        <div class="container">
+                            <div class="type">
+                                Debit
+                            </div>
+                            <div class="circuit">
+                                <i class="fab fa-cc-visa fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="holder">
+                            <span class="name">Holder Name</span>
+                            <span class="number">1234 - 5678 - 9012 - 3456</span>
+                        </div>
+                    </div>
+
+                    <div class="cc mastercard">
+                        <svg width="295" height="87">
+                            <path d="M 0 0 C 50 50 250 0 300 87"></path>
+                        </svg>
+                        <div class="container">
+                            <div class="type">
+                                Debit
+                            </div>
+                            <div class="circuit">
+                                <i class="fab fa-cc-mastercard fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="holder">
+                            <span class="name">Holder Name</span>
+                            <span class="number">1234 - 5678 - 9012 - 3456</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
