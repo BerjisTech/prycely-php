@@ -133,7 +133,7 @@
                                 Debit
                             </div>
                             <div class="circuit">
-                                <span class="fab fa-cc-visa fa-2x"></span>
+                                <span class="fab fa fa-cc-visa fa-2x"></span>
                             </div>
                         </div>
                         <div class="holder">
@@ -151,7 +151,7 @@
                                 Debit
                             </div>
                             <div class="circuit">
-                                <span class="fa-cc-mastercard fa-2x"></span>
+                                <span class="fab fa fa-cc-mastercard fa-2x"></span>
                             </div>
                         </div>
                         <div class="holder">
