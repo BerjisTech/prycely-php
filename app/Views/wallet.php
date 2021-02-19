@@ -125,7 +125,7 @@
                 </div>
 
                     <div class="cc visa">
-                        <svg style="width:100%; opacity: 0.5;">
+                        <svg style="width:100%; opacity: 0.3;">
                             <path d="M 0 0 C 50 50 250 0 300 87"></path>
                         </svg>
                         <div class="container">
@@ -143,7 +143,7 @@
                     </div>
 
                     <div class="cc mastercard">
-                        <svg style="width:100%; opacity: 0.5;">
+                        <svg style="width:100%; opacity: 0.3;">
                             <path d="M 0 0 C 50 50 250 0 300 87"></path>
                         </svg>
                         <div class="container">
