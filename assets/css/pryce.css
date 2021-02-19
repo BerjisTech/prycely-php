@@ -39,7 +39,7 @@ body {
 }
 
 .right-card {
-    background: rgba( 247, 248, 250, 0.30);
+    background: rgba( 247, 248, 250, 1);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
@@ -124,4 +124,36 @@ body {
 
 .complete {
     color: #8AE3B7 !important;
+}
+
+html {
+    background: #fff;
+}
+
+.CCBackground {
+    padding-top: 50px;
+    height: 100%;
+    background: #fff;
+}
+
+.outercontainer {
+    margin: 0px auto;
+    border: 1px solid #a6a6a6;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    background: #607d8b;
+}
+
+.formcontainer {
+    margin-top: 20px;
+}
+
+.purchasebtn {
+    margin-top: 20px;
+}
+
+.btn-success {
+    backgroun-color: #0032a0;
 }

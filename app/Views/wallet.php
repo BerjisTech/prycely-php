@@ -119,6 +119,29 @@
                     <span class="balance-title">Account Balance</span>
                     <span class="balance-amount">$25,386</span>
                 </div>
+
+                <div class="CCBackground">
+                    <div class="outercontainer">
+                        <div class="card-wrapper"></div>
+                        <div class="formcontainer">
+                            <form action="">
+                                <input class="form-control" placeholder="Card Number" type="text" name="number">
+                                <br>
+                                <input class="form-control" placeholder="Full Name" type="text" name="name">
+                                <br>
+                                <div class="form-inline text-right">
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="MM/YY" type="text" name="expiry">
+                                        <input class="form-control" placeholder="CVC" type="text" name="cvc">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="text-right purchasebtn">
+                            <button class="btn btn-success">Purchase</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
