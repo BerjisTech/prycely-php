@@ -133,7 +133,7 @@
                                 Debit
                             </div>
                             <div class="circuit">
-                                <i class="fab fa-cc-visa fa-2x"></i>
+                                <i class="fab fa-home fa-2x"></i>
                             </div>
                         </div>
                         <div class="holder">
