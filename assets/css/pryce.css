@@ -46,6 +46,7 @@ body {
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
     border-radius: 10px;
+    cursor: pointer;
 }
 .wallet-panel {
     min-height: 75vh !important;
