@@ -41,6 +41,8 @@ body {
 
 .slide-icon span {
     display: table;
+    text-align: center;
+    width: 100%;
 }
 
 .row-tabs {
