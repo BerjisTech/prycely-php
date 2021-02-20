@@ -65,6 +65,8 @@ body {
 
 .slide-icon span {
     text-align: center;
+    display: table;
+    width: 100%;
 }
 
 .slide-icon span:last-child {
