@@ -10,19 +10,19 @@
         <div class="row slide-icons-parent">
             <div class="col-sm-12 slide-icons">
                 <div class="slide-icon">
-                    <span class="fab fa fa-plus"></span><span>Transfer</span>
+                    <span class="fab fa fa-plus"></span><br /><span>Transfer</span>
                 </div>
                 <div class="slide-icon">
-                    <span class="fab fa fa-plus"></span><span>Pay Bill</span>
+                    <span class="fab fa fa-plus"></span><br /><span>Pay Bill</span>
                 </div>
                 <div class="slide-icon">
-                    <span class="fab fa fa-plus"></span><span>Top Up</span>
+                    <span class="fab fa fa-plus"></span><br /><span>Top Up</span>
                 </div>
                 <div class="slide-icon">
-                    <span class="fab fa fa-plus"></span><span>Statement</span>
+                    <span class="fab fa fa-plus"></span><br /><span>Statement</span>
                 </div>
                 <div class="slide-icon">
-                    <span class="fab fa fa-plus"></span><span>Subscription</span>
+                    <span class="fab fa fa-plus"></span><br /><span>Subscription</span>
                 </div>
             </div>
         </div>
