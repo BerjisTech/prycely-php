@@ -10,19 +10,19 @@
         <div class="row slide-icons-parent">
             <div class="col-sm-12 slide-icons">
                 <div class="slide-icon">
-                    <span><em class="fab fa fa-plus"></em></span><span>Transfer</span>
+                    <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fab fa fa-plus"></em></span><span>Pay Bill</span>
+                    <span><em class="fa fa-plus"></em></span><span>Pay Bill</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fab fa fa-plus"></em></span><span>Top Up</span>
+                    <span><em class="fa fa-plus"></em></span><span>Top Up</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fab fa fa-plus"></em></span><span>Statement</span>
+                    <span><em class="fa fa-file-text"></em></span><span>Statement</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fab fa fa-plus"></em></span><span>Subscription</span>
+                    <span><em class="fa fa-plus"></em></span><span>Subscription</span>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
                             Debit
                         </div>
                         <div class="circuit">
-                            <i class="fab fa fa-cc-visa fa-2x"></i>
+                            <i class="fa fa-cc-visa fa-2x"></i>
                         </div>
                     </div>
                     <div class="holder">
@@ -165,7 +165,7 @@
                             Debit
                         </div>
                         <div class="circuit">
-                            <i class="fab fa fa-cc-mastercard fa-2x"></i>
+                            <i class="fa fa-cc-mastercard fa-2x"></i>
                         </div>
                     </div>
                     <div class="holder">
