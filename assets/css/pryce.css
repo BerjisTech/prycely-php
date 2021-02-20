@@ -52,6 +52,10 @@ body {
     cursor: pointer;
 }
 
+.slide-icon:hover{
+    background: rgba(131,161,254, 0.28)
+}
+
 .slide-icon .fa {
     border: 1px solid rgba( 255, 255, 255, 0.4);
     padding: 5px;
