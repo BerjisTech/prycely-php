@@ -13,16 +13,16 @@
                     <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-plus"></em></span><span>Pay Bill</span>
+                    <span><em class="fa fa-money"></em></span><span>Pay Bill</span>
                 </div>
                 <div class="slide-icon">
                     <span><em class="fa fa-plus"></em></span><span>Top Up</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-file-text"></em></span><span>Statement</span>
+                    <span><em class="fa fa-file-text-o"></em></span><span>Statement</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-plus"></em></span><span>Subscription</span>
+                    <span><em class="fa fa-dot-circle-o"></em></span><span>Subscription</span>
                 </div>
             </div>
         </div>
