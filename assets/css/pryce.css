@@ -40,6 +40,11 @@ body {
     width: 60px;
 }
 
+.slide-icon .fa {
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    padding: 5px;
+}
+
 .slide-icon span {
     display: table;
     text-align: center;
@@ -54,7 +59,7 @@ body {
 .row-tabs span {
     margin: 0px 10px 0px 0px;
     padding: 7px 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.4);
+    border: 1px solid rgba( 255, 255, 255, 0.6);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
