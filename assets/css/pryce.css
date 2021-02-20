@@ -57,13 +57,13 @@ body {
 }
 
 .slide-icon .fa {
-    background: rgba(131, 161, 254, 0.38);
+    border: 1px solid rgba(131, 161, 254, 0.38);
     border-radius: 10px;
     padding: 5px;
 }
 
 .slide-icon .fa:hover {
-    background: rgba(131, 161, 254, 0.18);
+    border: 1px solid rgba(131, 161, 254, 0.18);
 }
 
 .slide-icon span {
