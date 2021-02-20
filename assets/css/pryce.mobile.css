@@ -27,11 +27,16 @@
         padding-left: 0px !important;
     }
     .row-tabs {
-        display: table;
         margin-right: 0px !important;
     }
     .balance-card .balance-amount {
         font-size: 35px;
         font-weight: 800;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .row-tabs {
+        display: none !important;
     }
 }
