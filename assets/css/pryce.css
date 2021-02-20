@@ -59,7 +59,7 @@ body {
 .slide-icon:hover {
     background: rgba(131, 161, 254, 0.18);
     color: #ffffff;
-    text-shadow: 0 0px 12px 0 rgba( 31, 38, 135, 0.7);
+    text-shadow: 0 0px 12px rgba(22, 24, 41, 0.87);
 }
 
 .slide-icon .fa {
