@@ -1,6 +1,6 @@
 console.log('Go pryce');
 
-document.querySelector('.switch-tab').onclick = function () {
+document.querySelectorAll('.switch-tab').onclick = function () {
     console.log($(this));
     if ($(this).attr('class').includes('active')) {
         return;
