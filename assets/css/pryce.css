@@ -84,7 +84,7 @@ body {
     padding: 5px;
 }
 
-.row-tabs span {
+.row-tabs span:first-child {
     margin: 0px 10px 0px 0px;
     padding: 7px 10px;
     border: 1px solid rgba( 255, 255, 255, 0.6);
