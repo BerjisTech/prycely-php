@@ -41,6 +41,8 @@ body {
 }
 
 .slide-icons {
+    display: flex;
+    overflow-x: auto;
     padding-left: 0px !important;
     margin-left: 0px !important;
     box-shadow: 0 8px 12px 0 rgb(31 38 135 / 37%);
