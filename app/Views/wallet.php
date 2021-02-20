@@ -132,6 +132,7 @@
 
                 </div>
 
+<<<<<<< HEAD
                 <div class="cc visa">
                     <svg style="width:100%; opacity: 0.3;">
                         <path d="M 0 0 C 50 50 250 0 300 87"></path>
@@ -139,6 +140,19 @@
                     <div class="container">
                         <div class="type">
                             Debit
+=======
+                    <div class="cc visa">
+                        <svg style="width:100%; opacity: 0.3;">
+                            <path d="M 0 0 C 50 50 250 0 300 87"></path>
+                        </svg>
+                        <div class="container">
+                            <div class="type">
+                                Debit
+                            </div>
+                            <div class="circuit">
+                                <span class="fab fa fa-cc-visa fa-2x"></span>
+                            </div>
+>>>>>>> b7a4b49fab29c082832c2febe7d9f850be44df79
                         </div>
                         <div class="circuit">
                             <i class="fa-cc-visa fa-2x"></i>
@@ -150,6 +164,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="cc mastercard">
                     <svg style="width:100%; opacity: 0.3;">
                         <path d="M 0 0 C 50 50 250 0 300 87"></path>
@@ -157,6 +172,19 @@
                     <div class="container">
                         <div class="type">
                             Debit
+=======
+                    <div class="cc mastercard">
+                        <svg style="width:100%; opacity: 0.3;">
+                            <path d="M 0 0 C 50 50 250 0 300 87"></path>
+                        </svg>
+                        <div class="container">
+                            <div class="type">
+                                Debit
+                            </div>
+                            <div class="circuit">
+                                <span class="fab fa fa-cc-mastercard fa-2x"></span>
+                            </div>
+>>>>>>> b7a4b49fab29c082832c2febe7d9f850be44df79
                         </div>
                         <div class="circuit">
                             <i class="fa-cc-mastercard fa-2x"></i>
