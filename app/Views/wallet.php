@@ -9,13 +9,9 @@
 
         <div class="row slide-icons-parent">
             <div class="col-sm-12 slide-icons">
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
-                <img src="https://fraser-pryce.herokuapp.com/assets/images/36471e6f2cbcccac675f875ef51b3bda.webp" style="margin: 5px; height: 50px" />
+                <div class="slide-icon text-center">
+                    <span class="fab fa fa-plus"></span><br /><span>Withdraw</span>
+                </div>
             </div>
         </div>
 

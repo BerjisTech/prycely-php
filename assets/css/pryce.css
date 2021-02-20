@@ -34,11 +34,16 @@ body {
     box-shadow: -5px 0px 10px #dddddd;
 }
 
-.row-tabs{
+.slide-icon {
+    margin: 10px 10px 10px 0px;
+}
+
+.row-tabs {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.row-tabs span{
+
+.row-tabs span {
     margin: 0px 10px 0px 0px;
     padding: 7px 10px;
     border: 1px solid rgba( 255, 255, 255, 0.4);
@@ -48,6 +53,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
+
 .wallet-panel {
     min-height: 75vh !important;
 }
