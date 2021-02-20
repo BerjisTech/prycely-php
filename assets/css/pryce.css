@@ -45,7 +45,7 @@ body {
     overflow-x: auto;
     padding-left: 0px !important;
     margin-left: 0px !important;
-    box-shadow: 0 0px 12px 0 rgb(31 38 135 / 37%);
+    box-shadow: 0 0px 12px 0 rgb(31 38 135 / 17%);
     border-radius: 10px;
 }
 
@@ -84,7 +84,7 @@ body {
     margin: 0px 10px 0px 0px;
     padding: 7px 10px;
     border: 1px solid rgba( 255, 255, 255, 0.6);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.27);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
     border-radius: 10px;
@@ -97,7 +97,7 @@ body {
 
 .right-card {
     background: rgba( 247, 248, 250, 1);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.27);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
     border-radius: 10px;
@@ -112,7 +112,7 @@ body {
     padding: 20px 30px;
     width: 100%;
     background-image: linear-gradient(to left bottom, #3455ff, #006bff, #007dff, #008dff, #169cff, #00a9ff, #00b6ff, #00c1fc, #00cdf5, #00d8e9, #20e1d7, #5ee8c4);
-    box-shadow: 0 8px 12px 0 rgba( 31, 38, 135, 0.37);
+    box-shadow: 0 8px 12px 0 rgba( 31, 38, 135, 0.27);
     backdrop-filter: blur( 10.5px);
     -webkit-backdrop-filter: blur( 10.5px);
 }
