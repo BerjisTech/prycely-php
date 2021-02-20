@@ -28,9 +28,9 @@
         </div>
 
         <div class="row row-tabs">
-            <span>Transactions</span>
-            <span>Stats</span>
-            <span>Wallets</span>
+            <span class="switch-tab active">Transactions</span>
+            <span class="switch-tab">Stats</span>
+            <span class="switch-tab">Wallets</span>
         </div>
 
         <div class="row">
