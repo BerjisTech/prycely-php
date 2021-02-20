@@ -80,6 +80,8 @@ body {
     margin-bottom: 10px;
     border-radius: 10px;
     background: #F7F9F9;
+    padding-right: 50px !important;
+    padding: 5px;
 }
 
 .row-tabs span {
@@ -89,7 +91,7 @@ body {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.27);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
 }
 
