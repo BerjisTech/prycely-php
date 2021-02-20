@@ -9,21 +9,21 @@
 
         <div class="row slide-icons-parent">
             <div class="col-sm-12 slide-icons">
-                <div class="slide-icon">
+                <span class="slide-icon">
                     <span class="fab fa fa-plus"></span><span>Transfer</span>
-                </div>
-                <div class="slide-icon">
+                </span>
+                <span class="slide-icon">
                     <span class="fab fa fa-plus"></span><span>Pay Bill</span>
-                </div>
-                <div class="slide-icon">
+                </span>
+                <span class="slide-icon">
                     <span class="fab fa fa-plus"></span><span>Top Up</span>
-                </div>
-                <div class="slide-icon">
+                </span>
+                <span class="slide-icon">
                     <span class="fab fa fa-plus"></span><span>Statement</span>
-                </div>
-                <div class="slide-icon">
+                </span>
+                <span class="slide-icon">
                     <span class="fab fa fa-plus"></span><span>Subscription</span>
-                </div>
+                </span>
             </div>
         </div>
 
