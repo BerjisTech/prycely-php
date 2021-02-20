@@ -37,6 +37,7 @@ body {
 .slide-icon {
     margin: 10px 10px 10px 0px;
     text-align: center;
+    width: 60px;
 }
 
 .slide-icon span {
