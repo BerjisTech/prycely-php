@@ -20,6 +20,14 @@
         </div>
 
         <div class="row">
+            <div class="row-tabs">
+                <div class="col-xs-4 text-center">Transactions</div>
+                <div class="col-xs-4 text-center">Stats</div>
+                <div class="col-xs-4 text-center">Wallets</div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-6 transactions-card wallet-panel left-card">
                 <p>Transactions</p>
                 <p>15th February, 2021</p>
@@ -124,41 +132,41 @@
 
                 </div>
 
-                    <div class="cc visa">
-                        <svg style="width:100%; opacity: 0.3;">
-                            <path d="M 0 0 C 50 50 250 0 300 87"></path>
-                        </svg>
-                        <div class="container">
-                            <div class="type">
-                                Debit
-                            </div>
-                            <div class="circuit">
-                                <i class="fa-cc-visa fa-2x"></i>
-                            </div>
+                <div class="cc visa">
+                    <svg style="width:100%; opacity: 0.3;">
+                        <path d="M 0 0 C 50 50 250 0 300 87"></path>
+                    </svg>
+                    <div class="container">
+                        <div class="type">
+                            Debit
                         </div>
-                        <div class="holder">
-                            <span class="name">Holder Name</span>
-                            <span class="number">************3456</span>
+                        <div class="circuit">
+                            <i class="fa-cc-visa fa-2x"></i>
                         </div>
                     </div>
+                    <div class="holder">
+                        <span class="name">Holder Name</span>
+                        <span class="number">************3456</span>
+                    </div>
+                </div>
 
-                    <div class="cc mastercard">
-                        <svg style="width:100%; opacity: 0.3;">
-                            <path d="M 0 0 C 50 50 250 0 300 87"></path>
-                        </svg>
-                        <div class="container">
-                            <div class="type">
-                                Debit
-                            </div>
-                            <div class="circuit">
-                                <i class="fa-cc-mastercard fa-2x"></i>
-                            </div>
+                <div class="cc mastercard">
+                    <svg style="width:100%; opacity: 0.3;">
+                        <path d="M 0 0 C 50 50 250 0 300 87"></path>
+                    </svg>
+                    <div class="container">
+                        <div class="type">
+                            Debit
                         </div>
-                        <div class="holder">
-                            <span class="name">Holder Name</span>
-                            <span class="number">************3456</span>
+                        <div class="circuit">
+                            <i class="fa-cc-mastercard fa-2x"></i>
                         </div>
                     </div>
+                    <div class="holder">
+                        <span class="name">Holder Name</span>
+                        <span class="number">************3456</span>
+                    </div>
+                </div>
 
             </div>
         </div>
