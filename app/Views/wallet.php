@@ -19,12 +19,10 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="row-tabs">
-                <div class="col-xs-4 text-center">Transactions</div>
-                <div class="col-xs-4 text-center">Stats</div>
-                <div class="col-xs-4 text-center">Wallets</div>
-            </div>
+        <div class="row row-tabs">
+            <div class="col-xs-4 text-center">Transactions</div>
+            <div class="col-xs-4 text-center">Stats</div>
+            <div class="col-xs-4 text-center">Wallets</div>
         </div>
 
         <div class="row">
