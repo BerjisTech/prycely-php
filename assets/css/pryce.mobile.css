@@ -27,6 +27,7 @@
         padding-left: 0px !important;
     }
     .row-tabs {
+        display: table;
         margin-right: 0px !important;
     }
     .balance-card .balance-amount {
