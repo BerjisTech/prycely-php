@@ -59,6 +59,10 @@ body {
     text-align: center;
 }
 
+.slide-icon span:last {
+    font-size: smaller;
+}
+
 .row-tabs {
     margin-top: 10px;
     margin-bottom: 10px;
