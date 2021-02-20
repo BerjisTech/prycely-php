@@ -36,7 +36,8 @@ body {
 }
 
 .slide-icons-parent {
-    padding-right: 20px;
+    padding-right: 20px !important;
+    padding-left: 0px !important;
 }
 
 .slide-icons {
