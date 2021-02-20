@@ -78,9 +78,9 @@ body {
 .row-tabs {
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 50px;
     background: #F7F9F9;
-    padding-right: 50px !important;
+    padding-right: 20px !important;
     padding: 5px;
 }
 
