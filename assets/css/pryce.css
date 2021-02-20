@@ -52,13 +52,18 @@ body {
     cursor: pointer;
 }
 
-.slide-icon:hover{
-    background: rgba(131,161,254, 0.28)
+.slide-icon:hover {
+    background: rgba(131, 161, 254, 0.18);
 }
 
 .slide-icon .fa {
-    border: 1px solid rgba( 255, 255, 255, 0.4);
+    background: rgba(131, 161, 254, 0.38);
+    border-radius: 10px;
     padding: 5px;
+}
+
+.slide-icon .fa:hover {
+    background: rgba(131, 161, 254, 0.18);
 }
 
 .slide-icon span {
