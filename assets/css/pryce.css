@@ -54,6 +54,7 @@ body {
 
 .slide-icon:hover {
     background: rgba(131, 161, 254, 0.18);
+    color: #ffffff;
 }
 
 .slide-icon .fa {
