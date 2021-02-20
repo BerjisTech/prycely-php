@@ -20,9 +20,9 @@
         </div>
 
         <div class="row row-tabs">
-            <div class="col-4 text-center"><span>Transactions</span></div>
-            <div class="col-4 text-center"><span>Stats</span></div>
-            <div class="col-4 text-center"><span>Wallets</span></div>
+            <span>Transactions</span>
+            <span>Stats</span>
+            <span>Wallets</span>
         </div>
 
         <div class="row">

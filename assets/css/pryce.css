@@ -34,11 +34,12 @@ body {
     box-shadow: -5px 0px 10px #dddddd;
 }
 
-.row-tabs .col-4{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.row-tabs{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .row-tabs span{
+    margin: 10px;
     padding: 7px;
     border: 1px solid rgba( 255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
