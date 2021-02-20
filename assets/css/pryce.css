@@ -42,6 +42,12 @@ body {
     box-shadow: 0 8px 12px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 7px;
 }
 
 .slide-icon .fa {
@@ -50,9 +56,7 @@ body {
 }
 
 .slide-icon span {
-    display: table;
     text-align: center;
-    width: 100%;
 }
 
 .row-tabs {
