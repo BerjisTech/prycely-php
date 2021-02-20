@@ -38,6 +38,10 @@ body {
     margin: 10px 10px 10px 0px;
 }
 
+.slide-icon span {
+    display: table;
+}
+
 .row-tabs {
     margin-top: 10px;
     margin-bottom: 10px;
