@@ -48,6 +48,7 @@ body {
     align-content: center;
     justify-content: center;
     padding: 7px;
+    width: 80px;
 }
 
 .slide-icon .fa {
@@ -59,7 +60,7 @@ body {
     text-align: center;
 }
 
-.slide-icon span:last {
+.slide-icon span:last-child {
     font-size: smaller;
 }
 
