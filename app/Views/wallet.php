@@ -9,7 +9,7 @@
 
         <div class="row slide-icons-parent">
             <div class="col-sm-12 slide-icons">
-                <div class="slide-icon text-center">
+                <div class="slide-icon">
                     <span class="fab fa fa-plus"></span><span>Withdraw</span>
                 </div>
             </div>
