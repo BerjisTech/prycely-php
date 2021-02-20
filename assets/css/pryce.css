@@ -40,8 +40,8 @@ body {
     text-align: center;
     border-radius: 7px;
     box-shadow: 0 8px 12px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 6.5px);
-    -webkit-backdrop-filter: blur( 6.5px);
+    backdrop-filter: blur( 4.5px);
+    -webkit-backdrop-filter: blur( 4.5px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,6 +49,7 @@ body {
     justify-content: center;
     padding: 7px;
     width: 80px;
+    cursor: pointer;
 }
 
 .slide-icon .fa {
