@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php include($page_name . '.php'); ?>
+    <?php # include($page_name . '.php'); ?>
     <?php include('modals.php'); ?>
     <?php include('footer.php'); ?>
 
