@@ -11,10 +11,7 @@
 </head>
 
 <body>
-    <?php include('nav.php'); ?>
-    <div class="main-content">
-        <?php include($page_name . '.php'); ?>
-    </div>
+    <?php include($page_name . '.php'); ?>
     <?php include('modals.php'); ?>
     <?php include('footer.php'); ?>
 
