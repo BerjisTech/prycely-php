@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class OnBoarding extends BaseController
+class Onboarding extends BaseController
 {
     public function index()
     {
