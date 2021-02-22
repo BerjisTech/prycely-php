@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 class Onboarding extends BaseController
 {
-    public function index()
+	public function index()
     {
         return view('onboarding');
     }
