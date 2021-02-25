@@ -57,10 +57,10 @@
     display: table;
     position: absolute;
     width: 70%;
-    height: 70%;
+    height: 90%;
     top: 15%;
     right: 0px;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-size: contain !important;
+    background-size: cover !important;
 }
