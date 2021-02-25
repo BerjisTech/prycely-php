@@ -34,6 +34,7 @@
 .user_type table tr td:nth-child(1) {
     text-align: center;
 }
+
 .user_type table tr td:nth-child(3) {
     text-align: right;
 }
@@ -45,9 +46,18 @@
 
 .right_home_panel {
     background-color: #EDF0F4 !important;
+    height: 98vh;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.right_home_panel span {
+    display: table;
+    width: 90%;
+    height: 70%;
+    margin-top: 15%;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-attachment: fixed !important;
-    height: 98vh;
 }

@@ -75,7 +75,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 hidden-xs right_home_panel" style="background-image: url(<?php echo base_url('assets/images/36471e6f2cbcccac675f875ef51b3bda.webp'); ?>);">
+            <div class="col-sm-4 hidden-xs right_home_panel">
+                <span style="background: url(<?php echo base_url('assets/images/36471e6f2cbcccac675f875ef51b3bda.webp'); ?>);"></span>
             </div>
         </div>
     </div>
