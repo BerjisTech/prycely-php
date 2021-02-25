@@ -2,9 +2,8 @@
 
 namespace App\Controllers;
 
-class Create_Account extends BaseController
+class Createaccount extends BaseController
 {
-
     public function index()
     {
         return view('create_account');
