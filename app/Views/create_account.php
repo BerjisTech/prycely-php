@@ -21,8 +21,8 @@
 <body>
 
     <div class="main_content">
-        <div class="row">
-            <div class="col-sm-8 ">
+        <div class="row main_row">
+            <div class="col-sm-8 left_home_panel">
                 <div class="row top">
                     <div class="col-sm-8">
                         <img src="<?php echo base_url('assets/images/logo.png') ?>" class="logo" /> MonMax

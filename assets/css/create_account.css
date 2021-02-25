@@ -2,6 +2,20 @@
     background: #FFFFFF;
 }
 
+.main_content, .main_row {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.left_home_panel, .right_home_panel {
+    max-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .top {
     margin-top: 30px;
 }
@@ -87,6 +101,8 @@
 }
 
 .right_home_panel {
+    border-radius: 0px 10px 10px 0px;
+    border: 10px solid #ffffff;
     background-color: #EDF0F4 !important;
     height: 98vh;
     vertical-align: middle;
