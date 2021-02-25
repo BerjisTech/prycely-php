@@ -15,6 +15,7 @@
     vertical-align: middle;
     width: 60%;
     margin-top: 30px;
+    padding: 10px;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
@@ -30,12 +31,16 @@
     border: none;
 }
 
-.user_type table tr td {
+.user_type table tr td:nth-child(1) {
     text-align: left;
+}
+.user_type table tr td:nth-child(3) {
+    text-align: right;
 }
 
 .user-type {
     font-weight: 300;
+    text-align: left;
 }
 
 .right_home_panel {
