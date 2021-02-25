@@ -38,11 +38,11 @@
 }
 
 .user_type:hover {
-    box-shadow: 0 8px 32px 0 rgba(255, 113, 30, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(99, 51, 24, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
     border-radius: 10px;
-    border: 1px solid rgba(255, 113, 30, 0.18);
+    border: 1px solid rgba(99, 51, 24, 0.18);
 }
 
 .user_type table {
