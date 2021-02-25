@@ -125,7 +125,7 @@
 }
 
 .right_home_panel span {
-    display: table;
+    display: none;
     position: absolute;
     width: 90%;
     height: 70%;
@@ -134,6 +134,15 @@
     background-position: 30% 0% !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+}
+
+.right_home_panel video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .go_back {

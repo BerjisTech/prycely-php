@@ -73,6 +73,7 @@
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs right_home_panel">
+                <video src="<?php echo base_url('assets/video/register-email-intro.mp4')?>" autoplay loop></video>
                 <span style="background: url(https://miro.medium.com/max/1838/1*_KZKYMI2hlndOSGL02PK9w.gif);"></span>
             </div>
         </div>
