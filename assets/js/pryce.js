@@ -1,5 +1,3 @@
-const { data } = require("jquery");
-
 let base_url = 'https://' + window.location.hostname;
 
 console.log('Go pryce');
@@ -14,6 +12,15 @@ $('.switch-tab').on('click', function () {
 })
 
 $('a').on('click', function () {
+
+    let link_data = {
+        'page': window.location.href,
+        'date': new Date(),
+        'class': $(this).attr('class'),
+        'id': $(this).attr('id'),
+        'text': $(this).html()
+    };
+    console.log(link_data);
     $.ajax({
         url: base_url + 'internals/link_stats',
         data: link_data,
