@@ -2,4 +2,8 @@
     .user_type, .yourself h3 {
         width: 90%;
     }
+    .user_type{
+        width: 90%;
+        margin-top: 20px;
+    }
 }
