@@ -1,6 +1,7 @@
-*{
+* {
     vertical-align: middle !important;
 }
+
 .main_content {
     background: #FFFFFF;
 }
@@ -17,6 +18,10 @@
     max-height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
+}
+
+.left_home_panel {
+    background: #FFFFFF;
 }
 
 .top {
