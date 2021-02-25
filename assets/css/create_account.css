@@ -31,3 +31,11 @@
 .user-type {
     font-weight: 300;
 }
+
+.right_home_panel {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 98vh;
+}
