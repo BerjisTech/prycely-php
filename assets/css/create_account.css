@@ -1,0 +1,31 @@
+.main_content {}
+
+.logo, .user_type img {
+    height: 50px;
+}
+
+.yourself {
+    text-align: center;
+}
+
+.user_type {
+    display: table;
+    vertical-align: middle;
+    width: 60%;
+}
+
+.user_type table {
+    width: 100%;
+}
+
+.user_type table, .user_type table tr, .user_type table tr td {
+    border: none;
+}
+
+.user_type table tr td {
+    text-align: left;
+}
+
+.user-type {
+    font-weight: 300;
+}

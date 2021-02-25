@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 yourself">
                         <h3>Tell us about yourself</h3>
                         <div class="user_type">
                             <table>
