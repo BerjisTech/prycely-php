@@ -29,6 +29,7 @@
     margin-top: 30px;
     padding: 20px 10px;
     cursor: pointer;
+    background: rgba( 255, 255, 255, 0.30);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
@@ -38,9 +39,10 @@
 }
 
 .user_type:hover {
+    background: rgba( 255, 255, 255, 0.50);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.418);
-    backdrop-filter: blur( 6.5px);
-    -webkit-backdrop-filter: blur( 6.5px);
+    backdrop-filter: blur( 8px);
+    -webkit-backdrop-filter: blur( 8px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }
