@@ -133,3 +133,7 @@
     text-decoration: underline;
     font-size: medium;
 }
+
+.go_back .fa {
+    margin-right: 10px;
+}
