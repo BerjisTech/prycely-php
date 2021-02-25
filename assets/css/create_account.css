@@ -32,7 +32,7 @@
 }
 
 .user_type table tr td:nth-child(1) {
-    text-align: left;
+    text-align: center;
 }
 .user_type table tr td:nth-child(3) {
     text-align: right;
