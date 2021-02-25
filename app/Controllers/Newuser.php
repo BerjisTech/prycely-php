@@ -8,4 +8,16 @@ class Newuser extends BaseController
 	{
 		return view('onboarding');
 	}
+
+	public function company()
+	{
+	}
+
+	public function individual()
+	{
+	}
+
+	public function freelancer()
+	{
+	}
 }
