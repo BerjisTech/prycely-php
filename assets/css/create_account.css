@@ -44,9 +44,10 @@
 }
 
 .right_home_panel {
+    background-color: #EDF0F4 !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-attachment: fixed !important;
     height: 98vh;
 }
