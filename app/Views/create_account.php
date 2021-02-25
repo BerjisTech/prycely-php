@@ -50,7 +50,7 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
+                                        <td><img src="<?php echo base_url('assets/images/freelancer.jpg') ?>" /></td>
                                         <td class="user-type">Freelancer<span>Best suited for Freelancers</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
