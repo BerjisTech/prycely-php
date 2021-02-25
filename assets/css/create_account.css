@@ -114,8 +114,6 @@
 }
 
 .right_home_panel {
-    border-radius: 0px 10px 10px 0px;
-    border: 10px solid #ffffff;
     background-color: #EDF0F4 !important;
     height: 100vh;
     vertical-align: middle;
