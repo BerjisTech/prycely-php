@@ -1,4 +1,6 @@
-.main_content {}
+.main_content {
+    background: #FFFFFF;
+}
 
 .logo, .user_type img {
     height: 50px;
