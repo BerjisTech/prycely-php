@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Createaccount extends BaseController
+class Create_Account extends BaseController
 {
 
     public function index()
