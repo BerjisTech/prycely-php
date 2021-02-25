@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class CreateAccount extends BaseController
+class Createaccount extends BaseController
 {
 
     public function __construct()
