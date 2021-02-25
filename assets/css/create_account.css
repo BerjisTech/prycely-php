@@ -40,6 +40,8 @@
 }
 
 .yourself h3 {
+    display: inline-table;
+    vertical-align: middle;
     width: 60%;
     text-align: left;
     margin-bottom: 40px;
