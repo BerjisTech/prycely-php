@@ -20,7 +20,7 @@
     margin-top: 30px;
 }
 
-.top a {
+.top a, .top a:hover, .top a:active {
     font-weight: 400;
     text-decoration: none;
     color: #007bff;
