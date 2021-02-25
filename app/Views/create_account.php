@@ -24,13 +24,13 @@
         <div class="row main_row">
             <div class="col-sm-8 left_home_panel">
                 <div class="row top">
-                    <div class="col-sm-8">
-                        <img src="<?php echo base_url('assets/images/logo.png') ?>" class="logo" /> MonMax
+                    <div class="col-md-8 col-sm-7 col-6">
+                        <img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo"> MonMax
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4 col-sm-5 col-6">
                         <div class="row">
                             <div class="col-5 text-right"><a href="">Log In</a></div>
-                            <div class="col-5 text-right">
+                            <div class="col-7 text-center">
                                 <a href="#">English <span class="fa fa-chevron-down"></span></a>
                             </div>
                         </div>
