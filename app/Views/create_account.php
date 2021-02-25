@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs right_home_panel">
-                <span style="background: url(https://st2.depositphotos.com/5394392/8955/v/950/depositphotos_89556344-stock-illustration-piggy-bank-cash-money-and.jpg);"></span>
+                <span style="background: url(https://miro.medium.com/max/1838/1*_KZKYMI2hlndOSGL02PK9w.gif);"></span>
             </div>
         </div>
     </div>
