@@ -40,7 +40,7 @@
 
 .user_type:hover {
     background: rgba( 255, 255, 255, 0.50);
-    box-shadow: 0 0px 22px 0 rgba(31, 38, 135, 0.418);
+    box-shadow: 0 4px 22px 0 rgba(31, 38, 135, 0.418);
     backdrop-filter: blur( 8px);
     -webkit-backdrop-filter: blur( 8px);
     border-radius: 10px;
