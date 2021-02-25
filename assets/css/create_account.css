@@ -58,6 +58,6 @@
     margin-top: 15%;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-attachment: fixed !important;
 }
