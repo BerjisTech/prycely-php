@@ -22,7 +22,7 @@ $('a').on('click', function () {
     };
     console.log(link_data);
     $.ajax({
-        url: base_url + 'internals/link_stats',
+        url: base_url + '/internals/link_stats',
         data: link_data,
         method: 'POST',
         success: function () { },
