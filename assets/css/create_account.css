@@ -1,3 +1,6 @@
+*{
+    vertical-align: middle !important;
+}
 .main_content {
     background: #FFFFFF;
 }
