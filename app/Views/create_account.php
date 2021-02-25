@@ -28,9 +28,11 @@
                         <img src="<?php echo base_url('assets/images/logo.png') ?>" class="logo" /> MonMax
                     </div>
                     <div class="col-sm-4">
-                        <div class="col-5 text-right">Log In</div>
-                        <div class="col-6 text-right">
-                            English <span class="fa fa-chevron-down"></span>
+                        <div class="row">
+                            <div class="col-5 text-right">Log In</div>
+                            <div class="col-5 text-right">
+                                English <span class="fa fa-chevron-down"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
