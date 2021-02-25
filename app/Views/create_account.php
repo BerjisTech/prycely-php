@@ -29,9 +29,9 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="row">
-                            <div class="col-5 text-right">Log In</div>
+                            <div class="col-5 text-right"><a href="">Log In</a></div>
                             <div class="col-5 text-right">
-                                English <span class="fa fa-chevron-down"></span>
+                                <a href="#">English <span class="fa fa-chevron-down"></span></a>
                             </div>
                         </div>
                     </div>
