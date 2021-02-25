@@ -124,6 +124,9 @@
 }
 
 .go_back {
+    display: table;
+    width: 100%;
+    text-align: center;
     color: rgba(163, 159, 159, 0.623);
     text-decoration: underline;
     font-size: medium;
