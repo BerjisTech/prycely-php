@@ -72,7 +72,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <span class="go_back">Go Back</span>
+                        <span class="go_back"><span class="fa fa-arrow-left"></span> Go Back</span>
                     </div>
                 </div>
             </div>
