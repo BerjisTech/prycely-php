@@ -26,6 +26,10 @@ $('a').on('click', function () {
         data: link_data,
         method: 'POST',
         success: function () { },
-        error: function () { }
+        error: function (e) { log_errors('link_stats', link_data, e) }
     });
 })
+
+function log_errors(from, data, e) {
+
+}
