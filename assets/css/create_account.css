@@ -45,6 +45,7 @@
 
 .user_type table tr td:nth-child(1) {
     text-align: center;
+    width: 70px;
 }
 
 .user_type table tr td:nth-child(3) {
