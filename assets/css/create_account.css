@@ -52,8 +52,14 @@
 }
 
 .user-type {
-    font-weight: 300;
+    font-weight: 500;
     text-align: left;
+}
+
+.user-type span {
+    display: table;
+    font-weight: 300;
+    opacity: 0.5;
 }
 
 .right_home_panel {
