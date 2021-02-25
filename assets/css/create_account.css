@@ -102,7 +102,7 @@
     height: 70%;
     top: 15%;
     right: 0px;
-    background-position: center center !important;
+    background-position: 30% 0% !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important;
+    background-size: contain, cover !important;
 }
