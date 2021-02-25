@@ -2,12 +2,24 @@
     background: #FFFFFF;
 }
 
+.top {
+    margin-top: 30px;
+}
+
+.logo {
+    margin-right: 30px;
+}
+
 .logo, .user_type img {
     height: 50px;
 }
 
 .yourself {
     text-align: center;
+}
+
+.yourself h3 {
+    margin-bottom: 60px;
 }
 
 .user_type {
