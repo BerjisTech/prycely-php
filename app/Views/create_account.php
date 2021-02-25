@@ -72,6 +72,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <span class="go_back">Go Back</span>
                     </div>
                 </div>
             </div>
