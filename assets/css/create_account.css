@@ -124,6 +124,8 @@
 }
 
 .go_back {
+    margin-top: 30px;
+    cursor: pointer;
     display: table;
     width: 100%;
     text-align: center;
