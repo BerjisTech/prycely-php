@@ -28,7 +28,7 @@
                         <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> MonMax</a>
                     </div>
                     <div class="col-md-4 col-sm-5 col-6 text-right">
-                        <a href="<?php echo base_url('assets/images/logo.png'); ?>">Log In</a>
+                        <a href="<?php echo base_url('auth/login'); ?>">Log In</a>
                         <a href="#">English <span class="fa fa-chevron-down"></span></a>
                     </div>
                 </div>
