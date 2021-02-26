@@ -43,11 +43,11 @@
     height: 50px;
 }
 
-.yourself {
+.yourself, .the_email {
     text-align: center;
 }
 
-.yourself h3 {
+.the_title {
     display: inline-table;
     vertical-align: middle;
     width: 60%;

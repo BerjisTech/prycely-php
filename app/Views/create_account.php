@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 yourself">
-                        <h3>Tell us about yourself</h3>
+                    <div class="col-12 yourself hidden">
+                        <h3 class="the_title">Tell us about yourself</h3>
                         <div class="user_type">
                             <table>
                                 <tbody>
@@ -69,6 +69,16 @@
                             </table>
                         </div>
                         <span class="go_back"><a href="<?php echo base_url() ?>"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                    </div>
+                    <div class="col-12 the_email">
+                        <h3 class="">Enter your email address</h3>
+                        <span>You'll need to log in and access your account</span>
+                        <div class="the_email_input">
+                            <span>Email Address</span>
+                            <input type="email" placeholder="you@mail.com" class="form_control" />
+                            <button type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
+                            <span>By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
+                        </div>
                     </div>
                 </div>
             </div>
