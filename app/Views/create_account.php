@@ -75,7 +75,7 @@
                         <span class="the_subtitle">You'll need to log in and access your account</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Email Address</span>
-                            <input type="email" placeholder="you@mail.com" class="form_control" />
+                            <input autocomplete="FALSE" type="email" placeholder="you@mail.com" class="form_control" />
                             <button type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
