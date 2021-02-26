@@ -36,6 +36,7 @@ function log_errors(from, data, e) {
 
 $('.user_type_chooser').on('click', function () {
     let this_step = $(this).attr('data-type');
+    $('.right_home_panel video source').attr('src', base_url + 'assets/video/register-email-intro.mp4');
     $('.yourself').hide();
     $('.the_email').show();
 })
@@ -45,10 +46,10 @@ $('.ca_next').on('click', function () {
     console.log();
     if (this_step == 'email') {
         $('.the_email').hide();
-
         $('.the_code').show();
     }
     if (this_step == 'code') {
+        $('.right_home_panel video source').attr('src', base_url + 'assets/video/register-confirm-email-intro.mp4');
         $('.the_code').hide();
         $('.the_password').show();
     }
@@ -60,14 +61,17 @@ $('.ca_next').on('click', function () {
 $('.back_link').on('click', function () {
     let this_step = $(this).attr('data-step');
     if (this_step == 'email') {
+        $('.right_home_panel video source').attr('src', base_url + 'assets/video/register-country-loop.mp4');
         $('.yourself').show();
         $('.the_email').hide();
     }
     if (this_step == 'code') {
+        $('.right_home_panel video source').attr('src', base_url + 'assets/video/register-email-intro.mp4');
         $('.the_email').show();
         $('.the_code').hide();
     }
     if (this_step == 'password') {
+        $('.right_home_panel video source').attr('src', base_url + 'assets/video/register-confirm-email-intro.mp4');
         $('.the_code').show();
         $('.the_password').hide();
     }
