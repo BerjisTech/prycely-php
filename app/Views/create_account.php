@@ -25,10 +25,10 @@
             <div class="col-sm-8 left_home_panel">
                 <div class="row top">
                     <div class="col-md-8 col-sm-7 col-6">
-                        <img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> MonMax
+                        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> MonMax</a>
                     </div>
                     <div class="col-md-4 col-sm-5 col-6 text-right">
-                        <a href="">Log In</a>
+                        <a href="<?php echo base_url('assets/images/logo.png'); ?>">Log In</a>
                         <a href="#">English <span class="fa fa-chevron-down"></span></a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
+                                        <td><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></td>
                                         <td class="user-type">Company<span>Best suited for Companies</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
@@ -50,7 +50,7 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><img src="<?php echo base_url('assets/images/freelancer.jpg') ?>" /></td>
+                                        <td><img src="<?php echo base_url('assets/images/freelancer.jpg'); ?>" /></td>
                                         <td class="user-type">Freelancer<span>Best suited for Freelancers</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
@@ -68,7 +68,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <span class="go_back"><span class="fal fa fa-arrow-left"></span> Go Back</span>
+                        <span class="go_back"><a href="<?php echo base_url() ?>"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                 </div>
             </div>
