@@ -6,7 +6,7 @@ class Createaccount extends BaseController
 {
     public function index()
     {
-        $this->db->select('*')->get('shops');
+        $this->db->get('shops');
         return view('create_account');
     }
 }
