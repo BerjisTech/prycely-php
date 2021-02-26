@@ -97,7 +97,7 @@
                         <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Confirmation Code</span>
-                            <input autocomplete="FALSE" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="XXX XXX" class="form_control" name="user_password" />
+                            <input autocomplete="FALSE" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="******" class="form_control" name="user_password" />
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
                             <button class="ca_next" data-step="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                         </div>
