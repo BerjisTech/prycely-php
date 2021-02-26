@@ -44,6 +44,7 @@ $('.ca_next').on('click', function () {
     $this_step = $(this).attr('data-step');
     if (this == 'email') {
         $('.the_email').hide();
+
         $('.the_code').show();
     }
     if (this == 'code') {
@@ -58,6 +59,8 @@ $('.ca_next').on('click', function () {
 $('.go_back').on('click', function () {
     $this_step = $(this).attr('data-step');
     if (this == 'email') {
+        $('.yourself').show();
+        $('.the_email').hide();
     }
     if (this == 'code') {
         $('.the_email').show();
