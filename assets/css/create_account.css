@@ -1,3 +1,7 @@
+* {
+    vertical-align: middle !important;
+}
+
 .main_content {
     background: #FFFFFF;
 }
@@ -208,4 +212,11 @@
 
 .the_email_input .agreement {
     margin-top: 10px;
+}
+
+.resend_code {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: table;
+    vertical-align: middle !important;
 }
