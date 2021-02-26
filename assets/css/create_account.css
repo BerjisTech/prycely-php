@@ -47,7 +47,7 @@
     text-align: center;
 }
 
-.the_title {
+.the_title, .the_email span {
     display: inline-table;
     vertical-align: middle;
     width: 60%;
