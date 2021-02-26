@@ -39,7 +39,7 @@
     height: 50px;
 }
 
-.yourself, .the_email {
+.yourself, .the_email, .the_code, .the_password {
     text-align: center;
 }
 
