@@ -42,31 +42,32 @@ $('.user_type_chooser').on('click', function () {
 
 $('.ca_next').on('click', function () {
     $this_step = $(this).attr('data-step');
-    if (this == 'email') {
+    console.log();
+    if ($this_step == 'email') {
         $('.the_email').hide();
 
         $('.the_code').show();
     }
-    if (this == 'code') {
+    if ($this_step == 'code') {
         $('.the_code').hide();
         $('.the_password').show();
     }
-    if (this == 'password') {
+    if ($this_step == 'password') {
 
     }
 })
 
 $('.go_back').on('click', function () {
     $this_step = $(this).attr('data-step');
-    if (this == 'email') {
+    if ($this_step == 'email') {
         $('.yourself').show();
         $('.the_email').hide();
     }
-    if (this == 'code') {
+    if ($this_step == 'code') {
         $('.the_email').show();
         $('.the_code').hide();
     }
-    if (this == 'password') {
+    if ($this_step == 'password') {
         $('.the_code').show();
         $('.the_password').hide();
     }
