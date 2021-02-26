@@ -187,3 +187,27 @@
     width: 100%;
     text-align: left;
 }
+
+.the_email_input_title {
+    font-weight: 400px;
+}
+
+.the_email_input input{
+    border-radius: 5px;
+    border: 2px solid #828486;
+    padding: 10px;
+}
+
+.the_email_input button{
+    border-radius: 5px;
+    background: #6B5AED;
+    text-align: center;
+    font-weight: 400px;
+    color: #ffffff;
+    padding: 12px;
+    margin-top: 40px;
+}
+
+.the_email_input .agreement{
+    margin-top: 10px;
+}
