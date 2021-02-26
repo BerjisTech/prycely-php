@@ -35,7 +35,7 @@ class Database extends Config
 		'hostname' => 'https://sleekupsell.com',
 		'username' => 'root',
 		'password' => '890Berjis*()',
-		'database' => 'fraser_pryce',
+		'database' => 'sleek_upsell',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
