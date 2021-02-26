@@ -216,3 +216,7 @@
     display: table;
     vertical-align: middle !important;
 }
+
+input[name="user_code"] {
+    text-transform: capitalize;
+}
