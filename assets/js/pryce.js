@@ -45,6 +45,7 @@ $('.ca_next').on('click', function () {
     let this_step = $(this).attr('data-step');
     console.log();
     if (this_step == 'email') {
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4');
         $('.the_email').hide();
         $('.the_code').show();
     }
