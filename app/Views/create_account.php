@@ -77,7 +77,7 @@
                             <span>Email Address</span>
                             <input type="email" placeholder="you@mail.com" class="form_control" />
                             <button type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
-                            <span>By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
+                            <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
                         <span class="go_back"><a href="#" data-step="2"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>

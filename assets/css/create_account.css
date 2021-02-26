@@ -156,7 +156,7 @@
     cursor: pointer;
     display: table;
     width: 100%;
-    text-align: center;
+    text-align: center !important;
     color: rgba(163, 159, 159, 0.623);
     text-decoration: underline;
     font-size: medium;
@@ -173,4 +173,10 @@
     margin-top: 30px;
     padding: 20px 10px;
     transition: all 0.56s;
+}
+
+.the_email_input .agreement, .the_email_input input, .the_email_input button{
+    display: inline-table;
+    width: 100%;
+    text-align: left;
 }
