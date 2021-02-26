@@ -79,7 +79,7 @@
                             <button type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span>By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
-                        <span class="go_back"><a href="<?php echo base_url() ?>"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" data-step="2"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                 </div>
             </div>
