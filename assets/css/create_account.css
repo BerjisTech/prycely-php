@@ -166,6 +166,11 @@
     margin-right: 10px;
 }
 
-.the_email_input{
-    
+.the_email_input {
+    display: inline-table;
+    vertical-align: middle;
+    width: 60%;
+    margin-top: 30px;
+    padding: 20px 10px;
+    transition: all 0.56s;
 }
