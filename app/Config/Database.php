@@ -32,9 +32,9 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'http://134.209.242.145:3306',
-		'username' => 'berjis',
-		'password' => '890Berjis*()',
+		'hostname' => 'https://sleekupsell.com',
+		'username' => 'mummy_money',
+		'password' => '123PyramidMoney!@#',
 		'database' => 'sleek_upsell',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
