@@ -81,7 +81,7 @@
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-12 the_email">
+                    <div class="col-12 the_code" style="display: none;">
                         <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
                         <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">
@@ -92,7 +92,7 @@
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="code"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-12 the_email" style="display: none;">
+                    <div class="col-12 the_password" style="display: none;">
                         <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
                         <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">

@@ -33,3 +33,24 @@ $('a').on('click', function () {
 function log_errors(from, data, e) {
 
 }
+
+$('.user_type_chooser').on('click', function () {
+    let this_step = $(this).attr('data-type');
+    $('.yourself').hide();
+    $('.the_email').show();
+})
+
+$('.ca_next').on('click', function () {
+    $this_step = $(this).attr('data-step');
+    if (this == 'email') {
+        $('.the_email').hide();
+        $('.the_code').show();
+    }
+    if (this == 'code') {
+        $('.the_code').hide();
+        $('.the_password').show();
+    }
+    if (this == 'password') {
+        
+    }
+})
