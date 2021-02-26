@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-12 the_email">
                         <h3 class="the_title">Enter your email address</h3>
-                        <span>You'll need to log in and access your account</span>
+                        <span class="the_subtitle">You'll need to log in and access your account</span>
                         <div class="the_email_input">
                             <span>Email Address</span>
                             <input type="email" placeholder="you@mail.com" class="form_control" />
