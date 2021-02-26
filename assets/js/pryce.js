@@ -51,6 +51,20 @@ $('.ca_next').on('click', function () {
         $('.the_password').show();
     }
     if (this == 'password') {
-        
+
+    }
+})
+
+$('.go_back').on('click', function () {
+    $this_step = $(this).attr('data-step');
+    if (this == 'email') {
+    }
+    if (this == 'code') {
+        $('.the_email').show();
+        $('.the_code').hide();
+    }
+    if (this == 'password') {
+        $('.the_code').show();
+        $('.the_password').hide();
     }
 })
