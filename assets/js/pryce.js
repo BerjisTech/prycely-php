@@ -49,7 +49,7 @@ $('.ca_next').on('click', function () {
         $('.the_code').show();
     }
     if (this_step == 'code') {
-        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-intro.mp4');
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4');
         $('.the_code').hide();
         $('.the_password').show();
     }
@@ -71,7 +71,7 @@ $('.back_link').on('click', function () {
         $('.the_code').hide();
     }
     if (this_step == 'password') {
-        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-intro.mp4');
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4');
         $('.the_code').show();
         $('.the_password').hide();
     }

@@ -107,7 +107,7 @@
             </div>
             <div class="col-sm-4 hidden-xs right_home_panel">
                 <video muted autoplay loop>
-                    <source src="<?php echo base_url('assets/video/register-email-intro.mp4') ?>" type="video/mp4">
+                    <source src="<?php echo base_url('assets/video/register-country-loop.mp4') ?>" type="video/mp4">
                 </video>
                 <span style="background: url(https://miro.medium.com/max/1838/1*_KZKYMI2hlndOSGL02PK9w.gif);"></span>
             </div>
