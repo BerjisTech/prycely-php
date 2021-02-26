@@ -76,10 +76,10 @@
                         <div class="the_email_input">
                             <span class="the_email_input_title">Email Address</span>
                             <input autocomplete="FALSE" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@mail.com" class="form_control" name="user_email" />
-                            <button type="submit" class="ca_next" data-position="email">NEXT <span class="fal fa fa-arrow-next"></span></button>
+                            <button type="submit" class="ca_next" data-step="email">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
-                        <span class="go_back"><a href="#" data-step="2"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" class="back_link" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                     <div class="col-12 the_email">
                         <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
@@ -88,9 +88,9 @@
                             <span class="the_email_input_title">Confirmation Code</span>
                             <input autocomplete="FALSE" type="text" pattern="[a-zA-Z0-9]{3}-[a-zA-Z0-9]{3}" placeholder="XXX-XXX" class="form_control" name="user_code" />
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
-                            <button class="ca_next" data-position="code" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
+                            <button class="ca_next" data-step="code" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                         </div>
-                        <span class="go_back"><a href="#" data-step="2"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" class="back_link" data-step="code"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                     <div class="col-12 the_email" style="display: none;">
                         <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
@@ -99,9 +99,9 @@
                             <span class="the_email_input_title">Confirmation Code</span>
                             <input autocomplete="FALSE" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="XXX XXX" class="form_control" name="user_password" />
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
-                            <button class="ca_next" data-position="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
+                            <button class="ca_next" data-step="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                         </div>
-                        <span class="go_back"><a href="#" data-step="2"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" class="back_link" data-step="password"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                 </div>
             </div>
