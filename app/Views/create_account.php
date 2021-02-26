@@ -71,7 +71,7 @@
                         <span class="go_back"><a href="<?php echo base_url() ?>"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                     <div class="col-12 the_email">
-                        <h3 class="">Enter your email address</h3>
+                        <h3 class="the_title">Enter your email address</h3>
                         <span>You'll need to log in and access your account</span>
                         <div class="the_email_input">
                             <span>Email Address</span>
