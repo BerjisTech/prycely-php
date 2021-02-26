@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 yourself hidden">
+                    <div class="col-12 yourself" style="display: none;">
                         <h3 class="the_title">Tell us about yourself</h3>
                         <div class="user_type">
                             <table>
