@@ -68,7 +68,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <span class="go_back"><a href="<?php echo base_url() ?>"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="<?php echo base_url() ?>" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                     <div class="col-12 the_email" style="display: none;">
                         <h3 class="the_title">Enter your email address</h3>

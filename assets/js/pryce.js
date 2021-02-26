@@ -57,8 +57,7 @@ $('.ca_next').on('click', function () {
     }
 })
 
-$('.go_back').on('click', function (e) {
-    e.preventDefault();
+$('.back_link').on('click', function () {
     let this_step = $(this).attr('data-step');
     if (this_step == 'email') {
         $('.yourself').show();
