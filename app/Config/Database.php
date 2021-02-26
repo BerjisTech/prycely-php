@@ -32,7 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'https://134.209.242.145',
+		'hostname' => 'https://134.209.242.145:3306',
 		'username' => 'root',
 		'password' => '890Berjis*()',
 		'database' => 'sleek_upsell',
