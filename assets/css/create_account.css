@@ -173,9 +173,10 @@
     margin-top: 30px;
     padding: 20px 10px;
     transition: all 0.56s;
+    text-align: left;
 }
 
-.the_email_input .agreement, .the_email_input input, .the_email_input button{
+.the_email_input .agreement, .the_email_input input, .the_email_input button {
     display: inline-table;
     width: 100%;
     text-align: left;
