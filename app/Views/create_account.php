@@ -75,7 +75,7 @@
                         <span class="the_subtitle">You'll need to log in and access your account</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Email Address</span>
-                            <input autocomplete="FALSE" type="email" placeholder="you@mail.com" class="form_control" />
+                            <input autocomplete="FALSE" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@mail.com" class="form_control" name="user_email" />
                             <button type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
@@ -86,7 +86,18 @@
                         <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Confirmation Code</span>
-                            <input autocomplete="FALSE" type="email" placeholder="XXX XXX" class="form_control" />
+                            <input autocomplete="FALSE" type="text" pattern="[A-Za-z0-9]{3}-[A-Za-z0-9]{3}" placeholder="XXX XXX" class="form_control" name="user_code" />
+                            <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
+                            <button type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
+                        </div>
+                        <span class="go_back"><a href="#" data-step="2"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                    </div>
+                    <div class="col-12 the_email" style="display: none;">
+                        <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
+                        <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
+                        <div class="the_email_input">
+                            <span class="the_email_input_title">Confirmation Code</span>
+                            <input autocomplete="FALSE" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="XXX XXX" class="form_control" name="user_password" />
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
                             <button type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                         </div>
