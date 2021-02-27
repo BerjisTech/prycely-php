@@ -24,11 +24,11 @@ body {
 
 .main-content {
     display: table;
-    margin-left: 30vw;
+    margin-left: 20vw;
     padding: 20px 50px;
     border-radius: 10px 0px 0px 10px;
     background: #FFFFFF;
-    width: 70vw;
+    width: 80vw;
     right: 0vw;
     min-height: 100vh;
     box-shadow: -5px 0px 10px #dddddd;
