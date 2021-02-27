@@ -9,7 +9,13 @@ class Home extends BaseController
 		return view('welcome_message');
 	}
 
-	public function wallet(){
+	public function wallet()
+	{
 		echo 'wallet';
+	}
+
+	public function dbtest()
+	{
+		print_r($this->db->query('SELECT * FROM shops'));
 	}
 }
