@@ -6,6 +6,7 @@ class Settings extends BaseController
 {
     public function index()
     {
-        return view('pryce');
+        $data['page_title'] = 'Settings';
+		return view('pryce', $data);
     }
 }
