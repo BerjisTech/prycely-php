@@ -1,5 +1,6 @@
 <div class="side_bar">
     <a href="" class="user_icon"></a>
+    <hr />
     <a href="<?php if ($page_name != 'overview') {
                     echo base_url('overview');
                 } else {
