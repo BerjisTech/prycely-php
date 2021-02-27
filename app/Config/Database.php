@@ -32,7 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'https://sleekupsell.com:3306',
+		'hostname' => 'https://sleekupsell.com',
 		'username' => 'pryce',
 		'password' => '123Pryce!@#',
 		'database' => 'fraser_pryce',
