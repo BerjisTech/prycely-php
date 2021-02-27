@@ -5,6 +5,9 @@
         left: 2.5%;
         top: 7.5vh;
     }
+    .nav_link_text {
+        display: none;
+    }
     .main-content {
         display: table;
         margin-left: 20vw;

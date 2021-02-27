@@ -20,6 +20,12 @@ body {
     border: 1px solid rgba( 255, 255, 255, 0.18); */
 }
 
+.nav_links {
+    display: inline-table;
+    width: 100%;
+    padding: 10px 5px;
+}
+
 /* Main Content */
 
 .main-content {
