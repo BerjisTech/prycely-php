@@ -34,7 +34,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6 transactions-card wallet-panel left-card">
+            <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p>Transactions</p>
                 <p>15th February, 2021</p>
                 <table class="table transaction-table">
@@ -120,9 +120,6 @@
                         </td>
                     </tr>
                 </table>
-            </div>
-            <div class="col-sm-6 wallet-panel mid-card">
-                <div>row</div>
             </div>
         </div>
     </div>
