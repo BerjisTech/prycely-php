@@ -13,6 +13,7 @@
         border: 1px solid rgba( 255, 255, 255, 0.18);
     }
     .nav_links {
+        width: 100%;
         text-align: center;
     }
     .nav_link_text {
