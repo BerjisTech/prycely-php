@@ -29,6 +29,7 @@ body {
 }
 
 .nav_links {
+    font-size: x-large;
     padding: 10px 5px;
     text-align: left;
 }
