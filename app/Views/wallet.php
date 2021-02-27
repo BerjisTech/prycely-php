@@ -37,7 +37,7 @@
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p>Transactions</p>
                 <p>15th February, 2021</p>
-                <table class="table transaction-table">
+                <table class="table transaction-table table-hover">
                     <tr>
                         <td class="t-img">
                             <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
