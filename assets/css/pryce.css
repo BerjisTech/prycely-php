@@ -163,6 +163,10 @@ body {
     padding-right: 50px;
 }
 
+.transaction-table tr {
+    cursor: pointer;
+}
+
 .transaction-table, .transaction-table tr {
     width: 100%;
 }
