@@ -6,5 +6,6 @@ class Settings extends BaseController
 {
     public function index()
     {
+        return view('pryce');
     }
 }
