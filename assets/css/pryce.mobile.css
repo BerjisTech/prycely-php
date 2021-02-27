@@ -4,6 +4,10 @@
         position: fixed !important;
         left: 2.5%;
         top: 7.5vh;
+        align-items: center;
+    }
+    .nav_links {
+        text-align: center;
     }
     .nav_link_text {
         display: none;

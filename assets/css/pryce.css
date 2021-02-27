@@ -24,6 +24,7 @@ body {
 
 .nav_links {
     padding: 10px 5px;
+    text-align: left;
 }
 
 .nav_links:hover {
