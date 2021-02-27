@@ -9,15 +9,15 @@ body {
     display: flex;
     height: 85vh;
     position: fixed;
-    left: 2.5%;
+    left: 2.5vw;
     top: 7.5vh;
-    width: 50px;
-    background: rgba( 255, 255, 255, 0.30);
+    width: 15vw;
+    /* background: rgba( 255, 255, 255, 0.30);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
+    border: 1px solid rgba( 255, 255, 255, 0.18); */
 }
 
 /* Main Content */
