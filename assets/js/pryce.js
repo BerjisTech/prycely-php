@@ -1,4 +1,4 @@
-let base_url = 'https://' + window.location.hostname+'/';
+let base_url = 'https://' + window.location.hostname + '/';
 
 console.log('Go pryce');
 
@@ -55,7 +55,7 @@ $('.ca_next').on('click', function () {
         $('.the_password').show();
     }
     if (this_step == 'password') {
-
+        window.location.href = base_url + "overview";
     }
 })
 
