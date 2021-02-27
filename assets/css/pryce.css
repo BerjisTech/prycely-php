@@ -37,6 +37,10 @@ body {
     background: #E1E1E2;
 }
 
+.nav_link_text {
+    padding-left: 5px;
+}
+
 /* Main Content */
 
 .main-content {
