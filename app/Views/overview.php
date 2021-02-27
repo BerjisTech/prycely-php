@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
-                <p>Transactions</p>
+                <p class="transaction-title">Transactions</p>
                 <p>15th February, 2021</p>
                 <table class="table transaction-table table-hover">
                     <tr>
