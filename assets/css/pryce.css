@@ -43,8 +43,8 @@ body {
 }
 
 .user_icon {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
     margin-bottom: 10px;
     background-image: url('https://fraser-pryce.herokuapp.com/assets/images/logo.png');
