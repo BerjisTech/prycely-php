@@ -7,6 +7,7 @@ class Group extends BaseController
 
     public function index()
     {
+        $data['page_name'] = '';
         $data['page_title'] = 'Group';
 		return view('pryce', $data);
     }
