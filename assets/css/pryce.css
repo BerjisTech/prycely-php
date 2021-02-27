@@ -20,6 +20,9 @@ body {
     width: 15vw;
     flex-direction: column;
     transition: all 0.56s;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
     /* background: rgba( 255, 255, 255, 0.30);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
@@ -32,6 +35,8 @@ body {
     font-size: large;
     padding: 10px 5px;
     text-align: left;
+    width: 100%;
+    padding-left: 30px;
 }
 
 .nav_links:hover {
