@@ -29,7 +29,6 @@
 
         <div class="row row-tabs">
             <span class="switch-tab active">Transactions</span>
-            <span class="switch-tab">Stats</span>
             <span class="switch-tab">Wallets</span>
         </div>
 
