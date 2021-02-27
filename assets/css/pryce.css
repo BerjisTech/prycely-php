@@ -17,7 +17,7 @@ body {
     position: fixed;
     left: 2.5vw;
     top: 7.5vh;
-    width: 15vw;
+    width: 150px;
     flex-direction: column;
     transition: all 0.56s;
     text-align: center;
