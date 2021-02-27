@@ -79,7 +79,7 @@
                     </tr>
                 </table>
                 <p>14th February, 2021</p>
-                <table class="table transaction-table">
+                <table class="table transaction-table table-hover">
                     <tr>
                         <td class="t-img">
                             <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>

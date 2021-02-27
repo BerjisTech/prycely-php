@@ -137,6 +137,10 @@ body {
     border-right: 1px solid #dddddd;
 }
 
+.transaction-table {
+    padding-right: 50px;
+}
+
 .transaction-table, .transaction-table tr {
     width: 100%;
 }
