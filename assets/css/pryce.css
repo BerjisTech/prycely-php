@@ -12,6 +12,7 @@ body {
     left: 2.5vw;
     top: 7.5vh;
     width: 15vw;
+    flex-direction: column;
     /* background: rgba( 255, 255, 255, 0.30);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 6.5px);
@@ -21,8 +22,6 @@ body {
 }
 
 .nav_links {
-    display: inline-table;
-    width: 100%;
     padding: 10px 5px;
 }
 
