@@ -70,7 +70,7 @@ body {
     width: 80vw;
     right: 0vw;
     min-height: 100vh;
-    box-shadow: -5px 0px 10px #dddddd;
+    box-shadow: -8px 0 32px 0 rgba( 31, 38, 135, 0.37);
 }
 
 .slide-icons-parent {
