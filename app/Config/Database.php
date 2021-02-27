@@ -33,8 +33,8 @@ class Database extends Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'https://sleekupsell.com:3306',
-		'username' => 'takii',
-		'password' => 'Takii2020!',
+		'username' => 'pryce',
+		'password' => '123Pryce!@#',
 		'database' => 'fraser_pryce',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
