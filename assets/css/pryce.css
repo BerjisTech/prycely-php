@@ -177,9 +177,9 @@ body {
     padding-right: 20px;
 }
 
-.transaction-table {
+/* .transaction-table {
     padding-right: 50px;
-}
+} */
 
 .transaction-table tr {
     cursor: pointer;
