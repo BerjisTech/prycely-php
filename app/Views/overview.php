@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
-                <p>15th February, 2021</p>
+                <span>15th February, 2021</span>
                 <table class="table transaction-table table-hover">
                     <tr>
                         <td class="t-img">
