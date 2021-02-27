@@ -32,7 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'https://sleekupsell.com',
+		'hostname' => 'https://sleekupsell.com:3306',
 		'username' => 'mummy_money',
 		'password' => '123PyramidMoney!@#',
 		'database' => 'sleek_upsell',
