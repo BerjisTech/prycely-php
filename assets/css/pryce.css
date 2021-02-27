@@ -174,12 +174,12 @@ body {
 
 .transactions-card {
     padding-top: 20px;
-    padding-right: 20px;
+    /* padding-right: 20px; */
 }
 
-/* .transaction-table {
+.transaction-table {
     padding-right: 50px;
-} */
+}
 
 .transaction-table tr {
     cursor: pointer;
