@@ -25,6 +25,10 @@ body {
     padding: 10px 5px;
 }
 
+.nav_links:hover {
+    background: #8d8d8f;
+}
+
 /* Main Content */
 
 .main-content {
