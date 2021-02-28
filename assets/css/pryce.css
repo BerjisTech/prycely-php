@@ -151,6 +151,7 @@ body {
 
 .balance-card {
     margin-top: 10px;
+    margin-bottom: 10px;
     display: table;
     color: #ffffff;
     border-radius: 20px;
@@ -236,6 +237,25 @@ body {
 
 .complete {
     color: #8AE3B7 !important;
+}
+
+.more_groups {
+    margin-top: 30px;
+    cursor: pointer;
+    display: table;
+    width: 100%;
+    text-align: center !important;
+    color: rgba(163, 159, 159, 0.623);
+    text-decoration: underline;
+    font-size: medium;
+}
+
+.more_groups *{
+    color: rgba(163, 159, 159, 0.623) !important;
+}
+
+.more_groups .fa {
+    margin-left: 10px;
 }
 
 .cc {

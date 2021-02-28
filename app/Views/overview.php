@@ -131,7 +131,7 @@
                     <span class="balance-amount">$25,386</span>
                 </div>
 
-                <p class="transaction-title">Groups</p>
+                <p class="transaction-title">My Groups</p>
                 <table class="table transaction-table table-hover">
                     <tr>
                         <td class="t-img">
@@ -161,6 +161,7 @@
                         </td>
                     </tr>
                 </table>
+                <span class="more_groups"><a href="">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
 
                 <p class="transaction-title">Cards</p>
                 <div class="cc visa">
