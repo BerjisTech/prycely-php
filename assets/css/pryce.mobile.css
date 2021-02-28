@@ -1,6 +1,5 @@
 @media only screen and (max-width: 768px) {
     .side_bar {
-        left: 2%;
         position: fixed !important;
         left: 2.5%;
         top: 7.5vh;
