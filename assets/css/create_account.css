@@ -41,6 +41,7 @@
 
 .yourself, .the_email, .the_code, .the_password {
     text-align: center;
+    height: 100vh;
 }
 
 .the_title {
