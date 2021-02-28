@@ -111,9 +111,12 @@ body {
 }
 
 .slide-icon span {
-    text-align: center;
-    display: table;
-    width: 100%;
+    display: flex;
+    width: auto;
+    min-width: 50px;
+    max-width: 90px;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide-icon span:last-child {
