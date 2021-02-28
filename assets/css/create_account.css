@@ -160,6 +160,10 @@
     font-size: medium;
 }
 
+.go_back *{
+    color: rgba(163, 159, 159, 0.623) !important;
+}
+
 .go_back .fa {
     margin-right: 10px;
 }
