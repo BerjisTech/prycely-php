@@ -76,6 +76,7 @@ body {
 .slide-icons-parent {
     padding-right: 20px !important;
     padding-left: 0px !important;
+    margin-bottom: 10px;
 }
 
 .slide-icons {
