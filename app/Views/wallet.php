@@ -1,24 +1,24 @@
 <div class="row">
-    <div class="row slide-icons-parent top">
-        <div class="col-sm-12 slide-icons">
-            <div class="slide-icon">
-                <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
-            </div>
-            <div class="slide-icon">
-                <span><em class="fa fa-money"></em></span><span>Pay Bill</span>
-            </div>
-            <div class="slide-icon">
-                <span><em class="fa fa-plus"></em></span><span>Top Up</span>
-            </div>
-            <div class="slide-icon">
-                <span><em class="fa fa-file-text-o"></em></span><span>Statement</span>
-            </div>
-            <div class="slide-icon">
-                <span><em class="fa fa-dot-circle-o"></em></span><span>Subscription</span>
+    <div class="col-sm-8 left-card">
+        <div class="row slide-icons-parent top">
+            <div class="col-sm-12 slide-icons">
+                <div class="slide-icon">
+                    <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-money"></em></span><span>Pay Bill</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-plus"></em></span><span>Top Up</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-file-text-o"></em></span><span>Statement</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-dot-circle-o"></em></span><span>Subscription</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-8 left-card">
         <div class="row top">
             <div class="col-md-8 col-sm-7 col-xs-6 transaction-title">
                 My Wallets
