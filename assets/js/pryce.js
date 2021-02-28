@@ -79,3 +79,16 @@ $('.back_link').on('click', function () {
         $('.the_password').hide();
     }
 })
+
+$('.switch-tab').on('click', function () {
+    let to_be_switched = $(this).attr('data-hide');
+
+    if (to_be_switched == 'switch-card') {
+        $('.switch-card').show();
+        $('.switch-transactions').hide();
+    }
+    if (to_be_switched == 'switch-transactions') {
+        $('.switch-card').hide();
+        $('.switch-transactions').show();
+    }
+})

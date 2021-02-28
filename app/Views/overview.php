@@ -28,11 +28,11 @@
         </div>
 
         <div class="row row-tabs">
-            <span class="switch-tab active">Transactions</span>
-            <span class="switch-tab">Wallets</span>
+            <span class="switch-tab active" data-hide="switch-transactions">Transactions</span>
+            <span class="switch-tab" data-hide="switch-card">Wallets</span>
         </div>
 
-        <div class="row">
+        <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
@@ -122,7 +122,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4 wallet-panel right-card">
+    <div class="col-sm-4 wallet-panel right-card switch-card">
         <div class="row">
             <div class="col-sm-12">
                 <div class="balance-card">

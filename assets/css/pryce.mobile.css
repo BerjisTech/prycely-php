@@ -49,6 +49,9 @@
     .row-tabs {
         margin-right: 0px !important;
     }
+    .switch-card {
+        display: none;
+    }
     .balance-card .balance-amount {
         font-size: 35px;
         font-weight: 800;
