@@ -90,10 +90,12 @@ body {
 .slide-icon {
     margin: 10px 10px 10px 0px;
     text-align: center;
-    display: inline-table;
     padding: 7px;
     width: 80px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide-icon .fa {
