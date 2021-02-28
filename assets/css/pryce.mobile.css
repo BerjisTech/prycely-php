@@ -43,7 +43,7 @@
     .slide-icons {
         display: flex !important;
         flex-direction: row !important;
-        height: 70px !important;
+        height: 75px !important;
         align-items: center !important;
         justify-content: flex-start !important;
         overflow-x: auto !important;
