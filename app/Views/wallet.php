@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="col-sm-10">
+    <div class="col-sm-8">
         <table class="table transaction-table table-hover">
             <tr>
                 <td class="t-img">
@@ -52,6 +52,6 @@
             </tr>
         </table>
     </div>
-    <div class="col-sm-2 hidden-xs"></div>
+    <div class="col-sm-4 hidden-xs right-card"></div>
 
 </div>
