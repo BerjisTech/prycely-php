@@ -91,7 +91,7 @@ body {
     margin: 10px 10px 10px 0px;
     text-align: center;
     display: inline-table;
-    padding: 13px 7px;
+    padding: 7px;
     width: 80px;
     cursor: pointer;
 }
@@ -119,7 +119,7 @@ body {
     border-radius: 50px;
     background: #F7F9F9;
     margin-right: 20px !important;
-    padding: 5px;
+    padding: 13px 7px;
 }
 
 .row-tabs span {
