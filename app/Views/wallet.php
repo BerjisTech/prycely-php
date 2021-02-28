@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td class="t-img">
-                <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/uk.svg'); ?>');"></p>
+                <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/gb.svg'); ?>');"></p>
             </td>
             <td class="transaction-details">
                 <span class="transaction-title">GBP - Foreign</span>
