@@ -4,7 +4,7 @@
             <div class="col-sm-12">
                 <h3>Overview</h3>
                 <small>Hi Fraser, some unneccesary greetings text here</small>
-                <br />
+                <br /><br />
             </div>
         </div>
 
