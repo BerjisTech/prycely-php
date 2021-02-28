@@ -36,7 +36,6 @@
     .slide-icons {
         display: flex !important;
         flex-direction: row !important;
-        width: 68vw !important;
         height: 70px !important;
         align-items: center !important;
         justify-content: flex-start !important;
