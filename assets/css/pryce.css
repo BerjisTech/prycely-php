@@ -363,3 +363,14 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.top {
+    margin-top: 30px;
+}
+
+.top a, .top a:hover, .top a:active {
+    font-weight: 400;
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 20px;
+}
