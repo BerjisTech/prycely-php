@@ -99,7 +99,9 @@ body {
 .slide-icon .fa {
     border: 1px solid rgba(131, 161, 254, 0.38);
     border-radius: 100%;
-    padding: 10px 12px;
+    display: table;
+    vertical-align: middle;
+    text-align: center;
     background: #F3F6FA;
     width: 40px;
     height: 40px;
