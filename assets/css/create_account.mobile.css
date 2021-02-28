@@ -12,4 +12,7 @@
     .the_title, .the_email_input, .go_back, .ca_next {
         margin-top: 20px;
     }
+    .the_title, .the_subtitle, .user_type, .the_email_input {
+        width: 85%;
+    }
 }
