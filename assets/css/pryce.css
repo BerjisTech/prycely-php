@@ -280,11 +280,16 @@ body {
 }
 
 .cc .container {
+    width: 100%;
     position: absolute;
     top: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.cc .container .type {
+    flex-grow: 4;
 }
 
 .cc .holder {
