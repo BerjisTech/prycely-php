@@ -43,8 +43,8 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="overviewTabContent">
-                    <div class="tab-pane fade show active" id="income" role="tabpanel" aria-labelledby="income-tab">...</div>
-                    <div class="tab-pane fade" id="expense" role="tabpanel" aria-labelledby="expense-tab">...</div>
+                    <div class="tab-pane fade show active" id="income" role="tabpanel" aria-labelledby="income-tab">Income</div>
+                    <div class="tab-pane fade" id="expense" role="tabpanel" aria-labelledby="expense-tab">Expense</div>
                 </div>
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
