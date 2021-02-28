@@ -24,16 +24,16 @@
         <div class="row main_row">
             <div class="col-sm-8 left_home_panel">
                 <div class="row top">
-                    <div class="col-md-8 col-sm-7 col-6">
+                    <div class="col-md-8 col-sm-7 col-xs-6">
                         <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> <span class="logo-text">MonMax</span></a>
                     </div>
-                    <div class="col-md-4 col-sm-5 col-6 text-right">
+                    <div class="col-md-4 col-sm-5 col-xs-6 text-right">
                         <a href="<?php echo base_url('auth/login'); ?>">Log In</a>
                         <a href="#">English <span class="fa fa-chevron-down"></span></a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 yourself">
+                    <div class="col-xs-12 yourself">
                         <h3 class="the_title">Tell us about yourself</h3>
                         <div class="user_type">
                             <table>
@@ -70,7 +70,7 @@
                         </div>
                         <span class="go_back"><a href="<?php echo base_url() ?>" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-12 the_email" style="display: none;">
+                    <div class="col-xs-12 the_email" style="display: none;">
                         <h3 class="the_title">Enter your email address</h3>
                         <span class="the_subtitle">You'll need to log in and access your account</span>
                         <div class="the_email_input">
@@ -81,7 +81,7 @@
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-12 the_code" style="display: none;">
+                    <div class="col-xs-12 the_code" style="display: none;">
                         <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
                         <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">
@@ -92,7 +92,7 @@
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="code"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-12 the_password" style="display: none;">
+                    <div class="col-xs-12 the_password" style="display: none;">
                         <h3 class="the_title">Create your password</h3>
                         <span class="the_subtitle">Choose a secure password that you can easily remember</span>
                         <div class="the_email_input">
