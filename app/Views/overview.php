@@ -1,84 +1,5 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        // Sparkline Charts
-        jQuery(".sales").sparkline([0,
-            414, 492, 68, 212, 202, 290, 66,
-        ], {
-            type: 'line',
-            width: '100%',
-            height: '55',
-            lineColor: '#e8b51b',
-            fillColor: '',
-            lineWidth: 2,
-            spotColor: '#344e86',
-            minSpotColor: '#344e86',
-            maxSpotColor: '#344e86',
-            highlightSpotColor: '#344e86',
-            highlightLineColor: '#30487b',
-            spotRadius: 2,
-            drawNormalOnTop: true
-        });
-
-
-        jQuery(".customer-reach").sparkline([0,
-            20, 26, 9, 9, 5, 26, 12, 6,
-        ], {
-            type: 'line',
-            width: '100%',
-            height: '55',
-            lineColor: '#ec3b83',
-            fillColor: '',
-            lineWidth: 2,
-            spotColor: '#344e86',
-            minSpotColor: '#344e86',
-            maxSpotColor: '#344e86',
-            highlightSpotColor: '#344e86',
-            highlightLineColor: '#30487b',
-            spotRadius: 2,
-            drawNormalOnTop: true
-        });
-
-        $(".monthly-sales").sparkline([0,
-            414, 492, 68, 212, 202, 290, 66,
-        ], {
-            type: 'bar',
-            barColor: '#ff4e50',
-            height: '55px',
-            width: '100%',
-            barWidth: 8,
-            barSpacing: 1
-        });
-
-        jQuery(".all-time-sales").sparkline([0,
-            15, 15, 10, 6, 5, 4, 5, 1,
-        ], {
-            type: 'line',
-            width: '100%',
-            height: '55',
-            lineColor: '#00acd6',
-            fillColor: '',
-            lineWidth: 2,
-            spotColor: '#344e86',
-            minSpotColor: '#344e86',
-            maxSpotColor: '#344e86',
-            highlightSpotColor: '#344e86',
-            highlightLineColor: '#30487b',
-            spotRadius: 2,
-            drawNormalOnTop: true
-        });
-
-        $('.inlinebar').sparkline('html', {
-            type: 'bar',
-            barColor: '#ff6264'
-        });
-        $('.inlinebar-2').sparkline('html', {
-            type: 'bar',
-            barColor: '#445982'
-        });
-        $('.inlinebar-3').sparkline('html', {
-            type: 'bar',
-            barColor: '#00b19d'
-        });
 
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
         var line_chart_demo = $("#line-chart-demo");
@@ -2308,27 +2229,6 @@
             line_chart_demo.parent().attr('style', '');
         }
 
-        // Donut Chart
-        var donut_chart_demo = $("#donut-chart-demo");
-        donut_chart_demo.parent().show();
-        var donut_chart = Morris.Donut({
-            element: 'donut-chart-demo',
-            data: [{
-                    label: "ATC ($ 1,744)",
-                    value: 25
-                },
-                {
-                    label: "Impressions",
-                    value: 113
-                },
-                {
-                    label: "Shown",
-                    value: 61
-                }
-            ],
-            colors: ['#EC3B83', '#00ACD6', '#E8B51B', '#002A5A']
-        });
-        donut_chart_demo.parent().attr('style', '');
     });
 
     function getRandomInt(min, max) {
@@ -2391,15 +2291,12 @@
                             </div>
                         </div>
                         <div class="panel-options">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#line-chart" data-toggle="tab">Shown vs ATC</a></li>
-                                <li class=""><a href="#pie-chart" data-toggle="tab">Comparison Chart</a></li>
-                            </ul>
+                            <span>Income vs Expense</span>
                         </div>
                     </div>
                     <div class="panel-body">
                         <div class="tab-content">
-                            <div class="tab-pane active" id="line-chart" style="">
+                            <div class="tab-pane active" id="line-chart">
                                 <div id="line-chart-demo" class="morrischart" style="height: 300px; position: relative;">
                                     <div class="morris-hover morris-default-style" style="left: 71.3479px; top: 157px;"></div>
                                 </div>
