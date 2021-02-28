@@ -131,10 +131,42 @@
                     <span class="balance-amount">$25,386</span>
                 </div>
 
-                <div class="credit-card">
+                <p class="transaction-title">Groups</p>
+                <table class="table transaction-table table-hover">
+                    <tr>
+                        <td class="t-img">
+                            <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>
+                        </td>
+                        <td class="transaction-details">
+                            <span class="transaction-title">Java House</span>
+                            <span class="transaction-status">Complete</span>
+                        </td>
+                        <td class="transaction-td">
+                            <span class="transaction-amount">$ 23</span>
+                            <span class="transaction-time">8:34 pm</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="t-img">
+                            <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/1269971823090978817/748sBk9P_400x400.jpg');"></p>
+                        </td>
+                        <td class="transaction-details">
+                            <span class="transaction-title">Happy Sisters</span>
+                            <span class="transaction-status">Processing</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="t-img">
+                            <p class="transaction-image" style="background: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_google_adsense_color_1x_web_512dp.max-500x500.png');"></p>
+                        </td>
+                        <td class="transaction-details">
+                            <span class="transaction-title">Google Experts</span>
+                            <span class="transaction-status">Complete</span>
+                        </td>
+                    </tr>
+                </table>
 
-                </div>
-
+                <p class="transaction-title">Cards</p>
                 <div class="cc visa">
                     <svg style="width:100%; opacity: 0.3;">
                         <path d="M 0 0 C 50 50 250 0 300 87"></path>
