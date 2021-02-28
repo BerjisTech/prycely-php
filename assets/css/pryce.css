@@ -305,3 +305,19 @@ body {
 .cc .holder span.number {
     font-weight: 500;
 }
+
+.graph-wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.graph {
+    height: 300px;
+    width: 100%;
+    max-width: 750px;
+    padding: 25px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

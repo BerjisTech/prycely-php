@@ -1,3 +1,47 @@
+<script>
+    new Morris.Line({
+        // ID of the element in which to draw the chart.
+        element: 'pushups',
+        // Chart data records -- each entry in this array corresponds to a point on
+        // the chart.
+        data: [{
+                day: 'Monday',
+                pushups: 20,
+                beers: 2
+            },
+            {
+                day: 'Tuesday',
+                pushups: 10,
+                beers: 2
+            },
+            {
+                day: 'Wednesday',
+                pushups: 5,
+                beers: 3
+            },
+            {
+                day: 'Thursday',
+                pushups: 5,
+                beers: 4
+            },
+            {
+                day: 'Friday',
+                pushups: 20,
+                beers: 1
+            }
+        ],
+        // The name of the data record attribute that contains x-values.
+        xkey: 'day',
+        parseTime: false,
+        // A list of names of data record attributes that contain y-values.
+        ykeys: ['pushups', 'beers'],
+        // Labels for the ykeys -- will be displayed when you hover over the
+        // chart.
+        labels: ['Pushups', 'Beers'],
+        lineColors: ['#373651', '#E65A26']
+    });
+</script>
+
 <div class="row">
     <div class="col-sm-8">
         <div class="row">
@@ -34,27 +78,11 @@
 
         <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
-                <!-- Tabs navs -->
-                <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="income" data-mdb-toggle="tab" href="#income_tab" role="tab" aria-controls="income_tab" aria-selected="true">Income</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="expense" data-mdb-toggle="tab" href="#expense_tab" role="tab" aria-controls="expense_tab" aria-selected="false">Expense</a>
-                    </li>
-                </ul>
-                <!-- Tabs navs -->
-
-                <!-- Tabs content -->
-                <div class="tab-content" id="ex1-content">
-                    <div class="tab-pane fade show active" id="income_tab" role="tabpanel" aria-labelledby="income">
-                        Income
-                    </div>
-                    <div class="tab-pane fade" id="expense_tab" role="tabpanel" aria-labelledby="expense">
-                        Expense
-                    </div>
+                <div class='graph-wrapper'>
+                    <h1>Money in vs. Money out</h1>
+                    <div class='graph' id='pushups'></div>
                 </div>
-                <!-- Tabs content -->
+
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
                 <table class="table transaction-table table-hover">
