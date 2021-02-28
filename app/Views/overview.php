@@ -161,7 +161,7 @@
                         </td>
                     </tr>
                 </table>
-                <span class="more_groups"><a href="">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
+                <span class="more_groups"><a href="<?php echo base_url('group'); ?>">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
 
                 <p class="transaction-title">Cards</p>
                 <div class="cc visa">
