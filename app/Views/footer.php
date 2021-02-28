@@ -1,8 +1,8 @@
 <script src="<?php echo base_url('assets/js/pryce.js?stamp=' . time()); ?>"></script>
 
 <!-- Imported styles on this page -->
-<link rel="stylesheet" href="<?php echo base_url('assets/js/jvectormap/jquery-jvectormap-1.2.2.css'); ?>" id="style-resource-1">
-<link rel="stylesheet" href="<?php echo base_url('assets/js/rickshaw/rickshaw.min.css'); ?>" id="style-resource-2">
+<!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/jvectormap/jquery-jvectormap-1.2.2.css'); ?>" id="style-resource-1">
+<link rel="stylesheet" href="<?php echo base_url('assets/js/rickshaw/rickshaw.min.css'); ?>" id="style-resource-2"> -->
 <script src="<?php echo base_url('assets/js/gsap/TweenMax.min.js'); ?>" id="script-resource-1"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js'); ?>" id="script-resource-2"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.js'); ?>" id="script-resource-3"></script>
