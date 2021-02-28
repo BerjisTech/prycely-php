@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/css/neon-core.css'); ?>" id="style-resource-5">
 <link rel="stylesheet" href="<?php echo base_url('assets/css/neon-theme.css'); ?>" id="style-resource-6">
 <link rel="stylesheet" href="<?php echo base_url('assets/css/neon-forms.css'); ?>" id="style-resource-7">
-<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" id="style-resource-8">
+<!-- <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" id="style-resource-8"> -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/skins/blue.css'); ?>" id="style-resource-9">
 <link rel="stylesheet" href="<?php echo base_url('assets/js/select2/select2-bootstrap.css'); ?>" id="style-resource-2">
 <link rel="stylesheet" href="<?php echo base_url('assets/js/select2/select2.css'); ?>" id="style-resource-3">
