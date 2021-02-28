@@ -52,8 +52,6 @@
             </tr>
         </table>
     </div>
-    <div class="col-sm-4 hidden-xs">
-        <div class="right-card"></div>
-    </div>
+    <div class="col-sm-4 hidden-xs right-card"></div>
 
 </div>
