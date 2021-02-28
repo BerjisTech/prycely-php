@@ -8378,14 +8378,6 @@ img.full-width {
   opacity: 0.5;
   visibility: hidden;
 }
-body {
-  -webkit-perspective: 800;
-  -moz-perspective: 800;
-  perspective: 800;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  perspective: 800px;
-}
 .datepicker.datepicker-dropdown {
   z-index: 10000 !important;
 }
