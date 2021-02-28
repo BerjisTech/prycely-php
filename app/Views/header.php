@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap-grid.css'); ?>" />
 <link rel="stylesheet" href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap-reboot.css'); ?>" />
 <link rel="stylesheet" href="<?php echo base_url('node_modules/jquery-ui-dist/jquery-ui.theme.min.css'); ?>" />
-<script src="<?php echo base_url('node_modules/morris-js-module/morris.css'); ?>"></script>
+<link rel="stylesheet" href="<?php echo base_url('node_modules/morris-js-module/morris.css'); ?>" />
 
 
 <script src="<?php echo base_url('node_modules/jquery/dist/jquery.min.js?stamp='.time()); ?>"></script>
