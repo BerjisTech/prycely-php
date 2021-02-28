@@ -2291,7 +2291,9 @@
                             </div>
                         </div>
                         <div class="panel-options">
-                            <span>Income vs Expense</span>
+                            <span class="input-group">
+                                <ul class="form-control">Income vs Expense</ul>
+                            </span>
                         </div>
                     </div>
                     <div class="panel-body">
