@@ -34,15 +34,15 @@
 
         <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="overviewTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="income-tab" data-bs-toggle="tab" data-bs-target="#income" type="button" role="tab" aria-controls="income" aria-selected="true">Recieved</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="expense-tab" data-bs-toggle="tab" data-bs-target="#expense" type="button" role="tab" aria-controls="expense" aria-selected="false">Spent</button>
+                        <button class="nav-link" id="expense-tab" data-bs-toggle="tab" data-bs-target="#expense" type="button" role="tab" aria-controls="expense" aria-selected="false">Expense</button>
                     </li>
                 </ul>
-                <div class="tab-content" id="myTabContent">
+                <div class="tab-content" id="overviewTabContent">
                     <div class="tab-pane fade show active" id="income" role="tabpanel" aria-labelledby="income-tab">...</div>
                     <div class="tab-pane fade" id="expense" role="tabpanel" aria-labelledby="expense-tab">...</div>
                 </div>
