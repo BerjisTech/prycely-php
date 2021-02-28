@@ -2265,7 +2265,7 @@
             </div>
         </div>
 
-        <div class="row row-tabs visible-xs-*">
+        <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
             <span class="switch-tab active" data-hide="switch-transactions">Transactions</span>
             <span class="switch-tab" data-hide="switch-card">Wallets</span>
         </div>
