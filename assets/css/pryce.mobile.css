@@ -1,6 +1,7 @@
 @media only screen and (max-width: 625px) {
     .slide-icons-parent {
-        width: 73vw !important;
+        width: 76vw !important;
+        margin-right: -25px !important;
     }
 }
 
@@ -36,7 +37,7 @@
         padding: 20px;
     }
     .slide-icons-parent {
-        margin: 0px !important;
+        margin: 0px;
         padding: 0px !important;
     }
     .slide-icons {
