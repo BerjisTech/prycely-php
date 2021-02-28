@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
     .slide-icons-parent {
-        width: 68vw;
+        width: 68vw !important;
     }
 }
 
