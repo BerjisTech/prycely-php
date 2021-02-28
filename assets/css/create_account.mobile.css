@@ -1,9 +1,15 @@
 @media only screen and (max-width: 600px) {
+    .logo-text {
+        display: none;
+    }
     .user_type, .yourself h3 {
         width: 90%;
     }
-    .user_type{
+    .user_type {
         width: 90%;
+        margin-top: 20px;
+    }
+    .the_title, .the_email_input, .go_back, .ca_next {
         margin-top: 20px;
     }
 }

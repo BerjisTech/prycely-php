@@ -12,9 +12,6 @@
         border: 1px solid rgba( 255, 255, 255, 0.18);
         width: 50px;
     }
-    .logo-text {
-        display: none;
-    }
     .nav_links {
         width: 100%;
         text-align: center;
@@ -58,9 +55,6 @@
     .balance-card .balance-amount {
         font-size: 35px;
         font-weight: 800;
-    }
-    .the_title, .the_email_input, .go_back, .ca_next {
-        margin-top: 20px;
     }
 }
 
