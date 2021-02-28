@@ -8,7 +8,7 @@
             <a href="#">Create New Wallet <span class="entypo-plus"></span></a>
         </div>
     </div>
-
+    <div class="row"></div>
     <div class="col-sm-8">
         <table class="table transaction-table table-hover">
             <tr>
