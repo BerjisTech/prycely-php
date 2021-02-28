@@ -240,11 +240,11 @@ body {
 }
 
 .more_groups {
-    margin-top: 30px;
+    margin-top: 10px;
     cursor: pointer;
     display: table;
     width: 100%;
-    text-align: center !important;
+    text-align: left !important;
     color: rgba(163, 159, 159, 0.623);
     text-decoration: underline;
     font-size: medium;
