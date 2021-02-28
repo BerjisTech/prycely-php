@@ -2290,7 +2290,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="panel-options">
+                        <div class="panel-options hidden-xs">
                             <span class="input-group">
                                 <ul class="form-control">Income vs Expense</ul>
                             </span>
