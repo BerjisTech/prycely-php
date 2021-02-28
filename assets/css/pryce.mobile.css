@@ -10,6 +10,7 @@
         backdrop-filter: none;
         border-radius: 10px;
         border: 1px solid rgba( 255, 255, 255, 0.18);
+        width: 50px;
     }
     .nav_links {
         width: 100%;
