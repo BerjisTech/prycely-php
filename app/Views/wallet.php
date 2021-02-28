@@ -8,7 +8,7 @@
             <a href="#">Create New Wallet <span class="entypo-plus"></span></a>
         </div>
     </div>
-    
+
     <div class="col-sm-8 left-card">
         <table class="table transaction-table table-hover">
             <tr>
@@ -52,6 +52,8 @@
             </tr>
         </table>
     </div>
-    <div class="col-sm-4 hidden-xs right-card"></div>
+    <div class="col-sm-4 hidden-xs">
+        <div class="right-card"></div>
+    </div>
 
 </div>
