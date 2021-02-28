@@ -138,12 +138,8 @@
                             <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>
                         </td>
                         <td class="transaction-details">
-                            <span class="transaction-title">Java House</span>
+                            <span class="transaction-title">Diani Vacay</span>
                             <span class="transaction-status">Complete</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount">$ 23</span>
-                            <span class="transaction-time">8:34 pm</span>
                         </td>
                     </tr>
                     <tr>
