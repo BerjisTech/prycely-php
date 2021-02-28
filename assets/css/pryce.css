@@ -159,7 +159,7 @@ body {
     -webkit-backdrop-filter: blur( 6.5px);
     border-radius: 10px;
     padding-top: 20px;
-    min-height: 100vw !important;
+    min-height: 100vh !important;
 }
 
 .balance-card {
