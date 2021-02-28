@@ -2265,7 +2265,7 @@
             </div>
         </div>
 
-        <div class="row row-tabs">
+        <div class="row row-tabs visible-xs-*">
             <span class="switch-tab active" data-hide="switch-transactions">Transactions</span>
             <span class="switch-tab" data-hide="switch-card">Wallets</span>
         </div>
@@ -2395,7 +2395,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4 wallet-panel right-card switch-card">
+    <div class="col-sm-4 wallet-panel right-card switch-card hidden-xs">
         <div class="row">
             <div class="col-sm-12">
                 <div class="balance-card">

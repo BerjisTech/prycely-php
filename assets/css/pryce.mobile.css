@@ -49,9 +49,9 @@
     .row-tabs {
         margin-right: 0px !important;
     }
-    .switch-card {
+    /* .switch-card {
         display: none;
-    }
+    } */
     .balance-card .balance-amount {
         font-size: 35px;
         font-weight: 800;
@@ -59,7 +59,7 @@
 }
 
 @media only screen and (min-width: 601px) {
-    .row-tabs {
+    /* .row-tabs {
         display: none !important;
-    }
+    } */
 }
