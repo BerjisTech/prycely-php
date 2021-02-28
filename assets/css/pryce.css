@@ -101,6 +101,8 @@ body {
     border-radius: 100%;
     padding: 10px 12px;
     background: #F3F6FA;
+    width: 40px;
+    height: 40px;
 }
 
 .slide-icon span {
@@ -250,7 +252,7 @@ body {
     font-size: medium;
 }
 
-.more_groups *{
+.more_groups * {
     color: rgba(163, 159, 159, 0.623) !important;
 }
 
