@@ -9,13 +9,13 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     <link rel="stylesheet" href="<?php echo base_url('assets/css/create_account.css?stamp=' . time()); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/css/create_account.mobile.css?stamp=' . time()); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.css?stamp=' . time()); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap.css'); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap-grid.css'); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap-reboot.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/font-icons/entypo/css/entypo.css'); ?>" id="style-resource-2">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/font-icons/font-awesome/css/font-awesome.min.css'); ?>" id="style-resource-1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic" id="style-resource-3">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>" id="style-resource-4">
 
 
-    <script src="<?php echo base_url('node_modules/jquery/dist/jquery.min.js?stamp=' . time()); ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery-1.11.3.min.js'); ?>"></script>
 </head>
 
 <body>
