@@ -12,7 +12,7 @@
 	$(document).ready(function()
 	{
 		
-		var domain = $("body").data('url').replace('http://', '').replace('/neon', '').replace('themes.', '');
+		var domain = 'fraser-pryce.herokuapp.com';
 		
 		
 		//Cookies.set('current-skin', 'cafe', {domain: domain});
