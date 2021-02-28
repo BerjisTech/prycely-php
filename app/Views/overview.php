@@ -34,18 +34,27 @@
 
         <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
-                <ul class="nav nav-tabs" id="overviewTab" role="tablist">
+                <!-- Tabs navs -->
+                <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="income-tab" data-bs-toggle="tab" data-bs-target="#income" type="button" role="tab" aria-controls="income" aria-selected="true">Recieved</button>
+                        <a class="nav-link active" id="income" data-mdb-toggle="tab" href="#income_tab" role="tab" aria-controls="income_tab" aria-selected="true">Income</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="expense-tab" data-bs-toggle="tab" data-bs-target="#expense" type="button" role="tab" aria-controls="expense" aria-selected="false">Expense</button>
+                        <a class="nav-link" id="expense" data-mdb-toggle="tab" href="#expense_tab" role="tab" aria-controls="expense_tab" aria-selected="false">Expense</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="overviewTabContent">
-                    <div class="tab-pane fade show active" id="income" role="tabpanel" aria-labelledby="income-tab">Income</div>
-                    <div class="tab-pane fade" id="expense" role="tabpanel" aria-labelledby="expense-tab">Expense</div>
+                <!-- Tabs navs -->
+
+                <!-- Tabs content -->
+                <div class="tab-content" id="ex1-content">
+                    <div class="tab-pane fade show active" id="income_tab" role="tabpanel" aria-labelledby="income">
+                        Income
+                    </div>
+                    <div class="tab-pane fade" id="expense_tab" role="tabpanel" aria-labelledby="expense">
+                        Expense
+                    </div>
                 </div>
+                <!-- Tabs content -->
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
                 <table class="table transaction-table table-hover">
