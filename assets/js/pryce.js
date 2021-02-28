@@ -82,6 +82,8 @@ $('.back_link').on('click', function () {
 
 $('.switch-tab').on('click', function () {
     let to_be_switched = $(this).attr('data-hide');
+    $('.switch-card').removeClass('hidden-xs');
+    $('.switch-card').hide();
 
     if (to_be_switched == 'switch-card') {
         $('.switch-card').show();
