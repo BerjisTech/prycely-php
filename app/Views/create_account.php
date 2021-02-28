@@ -25,7 +25,7 @@
             <div class="col-sm-8 left_home_panel">
                 <div class="row top">
                     <div class="col-md-8 col-sm-7 col-6">
-                        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> <span class="logo-text">MonMax</span></a>
+                        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> <span class="logo-text hidden-xs">MonMax</span></a>
                     </div>
                     <div class="col-md-4 col-sm-5 col-6 text-right">
                         <a href="<?php echo base_url('auth/login'); ?>">Log In</a>
