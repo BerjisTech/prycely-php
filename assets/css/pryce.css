@@ -262,6 +262,11 @@ body {
     font-size: medium;
 }
 
+.more_groups:last-of-type {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .more_groups * {
     color: rgba(163, 159, 159, 0.623) !important;
 }

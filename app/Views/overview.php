@@ -199,6 +199,7 @@
                         <span class="number">************3456</span>
                     </div>
                 </div>
+                <span class="more_groups"><a href="<?php echo base_url('group'); ?>">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
 
             </div>
         </div>
