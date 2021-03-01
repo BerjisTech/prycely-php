@@ -59,7 +59,7 @@
                     <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/gb.svg'); ?>');"></p>
                 </td>
                 <td class="transaction-details">
-                    <span class="transaction-title">GameStonks</span>
+                    <span class="transaction-title">GameStonks Autists</span>
                     <span class="transaction-status">GBP</span>
                 </td>
                 <td class="transaction-td">
