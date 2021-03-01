@@ -94,3 +94,9 @@ $('.switch-tab').on('click', function () {
         $('.switch-transactions').show();
     }
 })
+
+$('img').on('error', function () {
+    $(this).onerror = "";
+    $(this).src = base_url + "assets/images/logo.png";
+    return true;
+})
