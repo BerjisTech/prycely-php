@@ -77,7 +77,7 @@
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card">
         <div class="input-group">
-            <iput type="search" placholder="Search groups by name" />
+            <input type="search" placholder="Search groups by name" />
         </div>
     </div>
 
