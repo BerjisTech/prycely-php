@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <td class="t-img">
-                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/us.svg'); ?>');"></p>
+                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/jm.svg'); ?>');"></p>
                 </td>
                 <td class="transaction-details">
                     <span class="transaction-title">MonMax Investors</span>
