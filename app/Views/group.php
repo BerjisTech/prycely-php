@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-sm-8 left-card">
+        <div class="row slide-icons-parent top">
+            <div class="col-sm-12 slide-icons">
+                <div class="slide-icon">
+                    <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-money"></em></span><span>Pay Bill</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-plus"></em></span><span>Top Up</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-file-text-o"></em></span><span>Statement</span>
+                </div>
+                <div class="slide-icon">
+                    <span><em class="fa fa-dot-circle-o"></em></span><span>Subscription</span>
+                </div>
+            </div>
+        </div>
+        <div class="row top">
+            <div class="col-md-8 col-sm-7 col-xs-6 transaction-title">
+                My Wallets
+            </div>
+            <div class="col-md-4 col-sm-5 col-xs-6 text-right">
+                <a href="#">Create New Wallet <span class="entypo-plus"></span></a>
+            </div>
+        </div>
+        <table class="table transaction-table table-hover">
+            <tr>
+                <td class="t-img">
+                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></p>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Diani Vacay</span>
+                    <span class="transaction-status">KES</span>
+                </td>
+                <td class="transaction-td">
+                    <span class="transaction-amount complete">KES 230,000 (Total)</span>
+                    <span class="transaction-time">KES 2,300 (me)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="t-img">
+                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/us.svg'); ?>');"></p>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">MonMax Investors</span>
+                    <span class="transaction-status">USD</span>
+                </td>
+                <td class="transaction-td">
+                    <span class="transaction-amount complete">$ 23,000 (total)</span>
+                    <span class="transaction-time">$ 200 (me)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="t-img">
+                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/gb.svg'); ?>');"></p>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">GameStonks</span>
+                    <span class="transaction-status">GBP</span>
+                </td>
+                <td class="transaction-td">
+                    <span class="transaction-amount complete">GBP 23.890 (total)</span>
+                    <span class="transaction-time">GBP 500 (me)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-4 hidden-xs right-card"></div>
+
+</div>
