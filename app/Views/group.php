@@ -80,6 +80,48 @@
             <input type="search" placholder="Search groups by name" class="form-control input-lg" />
             <span class="input-group-addon entypo-search"></span>
         </div>
+        <p class="transaction-title">My Invites</p>
+        <table class="table transaction-table table-hover">
+            <tr>
+                <td class="t-img">
+                    <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Diani Vacay</span>
+                    <span class="transaction-status">Invited by Irene</span>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Join</span>
+                    <span class="transaction-status danger">Reject</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="t-img">
+                    <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/1269971823090978817/748sBk9P_400x400.jpg');"></p>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Happy Sisters</span>
+                    <span class="transaction-status">Invited by lord_Sombo</span>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Join</span>
+                    <span class="transaction-status danger">Reject</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="t-img">
+                    <p class="transaction-image" style="background: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_google_adsense_color_1x_web_512dp.max-500x500.png');"></p>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Google Experts</span>
+                    <span class="transaction-status">Invited by Tanveer</span>
+                </td>
+                <td class="transaction-details">
+                    <span class="transaction-title">Join</span>
+                    <span class="transaction-status danger">Reject</span>
+                </td>
+            </tr>
+        </table>
     </div>
 
 </div>
