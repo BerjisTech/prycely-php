@@ -91,8 +91,8 @@
                     <span class="transaction-status">Invited by Irene</span>
                 </td>
                 <td class="transaction-details">
-                    <span class="transaction-title">Join</span>
-                    <span class="transaction-status danger">Reject</span>
+                    <span class="transaction-title complete">Join</span>
+                    <span class="transaction-status text-danger">Reject</span>
                 </td>
             </tr>
             <tr>
@@ -104,8 +104,8 @@
                     <span class="transaction-status">Invited by lord_Sombo</span>
                 </td>
                 <td class="transaction-details">
-                    <span class="transaction-title">Join</span>
-                    <span class="transaction-status danger">Reject</span>
+                    <span class="transaction-title complete">Join</span>
+                    <span class="transaction-status text-danger">Reject</span>
                 </td>
             </tr>
             <tr>
@@ -117,8 +117,8 @@
                     <span class="transaction-status">Invited by Tanveer</span>
                 </td>
                 <td class="transaction-details">
-                    <span class="transaction-title">Join</span>
-                    <span class="transaction-status danger">Reject</span>
+                    <span class="transaction-title complete">Join</span>
+                    <span class="transaction-status text-danger">Reject</span>
                 </td>
             </tr>
         </table>
