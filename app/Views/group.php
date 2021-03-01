@@ -77,7 +77,8 @@
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card">
         <div class="input-group">
-            <input type="search" placholder="Search groups by name" />
+            <input type="search" placholder="Search groups by name" class="form-control" />
+            <span class="input-group-addon entypo-search"></span>
         </div>
     </div>
 
