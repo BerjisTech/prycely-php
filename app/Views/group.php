@@ -77,7 +77,7 @@
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card">
         <div class="input-group">
-            <input type="search" placholder="Search groups by name" class="form-control input-lg" />
+            <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
             <span class="input-group-addon entypo-search"></span>
         </div>
         <p class="transaction-title">My Invites</p>
