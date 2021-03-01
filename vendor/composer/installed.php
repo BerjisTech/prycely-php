@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '50c94fc5793b0261debe81d14bbcad20dc97e8b0',
+    'reference' => '977a15ea7295567e443ba464b8884cea41d5452f',
     'name' => 'codeigniter4/framework',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '50c94fc5793b0261debe81d14bbcad20dc97e8b0',
+      'reference' => '977a15ea7295567e443ba464b8884cea41d5452f',
     ),
     'doctrine/instantiator' => 
     array (
@@ -230,6 +230,15 @@
       array (
       ),
       'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
+    ),
+    'safaricom/mpesa' => 
+    array (
+      'pretty_version' => '1.0.8',
+      'version' => '1.0.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c66895dcdec8df1f496e017708c557fc252340c5',
     ),
     'sebastian/cli-parser' => 
     array (
