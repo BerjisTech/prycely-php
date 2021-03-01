@@ -19,56 +19,62 @@
                 </div>
             </div>
         </div>
-        <div class="row top">
-            <div class="col-md-8 col-sm-7 col-xs-6 transaction-title">
-                My Wallets
-            </div>
-            <div class="col-md-4 col-sm-5 col-xs-6 text-right">
-                <a href="#">Create New Wallet <span class="entypo-plus"></span></a>
-            </div>
+        <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
+            <span class="switch-tab active" data-hide="switch-transactions">Groups</span>
+            <span class="switch-tab" data-hide="switch-card">Invites</span>
         </div>
-        <table class="table transaction-table table-hover">
-            <tr>
-                <td class="t-img">
-                    <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
-                </td>
-                <td class="transaction-details">
-                    <span class="transaction-title">Diani Vacay</span>
-                    <span class="transaction-status">KES</span>
-                </td>
-                <td class="transaction-td">
-                    <span class="transaction-amount complete">KES 230,000 (Total)</span>
-                    <span class="transaction-time">KES 2,300 (me)</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="t-img">
-                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/jm.svg'); ?>');"></p>
-                </td>
-                <td class="transaction-details">
-                    <span class="transaction-title">MonMax Investors</span>
-                    <span class="transaction-status">USD</span>
-                </td>
-                <td class="transaction-td">
-                    <span class="transaction-amount complete">$ 23,000 (total)</span>
-                    <span class="transaction-time">$ 200 (me)</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="t-img">
-                    <p class="transaction-image" style="background: url('https://cdn-us1.hash.ai/site/stonks.jpg');"></p>
-                </td>
-                <td class="transaction-details">
-                    <span class="transaction-title">GameStonks Autists</span>
-                    <span class="transaction-status">GBP</span>
-                </td>
-                <td class="transaction-td">
-                    <span class="transaction-amount complete">GBP 23.890 (total)</span>
-                    <span class="transaction-time">GBP 500 (me)</span>
-                </td>
-            </tr>
-        </table>
+        <div class="switch-transactions">
+            <div class="row top">
+                <div class="col-md-8 col-sm-7 col-xs-6 transaction-title">
+                    My Groups
+                </div>
+                <div class="col-md-4 col-sm-5 col-xs-6 text-right">
+                    <a href="<?php echo base_url('group/create'); ?>">Create New Group <span class="entypo-plus"></span></a>
+                </div>
+            </div>
+            <table class="table transaction-table table-hover">
+                <tr>
+                    <td class="t-img">
+                        <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
+                    </td>
+                    <td class="transaction-details">
+                        <span class="transaction-title">Diani Vacay</span>
+                        <span class="transaction-status">KES</span>
+                    </td>
+                    <td class="transaction-td">
+                        <span class="transaction-amount complete">KES 230,000 (Total)</span>
+                        <span class="transaction-time">KES 2,300 (me)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t-img">
+                        <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/jm.svg'); ?>');"></p>
+                    </td>
+                    <td class="transaction-details">
+                        <span class="transaction-title">MonMax Investors</span>
+                        <span class="transaction-status">USD</span>
+                    </td>
+                    <td class="transaction-td">
+                        <span class="transaction-amount complete">$ 23,000 (total)</span>
+                        <span class="transaction-time">$ 200 (me)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t-img">
+                        <p class="transaction-image" style="background: url('https://cdn-us1.hash.ai/site/stonks.jpg');"></p>
+                    </td>
+                    <td class="transaction-details">
+                        <span class="transaction-title">GameStonks Autists</span>
+                        <span class="transaction-status">GBP</span>
+                    </td>
+                    <td class="transaction-td">
+                        <span class="transaction-amount complete">GBP 23.890 (total)</span>
+                        <span class="transaction-time">GBP 500 (me)</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div class="col-sm-4 hidden-xs right-card"></div>
+    <div class="col-sm-4 hidden-xs right-card switch-card"></div>
 
 </div>

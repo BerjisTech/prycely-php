@@ -24,7 +24,7 @@
                 My Wallets
             </div>
             <div class="col-md-4 col-sm-5 col-xs-6 text-right">
-                <a href="#">Create New Wallet <span class="entypo-plus"></span></a>
+                <a href="<?php echo base_url('wallet/create'); ?>">Create New Wallet <span class="entypo-plus"></span></a>
             </div>
         </div>
         <table class="table transaction-table table-hover">
