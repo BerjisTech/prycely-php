@@ -30,7 +30,7 @@
         <table class="table transaction-table table-hover">
             <tr>
                 <td class="t-img">
-                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></p>
+                    <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
                 </td>
                 <td class="transaction-details">
                     <span class="transaction-title">Diani Vacay</span>
@@ -56,7 +56,7 @@
             </tr>
             <tr>
                 <td class="t-img">
-                    <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/gb.svg'); ?>');"></p>
+                    <p class="transaction-image" style="background: url('https://cdn-us1.hash.ai/site/stonks.jpg');"></p>
                 </td>
                 <td class="transaction-details">
                     <span class="transaction-title">GameStonks Autists</span>
