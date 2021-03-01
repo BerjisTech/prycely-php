@@ -6,6 +6,6 @@ class Onboarding extends BaseController
 {
     public function index()
     {
-        return view('onboarding');
+        return view('auth/onboarding');
     }
 }

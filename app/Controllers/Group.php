@@ -7,8 +7,8 @@ class Group extends BaseController
 
     public function index()
     {
-        $data['page_name'] = 'group';
+        $data['page_name'] = 'group/index';
         $data['page_title'] = 'Group';
-		return view('pryce', $data);
+		return view('index', $data);
     }
 }

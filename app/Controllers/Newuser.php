@@ -6,7 +6,7 @@ class Newuser extends BaseController
 {
 	public function index()
 	{
-		return view('onboarding');
+		return view('auth/onboarding');
 	}
 
 	public function company()
