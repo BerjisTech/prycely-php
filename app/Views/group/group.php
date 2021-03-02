@@ -61,7 +61,7 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 </script>
-<div class="group-page row">
+<div class="row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
             <span class="switch-tab active" data-hide="switch-transactions">Group</span>
