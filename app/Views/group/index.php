@@ -33,7 +33,7 @@
                 </div>
             </div>
             <table class="table transaction-table table-hover">
-                <tr>
+                <tr class="go_to_group" data-id="group_id">
                     <td class="t-img">
                         <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
                     </td>
@@ -46,7 +46,7 @@
                         <span class="transaction-time">KES 2,300 (me)</span>
                     </td>
                 </tr>
-                <tr>
+                <tr class="go_to_group" data-id="group_id">
                     <td class="t-img">
                         <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/jm.svg'); ?>');"></p>
                     </td>
@@ -59,7 +59,7 @@
                         <span class="transaction-time">$ 200 (me)</span>
                     </td>
                 </tr>
-                <tr>
+                <tr class="go_to_group" data-id="group_id">
                     <td class="t-img">
                         <p class="transaction-image" style="background: url('https://cdn-us1.hash.ai/site/stonks.jpg');"></p>
                     </td>
