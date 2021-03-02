@@ -5,45 +5,32 @@
         var line_chart_demo = $("#line-chart");
         var line_chart = Morris.Line({
             element: 'line-chart',
-            data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                },
-                {
-                    y: '2007',
-                    a: 75,
-                    b: 65
-                },
-                {
-                    y: '2008',
-                    a: 50,
-                    b: 40
-                },
-                {
-                    y: '2009',
-                    a: 75,
-                    b: 65
-                },
-                {
-                    y: '2010',
-                    a: 50,
-                    b: 40
-                },
-                {
-                    y: '2011',
-                    a: 75,
-                    b: 65
-                },
-                {
-                    y: '2012',
-                    a: 100,
-                    b: 90
-                }
+            data: [
+                <?php
+                for ($m = 30; $m > -1; $m--) :
+                    $nowmonth = strtotime(date('d-M-Y', strtotime('-' . $m . ' days')));
+                    $lastmonth = strtotime(date('d-M-Y', strtotime('-' . ($m - 1) . ' days'))); ?> {
+                        y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
+                        a: getRandomInt(100, 0),
+                        b: getRandomInt(100, 0)
+                    },
+                <?php endfor; ?>
             ],
             xkey: 'y',
-            ykeys: ['a', 'b'],
-            labels: ['October 2013', 'November 2013'],
+            ykeys: ['a', 'b', 'c'],
+            labels: ['Shown', 'Impressions', 'Purchased'],
+            lineColors: ['#ec3b83', '#E8B51B', '#00acd6'],
+            xLabelFormat: function(d) {
+                return d.getDate() + ' ' + months[d.getMonth()];
+            },
+            dateFormat: function(x) {
+                let shit = new Date(x);
+                var douche = shit.getDate() + ' ' + months[shit.getMonth()];
+                return douche;
+            },
+            resize: true,
+            smooth: true,
+            pointSize: 0,
             redraw: true
         });
         line_chart_demo.parent().attr('style', '');
@@ -54,19 +41,19 @@
         var donut_chart = Morris.Donut({
             element: 'donut-chart',
             data: [{
-                    label: "Download Sales",
+                    label: "Member Deposits",
                     value: getRandomInt(10, 50)
                 },
                 {
-                    label: "In-Store Sales",
+                    label: "Project Expenses",
                     value: getRandomInt(10, 50)
                 },
                 {
-                    label: "Mail-Order Sales",
+                    label: "Withdrawals & Refunds",
                     value: getRandomInt(10, 50)
                 }
             ],
-            colors: ['#707f9b', '#455064', '#242d3c']
+            colors: ['#EC3B83', '#00ACD6', '#E8B51B']
         });
         donut_chart_demo.parent().attr('style', '');
     });
