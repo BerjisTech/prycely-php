@@ -417,12 +417,21 @@ body {
 }
 
 .chat-block .input-group {
+    z-index: 3px;
     border-radius: 10px !important;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%) !important;
 }
 
 .chat-card .btn-danger {
     display: none;
+}
+
+.chat-card .input-group input {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.chat-card .input-group .input-group-addon {
+    border-radius: 10px;
 }
 
 .chat-body {
