@@ -565,7 +565,7 @@ body {
     cursor: pointer;
 }
 
-.chart-card textarea, .chart-card .form-control {
+.chat-card .input-group textarea, .chat-card .input-group .form-control {
     resize: none !important;
 }
 
