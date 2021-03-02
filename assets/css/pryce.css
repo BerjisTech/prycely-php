@@ -394,7 +394,8 @@ body {
     border: 2px solid #8EA0CC;
     display: table;
 }
-.chat-card{
+
+.chat-card {
     position: fixed !important;
     padding: 0px !important;
     max-width: 27vw !important;
@@ -404,6 +405,24 @@ body {
     box-shadow: 15px 0 32px inset rgb(31 38 135 / 27%) !important;
 }
 
-.chat-card .btn-danger{
+.chat-block {
+    display: flex;
+    height: 100vh;
+    width: auto;
+    max-width: 27vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-block .input-group{
+    border-radius: 10px;
+    box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%) !important;
+}
+
+.chat-card .btn-danger {
     display: none;
+}
+
+.chat-body {
+    flex-grow: 4;
 }

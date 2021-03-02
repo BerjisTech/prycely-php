@@ -146,11 +146,18 @@
         <br />
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
-
-        <div class="input-group">
-            <span class="input-group-addon entypo-cancel btn-danger" onclick="$('.switch-tab[data-hide=\'switch-transactions\']').trigger('click');"></span>
-            <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
-            <span class="input-group-addon entypo-search"></span>
+        <div class="chat-block">
+            <div class="input-group">
+                <span class="input-group-addon entypo-cancel btn-danger" onclick="$('.switch-tab[data-hide=\'switch-transactions\']').trigger('click');"></span>
+                <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
+                <span class="input-group-addon entypo-search"></span>
+            </div>
+            <div class="chat-body"></div>
+            <div class="input-group">
+                <span class="input-group-addon entypo-cancel btn-danger" onclick="$('.switch-tab[data-hide=\'switch-transactions\']').trigger('click');"></span>
+                <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
+                <span class="input-group-addon entypo-search"></span>
+            </div>
         </div>
     </div>
 
