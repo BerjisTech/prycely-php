@@ -11,7 +11,7 @@
             </div>
 
 
-            <div class="row group-navi">
+            <div class="col-sm-12 group-navi">
                 <div class="group-entypo col-sm-3 col-xs-6">
                     <div class="entypo-inner text-center">
                         <span class="entypo-logout"></span>
