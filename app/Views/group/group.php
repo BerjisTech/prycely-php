@@ -1,3 +1,9 @@
+<style>
+    .main-content {
+        padding: 20px !important;
+    }
+</style>
+
 <div class="group-page row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">

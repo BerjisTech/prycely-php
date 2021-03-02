@@ -1,9 +1,3 @@
-<style>
-    .main-content {
-        padding: 20px !important;
-    }
-</style>
-
 <div class="row">
     <div class="col-sm-8 left-card">
         <div class="row slide-icons-parent top">
@@ -88,7 +82,7 @@
         </div>
         <p class="transaction-title">My Invites</p>
         <table class="table transaction-table table-hover">
-            <tr class="go_to_group" data-id="group_id">
+            <tr>
                 <td class="t-img">
                     <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>
                 </td>
@@ -101,7 +95,7 @@
                     <span class="transaction-status text-danger">Reject</span>
                 </td>
             </tr>
-            <tr class="go_to_group" data-id="group_id">
+            <tr>
                 <td class="t-img">
                     <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/1269971823090978817/748sBk9P_400x400.jpg');"></p>
                 </td>
@@ -114,7 +108,7 @@
                     <span class="transaction-status text-danger">Reject</span>
                 </td>
             </tr>
-            <tr class="go_to_group" data-id="group_id">
+            <tr>
                 <td class="t-img">
                     <p class="transaction-image" style="background: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_google_adsense_color_1x_web_512dp.max-500x500.png');"></p>
                 </td>
