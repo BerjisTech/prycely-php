@@ -435,6 +435,7 @@ body {
 }
 
 .gp-grow {
+    font-weight: 500;
     color: #2ECB8B;
     background: #E6F9F1;
     padding: 2%;
