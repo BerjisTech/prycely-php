@@ -428,6 +428,11 @@ body {
     margin-top: 10px;
 }
 
+.group-entypo span:last-of-type {
+    color: #000000;
+    font-weight: 500px;
+}
+
 .group-balance-preview {
     display: flex;
     flex-direction: column;
