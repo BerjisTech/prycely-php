@@ -154,7 +154,7 @@
             </div>
             <div class="chat-body"></div>
             <div class="input-group">
-                <span class="input-group-addon entypo-cancel btn-danger" onclick="$('.switch-tab[data-hide=\'switch-transactions\']').trigger('click');"></span>
+                <span class="input-group-addon entypo-cancel text-center;"><img src="<?php echo base_url('assets/images/the_emo.png'); ?>" style="width: 100%; height: auto;" /></span>
                 <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
                 <span class="input-group-addon entypo-search"></span>
             </div>
