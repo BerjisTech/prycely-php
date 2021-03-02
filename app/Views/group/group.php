@@ -7,7 +7,9 @@
         <div class="switch-transactions">
             <div class="">
                 <p class="transaction-title">Group Name</p>
-                <p>Group Goal</p>
+            </div>
+            <div>
+                <p>Group Goal here</p>
             </div>
             <div class="row slide-icons-parent">
                 <div class="col-sm-12 slide-icons">
