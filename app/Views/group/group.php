@@ -36,7 +36,13 @@
                 </div>
             </div>
 
-            <div class="col-sm-6"></div>
+            <div class="col-sm-6 text-center">
+                <div class="group-balance-preview">
+                    <span class="gp-txt">Total balance</span>
+                    <span class="gp-bals"><sup>$</sup>12,319</span>
+                    <span class="gp-grow"><span class="entypo-arrow-up"></span> 4.76%</span>
+                </div>
+            </div>
             <div class="col-sm-6"></div>
 
             <div class="col-xs-12"></div>

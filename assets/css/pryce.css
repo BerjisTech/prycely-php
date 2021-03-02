@@ -412,6 +412,34 @@ body {
     margin-top: 10px;
 }
 
+.group-balance-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.gp-txt {
+    font-weight: 500;
+}
+
+.gp-bals {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.gp-bals sup {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.gp-grow {
+    color: #2ECB8B;
+    background: #E6F9F1;
+    padding: 2%;
+}
+
 .chat-card {
     position: fixed !important;
     padding: 0px !important;
