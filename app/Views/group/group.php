@@ -37,6 +37,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-sm-6 text-center">
                 <div class="group-balance-preview">
                     <span class="gp-txt">Total balance</span>
