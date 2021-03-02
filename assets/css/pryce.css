@@ -426,7 +426,7 @@ body {
     display: none;
 }
 
-.chat-card .input-group .form-control {
+.chat-card .input-group:first-of-type .form-control {
     border-radius: 10px 0px 0px 10px !important;
 }
 
