@@ -376,3 +376,21 @@ body {
     color: #007bff;
     margin-right: 20px;
 }
+
+.group-user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.slide-icon p {
+    padding: 1px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    border: 2px solid #8EA0CC;
+    display: flex;
+}
