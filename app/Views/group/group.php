@@ -9,19 +9,28 @@
                 <h3>Group Name</h3>
                 <p class="group-goal">Group Goal here</p>
             </div>
-            <div class="col-xs-12">
-                <div class="col-sm-3 col-xs-6">
-                    <p><span class="entypo-"></span></p>
-                    <p class="hidden-xs">Send Money</p>
-                </div>
-                <div class="col-sm-3 col-xs-6"></div>
-                <div class="col-sm-3 col-xs-6"></div>
-                <div class="col-sm-3 col-xs-6"></div>
+            
+            
+            <div class="col-sm-3 col-xs-6 text-center">
+                <p><span class="entypo-logout"></span></p>
+                <p class="hidden-xs">Send Money</p>
             </div>
-            <div class="col-xs-12">
-                <div class="col-sm-6"></div>
-                <div class="col-sm-6"></div>
+            <div class="col-sm-3 col-xs-6 text-center">
+                <p><span class="entypo-doc-text"></span></p>
+                <p class="hidden-xs">Statements</p>
             </div>
+            <div class="col-sm-3 col-xs-6 text-center">
+                <p><span class="entypo-publish"></span></p>
+                <p class="hidden-xs">Top Up</p>
+            </div>
+            <div class="col-sm-3 col-xs-6 text-center">
+                <p><span class="entypo-dot-3"></span></p>
+                <p class="hidden-xs">More</p>
+            </div>
+
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6"></div>
+
             <div class="col-xs-12"></div>
         </div>
     </div>
@@ -35,7 +44,7 @@
             <div class="chat-body"></div>
             <div class="input-group">
                 <span class="input-group-addon text-center;"><img src="<?php echo base_url('assets/images/the_emo.png'); ?>" class="the_emoji" /></span>
-                <textarea type="search" placeholder="Search groups by name" class="form-control input-lg" ></textarea>
+                <textarea type="search" placeholder="Search groups by name" class="form-control input-lg"></textarea>
                 <span class="input-group-addon entypo-paper-plane"></span>
             </div>
         </div>
