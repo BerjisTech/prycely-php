@@ -377,6 +377,14 @@ body {
     margin-right: 20px;
 }
 
+.group-page {
+    margin-left: -25px;
+}
+
+.group-page .row {
+    margin-left: 0px;
+}
+
 .group-user-image {
     width: 50px;
     height: 50px;
@@ -387,10 +395,13 @@ body {
 }
 
 .group-cover {
+    display: flex;
     height: 200px;
     background: #C0C0C0;
-    vertical-align: bottom;
-    text-align: right;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: left;
+    flex-direction: column;
 }
 
 .group-cover p {

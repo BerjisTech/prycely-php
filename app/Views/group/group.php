@@ -1,4 +1,4 @@
-<div class="row">
+<div class="group-page row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
             <span class="switch-tab active" data-hide="switch-transactions">Group</span>
