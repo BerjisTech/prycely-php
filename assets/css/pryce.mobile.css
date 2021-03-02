@@ -52,15 +52,9 @@
     .row-tabs {
         margin-right: 0px !important;
     }
-    /* .switch-card {
-        display: none;
-    } */
     .balance-card .balance-amount {
         font-size: 35px;
         font-weight: 800;
-    }
-    .group-cover {
-        width: 76vw;
     }
     .chat-card {
         position: fixed !important;

@@ -449,3 +449,7 @@ body {
 .input-group .form-control {
     height: 50px;
 }
+
+.input-group .input-group-addon {
+    cursor: pointer;
+}
