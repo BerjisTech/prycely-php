@@ -469,7 +469,7 @@ body {
     font-weight: 700;
 }
 
-.group-balance-chart.savings {
+.group-balance-chart .savings {
     color: #EC3B83;
 }
 
