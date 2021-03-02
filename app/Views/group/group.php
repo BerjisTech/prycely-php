@@ -147,7 +147,7 @@
             <div class="chat-body"></div>
             <div class="input-group">
                 <span class="input-group-addon text-center;"><img src="<?php echo base_url('assets/images/the_emo.png'); ?>" class="the_emoji" /></span>
-                <textarea type="search" placeholder="Search groups by name" class="form-control input-lg"></textarea>
+                <textarea type="search" placeholder="Type something..." class="form-control input-lg"></textarea>
                 <span class="input-group-addon entypo-paper-plane"></span>
             </div>
         </div>
