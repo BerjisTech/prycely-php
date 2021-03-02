@@ -12,19 +12,19 @@
             
             
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <p><span class="entypo-logout"></span></p>
+                <div><p><span class="entypo-logout"></span></p>
                 <p class="hidden-xs">Send Money</p>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <p><span class="entypo-doc-text"></span></p>
+                <div><p><span class="entypo-doc-text"></span></p>
                 <p class="hidden-xs">Statements</p>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <p><span class="entypo-publish"></span></p>
+                <div><p><span class="entypo-publish"></span></p>
                 <p class="hidden-xs">Top Up</p>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <p><span class="entypo-dot-3"></span></p>
+                <div><p><span class="entypo-dot-3"></span></p>
                 <p class="hidden-xs">More</p>
             </div>
 
