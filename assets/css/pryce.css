@@ -385,7 +385,7 @@ body {
     margin-left: 0px;
 }
 
-.group-entypo {
+.group-entypo span{
     border-radius: 10px;
     border: 1px solid #8EA0CC;
     padding: 5px;
