@@ -453,3 +453,7 @@ body {
 .input-group .input-group-addon {
     cursor: pointer;
 }
+
+.chart-card textarea {
+    resize: none;
+}
