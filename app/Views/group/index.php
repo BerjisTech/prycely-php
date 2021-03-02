@@ -1,3 +1,9 @@
+<style>
+    .main-content {
+        margin: 20px !important;
+    }
+</style>
+
 <div class="row">
     <div class="col-sm-8 left-card">
         <div class="row slide-icons-parent top">
