@@ -77,15 +77,13 @@
     .chat-card .btn-danger {
         display: table-cell;
     }
-    .chat-card .input-group .form-control {
+    .chat-card .input-group:first-of-type .form-control {
         border-radius: 0px !important;
     }
-    
-.chat-card .input-group .input-group-addon:first-of-type {
-    border-radius: 10px 0px 0px 10px !important;
-}
-
-.chat-card .input-group .input-group-addon:last-of-type {
-    border-radius: 0px 10px 10px 0px !important;
-}
+    .chat-card .input-group .input-group-addon:first-of-type {
+        border-radius: 10px 0px 0px 10px !important;
+    }
+    .chat-card .input-group .input-group-addon:last-of-type {
+        border-radius: 0px 10px 10px 0px !important;
+    }
 }
