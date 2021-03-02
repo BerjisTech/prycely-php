@@ -70,6 +70,10 @@
         });
         donut_chart_demo.parent().attr('style', '');
     });
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 </script>
 <div class="group-page row">
     <div class="col-sm-8 left-card">
