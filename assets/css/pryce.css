@@ -565,7 +565,7 @@ body {
     cursor: pointer;
 }
 
-.chart-card .input-group textarea, .chart-card .input-group .form-control {
+.chart-card textarea, .chart-card .form-control {
     resize: none !important;
 }
 
