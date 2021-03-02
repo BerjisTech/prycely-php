@@ -385,15 +385,16 @@ body {
     margin-left: 0px;
 }
 
-.group-entypo{
+.group-entypo {
     padding: 10px;
 }
 
-.entypo-inner{
+.entypo-inner {
     background: #F1F3FF;
+    border-radius: 20px;
 }
 
-.group-entypo span{
+.group-entypo span {
     border-radius: 10px;
     border: 1px solid #8EA0CC;
     padding: 5px;
