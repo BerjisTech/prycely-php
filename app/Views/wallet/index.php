@@ -73,9 +73,6 @@
         <p class="transaction-title">Recent Transactions</p>
         <table class="table transaction-table table-hover">
             <tr>
-                <td class="t-img">
-                    <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
-                </td>
                 <td class="transaction-details">
                     <span class="transaction-title">Netflix</span>
                     <span class="transaction-status">Processing</span>
@@ -86,9 +83,6 @@
                 </td>
             </tr>
             <tr>
-                <td class="t-img">
-                    <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/689518720998252544/mOobZd_8.png');"></p>
-                </td>
                 <td class="transaction-details">
                     <span class="transaction-title">Heroku</span>
                     <span class="transaction-status">Processing</span>
@@ -99,9 +93,6 @@
                 </td>
             </tr>
             <tr>
-                <td class="t-img">
-                    <p class="transaction-image" style="background: url('https://cdn.shopify.com/assets/images/logos/shopify-bag.png');"></p>
-                </td>
                 <td class="transaction-details">
                     <span class="transaction-title">Shopify Payouts</span>
                     <span class="transaction-status">Complete</span>
