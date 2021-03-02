@@ -118,7 +118,7 @@
 
                 <div class="col-sm-6 col-xs-12">
                     <div class="group-balance-preview">
-                        <div id="donut-chart" style="height: 250px"></div>
+                        <div id="donut-chart" style="width: 250px"></div>
                     </div>
                 </div>
             </div>
