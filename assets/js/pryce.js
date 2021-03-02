@@ -100,3 +100,8 @@ $('img').on('error', function () {
     $(this).src = base_url + "assets/images/logo.png";
     return true;
 })
+
+$('.go_to_group').on('click', function () {
+    let group_id = $(this).attr('data-id');
+    window.location.href = base_url + "group/g/" + group_id;
+})

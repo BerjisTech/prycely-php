@@ -9,6 +9,13 @@ class Group extends BaseController
     {
         $data['page_name'] = 'group/index';
         $data['page_title'] = 'Group';
-		return view('index', $data);
+        return view('index', $data);
+    }
+
+    public function g($group_id)
+    {
+        $data['page_name'] = 'group/group';
+        $data['page_title'] = 'Diani Vacation';
+        return view('index', $data);
     }
 }
