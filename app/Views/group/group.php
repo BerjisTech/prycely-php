@@ -5,11 +5,8 @@
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
         <div class="switch-transactions">
-            <div class="">
+            <div class="group-cover">
                 <p class="transaction-title">Group Name</p>
-            </div>
-            <div>
-                <p>Group Goal here</p>
             </div>
             <div class="row slide-icons-parent">
                 <div class="col-sm-12 slide-icons">
@@ -39,6 +36,9 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div>
+                <p>Group Goal here</p>
             </div>
         </div>
     </div>

@@ -386,6 +386,22 @@ body {
     background-size: cover !important;
 }
 
+.group-cover {
+    height: 200px;
+    background: #C0C0C0;
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.group-cover p {
+    width: 100%;
+    padding: 20px 0px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.4);
+}
+
 .slide-icon p {
     padding: 1px;
     width: 55px;
