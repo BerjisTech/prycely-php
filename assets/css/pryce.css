@@ -396,9 +396,11 @@ body {
     justify-content: center;
     background: #F1F3FF;
     border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.group-entypo span {
+.group-entypo span:first-of-type {
     border-radius: 10px;
     border: 1px solid #8EA0CC;
     padding: 5px;
