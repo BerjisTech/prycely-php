@@ -409,6 +409,7 @@ body {
 
 .group-entypo span:last-of-type {
     font-weight: lighter;
+    margin-top: 10px;
 }
 
 .chat-card {
@@ -471,6 +472,6 @@ body {
     cursor: pointer;
 }
 
-.chart-card textarea {
-    resize: none;
+.chart-card .input-group textarea, .chart-card .input-group .form-control {
+    resize: none !important;
 }
