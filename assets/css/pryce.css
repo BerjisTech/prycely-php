@@ -442,3 +442,7 @@ body {
     flex-grow: 4;
     padding: 10px 5px
 }
+
+.the_emoji {
+    width: 25px;
+}
