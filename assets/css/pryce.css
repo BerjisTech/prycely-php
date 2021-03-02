@@ -457,8 +457,21 @@ body {
     flex-direction: row;
 }
 
+.gbc-top span {
+    font-weight: 500px;
+}
+
 .gbc-top span:first-of-type {
     flex-grow: 4;
+    font-weight: 600px;
+}
+
+.entypo-dot .savings {
+    color: #EC3B83;
+}
+
+.entypo-dot .expenses {
+    color: #E8B51B;
 }
 
 .gp-txt {

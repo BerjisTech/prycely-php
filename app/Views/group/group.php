@@ -18,8 +18,8 @@
                 <?php endfor; ?>
             ],
             xkey: 'y',
-            ykeys: ['a', 'b', 'c'],
-            labels: ['Shown', 'Impressions', 'Purchased'],
+            ykeys: ['a', 'b'],
+            labels: ['Deposits', 'Withdrawals'],
             lineColors: ['#ec3b83', '#E8B51B', '#00acd6'],
             xLabelFormat: function(d) {
                 return d.getDate() + ' ' + months[d.getMonth()];
@@ -130,8 +130,8 @@
                     <div class="group-balance-chart">
                         <div class="gbc-top">
                             <span>Transaction Overview</span>
-                            <span>Savings</span>
-                            <span>Expenses</span>
+                            <span><span class="entypo-dot savings"></span> Savings</span>
+                            <span><span class="entypo-dot expenses"></span> Expenses</span>
                         </div>
                         <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
                     </div>
