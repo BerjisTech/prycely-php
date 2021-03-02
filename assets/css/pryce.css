@@ -464,6 +464,7 @@ body {
     color: #2ECB8B;
     background: #E6F9F1;
     padding: 2%;
+    border-radius: 10px;
 }
 
 .chat-card {
