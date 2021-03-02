@@ -5,7 +5,7 @@
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
         <div class="row switch-transactions">
-            <div class="group-cover">
+            <div class="group-cover col-xs-12">
                 <h3>Group Name</h3>
                 <p class="group-goal">Group Goal here</p>
             </div>
