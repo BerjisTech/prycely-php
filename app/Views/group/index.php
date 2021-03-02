@@ -1,6 +1,6 @@
 <style>
     .main-content {
-        margin: 20px !important;
+        padding: 20px !important;
     }
 </style>
 
