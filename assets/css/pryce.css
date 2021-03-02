@@ -383,6 +383,7 @@ body {
 
 .group-navi {
     display: table;
+    width: 100%;
     border-radius: 20px;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
     margin-bottom: 30px;
