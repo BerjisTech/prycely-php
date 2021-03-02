@@ -413,10 +413,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 20px;
 }
 
 .chat-block .input-group {
-    border-radius: 10px;
+    border-radius: 10px !important;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%) !important;
 }
 
