@@ -461,19 +461,19 @@ body {
 }
 
 .gbc-top span {
-    font-weight: 500px;
+    font-weight: 500;
 }
 
 .gbc-top span:first-of-type {
     flex-grow: 4;
-    font-weight: 600px;
+    font-weight: 700;
 }
 
-.entypo-dot .savings {
+.group-balance-chart.savings {
     color: #EC3B83;
 }
 
-.entypo-dot .expenses {
+.group-balance-chart .expenses {
     color: #E8B51B;
 }
 
