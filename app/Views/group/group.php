@@ -45,6 +45,7 @@
                     <span class="gp-grow"><span class="entypo-arrow-up"></span> 4.76%</span>
                 </div>
             </div>
+            
             <div class="col-sm-6"></div>
 
             <div class="col-xs-12"></div>
