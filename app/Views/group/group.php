@@ -67,7 +67,7 @@
             <span class="switch-tab active" data-hide="switch-transactions">Group</span>
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
-        <div class="row switch-transactions">
+        <div class="switch-transactions">
             <div class="row">
                 <div class="group-cover col-xs-12">
                     <h3>Group Name</h3>
