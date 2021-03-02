@@ -402,6 +402,7 @@ body {
     justify-content: flex-end;
     text-align: left;
     flex-direction: column;
+    padding: 0px;
 }
 
 .group-cover p {
@@ -411,6 +412,7 @@ body {
     font-size: 20px;
     color: #ffffff;
     background: rgba(0, 0, 0, 0.4);
+    margin-bottom: 0px;
 }
 
 .slide-icon p {
