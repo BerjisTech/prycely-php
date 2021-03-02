@@ -5,50 +5,58 @@
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
         <div class="row switch-transactions">
-            <div class="group-cover col-xs-12">
-                <h3>Group Name</h3>
-                <p class="group-goal">Group Goal here</p>
-            </div>
-
-
-            <div class="col-sm-12 group-navi">
-                <div class="group-entypo col-sm-3 col-xs-6">
-                    <div class="entypo-inner text-center">
-                        <span class="entypo-logout"></span>
-                        <span class="hidden-xs">Send Money</span>
-                    </div>
-                </div>
-                <div class="group-entypo col-sm-3 col-xs-6">
-                    <div class="entypo-inner text-center">
-                        <span class="entypo-doc-text"></span>
-                        <span class="hidden-xs">Statements</span>
-                    </div>
-                </div>
-                <div class="group-entypo col-sm-3 col-xs-6">
-                    <div class="entypo-inner text-center">
-                        <span class="entypo-publish"></span>
-                        <span class="hidden-xs">Top Up</span>
-                    </div>
-                </div>
-                <div class="group-entypo col-sm-3 col-xs-6">
-                    <div class="entypo-inner text-center">
-                        <span class="entypo-dot-3"></span>
-                        <span class="hidden-xs">More</span>
-                    </div>
+            <div class="row">
+                <div class="group-cover col-xs-12">
+                    <h3>Group Name</h3>
+                    <p class="group-goal">Group Goal here</p>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-xs-12 text-center">
-                <div class="group-balance-preview">
-                    <span class="gp-txt">Total balance</span>
-                    <span class="gp-bals"><sup>$</sup>12,319</span>
-                    <span class="gp-grow"><span class="entypo-arrow-up"></span> 4.76%</span>
+
+            <div class="row">
+                <div class="col-sm-12 group-navi">
+                    <div class="group-entypo col-sm-3 col-xs-6">
+                        <div class="entypo-inner text-center">
+                            <span class="entypo-logout"></span>
+                            <span class="hidden-xs">Send Money</span>
+                        </div>
+                    </div>
+                    <div class="group-entypo col-sm-3 col-xs-6">
+                        <div class="entypo-inner text-center">
+                            <span class="entypo-doc-text"></span>
+                            <span class="hidden-xs">Statements</span>
+                        </div>
+                    </div>
+                    <div class="group-entypo col-sm-3 col-xs-6">
+                        <div class="entypo-inner text-center">
+                            <span class="entypo-publish"></span>
+                            <span class="hidden-xs">Top Up</span>
+                        </div>
+                    </div>
+                    <div class="group-entypo col-sm-3 col-xs-6">
+                        <div class="entypo-inner text-center">
+                            <span class="entypo-dot-3"></span>
+                            <span class="hidden-xs">More</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-xs-12"></div>
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 text-center">
+                    <div class="group-balance-preview">
+                        <span class="gp-txt">Total balance</span>
+                        <span class="gp-bals"><sup>$</sup>12,319</span>
+                        <span class="gp-grow"><span class="entypo-arrow-up"></span> 4.76%</span>
+                    </div>
+                </div>
 
-            <div class="col-xs-12"></div>
+                <div class="col-sm-6 col-xs-12"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12"></div>
+            </div>
         </div>
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
