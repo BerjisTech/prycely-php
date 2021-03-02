@@ -9,23 +9,31 @@
                 <h3>Group Name</h3>
                 <p class="group-goal">Group Goal here</p>
             </div>
-            
-            
+
+
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <div><p><span class="entypo-logout"></span></p>
-                <p class="hidden-xs">Send Money</p>
+                <div>
+                    <p><span class="entypo-logout"></span></p>
+                    <p class="hidden-xs">Send Money</p>
+                </div>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <div><p><span class="entypo-doc-text"></span></p>
-                <p class="hidden-xs">Statements</p>
+                <div>
+                    <p><span class="entypo-doc-text"></span></p>
+                    <p class="hidden-xs">Statements</p>
+                </div>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <div><p><span class="entypo-publish"></span></p>
-                <p class="hidden-xs">Top Up</p>
+                <div>
+                    <p><span class="entypo-publish"></span></p>
+                    <p class="hidden-xs">Top Up</p>
+                </div>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6 text-center">
-                <div><p><span class="entypo-dot-3"></span></p>
-                <p class="hidden-xs">More</p>
+                <div>
+                    <p><span class="entypo-dot-3"></span></p>
+                    <p class="hidden-xs">More</p>
+                </div>
             </div>
 
             <div class="col-sm-6"></div>
