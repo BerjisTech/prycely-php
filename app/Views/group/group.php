@@ -35,7 +35,7 @@
                     <span class="hidden-xs">More</span>
                 </div>
             </div>
-            <div class="col-xs-12 clearfix"></div>
+            <div class="col-xs-12 full-spacer"></div>
             <div class="col-sm-6 text-center">
                 <div class="group-balance-preview">
                     <span class="gp-txt">Total balance</span>

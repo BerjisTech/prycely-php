@@ -399,6 +399,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     color: #9DA7B9;
+    height: 100px;
 }
 
 .group-entypo span:first-of-type {
@@ -507,4 +508,8 @@ body {
 
 .chart-card .input-group textarea, .chart-card .input-group .form-control {
     resize: none !important;
+}
+
+.full-spacer {
+    height: 30px;
 }
