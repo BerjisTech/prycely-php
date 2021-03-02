@@ -127,7 +127,14 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
+                    <div class="group-balance-chart">
+                        <div class="gbc-top">
+                            <span>Transaction Overview</span>
+                            <span>Savings</span>
+                            <span>Expenses</span>
+                        </div>
+                        <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
+                    </div>
                 </div>
             </div>
         </div>
