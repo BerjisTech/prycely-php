@@ -1,6 +1,7 @@
 <script>
     jQuery(document).ready(function($) {
 
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
         // Line Charts
         var line_chart_demo = $("#line-chart");
         var line_chart = Morris.Line({
