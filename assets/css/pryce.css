@@ -504,7 +504,7 @@ body {
 }
 
 .chat-card {
-    position: absolute !important;
+    position: fixed !important;
     padding: 0px !important;
     max-width: 27vw !important;
     height: 100vh !important;
