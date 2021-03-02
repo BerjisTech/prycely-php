@@ -34,7 +34,7 @@
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
     </div>
-    <div class="col-sm-4 hidden-xs right-card switch-card">
+    <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
 
     </div>
 

@@ -59,4 +59,13 @@
         font-size: 35px;
         font-weight: 800;
     }
+    .chat-card {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: -webkit-fill-available;
+        height: 100vh;
+        border-radius: 0px;
+    }
 }
