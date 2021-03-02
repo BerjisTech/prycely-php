@@ -412,9 +412,10 @@ body {
     max-width: 27vw;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.chat-block .input-group{
+.chat-block .input-group {
     border-radius: 10px;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%) !important;
 }
