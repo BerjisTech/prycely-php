@@ -430,11 +430,15 @@ body {
     border-radius: 10px 0px 0px 10px !important;
 }
 
-.chat-card .input-group .input-group-addon {
+.chat-card .input-group .input-group-addon:first-of-type {
     border-radius: 0px 10px 10px 0px !important;
+}
+
+.chat-card .input-group .input-group-addon:last-of-type {
+    border-radius: 10px 0px 0px 10px !important;
 }
 
 .chat-body {
     flex-grow: 4;
     padding: 10px 5px
-} 
+}
