@@ -8,7 +8,7 @@
             element: 'line-chart',
             data: [
                 <?php
-                for ($m = 30; $m > -1; $m - 6) : ?> {
+                for ($m = 30; $m > -1; ($m-6)) : ?> {
                         y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
                         a: getRandomInt(100, 0),
                         b: getRandomInt(100, 0)
