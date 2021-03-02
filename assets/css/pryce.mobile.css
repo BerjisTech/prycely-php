@@ -76,7 +76,7 @@
         display: table-cell;
     }
     
-.chat-card .input-group input {
-    border-radius: 0px;
+.chat-card .input-group .form-control {
+    border-radius: 0px !important;
 }
 }
