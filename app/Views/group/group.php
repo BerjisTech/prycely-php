@@ -1,3 +1,76 @@
+<script>
+    jQuery(document).ready(function($) {
+
+        // Line Charts
+        var line_chart_demo = $("#line-chart");
+        var line_chart = Morris.Line({
+            element: 'line-chart',
+            data: [{
+                    y: '2006',
+                    a: 100,
+                    b: 90
+                },
+                {
+                    y: '2007',
+                    a: 75,
+                    b: 65
+                },
+                {
+                    y: '2008',
+                    a: 50,
+                    b: 40
+                },
+                {
+                    y: '2009',
+                    a: 75,
+                    b: 65
+                },
+                {
+                    y: '2010',
+                    a: 50,
+                    b: 40
+                },
+                {
+                    y: '2011',
+                    a: 75,
+                    b: 65
+                },
+                {
+                    y: '2012',
+                    a: 100,
+                    b: 90
+                }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['October 2013', 'November 2013'],
+            redraw: true
+        });
+        line_chart_demo.parent().attr('style', '');
+
+        // Donut Chart
+        var donut_chart_demo = $("#donut-chart");
+        donut_chart_demo.parent().show();
+        var donut_chart = Morris.Donut({
+            element: 'donut-chart',
+            data: [{
+                    label: "Download Sales",
+                    value: getRandomInt(10, 50)
+                },
+                {
+                    label: "In-Store Sales",
+                    value: getRandomInt(10, 50)
+                },
+                {
+                    label: "Mail-Order Sales",
+                    value: getRandomInt(10, 50)
+                }
+            ],
+            colors: ['#707f9b', '#455064', '#242d3c']
+        });
+        donut_chart_demo.parent().attr('style', '');
+    });
+</script>
 <div class="group-page row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
@@ -53,11 +126,17 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-xs-12"></div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="group-balance-preview">
+                        <div id="donut-chart" style="height: 250px"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-12"></div>
+                <div class="col-xs-12">
+                    <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
+                </div>
             </div>
         </div>
     </div>
