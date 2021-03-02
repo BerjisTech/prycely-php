@@ -395,16 +395,9 @@ body {
 }
 
 .group-cover {
-    display: flex;
-    height: 250px;
-    background: #C0C0C0;
-    align-items: flex-end;
-    justify-content: flex-end;
-    text-align: left;
-    flex-direction: column;
     padding: 0px;
     border-radius: 10px 10px 0px 0px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .group-cover p {
@@ -412,9 +405,10 @@ body {
     padding: 20px 10px;
     font-weight: 600;
     font-size: 20px;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.4);
-    margin-bottom: 0px;
+}
+
+.group-goal {
+    margin-top: 20px;
 }
 
 .slide-icon p {

@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="group-goal">
                 <p>Group Goal here</p>
             </div>
         </div>
