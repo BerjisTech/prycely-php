@@ -395,6 +395,6 @@ body {
     display: table;
 }
 .chat-card{
-    position: fixed;
+    position: fixed !important;
     padding: 0px !important;
 }
