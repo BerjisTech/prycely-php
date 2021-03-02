@@ -60,8 +60,7 @@
         font-weight: 800;
     }
     .chat-card {
-        display: block;
-        position: fixed;
+        position: fixed !important;
         top: 0;
         right: 0;
         width: -webkit-fill-available;
