@@ -63,7 +63,7 @@
         position: fixed !important;
         top: 0;
         right: 0;
-        width: -webkit-fill-available;
+        width: -webkit-fill-available !important;
         height: 100vh;
         border-radius: 0px;
     }
