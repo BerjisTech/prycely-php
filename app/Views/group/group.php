@@ -63,7 +63,7 @@
 </script>
 <div class="row">
     <div class="col-sm-8 left-card">
-        <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
+        <div class="row row-tabs visible-xs">
             <span class="switch-tab active" data-hide="switch-transactions">Group</span>
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
@@ -76,7 +76,36 @@
             </div>
 
 
-            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="group-navi">
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-logout"></span>
+                                <span class="hidden-xs">Send Money</span>
+                            </div>
+                        </div>
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-doc-text"></span>
+                                <span class="hidden-xs">Statements</span>
+                            </div>
+                        </div>
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-publish"></span>
+                                <span class="hidden-xs">Top Up</span>
+                            </div>
+                        </div>
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-dot-3"></span>
+                                <span class="hidden-xs">More</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-sm-6 col-xs-12 text-center">
