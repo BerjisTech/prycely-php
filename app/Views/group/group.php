@@ -128,8 +128,8 @@
                     <div class="group-balance-chart">
                         <div class="gbc-top">
                             <span>Transaction Overview</span>
-                            <span><span class="entypo-dot savings"></span> Savings</span>
-                            <span><span class="entypo-dot expenses"></span> Expenses</span>
+                            <span><span class="entypo-record savings"></span> Savings</span>
+                            <span><span class="entypo-record expenses"></span> Expenses</span>
                         </div>
                         <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
                     </div>
