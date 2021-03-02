@@ -390,6 +390,10 @@ body {
 }
 
 .entypo-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: #F1F3FF;
     border-radius: 20px;
 }

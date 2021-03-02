@@ -13,26 +13,26 @@
 
             <div class="group-entypo col-sm-3 col-xs-6">
                 <div class="entypo-inner text-center">
-                    <p><span class="entypo-logout"></span></p>
-                    <p class="hidden-xs">Send Money</p>
+                    <span class="entypo-logout"></span>
+                    <span class="hidden-xs">Send Money</span>
                 </div>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6">
                 <div class="entypo-inner text-center">
-                    <p><span class="entypo-doc-text"></span></p>
-                    <p class="hidden-xs">Statements</p>
+                    <span class="entypo-doc-text"></span>
+                    <span class="hidden-xs">Statements</span>
                 </div>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6">
                 <div class="entypo-inner text-center">
-                    <p><span class="entypo-publish"></span></p>
-                    <p class="hidden-xs">Top Up</p>
+                    <span class="entypo-publish"></span>
+                    <span class="hidden-xs">Top Up</span>
                 </div>
             </div>
             <div class="group-entypo col-sm-3 col-xs-6">
                 <div class="entypo-inner text-center">
-                    <p><span class="entypo-dot-3"></span></p>
-                    <p class="hidden-xs">More</p>
+                    <span class="entypo-dot-3"></span>
+                    <span class="hidden-xs">More</span>
                 </div>
             </div>
 
