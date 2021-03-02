@@ -431,7 +431,7 @@ body {
 }
 
 .chat-card .input-group .input-group-addon {
-    border-radius: 10px 0px 0px 10px !important;
+    border-radius: 0px 10px 10px 0px !important;
 }
 
 .chat-body {
