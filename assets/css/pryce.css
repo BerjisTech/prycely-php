@@ -446,3 +446,7 @@ body {
 .the_emoji {
     width: 25px;
 }
+
+.input-group .form-control {
+    height: 50px;
+}
