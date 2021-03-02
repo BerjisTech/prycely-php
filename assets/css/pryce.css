@@ -407,7 +407,7 @@ body {
 
 .chat-block {
     display: flex;
-    height: 100vh;
+    height: 90vh;
     width: auto;
     max-width: 27vw;
     align-items: center;
@@ -431,11 +431,11 @@ body {
 }
 
 .chat-card .input-group .input-group-addon:first-of-type {
-    border-radius: 0px 10px 10px 0px !important;
+    border-radius: 10px 0px 0px 10px !important;
 }
 
 .chat-card .input-group .input-group-addon:last-of-type {
-    border-radius: 10px 0px 0px 10px !important;
+    border-radius: 0px 10px 10px 0px !important;
 }
 
 .chat-body {
