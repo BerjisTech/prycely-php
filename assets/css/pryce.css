@@ -381,7 +381,7 @@ body {
     display: table;
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 0 12px 0 rgb(31 38 135 / 27%);
+    box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
     margin-bottom: 20px;
     background: #ffffff;
     padding: 0px !important;
@@ -436,7 +436,7 @@ body {
     justify-content: center;
     height: 300px;
     border-radius: 20px;
-    box-shadow: 0 0 12px 0 rgb(31 38 135 / 27%);
+    box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -447,7 +447,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    box-shadow: 0 0 12px 0 rgb(31 38 135 / 27%);
+    box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -510,7 +510,7 @@ body {
     height: 100vh !important;
     top: 0px !important;
     right: 0px !important;
-    box-shadow: 7px 0 32px inset rgb(31 38 135 / 27%) !important;
+    box-shadow: 15px 0 32px inset rgb(31 38 135 / 27%) !important;
 }
 
 .chat-block {
@@ -527,7 +527,7 @@ body {
 .chat-block .input-group {
     z-index: 3;
     border-radius: 10px !important;
-    box-shadow: 0 0 12px 0 rgb(31 38 135 / 27%) !important;
+    box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%) !important;
 }
 
 .chat-card .btn-danger {
