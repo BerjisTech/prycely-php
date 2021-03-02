@@ -29,6 +29,10 @@
                 </div>
             </div>
         </div>
+        <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
+            <span class="switch-tab active" data-hide="switch-transactions">Group</span>
+            <span class="switch-tab" data-hide="switch-card">Chats</span>
+        </div>
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card">
 
