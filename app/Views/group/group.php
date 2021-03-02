@@ -14,29 +14,31 @@
 
 
             <div class="row">
-                <div class="col-sm-12 group-navi">
-                    <div class="group-entypo col-sm-3 col-xs-6">
-                        <div class="entypo-inner text-center">
-                            <span class="entypo-logout"></span>
-                            <span class="hidden-xs">Send Money</span>
+                <div class="col-sm-12">
+                    <div class="group-navi">
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-logout"></span>
+                                <span class="hidden-xs">Send Money</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="group-entypo col-sm-3 col-xs-6">
-                        <div class="entypo-inner text-center">
-                            <span class="entypo-doc-text"></span>
-                            <span class="hidden-xs">Statements</span>
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-doc-text"></span>
+                                <span class="hidden-xs">Statements</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="group-entypo col-sm-3 col-xs-6">
-                        <div class="entypo-inner text-center">
-                            <span class="entypo-publish"></span>
-                            <span class="hidden-xs">Top Up</span>
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-publish"></span>
+                                <span class="hidden-xs">Top Up</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="group-entypo col-sm-3 col-xs-6">
-                        <div class="entypo-inner text-center">
-                            <span class="entypo-dot-3"></span>
-                            <span class="hidden-xs">More</span>
+                        <div class="group-entypo col-sm-3 col-xs-6">
+                            <div class="entypo-inner text-center">
+                                <span class="entypo-dot-3"></span>
+                                <span class="hidden-xs">More</span>
+                            </div>
                         </div>
                     </div>
                 </div>
