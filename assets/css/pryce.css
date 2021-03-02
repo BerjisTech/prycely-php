@@ -385,32 +385,6 @@ body {
     margin-left: 0px;
 }
 
-.group-user-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background-position: 50% 50% !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-}
-
-.group-cover {
-    padding: 0px;
-    border-radius: 10px 10px 0px 0px;
-    margin-bottom: 10px;
-}
-
-.group-cover p {
-    width: 100%;
-    padding: 20px 10px;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.group-goal {
-    margin-top: 20px;
-}
-
 .slide-icon p {
     padding: 1px;
     width: 55px;

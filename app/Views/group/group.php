@@ -1,50 +1,13 @@
-<style>
-    .main-content {
-        padding: 20px !important;
-    }
-</style>
-
 <div class="group-page row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
             <span class="switch-tab active" data-hide="switch-transactions">Group</span>
             <span class="switch-tab" data-hide="switch-card">Chats</span>
         </div>
-        <div class="switch-transactions">
+        <div class="row switch-transactions">
             <div class="group-cover">
-                <p class="transaction-title">Group Name</p>
-            </div>
-            <div class="row slide-icons-parent">
-                <div class="col-sm-12 slide-icons">
-                    <div class="slide-icon">
-                        <p>
-                            <span class="group-user-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></span>
-                        </p>
-                    </div>
-                    <div class="slide-icon">
-                        <p>
-                            <span class="group-user-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></span>
-                        </p>
-                    </div>
-                    <div class="slide-icon">
-                        <p>
-                            <span class="group-user-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></span>
-                        </p>
-                    </div>
-                    <div class="slide-icon">
-                        <p>
-                            <span class="group-user-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></span>
-                        </p>
-                    </div>
-                    <div class="slide-icon">
-                        <p>
-                            <span class="group-user-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="group-goal">
-                <p>Group Goal here</p>
+                <h3>Group Name</h3>
+                <p class="group-goal">Group Goal here</p>
             </div>
         </div>
     </div>
