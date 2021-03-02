@@ -11,7 +11,9 @@
             </div>
 
 
-            <div class="group-entypo col-sm-3 col-xs-6">
+            <div class="group-navi">
+
+            </div><div class="group-entypo col-sm-3 col-xs-6">
                 <div class="entypo-inner text-center">
                     <span class="entypo-logout"></span>
                     <span class="hidden-xs">Send Money</span>
@@ -35,7 +37,6 @@
                     <span class="hidden-xs">More</span>
                 </div>
             </div>
-            <div class="col-xs-12 full-spacer"></div>
             <div class="col-sm-6 text-center">
                 <div class="group-balance-preview">
                     <span class="gp-txt">Total balance</span>
