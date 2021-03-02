@@ -8,7 +8,7 @@
             element: 'line-chart',
             data: [
                 <?php
-                for ($m = 30; $m > -1; $m--) :
+                for ($m = 30; $m > -1; $m-6) :
                     $nowmonth = strtotime(date('d-M-Y', strtotime('-' . $m . ' days')));
                     $lastmonth = strtotime(date('d-M-Y', strtotime('-' . ($m - 1) . ' days'))); ?> {
                         y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
