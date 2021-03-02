@@ -10,8 +10,8 @@
                 <?php
                 for ($m = 30; $m > -1; $m -= 6) : ?> {
                         y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
-                        a: getRandomInt(100, 0),
-                        b: getRandomInt(100, 0)
+                        a: getRandomInt(10000, 1000),
+                        b: getRandomInt(10000, 1000)
                     },
                 <?php endfor; ?>
             ],
