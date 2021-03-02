@@ -413,7 +413,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 3%;
 }
 
 .chat-block .input-group {
@@ -427,4 +427,5 @@ body {
 
 .chat-body {
     flex-grow: 4;
+    padding: 10px 5px
 }
