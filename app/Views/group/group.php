@@ -49,7 +49,7 @@
                     <div class="group-balance-preview">
                         <span class="gp-txt">Total balance</span>
                         <span class="gp-bals"><sup>$</sup>12,319</span>
-                        <span class="gp-grow"><span class="entypo-arrow-up"></span> 4.76%</span>
+                        <span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
                     </div>
                 </div>
 
