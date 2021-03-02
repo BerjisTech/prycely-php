@@ -11,7 +11,7 @@
             </div>
 
 
-            <div class="group-navi">
+            <div class="col-xs-12 group-navi">
                 <div class="group-entypo col-sm-3 col-xs-6">
                     <div class="entypo-inner text-center">
                         <span class="entypo-logout"></span>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-sm-6 text-center">
                 <div class="group-balance-preview">
                     <span class="gp-txt">Total balance</span>
