@@ -60,12 +60,12 @@
         font-weight: 800;
     }
     .chat-card {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: -webkit-fill-available;
-        height: 100vh;
-        border-radius: 0px;
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: -webkit-fill-available !important;
+        height: 100vh !important;
+        border-radius: 0px !important;
     }
 }
