@@ -68,7 +68,6 @@
         width: 100vw !important;
         height: 100vh;
         border-radius: 0px;
-        box-shadow: 15px 0 32px inset rgb(31 38 135 / 27%) !important;
     }
     .chat-card .btn-danger {
         display: table-cell;

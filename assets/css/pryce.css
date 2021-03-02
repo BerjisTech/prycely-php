@@ -401,6 +401,7 @@ body {
     height: 100vh !important;
     top: 0px !important;
     right: 0px !important;
+    box-shadow: 15px 0 32px inset rgb(31 38 135 / 27%) !important;
 }
 
 .chat-card .btn-danger{
