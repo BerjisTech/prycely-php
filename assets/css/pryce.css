@@ -430,8 +430,8 @@ body {
     border-radius: 10px 0px 0px 10px !important;
 }
 
-.chat-card .input-group .input-group-addon:first-of-type {
-    border-radius: 10px 0px 0px 10px;
+.chat-card .input-group .input-group-addon {
+    border-radius: 10px 0px 0px 10px !important;
 }
 
 .chat-body {
