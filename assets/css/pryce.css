@@ -418,7 +418,7 @@ body {
     padding: 5px;
 }
 
-.group-entypo span:first-of-type:hover {
+.entypo-inner:hover span:first-of-type {
     color: #7083FF;
     border-color: #7083FF;
 }
@@ -428,7 +428,7 @@ body {
     margin-top: 10px;
 }
 
-.group-entypo span:last-of-type {
+.entypo-inner:hover span:last-of-type {
     color: #000000;
     font-weight: 500px;
 }
