@@ -402,3 +402,7 @@ body {
     top: 0px !important;
     right: 0px !important;
 }
+
+.chat-card .btn-danger{
+    display: none;
+}
