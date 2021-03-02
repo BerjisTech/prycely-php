@@ -386,7 +386,7 @@ body {
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background: #ffffff;
     padding: 0px !important;
 }
@@ -441,6 +441,8 @@ body {
     height: 300px;
     border-radius: 20px;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .group-balance-chart {
@@ -450,7 +452,7 @@ body {
     justify-content: center;
     border-radius: 20px;
     box-shadow: 0 0 32px 0 rgb(31 38 135 / 27%);
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
