@@ -385,13 +385,10 @@ body {
     margin-left: 0px;
 }
 
-.slide-icon p {
-    padding: 1px;
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    border: 2px solid #8EA0CC;
-    display: table;
+.group-entypo {
+    border-radius: 10px;
+    border: 1px solid #8EA0CC;
+    padding: 5px;
 }
 
 .chat-card {
