@@ -397,12 +397,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #F1F3FF;
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: #9DA7B9;
     height: 100px;
+    cursor: pointer;
+}
+
+.entypo-inner:hover {
+    background: #F1F3FF;
 }
 
 .group-entypo span:first-of-type {
