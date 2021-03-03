@@ -615,3 +615,11 @@ body {
     background: #FFFFFF;
     flex-direction: column;
 }
+
+.chat-out {
+    left: 5px;
+}
+
+.chat-in {
+    right: 5px;
+}
