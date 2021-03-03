@@ -614,11 +614,21 @@ body {
     background: #FFFFFF;
     margin: 3px;
     padding: 4px;
+    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
 }
 
-.chat-bubble img {
+.chat-img {
     width: 100%;
     display: table;
+    text-align: center;
+    max-height: 250px;
+}
+
+.chat-img img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
 }
 
 .chat-out {
