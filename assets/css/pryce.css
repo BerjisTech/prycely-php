@@ -408,13 +408,17 @@ body {
     background: #F1F3FF;
 }
 
+.entypo-current {
+    background: #F1F3FF;
+}
+
 .group-entypo span:first-of-type {
     border-radius: 10px;
     border: 2px solid #9DA7B9;
     padding: 5px;
 }
 
-.entypo-inner:hover span:first-of-type {
+.entypo-inner:hover span:first-of-type, .entypo-current span:first-of-type {
     color: #7083FF;
     border-color: #7083FF;
 }
@@ -424,7 +428,7 @@ body {
     margin-top: 10px;
 }
 
-.entypo-inner:hover span:last-of-type {
+.entypo-inner:hover span:last-of-type, .entypo-current span:last-of-type {
     color: #000000;
     font-weight: 700px;
 }
