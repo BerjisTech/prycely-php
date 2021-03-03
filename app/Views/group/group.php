@@ -145,26 +145,7 @@
                 <span class="input-group-addon entypo-search"></span>
             </div>
             <div class="chat-body">
-                <div class="chat-bubble chat-out">
-                    <img src="<?php echo base_url('assets/images/shot-full.webp'); ?>" />
-                    <span>
-                        Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
-                    </span>
-                </div>
-                <div class="chat-bubble chat-out">
-                    <span>
-                        Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
-                    </span>
-                </div>
-                <div class="chat-bubble chat-in">
-                    <img src="<?php echo base_url('assets/images/shot-full.webp'); ?>" />
-                    <span>
-                        Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
-                    </span>
-                </div>
-                <div class="chat-bubble chat-out">
-                    <img src="<?php echo base_url('assets/images/shot-full.webp'); ?>" />
-                </div>
+                
             </div>
             <div class="input-group">
                 <span class="input-group-addon text-center;"><img src="<?php echo base_url('assets/images/the_emo.png'); ?>" class="the_emoji" /></span>
