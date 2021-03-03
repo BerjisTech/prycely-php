@@ -551,7 +551,7 @@ body {
     max-height: 80vh;
     overflow-Y: auto;
     flex-grow: 4;
-    padding: 10px 5px;
+    padding: 10px 5px 10px 0px;
     width: 100%;
     max-width: 27vw;
     display: block;
@@ -612,7 +612,7 @@ body {
     height: auto;
     border-radius: 10px;
     background: #FFFFFF;
-    margin: 3px;
+    margin: 3px 0px;
     padding: 4px;
     box-shadow: 0 0 12px 0 rgb(31 38 135 / 17%);
 }
