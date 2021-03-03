@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row group-overview">
                 <div class="col-sm-6 col-xs-12 text-center">
                     <div class="group-balance-preview">
                         <span class="gp-txt">Total balance</span>
@@ -123,9 +123,7 @@
                         <div id="donut-chart" style="width: 250px"></div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
                 <div class="col-xs-12">
                     <div class="group-balance-chart">
                         <div class="gbc-top">
