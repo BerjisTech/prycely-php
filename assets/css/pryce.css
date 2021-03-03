@@ -614,12 +614,14 @@ body {
     border-radius: 10px;
     background: #FFFFFF;
     flex-direction: column;
+    margin: 3px;
+    padding: 4px;
 }
 
 .chat-out {
-    left: 5px;
+    right: 5px;
 }
 
 .chat-in {
-    right: 5px;
+    left: 5px;
 }
