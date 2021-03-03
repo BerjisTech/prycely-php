@@ -105,5 +105,3 @@ $('.go_to_group').on('click', function () {
     let group_id = $(this).attr('data-id');
     window.location.href = base_url + "group/g/" + group_id;
 })
-
-$(".chat-body").scrollTop(function () { return this.scrollHeight; });
