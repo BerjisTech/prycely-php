@@ -88,4 +88,8 @@
     .chat-card .input-group .input-group-addon:last-of-type {
         border-radius: 0px 10px 10px 0px !important;
     }
+    .chat-bubble {
+        width: auto;
+        max-width: 70vw;
+    }
 }
