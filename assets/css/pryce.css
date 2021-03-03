@@ -554,8 +554,7 @@ body {
     padding: 10px 5px;
     width: 100%;
     max-width: 27vw;
-    display: flex;
-    flex-direction: column;
+    display: table;
 }
 
 .chat-body::-webkit-scrollbar {
