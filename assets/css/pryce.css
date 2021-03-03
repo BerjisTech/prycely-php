@@ -618,7 +618,7 @@ body {
 }
 
 .chat-user {
-    font-weight: 500;
+    font-weight: bolder;
     display: table;
     width: 100%;
     text-align: left;
@@ -653,4 +653,5 @@ body {
     width: 100%;
     text-align: left;
     padding: 3px 0px;
+    font-weight: lighter;
 }
