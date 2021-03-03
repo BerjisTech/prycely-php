@@ -135,6 +135,7 @@
                     </div>
                 </div>
             </div>
+            <div class="row " style="display: none;"></div>
         </div>
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
