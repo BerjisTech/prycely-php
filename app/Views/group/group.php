@@ -148,23 +148,35 @@
                 <div class="chat-bubble chat-out">
                     <span class="chat-img"><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></span>
                     <span class="chat-text">
-                        Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
+                        Guys what do you think about my new logo concept
                     </span>
                 </div>
                 <div class="chat-bubble chat-out">
+                    <span class="chat-user">Xi Jin Ping</span>
+                    <span class="chat-img"><img src="https://i.imgur.com/5BBABri.gif" /></span>
                     <span class="chat-text">
-                        Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
+                        My face better than your logo. ALSO Communisim is fyucha
                     </span>
                 </div>
                 <div class="chat-bubble chat-in">
                     <span class="chat-user">Kim Jong Un</span>
-                    <span class="chat-img"><img src="<?php echo base_url('assets/images/freelancer.jpg'); ?>" /></span>
+                    <span class="chat-img"><img src="https://www.aljazeera.com/wp-content/uploads/2020/01/5725cee6113f42b4ad829dff628f13ce_18.jpeg?resize=770%2C513" /></span>
                     <span class="chat-text">
-                        Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
+                        Wassuuuup
                     </span>
                 </div>
-                <div class="chat-bubble chat-out">
-                    <span class="chat-img"><img src="<?php echo base_url('assets/images/36471e6f2cbcccac675f875ef51b3bda.webp'); ?>" /></span>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Xi Jin Ping</span>
+                    <span class="chat-text">
+                        C'mon dude, keep your dick in your pants. Your wife just starved to death.
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Putin</span>
+                    <span class="chat-img"><img src="https://i.makeagif.com/media/5-08-2015/z2CvR6.gif" /></span>
+                    <span class="chat-text">
+                        C'mon dude, keep your dick in your pants. Your wife just starved to death.
+                    </span>
                 </div>
             </div>
             <div class="input-group">
