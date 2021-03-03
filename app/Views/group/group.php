@@ -180,7 +180,13 @@
                     <span class="chat-user">Putin</span>
                     <span class="chat-img"><img src="https://i.makeagif.com/media/5-08-2015/z2CvR6.gif" /></span>
                     <span class="chat-text">
-                        C'mon dude, keep your dick in your pants. Your wife just starved to death.
+                        Starving wiifffeee,
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Putin</span>
+                    <span class="chat-text">
+                        Wait you people have actual wives!!
                     </span>
                 </div>
             </div>
