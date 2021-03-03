@@ -67,7 +67,9 @@
         border-radius: 0px;
     }
     .chat-body {
-        width: 100vw;
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+        width: 100vw !important;
     }
     .chat-block {
         max-width: 100vw !important;
