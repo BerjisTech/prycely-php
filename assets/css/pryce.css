@@ -525,6 +525,7 @@ body {
 }
 
 .chat-block .input-group {
+    max-height: 10vh;
     z-index: 3;
     border-radius: 10px !important;
     box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%) !important;
@@ -547,6 +548,8 @@ body {
 }
 
 .chat-body {
+    max-height: 80vh;
+    overflow-Y: auto;
     flex-grow: 4;
     padding: 10px 5px
 }
