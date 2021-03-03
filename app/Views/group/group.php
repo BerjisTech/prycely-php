@@ -160,7 +160,7 @@
                 </div>
                 <div class="chat-bubble chat-out">
                     <span class="chat-text">
-                        No, clearly octupus hentai is the fyucha
+                        No, tentacles hentai is clearly the fyucha
                     </span>
                 </div>
                 <div class="chat-bubble chat-in">
@@ -171,7 +171,7 @@
                     </span>
                 </div>
                 <div class="chat-bubble chat-in">
-                    <span class="chat-user">Xi Jin Ping</span>
+                    <span class="chat-user">Obama</span>
                     <span class="chat-text">
                         C'mon dude, keep your dick in your pants. Your wife just starved to death.
                     </span>
