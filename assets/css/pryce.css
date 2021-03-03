@@ -618,11 +618,12 @@ body {
 }
 
 .chat-user {
-    font-weight: bolder;
+    font-weight: 800;
     display: table;
     width: 100%;
     text-align: left;
     padding: 3px 0px;
+    font-size: 15px;
 }
 
 .chat-img {
@@ -653,5 +654,6 @@ body {
     width: 100%;
     text-align: left;
     padding: 3px 0px;
-    font-weight: lighter;
+    font-weight: 200;
+    color: #535151;
 }
