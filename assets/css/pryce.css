@@ -551,7 +551,8 @@ body {
     max-height: 80vh;
     overflow-Y: auto;
     flex-grow: 4;
-    padding: 10px 5px
+    padding: 10px 5px;
+    width: 100%;
 }
 
 .the_emoji {
