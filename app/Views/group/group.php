@@ -146,7 +146,7 @@
             </div>
             <div class="chat-body">
                 <div class="chat-bubble chat-out">
-                    <span class="chat-img"><img src="<?php echo base_url('assets/images/shot-full.webp'); ?>" /></span>
+                    <span class="chat-img"><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></span>
                     <span class="chat-text">
                         Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
                     </span>
@@ -158,13 +158,13 @@
                 </div>
                 <div class="chat-bubble chat-in">
                     <span class="chat-user">Kim Jong Un</span>
-                    <span class="chat-img"><img src="<?php echo base_url('assets/images/shot-full.webp'); ?>" /></span>
+                    <span class="chat-img"><img src="<?php echo base_url('assets/images/freelancer.jpg'); ?>" /></span>
                     <span class="chat-text">
                         Yoh! What do you think of this image? I'm thinking we use it as an inspo for the UI.
                     </span>
                 </div>
                 <div class="chat-bubble chat-out">
-                    <span class="chat-img"><img src="<?php echo base_url('assets/images/shot-full.webp'); ?>" /></span>
+                    <span class="chat-img"><img src="<?php echo base_url('assets/images/36471e6f2cbcccac675f875ef51b3bda.webp'); ?>" /></span>
                 </div>
             </div>
             <div class="input-group">
