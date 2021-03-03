@@ -606,21 +606,25 @@ body {
 }
 
 .chat-bubble {
-    display: flex;
+    display: table;
     width: auto;
     max-width: 20vw;
     height: auto;
     border-radius: 10px;
     background: #FFFFFF;
-    flex-direction: column;
     margin: 3px;
     padding: 4px;
 }
 
+.chat-bubble img {
+    width: 100%;
+    display: table;
+}
+
 .chat-out {
-    right: 5px;
+    float: right;
 }
 
 .chat-in {
-    left: 5px;
+    float: left;
 }
