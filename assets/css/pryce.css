@@ -614,7 +614,15 @@ body {
     background: #FFFFFF;
     margin: 3px;
     padding: 4px;
-    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
+    box-shadow: 0 0 12px 0 rgb(31 38 135 / 17%);
+}
+
+.chat-user {
+    font-weight: 500;
+    display: table;
+    width: 100%;
+    text-align: left;
+    padding: 3px 0px;
 }
 
 .chat-img {
@@ -622,6 +630,7 @@ body {
     display: table;
     text-align: center;
     max-height: 250px;
+    margin-bottom: 5px;
 }
 
 .chat-img img {
@@ -637,4 +646,11 @@ body {
 
 .chat-in {
     float: left;
+}
+
+.chat-text {
+    display: table;
+    width: 100%;
+    text-align: left;
+    padding: 3px 0px;
 }
