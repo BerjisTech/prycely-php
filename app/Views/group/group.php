@@ -151,11 +151,16 @@
                         Guys what do you think about my new logo concept
                     </span>
                 </div>
-                <div class="chat-bubble chat-out">
+                <div class="chat-bubble chat-in">
                     <span class="chat-user">Xi Jin Ping</span>
                     <span class="chat-img"><img src="https://i.imgur.com/5BBABri.gif" /></span>
                     <span class="chat-text">
                         My face better than your logo. ALSO Communisim is fyucha
+                    </span>
+                </div>
+                <div class="chat-bubble chat-out">
+                    <span class="chat-text">
+                        No, clearly octupus hentai is the fyucha
                     </span>
                 </div>
                 <div class="chat-bubble chat-in">
