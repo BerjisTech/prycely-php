@@ -108,6 +108,7 @@ $('.go_to_group').on('click', function () {
 
 $('.g-switch').on('click', function () {
     console.log('Show ' + $(this).attr('data-show'))
+    $('.group-switched').attr('style', '');
     $('.group-switched').hide();
     $('.' + $(this).attr('data-show')).show();
     $('.g-switch').removeClass('entypo-current');
