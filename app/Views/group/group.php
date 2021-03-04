@@ -97,25 +97,25 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="group-navi">
-                        <div class="group-entypo col-sm-3 col-xs-6 g-switch entypo-current" data-show="group-overview">
+                        <div class="group-entypo col-sm-3 col-xs-6 entypo-current" data-show="group-overview">
                             <div class="entypo-inner text-center">
                                 <span class="entypo-logout"></span>
                                 <span class="hidden-xs">Overview</span>
                             </div>
                         </div>
-                        <div class="group-entypo col-sm-3 col-xs-6 g-switch" data-show="group-transacts">
+                        <div class="group-entypo col-sm-3 col-xs-6" data-show="group-transacts">
                             <div class="entypo-inner text-center">
                                 <span class="entypo-doc-text"></span>
                                 <span class="hidden-xs">Statements</span>
                             </div>
                         </div>
-                        <div class="group-entypo col-sm-3 col-xs-6 g-switch" data-show="group-topup">
+                        <div class="group-entypo col-sm-3 col-xs-6" data-show="group-topup">
                             <div class="entypo-inner text-center">
                                 <span class="entypo-publish"></span>
                                 <span class="hidden-xs">Top Up</span>
                             </div>
                         </div>
-                        <div class="group-entypo col-sm-3 col-xs-6 g-switch" data-show="group-more">
+                        <div class="group-entypo col-sm-3 col-xs-6" data-show="group-more">
                             <div class="entypo-inner text-center">
                                 <span class="entypo-dot-3"></span>
                                 <span class="hidden-xs">More</span>

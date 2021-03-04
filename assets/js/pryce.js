@@ -106,7 +106,7 @@ $('.go_to_group').on('click', function () {
     window.location.href = base_url + "group/g/" + group_id;
 })
 
-$('.g-switch').on('click', function () {
+$('.group-entypo').on('click', function () {
     $('.entypo-current').removeClass('entypo-current');
     $(this).addClass('entypo-current');
     $('.group-switched').hide();
