@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="row group-swicthed group-overview">
+            <div class="row group-switched group-overview">
                 <div class="col-sm-6 col-xs-12 text-center">
                     <div class="group-balance-preview">
                         <span class="gp-txt">Total balance</span>
@@ -151,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row group-swicthed group-transacts" style="display: none;">
+            <div class="row group-switched group-transacts" style="display: none;">
                 <table class="datatable" id="table-4">
                     <thead>
                         <tr>
@@ -177,10 +177,10 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row group-swicthed group-topup" style="display: none;">
+            <div class="row group-switched group-topup" style="display: none;">
                 Top Up area here
             </div>
-            <div class="row group-swicthed group-more" style="display: none;">
+            <div class="row group-switched group-more" style="display: none;">
                 More acrtions here
             </div>
         </div>
