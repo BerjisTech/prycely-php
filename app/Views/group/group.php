@@ -1,5 +1,21 @@
 <script>
     jQuery(document).ready(function($) {
+        var $table4 = jQuery("#transTable");
+        $table4.DataTable({
+            //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5',
+                'print'
+            ]
+        });
+        $table4.closest('.dataTables_wrapper').find('select').select2({
+            minimumResultsForSearch: -1
+        });
+
         $(".chat-body").scrollTop(function() {
             return this.scrollHeight;
         });
@@ -135,7 +151,32 @@
                     </div>
                 </div>
             </div>
-            <div class="group-swicthed row group-transacts" style="display: none;"></div>
+            <div class="group-swicthed row group-transacts" style="display: none;">
+                <table class="datatable" id="table-4">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <?php for ($i = 1; $i <= 100; $i++) : ?>
+                                <td><?php echo $i; ?></td>
+                                <td>Jina Ya Mtu</td>
+                                <td><?php echo mt_rand(900, 99000); ?></td>
+                                <td>Deposit,<br /> withdraw,<br /> loan</td>
+                                <td><?php date('d M, Y', strtotime('-' . $i - mt_rand(0, 9) . ' days')) ?></td>
+                                <td>Complete,<br />Pending,<br />Cancelled</td>
+                            <?php endfor; ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="group-swicthed row group-topup" style="display: none;"></div>
             <div class="group-swicthed row group-more" style="display: none;"></div>
         </div>
