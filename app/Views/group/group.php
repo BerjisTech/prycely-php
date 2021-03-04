@@ -164,16 +164,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <?php for ($i = 1; $i <= 100; $i++) : ?>
+                        <?php for ($i = 1; $i <= 100; $i++) : ?>
+                            <tr>
                                 <td><?php echo $i; ?></td>
                                 <td>Jina Ya Mtu</td>
                                 <td><?php echo mt_rand(900, 99000); ?></td>
                                 <td>Deposit,<br /> Withdraw,<br />Loan</td>
                                 <td><?php date('d M, Y', strtotime('-' . $i - mt_rand(0, 9) . ' days')) ?></td>
                                 <td>Complete,<br />Pending,<br />Cancelled</td>
-                            <?php endfor; ?>
-                        </tr>
+                            </tr>
+                        <?php endfor; ?>
                     </tbody>
                 </table>
             </div>
