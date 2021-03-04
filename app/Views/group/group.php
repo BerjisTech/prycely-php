@@ -97,8 +97,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="group-navi">
-                        <div class="g-switch group-entypo col-sm-3 col-xs-6" data-show="group-overview">
-                            <div class="entypo-inner entypo-current text-center">
+                        <div class="g-switch group-entypo col-sm-3 col-xs-6 entypo-current" data-show="group-overview">
+                            <div class="entypo-inner text-center">
                                 <span class="entypo-logout"></span>
                                 <span class="hidden-xs">Overview</span>
                             </div>
