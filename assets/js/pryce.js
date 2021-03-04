@@ -105,3 +105,10 @@ $('.go_to_group').on('click', function () {
     let group_id = $(this).attr('data-id');
     window.location.href = base_url + "group/g/" + group_id;
 })
+
+$('.g-switch').on('click', function () {
+    $('.group-switched').hide();
+    $('.' + $(this).attr('data-show')).show();
+    $('.g-switch').removeClass('entypo-current');
+    $(this).addClass('entypo-current');
+})

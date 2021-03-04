@@ -82,25 +82,25 @@
                 <div class="col-sm-12">
                     <div class="group-navi">
                         <div class="group-entypo col-sm-3 col-xs-6">
-                            <div class="entypo-inner entypo-current text-center">
+                            <div class="g-switch entypo-inner entypo-current text-center" data-show="group-overview">
                                 <span class="entypo-logout"></span>
                                 <span class="hidden-xs">Overview</span>
                             </div>
                         </div>
                         <div class="group-entypo col-sm-3 col-xs-6">
-                            <div class="entypo-inner text-center">
+                            <div class="g-switch entypo-inner text-center" data-show="group-transacts">
                                 <span class="entypo-doc-text"></span>
                                 <span class="hidden-xs">Statements</span>
                             </div>
                         </div>
                         <div class="group-entypo col-sm-3 col-xs-6">
-                            <div class="entypo-inner text-center">
+                            <div class="g-switch entypo-inner text-center" data-show="group-topup">
                                 <span class="entypo-publish"></span>
                                 <span class="hidden-xs">Top Up</span>
                             </div>
                         </div>
                         <div class="group-entypo col-sm-3 col-xs-6">
-                            <div class="entypo-inner text-center">
+                            <div class="g-switch entypo-inner text-center" data-show="group-more">
                                 <span class="entypo-dot-3"></span>
                                 <span class="hidden-xs">More</span>
                             </div>
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="row group-overview">
+            <div class="group-swicthed row group-overview">
                 <div class="col-sm-6 col-xs-12 text-center">
                     <div class="group-balance-preview">
                         <span class="gp-txt">Total balance</span>
@@ -135,7 +135,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row " style="display: none;"></div>
+            <div class="group-swicthed row group-transacts" style="display: none;"></div>
+            <div class="group-swicthed row group-topup" style="display: none;"></div>
+            <div class="group-swicthed row group-more" style="display: none;"></div>
         </div>
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
