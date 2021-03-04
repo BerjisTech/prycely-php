@@ -404,11 +404,11 @@ body {
     cursor: pointer;
 }
 
-.entypo-inner:hover {
+.entypo-inner:hover, .entypo-current .entypo-inner {
     background: #F1F3FF;
 }
 
-.entypo-current .entypo-inner {
+.entypo-inner {
     background: #F1F3FF;
 }
 
