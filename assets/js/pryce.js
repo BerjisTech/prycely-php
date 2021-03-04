@@ -107,7 +107,7 @@ $('.go_to_group').on('click', function () {
 })
 
 $('.g-switch').on('click', function () {
-    $('.g-switch').removeClass('entypo-current');
+    $('.entypo-current').removeClass('entypo-current');
     $(this).addClass('entypo-current');
     $('.group-switched').hide();
     $('.' + $(this).attr('data-show')).show();
