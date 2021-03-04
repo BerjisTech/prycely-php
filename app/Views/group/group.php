@@ -178,7 +178,9 @@
                 </table>
             </div>
             <div class="row group-switched group-topup" style="display: none;">
-                Top Up area here
+                <div class="col-xs-12">
+                    <div class="group-balance-chart"></div>
+                </div>
             </div>
             <div class="row group-switched group-more" style="display: none;">
                 More acrtions here
