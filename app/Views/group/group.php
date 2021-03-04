@@ -169,7 +169,7 @@
                                 <td><?php echo $i; ?></td>
                                 <td>Jina Ya Mtu</td>
                                 <td><?php echo mt_rand(900, 99000); ?></td>
-                                <td>Deposit,<br /> withdraw,<br /> loan</td>
+                                <td>Deposit,<br /> Withdraw,<br />Loan</td>
                                 <td><?php date('d M, Y', strtotime('-' . $i - mt_rand(0, 9) . ' days')) ?></td>
                                 <td>Complete,<br />Pending,<br />Cancelled</td>
                             <?php endfor; ?>
@@ -177,8 +177,12 @@
                     </tbody>
                 </table>
             </div>
-            <div class="group-swicthed row group-topup" style="display: none;"></div>
-            <div class="group-swicthed row group-more" style="display: none;"></div>
+            <div class="group-swicthed row group-topup" style="display: none;">
+                Top Up area here
+            </div>
+            <div class="group-swicthed row group-more" style="display: none;">
+                More acrtions here
+            </div>
         </div>
     </div>
     <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
