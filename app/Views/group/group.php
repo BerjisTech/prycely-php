@@ -152,7 +152,7 @@
                 </div>
             </div>
             <div class="row group-switched group-transacts" style="display: none;">
-                <table class="datatable" id="table-4">
+                <table class="datatable" id="transTable">
                     <thead>
                         <tr>
                             <th>#</th>
