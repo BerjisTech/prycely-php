@@ -335,7 +335,9 @@
         #document.skn-srz9.active .acrs-bdr{left:-60px !important}
         #document.skn-srz9.active .acr-edit,#document.skn-srz9.active .acr-delete{left:-59px !important}
         #document.skn-srz9.active .acr-move{right:-59px !important}
-    </style></div><div id="document" class="document fontsize fontface vmargins hmargins pagesize skn-srz9 SRZ9  ZTY"><div id="CONTAINER_PARENT_0" class="parentContainer"><div id="CONTAINER_0" class="left-box"><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-CNTC"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button></div><div id="SECTION_CNTC543e7fbd-f0dd-4737-b44a-2c6604023e62" class="section SECTION_CNTC notdraggable     " data-section-cd="CNTC"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_CNTC">Contact<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class=""><div id="PARAGRAPH_CNTC_10c24c2e-b151-c7a8-1b0e-833a9cbe5f89" class="paragraph PARAGRAPH_CNTC firstparagraph  "><div class="clearfix doc-item">
+    </style>
+	</div>
+	<div id="document" class="document fontsize fontface vmargins hmargins pagesize skn-srz9 SRZ9  ZTY"><div id="CONTAINER_PARENT_0" class="parentContainer"><div id="CONTAINER_0" class="left-box"><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-CNTC"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button></div><div id="SECTION_CNTC543e7fbd-f0dd-4737-b44a-2c6604023e62" class="section SECTION_CNTC notdraggable     " data-section-cd="CNTC"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_CNTC">Contact<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class=""><div id="PARAGRAPH_CNTC_10c24c2e-b151-c7a8-1b0e-833a9cbe5f89" class="paragraph PARAGRAPH_CNTC firstparagraph  "><div class="clearfix doc-item">
                         <div class="address">
                             <div class="singlecolumn">
                                 <div class="iconRow" dependency="STRT|CITY|STAT|ZIPC">
@@ -822,7 +824,9 @@
 </ul></span>
                         </div>
                     </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div></div></div></div></div><div id="svgPreviewHidden" hidden=""></div></div>
-	<div class="menu">
+
+
+	<div class="menu" style="display: none;">
 		<ul>
 			<li class="logo"><a href="https://codeigniter.com" target="_blank"><img height="44" title="CodeIgniter Logo"
 																					alt="Visit CodeIgniter.com official website!"
