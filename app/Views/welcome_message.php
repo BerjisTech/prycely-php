@@ -201,7 +201,493 @@
 
 <!-- HEADER: MENU + HEROE SECTION -->
 <header>
-
+<div id="CONTAINER_PARENT_0" class="parentContainer"><div id="CONTAINER_0" class="left-box"><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-CNTC"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button></div><div id="SECTION_CNTC543e7fbd-f0dd-4737-b44a-2c6604023e62" class="section SECTION_CNTC notdraggable     " data-section-cd="CNTC"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_CNTC">Contact<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class=""><div id="PARAGRAPH_CNTC_10c24c2e-b151-c7a8-1b0e-833a9cbe5f89" class="paragraph PARAGRAPH_CNTC firstparagraph  "><div class="clearfix doc-item">
+                        <div class="address">
+                            <div class="singlecolumn">
+                                <div class="iconRow" dependency="STRT|CITY|STAT|ZIPC">
+                                    <div class="iconSvg">
+                                        <svg viewBox="0 0 54 54">
+                                            <circle cx="27" cy="27" r="26"></circle>
+                                            <path transform="translate(11,11)" d="M16 0C8.772 0 2.912 5.86 2.912 13.088 2.912 20.428 9.276 25.27 16 32c6.724-6.732 13.088-11.572 13.088-18.912C29.088 5.86 23.228 0 16 0zm0 22.288c-5.302 0-9.602-4.298-9.602-9.602 0-5.302 4.298-9.602 9.602-9.602 5.302 0 9.602 4.298 9.602 9.602s-4.3 9.602-9.602 9.602z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icoTxt">
+                                        <span class="field" id="FIELD_STRT"></span>
+                                        <span class="field" id="FIELD_CITY">Nairobi</span><span dependency="CITY+STAT|ZIPC">,</span>
+                                        <span class="field" id="FIELD_STAT">35016</span><span dependency="STAT+ZIPC">, </span>
+                                        <span class="field" id="FIELD_ZIPC">00200</span>
+                                    </div>
+                                </div>
+                                <div class="iconRow" dependency="HPHN|CPHN">
+                                    <div class="iconSvg">
+                                        <svg viewBox="0 0 54 54">
+                                            <circle cx="27" cy="27" r="26"></circle>
+                                            <path transform="translate(11,11)" d="M6.067.655L1.328 5.39C-.696 7.413.196 9.679.196 9.679c2.156 4.733 5.134 9.182 9.03 13.076 3.898 3.893 8.35 6.87 13.087 9.024 0 0 2.195.964 4.293-1.132l4.739-4.736a2.229 2.229 0 0 0 0-3.156l-4.74-4.736a2.233 2.233 0 0 0-3.159 0l-2.665 2.664c-1.837-1.237-3.607-2.619-5.233-4.242-1.627-1.623-3.005-3.391-4.245-5.229l2.665-2.665a2.229 2.229 0 0 0 0-3.157L9.23.655a2.236 2.236 0 0 0-3.162 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icoTxt">
+                                        <span class="field" id="FIELD_HPHN">072 778 8228</span>
+                                        <span class="field" id="FIELD_CPHN"></span>
+                                    </div>
+                                </div>
+                                <div class="iconRow" dependency="EMAI">
+                                    <div class="iconSvg">
+                                        <svg viewBox="0 0 54 54">
+                                            <circle cx="27" cy="27" r="26"></circle>
+                                            <path transform="translate(11,11)" d="M32 6c0-1.106-.894-2-2-2H2C.894 4 0 4.894 0 6l16 13L32 6z"></path>
+                                            <path transform="translate(11,11)" d="M0 9v17c0 1.106.894 2 2 2h28c1.106 0 2-.894 2-2V8.968L16 22 0 9z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icoTxt">
+                                        <span class="field" id="FIELD_EMAI">muchirilucy101@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-HILT"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn ml-0 btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i class="fas fa-trash icon-delete"></i></button><a href="javascript:;" class="btn-icon-tertiary btn-icon-move" style="right: -245px;"><i class="fas fa-arrows-alt" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false"></i><span class="tooltip">Move</span></a></div><div id="SECTION_HILTc63cc439-9f73-4b9c-89e7-b705a96ac7c8" class="section SECTION_HILT     " data-section-cd="HILT"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_HILT">Skills<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class="sortableInner"><div id="PARAGRAPH_HILT_57526b19-38d0-73a5-38ca-0f17e73c6af5" class="paragraph PARAGRAPH_HILT firstparagraph  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><ul><p>Documentation and reporting</p></ul></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#d5d6d6"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Very Good</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_4789f0b5-8818-7e08-7fdf-d858e84ff9b2" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Inbound and outbound calling</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_c6d23900-6f0b-9e1c-5a38-540562740608" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Complaint resolution</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_9bdfb977-9bb4-dcdc-a4ca-84938b9bb223" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Report preparation</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#d5d6d6"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Very Good</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_11d99b16-ebc0-bdeb-4c74-1ee50d2b577e" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Sales expertise</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#d5d6d6"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Very Good</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_d65e70da-38af-23c0-83ab-5fd321bf4480" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Cash Handling</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_94245bb4-1a26-ecb7-6800-b553022ddf60" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Payment processing</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_55a36bbe-a4e3-9d28-d3c9-7d6d1828112b" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Account management</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_c521dcab-e5ac-b91e-a323-7c473178bac8" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Technical Support</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_a70aa357-05bc-7cbf-ff1d-a1a809a3edd5" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Stocking and replenishing</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_7be876d6-d4a5-308b-6141-443754a15e71" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Exceptional customer service</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_ea531b62-4f89-3809-ab58-14e9677a1b06" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Product promotions</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_a5e1e533-c10c-19cb-c1a6-c1f364e837a0" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Adapt to diverse groups</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_53781fa2-fc44-2a3f-0aaf-4b4bb5e402f7" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Cash register operation</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_3e50866f-a0d0-70cd-b60d-363be777e75f" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Relationship building</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#d5d6d6"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Very Good</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_7b2a7254-8584-6ee9-de9c-2a2c1e35381e" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Point of sale knowledge</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_HILT_2d433410-a537-4c3c-eb7d-7bcc65abec7f" class="paragraph PARAGRAPH_HILT  "><div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <span class="paddedline" id="FIELD_SKC1"><p>Problem-solving skills</p></span>
+                            <div class="ratingWrapper" dependency="RATV">
+                                <div class="noLnht">
+                                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                        <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                        <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    </svg>
+                                </div>
+                                <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-SFTR"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn ml-0 btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i class="fas fa-trash icon-delete"></i></button><a href="javascript:;" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i class="fas fa-arrows-alt" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false"></i><span class="tooltip">Move</span></a></div><div id="SECTION_SFTR2f217327-d433-5ff0-05eb-24fa13af7d9c" class="section SECTION_SFTR     " data-section-cd="SFTR"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_SFTR">Software<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class="sortableInner"><div id="PARAGRAPH_SFTR_6452e7d3-7036-586a-7898-54b2ac2886f3" class="paragraph PARAGRAPH_SFTR firstparagraph  "><div class="clearfix doc-item">
+                        <div class="field singlecolumn" id="FIELD_FRFM"><p>Microsoft Suite</p></div>
+                        <div class="ratingWrapper" dependency="RATV">
+                            <div class="noLnht">
+                                <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                    <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="450" cy="50" r="40" fill="#d5d6d6"></circle>
+                                </svg>
+                            </div>
+                            <span class="paddedline" id="FIELD_RATT">Very Good</span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_SFTR_8a1874b1-1b76-44f3-6543-963e6c6330f6" class="paragraph PARAGRAPH_SFTR  "><div class="clearfix doc-item">
+                        <div class="field singlecolumn" id="FIELD_FRFM"><p>POS</p></div>
+                        <div class="ratingWrapper" dependency="RATV">
+                            <div class="noLnht">
+                                <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                    <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                </svg>
+                            </div>
+                            <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_SFTR_8a5bc7a5-246e-4223-e3ae-d0729ce01330" class="paragraph PARAGRAPH_SFTR  "><div class="clearfix doc-item">
+                        <div class="field singlecolumn" id="FIELD_FRFM"><p>Google Suite</p></div>
+                        <div class="ratingWrapper" dependency="RATV">
+                            <div class="noLnht">
+                                <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
+                                    <circle cx="50" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="150" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="250" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="350" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                    <circle cx="450" cy="50" r="40" fill="#002e58" class="default-fill"></circle>
+                                </svg>
+                            </div>
+                            <span class="paddedline" id="FIELD_RATT">Excellent</span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div></div><div id="CONTAINER_1" class="right-box"><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-NAME"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button></div><div id="SECTION_NAME359f524b-0111-4a4f-aba9-db1726a65d6a" class="section nameSec notdraggable SECTION_NAME firstsection    " data-section-cd="NAME"><div class=" doc-item"><div class=""><div class=""><div id="PARAGRAPH_NAME_714faae5-2b81-4b85-be23-2ae365a26c04" class="paragraph PARAGRAPH_NAME firstparagraph  "><div>
+                        <div class="name word-break">
+                            <div class="monogram" dependency="FNAM|LNAM">
+                                <svg height="90px" width="90px">
+                                    <circle cx="45px" cy="45px" r="45px" fill="#003D74"></circle>
+                                    <text text-anchor="middle" x="60px" y="68px" fill="#fff" font-size="20px" id="SUBSTR_FALN">LM</text>
+                                </svg>
+                            </div>
+                            <div class="flname">
+                                <span class="field" id="FIELD_FNAM">Lucy</span>
+                                <span class="field word-break txtBold" id="FIELD_LNAM">Muchiri</span>
+                                <div class="resumeTitle" id="FIELD_DCTL">Procurement</div>
+                            </div>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-SUMM"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button></div><div id="SECTION_SUMM7bdd741c-f679-45da-b9d2-cc7946edc266" class="section summary notdraggable SECTION_SUMM     " data-section-cd="SUMM"><div class=" doc-item"><div class=""><div class=""><div id="PARAGRAPH_SUMM_4384c7e5-a968-70fa-9ea7-3785793d2247" class="paragraph PARAGRAPH_SUMM firstparagraph  "><div class="clearfix doc-item">
+                        <div class="field singlecolumn" id="FIELD_FRFM"><p>Hardworking Customer Service Representative with 6 years of experience working with a wide range of products and services. Trained in project and time management with extensive knowledge of customer care and proven multitasking abilities. Committed to maintaining professional relationships with clients to increase profitability and drive business results. Responsible and dedicated customer service team member with proven multitasking and organizational skills. Proficient in operating in fast-paced environment to coordinate paperwork, process payment and complete orders. Proactively manage shipments and coordinate deliveries with strong attention to detail and systematic approach. Retail professional with extensive knowledge of fashion industry, including current trends. Enjoys helping customers find stylish and affordable clothing and accessories. Customer Service Representative bringing top-notch skills in oral and written communication, active listening and analytical problem-solving skills. Enhances customer experiences by employing service-oriented behaviors, understanding customer desires and providing customized solutions to build loyalty. Results-driven Procurement Officer offering superior research abilities, sound judgment and meticulous organizational skills. Meets internal supply needs while maintaining budget and operational goals. Dedicated purchasing professional specializing in logistics coordination, vendor relations and inventory management. Organized and proactive with remarkable project management, communication and planning abilities. Exceptional leader skilled at reducing costs and increasing department efficiency. Experienced Purchasing professional with top-notch leadership, program management and planning abilities. Excellent verbal and written communication skills paired with organized nature and advanced problem-solving strengths. Improves policies, reduces waste and supports business needs with efficient, high-quality materials. Driven Purchasing Manager with strengths in streamlining procurement operations while achieving cost savings and improving reporting procedures. Organized Purchasing Manager with diligence, resourcefulness and experience to expand and improve regional operations for multiple locations. Self-directed and proactive with strong program management abilities.</p></div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-EXPR"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button><button class="btn ml-0 btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i class="fas fa-trash icon-delete"></i></button><a href="javascript:;" class="btn-icon-tertiary btn-icon-move" style="right: -451px;"><i class="fas fa-arrows-alt" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false"></i><span class="tooltip">Move</span></a></div><div id="SECTION_EXPRa2ead3e7-2d6e-4e1b-81a5-487b8f510b7c" class="section experience SECTION_EXPR   multi-para  " data-section-cd="EXPR"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_EXPR">Work History<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class="sortableInner"><div id="PARAGRAPH_EXPR_7d880f49-c6ba-0b05-dc91-42181ff3ff74" class="paragraph datespara PARAGRAPH_EXPR firstparagraph  "><div class="clearfix doc-item">
+                        <div class="paddedline date-content hidedates" dependency="JSTD|EDDT">
+                            <span class="jobdates" dependency="JSTD">2007-03</span><span dependency="JSTD+EDDT"> - </span>
+                            <span class="jobdates" dependency="EDDT">2007-03</span><br dependency="JTIT|COMP|JSTA|JCIT">
+                        </div>
+                        <div class="paddedline date-content" dependency="JSTD|EDDT">
+                            <span class="jobdates" id="FIELD_JSTD" format="%Y-%m">2018-08</span><span dependency="JSTD+EDDT"> - </span>
+                            <span class="jobdates" id="FIELD_EDDT" format="%Y-%m">Current</span><br dependency="JTIT|COMP|JSTA|JCIT">
+                        </div>
+                        <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT">
+                                <span class="jobtitle txtBold" id="FIELD_JTIT">Customer Service Assistant</span>
+                            </span>
+                            <span class="paddedline locationGap" dependency="COMP|JSTA|JCIT">
+                                <span class="companyname" id="FIELD_COMP">Total Kenya</span><span dependency="COMP+JCIT|JSTA">,</span>
+                                <span class="jobcity" id="FIELD_JCIT">Nairobi</span><span dependency="JCIT+JSTA">, </span>
+                                <span class="jobstate" id="FIELD_JSTA">Kenya</span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul>
+  <li>Achieved and consistently exceeded revenue quota through product and service promotion during routine calls.</li>
+  <li>Evaluated customer information to explore issues, develop potential solutions and maintain high-quality service.</li>
+  <li>Submitted completed orders quickly to maximize delivery efficiency.</li>
+  <li>Conferred with customers about concerns with products or services to resolve problems and drive sales.</li>
+  <li>Capitalized on upsell opportunities by suggesting best-fit offerings from available company products and services.</li>
+  <li>Answered customer questions about product availability and shipment times.</li>
+  <li>Preserved revenue streams by utilizing strong communication and negotiation skills, offering refunds as last resort to maintain customer satisfaction.</li>
+  <li>Maintained accurate and current customer account data with manual forms processing and digital information updates.</li>
+  <li>Supported senior management in executive decision-making by drafting informative reports.</li>
+  <li>Delivered prompt service to prioritize customer needs.</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_EXPR_67d73374-315d-04f5-e2f2-ee699e0755a7" class="paragraph datespara PARAGRAPH_EXPR  "><div class="clearfix doc-item">
+                        <div class="paddedline date-content hidedates" dependency="JSTD|EDDT">
+                            <span class="jobdates" dependency="JSTD">2007-03</span><span dependency="JSTD+EDDT"> - </span>
+                            <span class="jobdates" dependency="EDDT">2007-03</span><br dependency="JTIT|COMP|JSTA|JCIT">
+                        </div>
+                        <div class="paddedline date-content" dependency="JSTD|EDDT">
+                            <span class="jobdates" id="FIELD_JSTD" format="%Y-%m">2018-01</span><span dependency="JSTD+EDDT"> - </span>
+                            <span class="jobdates" id="FIELD_EDDT" format="%Y-%m">2020-02</span><br dependency="JTIT|COMP|JSTA|JCIT">
+                        </div>
+                        <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT">
+                                <span class="jobtitle txtBold" id="FIELD_JTIT">Sales Associate</span>
+                            </span>
+                            <span class="paddedline locationGap" dependency="COMP|JSTA|JCIT">
+                                <span class="companyname" id="FIELD_COMP">Mountain View Welfare</span><span dependency="COMP+JCIT|JSTA">,</span>
+                                <span class="jobcity" id="FIELD_JCIT">Nairobi</span><span dependency="JCIT+JSTA">, </span>
+                                <span class="jobstate" id="FIELD_JSTA">Kenya</span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul>
+  <li>Worked alongside retail representatives to boost sales by enhancing product presentations and advertising collateral.</li>
+  <li>Delivered high level of assistance by locating products and checking store system for merchandise at other sites.</li>
+  <li>Engaged with customers to effectively build rapport and lasting relationships.</li>
+  <li>Applied security and loss prevention training toward recognizing risks and reducing store theft.</li>
+  <li>Prepared merchandise for sales floor by pricing or tagging.</li>
+  <li>Processed product returns and assisted customers with other selections.</li>
+  <li>Implemented up-selling strategies such as recommending accessories and complementary purchases to boost revenue.</li>
+  <li>Implemented up-selling strategies, encompassing recommendation of accessories and complementary purchases.</li>
+  <li>Collaborated with clients to maintain relationships and provide customers with thorough support and guidance.</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><div id="PARAGRAPH_EXPR_1db1430f-917c-4bc2-4046-d1c3dbb42d60" class="paragraph datespara PARAGRAPH_EXPR  "><div class="clearfix doc-item">
+                        <div class="paddedline date-content hidedates" dependency="JSTD|EDDT">
+                            <span class="jobdates" dependency="JSTD">2007-03</span><span dependency="JSTD+EDDT"> - </span>
+                            <span class="jobdates" dependency="EDDT">2007-03</span><br dependency="JTIT|COMP|JSTA|JCIT">
+                        </div>
+                        <div class="paddedline date-content" dependency="JSTD|EDDT">
+                            <span class="jobdates" id="FIELD_JSTD" format="%Y-%m">2017-01</span><span dependency="JSTD+EDDT"> - </span>
+                            <span class="jobdates" id="FIELD_EDDT" format="%Y-%m">2017-12</span><br dependency="JTIT|COMP|JSTA|JCIT">
+                        </div>
+                        <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT">
+                                <span class="jobtitle txtBold" id="FIELD_JTIT">Attendant</span>
+                            </span>
+                            <span class="paddedline locationGap" dependency="COMP|JSTA|JCIT">
+                                <span class="companyname" id="FIELD_COMP">FREDALUFA Collections</span><span dependency="COMP+JCIT|JSTA">,</span>
+                                <span class="jobcity" id="FIELD_JCIT">Nairobi</span><span dependency="JCIT+JSTA">, </span>
+                                <span class="jobstate" id="FIELD_JSTA">Kenya</span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul>
+  <li>Kept facilities clean, neat and organized at all times to give areas professional and fresh appeal.</li>
+  <li>Determined customer needs by asking relevant questions and listening actively to responses.</li>
+  <li>Instructed guests and directed to clean and open stalls.</li>
+  <li>Responded to all customer inquiries thoroughly and professionally.</li>
+  <li>Replaced restroom supplies, sanitized counters and mopped.</li>
+  <li>Cleaned, emptied and maintained lockers and storage cubbies.</li>
+  <li>Locked and unlocked facilities to allow participants entry or shut down after events.</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div><div data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling data-EDUC"><div class="document-tool sec-tool" id="editIcons" style="right: -24px;"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i class="fas fa-pencil icon-edit"></i></button><button class="btn ml-0 btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i class="fas fa-trash icon-delete"></i></button><a href="javascript:;" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i class="fas fa-arrows-alt" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false"></i><span class="tooltip">Move</span></a></div><div id="SECTION_EDUC5def73e0-d75d-42c4-b8e1-b833a9f4fc91" class="section education SECTION_EDUC   multi-para  " data-section-cd="EDUC"><div class=" doc-item"><div class="heading"><div class="sectiontitle" id="SECTIONNAME_EDUC">Education<span class="rename-section text-rename"> Rename</span></div></div><div class=""><div class=""><div id="PARAGRAPH_EDUC_11441fa0-3a50-e824-a966-994ed9ed0e5a" class="paragraph datespara PARAGRAPH_EDUC firstparagraph  "><div class="clearfix doc-item">
+                        <div class="paddedline date-content hidedates" dependency="GRST|GRED">
+                            <span class="jobdates" dependency="GRST">2007-03</span><span dependency="GRST+GRED"> - </span>
+                            <span class="jobdates" dependency="GRED">2007-03</span>
+                        </div>
+                        <div class="paddedline date-content">
+                            <span class="jobdates" id="FIELD_GRST" format="%Y-%m">2017-01</span><span dependency="GRST+GRED"> - </span>
+                            <span class="jobdates" id="FIELD_GRED" format="%Y-%m">2018-12</span>
+                        </div>
+                        <div class="singlecolumn">
+                            <span class="paddedline degreeGap txtBold" dependency="DGRE|STUY">
+                                <span class="degree" id="FIELD_DGRE">Diploma</span><span dependency="DGRE+STUY">: </span>
+                                <span class="programline" id="FIELD_STUY">Purchasing, Procurement, And Contracts Management</span>
+                            </span>
+                            <div class="paddedline" dependency="SCIT|SSTA|SCHO">
+                                <span class="companyname" id="FIELD_SCHO">UNIVERSITY OF NAIROBI</span><span dependency="SCHO+SSTA|SCIT"> - </span>
+                                <span class="joblocation jobcity" id="FIELD_SCIT">Nairobi</span>
+                                <span class="joblocation jobstate" id="FIELD_SSTA"></span>
+                            </div>
+                            <span class="field" id="FIELD_FRFM"><ul>
+  <li>Coursework in Purchasing, and Supply management</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-24px; right: -24px;"><span class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div class="doc-overlay section-overlay" style="left:-24px; right: -24px;"><span>&nbsp;</span></div></div></div></div></div>
 	<div class="menu">
 		<ul>
 			<li class="logo"><a href="https://codeigniter.com" target="_blank"><img height="44" title="CodeIgniter Logo"
