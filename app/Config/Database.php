@@ -32,7 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'us-cdbr-east-03.cleardb.com/',
+		'hostname' => 'us-cdbr-east-03.cleardb.com',
 		'username' => 'b6ee84413a22d8',
 		'password' => '28734fcf',
 		'database' => 'heroku_a476988322e6b36',
@@ -58,7 +58,7 @@ class Database extends Config
 	 */
 	public $tests = [
 		'DSN'      => '',
-		'hostname' => 'us-cdbr-east-03.cleardb.com/',
+		'hostname' => 'us-cdbr-east-03.cleardb.com',
 		'username' => 'b6ee84413a22d8',
 		'password' => '28734fcf',
 		'database' => 'heroku_a476988322e6b36',
