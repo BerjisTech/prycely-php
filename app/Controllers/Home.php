@@ -8,8 +8,10 @@ class Home extends BaseController
 	{
 		echo 'chieth';
 		if (!$this->session->has('sombo')) {
+			echo "no";
 			header("location: https://radio.garden");
 		} else {
+			echo 'yes';
 			echo '<h1>' . $this->session->get('sombo') . '</h1>';
 		}
 	}
