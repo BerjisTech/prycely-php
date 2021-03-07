@@ -32,10 +32,10 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'us-cdbr-east-03.cleardb.com',
-		'username' => 'b6ee84413a22d8',
-		'password' => '28734fcf',
-		'database' => 'heroku_a476988322e6b36',
+		'hostname' => 'https://sleekupsell.com',
+		'username' => 'takii',
+		'password' => 'Takii2020!',
+		'database' => 'fraser_pryce',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
@@ -58,10 +58,10 @@ class Database extends Config
 	 */
 	public $tests = [
 		'DSN'      => '',
-		'hostname' => 'us-cdbr-east-03.cleardb.com',
-		'username' => 'b6ee84413a22d8',
-		'password' => '28734fcf',
-		'database' => 'heroku_a476988322e6b36',
+		'hostname' => '127.0.0.1',
+		'username' => '',
+		'password' => '',
+		'database' => ':memory:',
 		'DBDriver' => 'SQLite3',
 		'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
 		'pConnect' => false,
