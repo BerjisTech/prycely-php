@@ -4,10 +4,16 @@ namespace App\Controllers;
 
 class Wallet extends BaseController
 {
+	public function __construct()
+	{
+		if (!isset($_SESSION['sombo'])) {
+			header("location: https://radio.garden");
+		}
+	}
 	public function index()
 	{
 		$data['page_name'] = 'wallet/index';
-        $data['page_title'] = 'Wallet';
+		$data['page_title'] = 'Wallet';
 		return view('index', $data);
 	}
 

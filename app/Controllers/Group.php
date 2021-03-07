@@ -4,6 +4,12 @@ namespace App\Controllers;
 
 class Group extends BaseController
 {
+    public function __construct()
+    {
+        if (!isset($_SESSION['sombo'])) {
+            header("location: https://radio.garden");
+        }
+    }
 
     public function index()
     {
