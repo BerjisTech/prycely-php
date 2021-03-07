@@ -32,10 +32,10 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'https://sleekupsell.com',
-		'username' => 'takii',
-		'password' => 'Takii2020!',
-		'database' => 'fraser_pryce',
+		'hostname' => 'us-cdbr-east-03.cleardb.com/',
+		'username' => 'b6ee84413a22d8',
+		'password' => '28734fcf',
+		'database' => 'heroku_a476988322e6b36',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
