@@ -7,7 +7,7 @@ class Home extends BaseController
 	public function __construct()
 	{
 		if (!isset($_SESSION['sombo'])) {
-			return redirect()->to(site_url("https://radio.garden"));
+			redirect()->to(site_url("https://radio.garden"));
 		}
 	}
 	public function index()
