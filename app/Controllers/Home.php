@@ -7,10 +7,10 @@ class Home extends BaseController
 	public function __construct()
 	{
 		echo 'chieth';
-		if (!isset($_SESSION['sombo'])) {
+		if (!$this->session->has('sombo')) {
 			header("location: https://radio.garden");
 		} else {
-			echo '<h1>' . $_SESSION['sombo'] . '</h1>';
+			echo '<h1>' . $this->session->get('sombo') . '</h1>';
 		}
 	}
 	public function index()
