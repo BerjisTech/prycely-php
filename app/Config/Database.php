@@ -58,10 +58,10 @@ class Database extends Config
 	 */
 	public $tests = [
 		'DSN'      => '',
-		'hostname' => '127.0.0.1',
-		'username' => '',
-		'password' => '',
-		'database' => ':memory:',
+		'hostname' => 'us-cdbr-east-03.cleardb.com/',
+		'username' => 'b6ee84413a22d8',
+		'password' => '28734fcf',
+		'database' => 'heroku_a476988322e6b36',
 		'DBDriver' => 'SQLite3',
 		'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
 		'pConnect' => false,
