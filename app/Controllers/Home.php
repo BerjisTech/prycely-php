@@ -6,13 +6,8 @@ class Home extends BaseController
 {
 	public function __construct()
 	{
-		echo 'chieth';
 		if (!isset($_SESSION['sombo'])) {
-			echo "no";
 			return redirect()->to("https://radio.garden");
-		} else {
-			echo 'yes';
-			echo '<h1>' . $this->session->get('sombo') . '</h1>';
 		}
 	}
 	public function index()
