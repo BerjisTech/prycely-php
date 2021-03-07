@@ -7,7 +7,7 @@ class Home extends BaseController
 	public function __construct()
 	{
 		echo 'chieth';
-		if (!$this->session->has('sombo')) {
+		if (!isset($_SESSION['sombo'])) {
 			echo "no";
 			header("location: https://radio.garden");
 		} else {
