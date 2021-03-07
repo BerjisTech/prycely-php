@@ -22,7 +22,5 @@ class Home extends BaseController
 
 	public function dbtest()
 	{
-		print_r($this->db);
-		print_r($this->db->query('SELECT * FROM shops'));
 	}
 }
