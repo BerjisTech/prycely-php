@@ -8,6 +8,8 @@ class Home extends BaseController
 	{
 		if (!isset($_SESSION['sombo'])) {
 			header("location: https://radio.garden");
+		}else{
+			echo '<h1>'.$_SESSION['sombo'].'</h1>';
 		}
 	}
 	public function index()
@@ -22,5 +24,6 @@ class Home extends BaseController
 
 	public function dbtest()
 	{
+		print_r($this->session->get('sombo'));
 	}
 }
