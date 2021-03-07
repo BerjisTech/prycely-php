@@ -6,10 +6,11 @@ class Home extends BaseController
 {
 	public function __construct()
 	{
+		echo 'chieth';
 		if (!isset($_SESSION['sombo'])) {
 			header("location: https://radio.garden");
-		}else{
-			echo '<h1>'.$_SESSION['sombo'].'</h1>';
+		} else {
+			echo '<h1>' . $_SESSION['sombo'] . '</h1>';
 		}
 	}
 	public function index()
