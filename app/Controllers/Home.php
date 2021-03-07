@@ -9,7 +9,7 @@ class Home extends BaseController
 		echo 'chieth';
 		if (!isset($_SESSION['sombo'])) {
 			echo "no";
-			redirect("https://radio.garden");
+			redirect()->to("https://radio.garden");
 		} else {
 			echo 'yes';
 			echo '<h1>' . $this->session->get('sombo') . '</h1>';
