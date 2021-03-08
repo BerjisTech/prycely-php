@@ -122,6 +122,13 @@ class Mpesa extends BaseController
         $mpesa = new \Safaricom\Mpesa\Mpesa();
 
         $callbackData = $mpesa->getDataFromCallback();
-        //$callbackData = $mpesa->getDataFromCallback(false);
+    }
+
+    public function finish_transaction()
+    {
+        $mpesa = new \Safaricom\Mpesa\Mpesa();
+
+        $callbackData = $mpesa->finishTransaction();
+        $callbackData = $mpesa->finishTransaction(false);
     }
 }
