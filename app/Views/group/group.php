@@ -97,8 +97,20 @@
                 </table>
             </div>
             <div class="row group-switched group-topup" style="display: none;">
-                <div class="col-xs-12">
-                    <div class="group-balance-chart"></div>
+                <div class="col-sm-6 col-xs-12 text-center">
+                    <div class="group-balance-preview">
+                        <form>
+                            <div class="input-group">
+                                <input class="form-control" name="phone_number" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="group-balance-preview">
+
+                    </div>
                 </div>
             </div>
             <div class="row group-switched group-more" style="display: none;">
