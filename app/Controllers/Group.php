@@ -7,7 +7,7 @@ class Group extends BaseController
     public function __construct()
     {
         if ($this->session->get('sombo') != true) {
-            echo '<script>window.location.href="http://radio.garden/visit/nairobi/xKaC0mlq"</script>';
+            return redirect()->to('http://radio.garden/visit/nairobi/xKaC0mlq');
         }
     }
 
