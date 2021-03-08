@@ -170,7 +170,6 @@
 </div>
 <script>
     jQuery(document).ready(function($) {
-        $.noConflict();
 
         $(".chat-body").scrollTop(function() {
             return this.scrollHeight;
