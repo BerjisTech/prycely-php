@@ -1,5 +1,6 @@
 <script>
     jQuery(document).ready(function($) {
+        $.noConflict();
         let transTable = jQuery("#transTable");
         transTable.DataTable({
             //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
