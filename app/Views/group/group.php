@@ -71,26 +71,6 @@
                 </div>
             </div>
             <div class="row group-switched group-transacts" style="display: none;">
-                <?php ob_start(); ?>
-                <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
-                <script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script>
-                <script>
-                    let transTable = jQuery("#transTable");
-                    transTable.DataTable({
-                        //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-                        dom: 'Bfrtip',
-                        buttons: [
-                            'copyHtml5',
-                            'excelHtml5',
-                            'csvHtml5',
-                            'pdfHtml5',
-                            'print'
-                        ]
-                    });
-                    transTable.closest('.dataTables_wrapper').find('select').select2({
-                        minimumResultsForSearch: -1
-                    });
-                </script>
                 <table class="datatable" id="transTable">
                     <thead>
                         <tr>
@@ -115,7 +95,6 @@
                         <?php endfor; ?>
                     </tbody>
                 </table>
-                <?php ob_end_flush(); ?>
             </div>
             <div class="row group-switched group-topup" style="display: none;">
                 <div class="col-xs-12">
@@ -250,53 +229,32 @@
         });
         donut_chart_demo.parent().attr('style', '');
 
-        // check_dt()
-
     });
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
-    function loadjscssfile(filename, filetype) {
-        if (filetype == "js") { //if filename is a external JavaScript file
-            var fileref = document.createElement('script')
-            fileref.setAttribute("type", "text/javascript")
-            fileref.setAttribute("src", filename)
-        } else if (filetype == "css") { //if filename is an external CSS file
-            var fileref = document.createElement("link")
-            fileref.setAttribute("rel", "stylesheet")
-            fileref.setAttribute("type", "text/css")
-            fileref.setAttribute("href", filename)
-        }
-        if (typeof fileref != "undefined")
-            document.getElementsByTagName("body")[0].appendChild(fileref)
-    }
-
-    // function check_dt() {
-    //     if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css')) {
-    //         if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
-    //             let transTable = jQuery("#transTable");
-    //             transTable.DataTable({
-    //                 //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-    //                 dom: 'Bfrtip',
-    //                 buttons: [
-    //                     'copyHtml5',
-    //                     'excelHtml5',
-    //                     'csvHtml5',
-    //                     'pdfHtml5',
-    //                     'print'
-    //                 ]
-    //             });
-    //             transTable.closest('.dataTables_wrapper').find('select').select2({
-    //                 minimumResultsForSearch: -1
-    //             });
-    //         } else {
-    //             check_dt()
-    //         }
-    //     } else {}
-    // }
 </script>
-
+<?php ob_start(); ?>
+<link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
+<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script>
+<script>
+    let transTable = jQuery("#transTable");
+    transTable.DataTable({
+        //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5',
+            'print'
+        ]
+    });
+    transTable.closest('.dataTables_wrapper').find('select').select2({
+        minimumResultsForSearch: -1
+    });
+</script>
+<?php ob_end_flush(); ?>
 <!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
 <script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script> -->
