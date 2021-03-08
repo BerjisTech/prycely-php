@@ -247,6 +247,8 @@
                     minimumResultsForSearch: -1
                 });
             }
+        } else {
+            loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')
         }
 
     });
