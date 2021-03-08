@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/js/select2/select2.css'); ?>" id="style-resource-3">
 <link rel="stylesheet" href="<?php echo base_url('assets/js/daterangepicker/daterangepicker-bs3.css'); ?>" id="style-resource-4">
 
-<script src="<?php echo base_url('assets/js/jquery-1.11.3.min.js'); ?>"></script>
+<script src="<?php echo base_url('node_modules/jquery/dist/jquery.min.js'); ?>"></script>
 
 <!--[if lt IE 9]><script src="<?php echo base_url(); ?>/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
