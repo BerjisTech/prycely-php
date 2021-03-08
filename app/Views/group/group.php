@@ -1,21 +1,6 @@
 <script>
     jQuery(document).ready(function($) {
         $.noConflict();
-        let transTable = jQuery("#transTable");
-        transTable.DataTable({
-            //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            dom: 'Bfrtip',
-            buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5',
-                'print'
-            ]
-        });
-        transTable.closest('.dataTables_wrapper').find('select').select2({
-            minimumResultsForSearch: -1
-        });
 
         $(".chat-body").scrollTop(function() {
             return this.scrollHeight;
@@ -74,10 +59,44 @@
             colors: ['#EC3B83', '#00ACD6', '#E8B51B']
         });
         donut_chart_demo.parent().attr('style', '');
+
+        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'js') &&
+            loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
+            let transTable = jQuery("#transTable");
+            transTable.DataTable({
+                //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5',
+                    'print'
+                ]
+            });
+            transTable.closest('.dataTables_wrapper').find('select').select2({
+                minimumResultsForSearch: -1
+            });
+        }
     });
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function loadjscssfile(filename, filetype) {
+        if (filetype == "js") { //if filename is a external JavaScript file
+            var fileref = document.createElement('script')
+            fileref.setAttribute("type", "text/javascript")
+            fileref.setAttribute("src", filename)
+        } else if (filetype == "css") { //if filename is an external CSS file
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref != "undefined")
+            document.getElementsByTagName("head")[0].appendChild(fileref)
     }
 </script>
 <div class="row">
@@ -252,5 +271,5 @@
 </div>
 
 
-<link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
-<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script>
+<!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
+<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script> -->
