@@ -274,7 +274,6 @@
                 check_dt()
             }
         } else {
-            check_dt()
         }
     }
 </script>
