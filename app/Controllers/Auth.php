@@ -8,7 +8,7 @@ class Auth extends BaseController
     {
         helper('url');
         $_SESSION['sombo'] = 'true';
-        redirect()->to('overview');
+        return redirect()->to('overview');
     }
 
     public function login()
