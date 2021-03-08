@@ -30,6 +30,7 @@ class BaseController extends Controller
 	 * @var array
 	 */
 	protected $helpers = [];
+	protected $libraries = [];
 
 	/**
 	 * Constructor.

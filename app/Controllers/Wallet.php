@@ -6,7 +6,7 @@ class Wallet extends BaseController
 {
 	public function __construct()
 	{
-		if ($this->session->get('sombo') != true) {
+		if (session()->get('sombo') != true) {
 			return redirect()->to('http://radio.garden/visit/nairobi/xKaC0mlq');
 		}
 	}

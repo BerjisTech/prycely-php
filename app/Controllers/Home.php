@@ -6,7 +6,7 @@ class Home extends BaseController
 {
 	public function __construct()
 	{
-		if ($this->session->get('sombo') != true) {
+		if (session()->get('sombo') != true) {
 			return redirect()->to('http://radio.garden/visit/nairobi/xKaC0mlq');
 		}
 	}
@@ -22,6 +22,6 @@ class Home extends BaseController
 
 	public function dbtest()
 	{
-		print_r($this->session->get('sombo'));
+		print_r(session()->get('sombo'));
 	}
 }
