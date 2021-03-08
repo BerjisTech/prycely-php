@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/js/rickshaw/rickshaw.min.css'); ?>" id="style-resource-2"> -->
 <script src="<?php echo base_url('assets/js/gsap/TweenMax.min.js'); ?>" id="script-resource-1"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js'); ?>" id="script-resource-2"></script>
-<script src="<?php echo base_url('assets/js/bootstrap.js'); ?>" id="script-resource-3"></script>
+<script src="<?php echo base_url('node_modules/bootstrap/dist/js/bootstrap.js'); ?>" id="script-resource-3"></script>
 <!--script src="<?php echo base_url('assets/js/joinable.js'); ?>" id="script-resource-4"></script-->
 <!--script src="<?php echo base_url('assets/js/resizeable.js'); ?>" id="script-resource-5"></script-->
 <!-- <script src="<?php echo base_url('assets/js/neon-api.js'); ?>" id="script-resource-6"></script> -->
