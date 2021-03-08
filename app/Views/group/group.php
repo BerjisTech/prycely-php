@@ -229,27 +229,7 @@
         });
         donut_chart_demo.parent().attr('style', '');
 
-        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css')) {
-            if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
-                let transTable = jQuery("#transTable");
-                transTable.DataTable({
-                    //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copyHtml5',
-                        'excelHtml5',
-                        'csvHtml5',
-                        'pdfHtml5',
-                        'print'
-                    ]
-                });
-                transTable.closest('.dataTables_wrapper').find('select').select2({
-                    minimumResultsForSearch: -1
-                });
-            }
-        } else {
-            loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')
-        }
+        check_dt()
 
     });
 
@@ -270,6 +250,32 @@
         }
         if (typeof fileref != "undefined")
             document.getElementsByTagName("body")[0].appendChild(fileref)
+    }
+
+    function check_dt() {
+        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css')) {
+            if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
+                let transTable = jQuery("#transTable");
+                transTable.DataTable({
+                    //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5',
+                        'print'
+                    ]
+                });
+                transTable.closest('.dataTables_wrapper').find('select').select2({
+                    minimumResultsForSearch: -1
+                });
+            } else {
+                check_dt()
+            }
+        } else {
+            check_dt()
+        }
     }
 </script>
 
