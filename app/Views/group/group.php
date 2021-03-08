@@ -251,9 +251,9 @@
             'print'
         ]
     });
-    transTable.closest('.dataTables_wrapper').find('select').select2({
-        minimumResultsForSearch: -1
-    });
+    // transTable.closest('.dataTables_wrapper').find('select').select2({
+    //     minimumResultsForSearch: -1
+    // });
 </script>
 <?php ob_end_flush(); ?>
 <!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
