@@ -1,105 +1,3 @@
-<script>
-    jQuery(document).ready(function($) {
-        $.noConflict();
-
-        $(".chat-body").scrollTop(function() {
-            return this.scrollHeight;
-        });
-        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-        // Line Charts
-        var line_chart_demo = $("#line-chart");
-        var line_chart = Morris.Line({
-            element: 'line-chart',
-            data: [
-                <?php
-                for ($m = 30; $m > -1; $m -= 6) : ?> {
-                        y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
-                        a: getRandomInt(10000, 1000),
-                        b: getRandomInt(10000, 1000)
-                    },
-                <?php endfor; ?>
-            ],
-            xkey: 'y',
-            ykeys: ['a', 'b'],
-            labels: ['Deposits', 'Withdrawals'],
-            lineColors: ['#ec3b83', '#E8B51B', '#00acd6'],
-            xLabelFormat: function(d) {
-                return d.getDate() + ' ' + months[d.getMonth()];
-            },
-            dateFormat: function(x) {
-                let shit = new Date(x);
-                var douche = shit.getDate() + ' ' + months[shit.getMonth()];
-                return douche;
-            },
-            resize: true,
-            smooth: true,
-            pointSize: 0,
-            redraw: true
-        });
-        line_chart_demo.parent().attr('style', '');
-
-        // Donut Chart
-        var donut_chart_demo = $("#donut-chart");
-        donut_chart_demo.parent().show();
-        var donut_chart = Morris.Donut({
-            element: 'donut-chart',
-            data: [{
-                    label: "Member Deposits",
-                    value: getRandomInt(10, 50)
-                },
-                {
-                    label: "Project Expenses",
-                    value: getRandomInt(10, 50)
-                },
-                {
-                    label: "Withdrawals & Refunds",
-                    value: getRandomInt(10, 50)
-                }
-            ],
-            colors: ['#EC3B83', '#00ACD6', '#E8B51B']
-        });
-        donut_chart_demo.parent().attr('style', '');
-
-        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css'))
-            if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
-                let transTable = jQuery("#transTable");
-                transTable.DataTable({
-                    //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copyHtml5',
-                        'excelHtml5',
-                        'csvHtml5',
-                        'pdfHtml5',
-                        'print'
-                    ]
-                });
-                transTable.closest('.dataTables_wrapper').find('select').select2({
-                    minimumResultsForSearch: -1
-                });
-            }
-
-    });
-
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function loadjscssfile(filename, filetype) {
-        if (filetype == "js") { //if filename is a external JavaScript file
-            var fileref = document.createElement('script')
-            fileref.setAttribute("type", "text/javascript")
-            fileref.setAttribute("src", filename)
-        } else if (filetype == "css") { //if filename is an external CSS file
-            var fileref = document.createElement("link")
-            fileref.setAttribute("rel", "stylesheet")
-            fileref.setAttribute("type", "text/css")
-            fileref.setAttribute("href", filename)
-        }
-        if (typeof fileref != "undefined")
-            document.getElementsByTagName("body")[0].appendChild(fileref)
-    }
-</script>
 <div class="row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs visible-xs">
@@ -270,7 +168,108 @@
     </div>
 
 </div>
+<script>
+    jQuery(document).ready(function($) {
+        $.noConflict();
 
+        $(".chat-body").scrollTop(function() {
+            return this.scrollHeight;
+        });
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        // Line Charts
+        var line_chart_demo = $("#line-chart");
+        var line_chart = Morris.Line({
+            element: 'line-chart',
+            data: [
+                <?php
+                for ($m = 30; $m > -1; $m -= 6) : ?> {
+                        y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
+                        a: getRandomInt(10000, 1000),
+                        b: getRandomInt(10000, 1000)
+                    },
+                <?php endfor; ?>
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Deposits', 'Withdrawals'],
+            lineColors: ['#ec3b83', '#E8B51B', '#00acd6'],
+            xLabelFormat: function(d) {
+                return d.getDate() + ' ' + months[d.getMonth()];
+            },
+            dateFormat: function(x) {
+                let shit = new Date(x);
+                var douche = shit.getDate() + ' ' + months[shit.getMonth()];
+                return douche;
+            },
+            resize: true,
+            smooth: true,
+            pointSize: 0,
+            redraw: true
+        });
+        line_chart_demo.parent().attr('style', '');
+
+        // Donut Chart
+        var donut_chart_demo = $("#donut-chart");
+        donut_chart_demo.parent().show();
+        var donut_chart = Morris.Donut({
+            element: 'donut-chart',
+            data: [{
+                    label: "Member Deposits",
+                    value: getRandomInt(10, 50)
+                },
+                {
+                    label: "Project Expenses",
+                    value: getRandomInt(10, 50)
+                },
+                {
+                    label: "Withdrawals & Refunds",
+                    value: getRandomInt(10, 50)
+                }
+            ],
+            colors: ['#EC3B83', '#00ACD6', '#E8B51B']
+        });
+        donut_chart_demo.parent().attr('style', '');
+
+        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css'))
+            if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
+                let transTable = jQuery("#transTable");
+                transTable.DataTable({
+                    //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5',
+                        'print'
+                    ]
+                });
+                transTable.closest('.dataTables_wrapper').find('select').select2({
+                    minimumResultsForSearch: -1
+                });
+            }
+
+    });
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function loadjscssfile(filename, filetype) {
+        if (filetype == "js") { //if filename is a external JavaScript file
+            var fileref = document.createElement('script')
+            fileref.setAttribute("type", "text/javascript")
+            fileref.setAttribute("src", filename)
+        } else if (filetype == "css") { //if filename is an external CSS file
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref != "undefined")
+            document.getElementsByTagName("body")[0].appendChild(fileref)
+    }
+</script>
 
 <!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
 <script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script> -->
