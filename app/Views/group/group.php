@@ -74,6 +74,23 @@
                 <?php ob_start(); ?>
                 <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
                 <script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script>
+                <script>
+                    let transTable = jQuery("#transTable");
+                    transTable.DataTable({
+                        //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copyHtml5',
+                            'excelHtml5',
+                            'csvHtml5',
+                            'pdfHtml5',
+                            'print'
+                        ]
+                    });
+                    transTable.closest('.dataTables_wrapper').find('select').select2({
+                        minimumResultsForSearch: -1
+                    });
+                </script>
                 <table class="datatable" id="transTable">
                     <thead>
                         <tr>
@@ -87,23 +104,6 @@
                     </thead>
                     <tbody>
                         <?php for ($i = 1; $i <= 100; $i++) : ?>
-                            <script>
-                                let transTable = jQuery("#transTable");
-                                transTable.DataTable({
-                                    //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-                                    dom: 'Bfrtip',
-                                    buttons: [
-                                        'copyHtml5',
-                                        'excelHtml5',
-                                        'csvHtml5',
-                                        'pdfHtml5',
-                                        'print'
-                                    ]
-                                });
-                                transTable.closest('.dataTables_wrapper').find('select').select2({
-                                    minimumResultsForSearch: -1
-                                });
-                            </script>
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td>Jina Ya Mtu</td>
