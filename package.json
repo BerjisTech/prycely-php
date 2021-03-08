@@ -1,0 +1,15 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "datatables.net": "^1.10.23",
+    "datatables.net-bs": "^1.10.23",
+    "datatables.net-bs4": "^1.10.23",
+    "datatables.net-dt": "^1.10.23",
+    "datatables.net-jqui": "^1.10.23",
+    "jquery": "^3.6.0",
+    "morris": "^0.1.4",
+    "morris-js-module": "^1.2.1"
+  }
+}
