@@ -60,23 +60,24 @@
         });
         donut_chart_demo.parent().attr('style', '');
 
-        loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css')
-        loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')
-        let transTable = jQuery("#transTable");
-        transTable.DataTable({
-            //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            dom: 'Bfrtip',
-            buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5',
-                'print'
-            ]
-        });
-        transTable.closest('.dataTables_wrapper').find('select').select2({
-            minimumResultsForSearch: -1
-        });
+        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css'))
+            if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
+                let transTable = jQuery("#transTable");
+                transTable.DataTable({
+                    //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5',
+                        'print'
+                    ]
+                });
+                transTable.closest('.dataTables_wrapper').find('select').select2({
+                    minimumResultsForSearch: -1
+                });
+            }
 
     });
 
