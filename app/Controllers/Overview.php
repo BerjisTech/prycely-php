@@ -12,6 +12,7 @@ class Overview extends BaseController
     }
     public function index()
     {
+        echo '<script>alert('.session()->get('sombo').')</script>';
         $data['page_name'] = 'overview/index';
         $data['page_title'] = 'Overview';
         return view('index', $data);
