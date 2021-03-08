@@ -251,5 +251,8 @@
 </div>
 
 
-<link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
-<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script>
+<!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
+<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script> -->
+
+<link rel="stylesheet" href="<?php echo base_url('node_modules/datatables.net-dt/css/jquery.dataTables.min.css'); ?>">
+<script src="<?php echo base_url('node_modules/datatables.net-dt/js/dataTables.dataTables.min.js'); ?>"></script>
