@@ -7,7 +7,7 @@ class Auth extends BaseController
     public function index()
     {
         $_SESSION['sombo'] = 'true';
-        redirect('overview');
+        redirect()->to('overview');
     }
 
     public function login()
