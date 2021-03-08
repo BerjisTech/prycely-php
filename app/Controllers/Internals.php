@@ -6,7 +6,7 @@ class Internals extends BaseController
 {
     public function __construct()
     {
-        if (!isset($_SESSION['sombo'])) {
+        if ($this->session->get('sombo') != true) {
             echo '<script>window.location.href="http://radio.garden/visit/nairobi/xKaC0mlq"</script>';
         }
     }
