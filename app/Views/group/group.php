@@ -60,7 +60,7 @@
         });
         donut_chart_demo.parent().attr('style', '');
 
-        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'js') &&
+        if (loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.css"); ?>', 'css') &&
             loadjscssfile('<?php echo base_url("assets/js/datatables/datatables.js"); ?>', 'js')) {
             let transTable = jQuery("#transTable");
             transTable.DataTable({
