@@ -1,7 +1,7 @@
 <script>
     jQuery(document).ready(function($) {
-        var $table4 = jQuery("#transTable");
-        $table4.DataTable({
+        var table4 = jQuery("#transTable");
+        table4.DataTable({
             //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
             dom: 'Bfrtip',
             buttons: [
@@ -12,7 +12,7 @@
                 'print'
             ]
         });
-        $table4.closest('.dataTables_wrapper').find('select').select2({
+        table4.closest('.dataTables_wrapper').find('select').select2({
             minimumResultsForSearch: -1
         });
 
