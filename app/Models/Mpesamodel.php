@@ -11,7 +11,7 @@ class Mpesamodel extends Model
         $accessToken = "";
         $status = 0;
         $description = "";
-        $url = 'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+        $url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         $credentials = base64_encode(env('MPESA_CONSUMER_KEY') . ':' . env('MPESA_CONSUMER_SECRET'));
@@ -24,7 +24,7 @@ class Mpesamodel extends Model
         $responseVals = json_decode($curl_response, TRUE);
         $accessToken = $responseVals['access_token'];
         $status = 1;
-        
+
         // if ($curl_response != FALSE) {
         //     $responseVals = json_decode($curl_response, TRUE);
         //     $accessToken = $responseVals['access_token'];
