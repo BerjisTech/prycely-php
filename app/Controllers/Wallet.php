@@ -44,6 +44,6 @@ class Wallet extends BaseController
 	{
 		// echo env('MPESA_CONSUMER_KEY') . ':' . env('MPESA_CONSUMER_SECRET');
 		$mpesa = new \App\Models\Mpesamodel();
-		print_r($mpesa->generate_token());
+		print_r($mpesa->generate_token()['token']);
 	}
 }
