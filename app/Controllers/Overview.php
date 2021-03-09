@@ -12,7 +12,6 @@ class Overview extends BaseController
     }
     public function index()
     {
-        print_r(session()->get('sombo'));
         $data['page_name'] = 'overview/index';
         $data['page_title'] = 'Overview';
         return view('index', $data);
