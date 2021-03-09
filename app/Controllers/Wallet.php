@@ -43,6 +43,6 @@ class Wallet extends BaseController
 	public function test_mpesa()
 	{
 		$mpesa = new \App\Models\Mpesamodel();
-		echo $mpesa;
+		print_r($mpesa->generate_token());
 	}
 }
