@@ -33,6 +33,6 @@ class Mpesamodel extends Model
         //     $description = "Curl Failed: " . curl_error($curl);
         // }
         $array = array('status' => $status, 'token' => $accessToken, 'description' => $description);
-        return json_encode($array);
+        return $array;
     }
 }
