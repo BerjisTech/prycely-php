@@ -7,6 +7,7 @@ class Mpesa extends BaseController
 {
     public function index()
     {
+        
     }
 
     public function b2c_request()
@@ -129,6 +130,6 @@ class Mpesa extends BaseController
         $mpesa = new \Safaricom\Mpesa\Mpesa();
 
         $callbackData = $mpesa->finishTransaction();
-        $callbackData = $mpesa->finishTransaction(false);
+        // $callbackData = $mpesa->finishTransaction(false);
     }
 }

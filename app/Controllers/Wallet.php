@@ -39,4 +39,10 @@ class Wallet extends BaseController
 	{
 		echo 'edit wallet';
 	}
+
+	public function test_mpesa()
+	{
+		$mpesa = new \App\Models\Mpesamodel();
+		print_r($mpesa);
+	}
 }
