@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace App\Controllers;
 
 
@@ -7,11 +7,23 @@ class Mpesa extends BaseController
 {
     public function index()
     {
-        
     }
 
     public function b2c_request()
     {
+        $token = (new \App\Models\Mpesamodel())->generate_token()['token'];
+
+        $InitiatorName = 'TestInit610';
+        $SecurityCredential = "";
+        $CommandID = "BusinessPayment";
+        $Amount = "449";
+        $PartyA = "600610";
+        $PartyB = "254725227513";
+        $Remarks = "User withdrawal";
+        $QueueTimeOutURL = base_url('mpesa/callback_post_data');
+        $ResultURL = base_url('mpesa/callback_post_data');
+        $Occasion = "";
+
         $mpesa = new \Safaricom\Mpesa\Mpesa();
         $b2cTransaction = $mpesa->b2c(
             $InitiatorName,
@@ -24,53 +36,6 @@ class Mpesa extends BaseController
             $QueueTimeOutURL,
             $ResultURL,
             $Occasion
-        );
-    }
-
-    public function balance_request()
-    {
-        $mpesa = new \Safaricom\Mpesa\Mpesa();
-
-        $balanceInquiry = $mpesa->accountBalance(
-            $CommandID,
-            $Initiator,
-            $SecurityCredential,
-            $PartyA,
-            $IdentifierType,
-            $Remarks,
-            $QueueTimeOutURL,
-            $ResultURL
-        );
-    }
-
-    public function transaction_status_request()
-    {
-        $mpesa = new \Safaricom\Mpesa\Mpesa();
-
-        $trasactionStatus = $mpesa->transactionStatus(
-            $Initiator,
-            $SecurityCredential,
-            $CommandID,
-            $TransactionID,
-            $PartyA,
-            $IdentifierType,
-            $ResultURL,
-            $QueueTimeOutURL,
-            $Remarks,
-            $Occasion
-        );
-    }
-
-    public function b2b_request()
-    {
-        $mpesa = new \Safaricom\Mpesa\Mpesa();
-
-        $b2bTransaction = $mpesa->b2b(
-            $ShortCode,
-            $CommandID,
-            $Amount,
-            $Msisdn,
-            $BillRefNumber
         );
     }
 
@@ -132,4 +97,51 @@ class Mpesa extends BaseController
         $callbackData = $mpesa->finishTransaction();
         // $callbackData = $mpesa->finishTransaction(false);
     }
-}
+
+    public function balance_request()
+    {
+        $mpesa = new \Safaricom\Mpesa\Mpesa();
+
+        $balanceInquiry = $mpesa->accountBalance(
+            $CommandID,
+            $Initiator,
+            $SecurityCredential,
+            $PartyA,
+            $IdentifierType,
+            $Remarks,
+            $QueueTimeOutURL,
+            $ResultURL
+        );
+    }
+
+    public function transaction_status_request()
+    {
+        $mpesa = new \Safaricom\Mpesa\Mpesa();
+
+        $trasactionStatus = $mpesa->transactionStatus(
+            $Initiator,
+            $SecurityCredential,
+            $CommandID,
+            $TransactionID,
+            $PartyA,
+            $IdentifierType,
+            $ResultURL,
+            $QueueTimeOutURL,
+            $Remarks,
+            $Occasion
+        );
+    }
+
+    public function b2b_request()
+    {
+        $mpesa = new \Safaricom\Mpesa\Mpesa();
+
+        $b2bTransaction = $mpesa->b2b(
+            $ShortCode,
+            $CommandID,
+            $Amount,
+            $Msisdn,
+            $BillRefNumber
+        );
+    }
+} */
