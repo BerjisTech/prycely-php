@@ -95,23 +95,23 @@
                         <span class="the_subtitle">How much do you and your group members intend to raise? This helps everyone keep track of the investment or saings progress</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Group Goal</span>
-                            <div class="input-group">
+                            <div style="width: 100%;" class="input-group">
                                 <select class="input-grou-addon">
-                                    <option value="USD"><img src="<?php echo base_url('assets/images/flags/us.svg'); ?>"/> USD</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/gb.svg'); ?>"/> GBP</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/ca.svg'); ?>"/> CAD</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/ke.svg'); ?>"/> KES</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/jm.svg'); ?>"/> JMD</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/au.svg'); ?>"/> AUD</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/nz.svg'); ?>"/> NZD</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/cn.svg'); ?>"/> CNY</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/jp.svg'); ?>"/> JPY</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/ug.svg'); ?>"/> UGS</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/tz.svg'); ?>"/> TZS</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/eg.svg'); ?>"/> EGP</option>
-                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/za.svg'); ?>"/> SAR</option>
+                                    <option value="USD"><img src="<?php echo base_url('assets/images/flags/us.svg'); ?>" /> USD</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/gb.svg'); ?>" /> GBP</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/ca.svg'); ?>" /> CAD</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/ke.svg'); ?>" /> KES</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/jm.svg'); ?>" /> JMD</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/au.svg'); ?>" /> AUD</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/nz.svg'); ?>" /> NZD</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/cn.svg'); ?>" /> CNY</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/jp.svg'); ?>" /> JPY</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/ug.svg'); ?>" /> UGS</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/tz.svg'); ?>" /> TZS</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/eg.svg'); ?>" /> EGP</option>
+                                    <option value="GBP"><img src="<?php echo base_url('assets/images/flags/za.svg'); ?>" /> SAR</option>
                                 </select>
-                                <input autocomplete="FALSE" type="number" placeholder="0.00" class="form_control" name="group_goal" />
+                                <input style="width: auto;" autocomplete="FALSE" type="number" placeholder="0.00" class="form_control" name="group_goal" />
                             </div>
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Make sure your password is at least 8 characters long and avoid personal details like your date of birth, pet name, nickname or simple patterns like 1234 or 0000</span>
                             <button class="ca_next" data-step="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>

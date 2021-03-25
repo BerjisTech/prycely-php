@@ -187,7 +187,7 @@
     font-weight: 500;
 }
 
-.the_email_input input, .the_email_input textarea {
+.the_email_input input, .the_email_input textarea, .the_email_input select {
     border-radius: 5px;
     border: 2px solid #828486;
     padding: 10px;
