@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 yourself">
-                        <h3 class="the_title">Tell us about yourself</h3>
+                        <h3 class="the_title">Which type group are you creating</h3>
                         <div class="user_type">
                             <table>
                                 <tbody>
@@ -86,7 +86,7 @@
                         <span class="the_subtitle">Something short about this group.<span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Group Description</span>
-                            <textarea autocomplete="FALSE" placeholder="Write here" class="form_control" name="group_description" ></textarea>
+                            <textarea autocomplete="FALSE" placeholder="Write here" class="form_control" name="group_description"></textarea>
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
                             <button class="ca_next" data-step="code" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                         </div>
