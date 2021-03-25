@@ -62,7 +62,7 @@
                                 <tbody>
                                     <tr class="user_type_chooser" data-type="personal">
                                         <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
-                                        <td class="user-type">Money Laundering<span>Unlimited. We are open to money laundering😜</span></td>
+                                        <td class="user-type">Wash Wash<span>Laundering. Unlimited members. We are open to money laundering😜</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
                                 </tbody>
