@@ -75,18 +75,18 @@
                         <span class="the_subtitle">They don't have to be unique. Just something that describes your group</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Group Name</span>
-                            <input autocomplete="FALSE" type="text" placeholder="you@mail.com" class="form_control" name="user_email" />
+                            <input autocomplete="FALSE" type="text" placeholder="The Money Group" class="form_control" name="group_name" />
                             <button type="submit" class="ca_next" data-step="email">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                     <div class="col-xs-12 the_code" style="display: none;">
-                        <h3 class="the_title">Your confirmation code is waiting for you in your email box!</h3>
-                        <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
+                        <h3 class="the_title">Add A Group Description</h3>
+                        <span class="the_subtitle">Something short about this group.<span class="email_with_code"></span> to confirm your email address</span>
                         <div class="the_email_input">
-                            <span class="the_email_input_title">Confirmation Code</span>
-                            <input autocomplete="FALSE" type="text" pattern="[a-zA-Z0-9]{3}-[a-zA-Z0-9]{3}" placeholder="XXX-XXX" class="form_control" name="user_code" />
+                            <span class="the_email_input_title">Group Description</span>
+                            <textare autocomplete="FALSE" placeholder="Write here" class="form_control" name="group_description" ></textarea>
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
                             <button class="ca_next" data-step="code" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                         </div>
