@@ -24,4 +24,11 @@ class Group extends BaseController
         $data['page_title'] = 'Diani Vacation';
         return view('index', $data);
     }
+
+    public function create()
+    {
+        $data['page_name'] = 'group/create';
+        $data['page_title'] = 'Create New Group';
+        return view('index', $data);
+    }
 }
