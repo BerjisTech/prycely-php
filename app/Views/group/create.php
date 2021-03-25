@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>On Boarding</title>
+    <title>Create New Group</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
@@ -25,7 +25,7 @@
             <div class="col-sm-8 left_home_panel">
                 <div class="row top">
                     <div class="col-md-8 col-sm-7 col-xs-6">
-                        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" /> <span class="logo-text">MonMax</span></a>
+                        <a href="#" onclick="window.history.back(false);">Cancel</a>
                     </div>
                     <div class="col-md-4 col-sm-5 col-xs-6 text-right">
                         <a href="<?php echo base_url('auth/login'); ?>">Log In</a>
@@ -40,7 +40,7 @@
                                 <tbody>
                                     <tr class="user_type_chooser" data-type="company">
                                         <td><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></td>
-                                        <td class="user-type">Company<span>Best suited for Companies</span></td>
+                                        <td class="user-type">CHAMA<span>Casual savings between close friends. 250 Members Max</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
                                 </tbody>
@@ -51,7 +51,7 @@
                                 <tbody>
                                     <tr class="user_type_chooser" data-type="freelancer">
                                         <td><img src="<?php echo base_url('assets/images/freelancer.jpg'); ?>" /></td>
-                                        <td class="user-type">Freelancer<span>Best suited for Freelancers</span></td>
+                                        <td class="user-type">SACCO<span>Official Savings. Plus project management. 500 Max</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
                                 </tbody>
@@ -62,7 +62,7 @@
                                 <tbody>
                                     <tr class="user_type_chooser" data-type="personal">
                                         <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
-                                        <td class="user-type">Individual<span>Best suited for Individuals and Personal use</span></td>
+                                        <td class="user-type">Wash Wash<span>Laundering. Unlimited members. We are open to money laundering😜</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
                                 </tbody>
