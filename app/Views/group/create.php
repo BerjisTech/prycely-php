@@ -71,11 +71,11 @@
                         <span class="go_back"><a href="<?php echo base_url() ?>" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                     <div class="col-xs-12 the_email" style="display: none;">
-                        <h3 class="the_title">Enter your email address</h3>
-                        <span class="the_subtitle">You'll need to log in and access your account</span>
+                        <h3 class="the_title">Choose Group Name</h3>
+                        <span class="the_subtitle">They don't have to be unique. Just something that describes your group</span>
                         <div class="the_email_input">
-                            <span class="the_email_input_title">Email Address</span>
-                            <input autocomplete="FALSE" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@mail.com" class="form_control" name="user_email" />
+                            <span class="the_email_input_title">Group Name</span>
+                            <input autocomplete="FALSE" type="text" placeholder="you@mail.com" class="form_control" name="user_email" />
                             <button type="submit" class="ca_next" data-step="email">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
