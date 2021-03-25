@@ -177,7 +177,7 @@
     text-align: left;
 }
 
-.the_email_input .agreement, .the_email_input input, .the_email_input button {
+.the_email_input .agreement, .the_email_input input, .the_email_input button,.the_email_input textarea {
     display: inline-table;
     width: 100%;
     text-align: left;
