@@ -27,7 +27,6 @@ class Group extends BaseController
 
     public function create()
     {
-        $data['page_name'] = 'group/create';
-        return view('group', $data);
+        return view('group/create', $data);
     }
 }
