@@ -1,12 +1,6 @@
-RewriteEngine on
-RewriteCond $1 !^(index\.php|images|assets|css|js|robots\.txt|favicon\.ico)
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ./public/index.php/$1 [L,QSA]
-
-#RewriteEngine On 
-#RewriteCond %{HTTP_HOST} ^fraser-pryce.herokuapp.com [NC] 
-#RewriteCond %{HTTPS} off 
-#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule ^(.*)$ index.php/$1 [L]
 
 SetEnv CI_ENVIRONMENT development
