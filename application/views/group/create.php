@@ -27,7 +27,7 @@
                     <div class="col-md-8 col-sm-7 col-xs-6">
                     </div>
                     <div class="col-md-4 col-sm-5 col-xs-6 text-right">
-                        <a href="" onclick="window.history.go(-1)">cancel</a>
+                        <a href="" onclick="window.history.back()">cancel</a>
                     </div>
                 </div>
                 <div class="row">
@@ -96,20 +96,20 @@
                         <div class="the_email_input">
                             <span class="the_email_input_title">Group Goal</span>
                             <div style="width: 100%;" class="input-group">
-                                <select class="selectboxit visible">
-                                    <option value="USD" data-iconurl="<?php echo base_url('assets/images/flags/us.svg'); ?>"> USD</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/gb.svg'); ?>"> GBP</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/ca.svg'); ?>"> CAD</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/ke.svg'); ?>"> KES</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/jm.svg'); ?>"> JMD</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/au.svg'); ?>"> AUD</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/nz.svg'); ?>"> NZD</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/cn.svg'); ?>"> CNY</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/jp.svg'); ?>"> JPY</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/ug.svg'); ?>"> UGS</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/tz.svg'); ?>"> TZS</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/eg.svg'); ?>"> EGP</option>
-                                    <option value="GBP" data-iconurl="<?php echo base_url('assets/images/flags/za.svg'); ?>"> SAR</option>
+                                <select>
+                                    <option value="USD" data-thumbnail="<?php echo base_url('assets/images/flags/us.svg'); ?>"> USD</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/gb.svg'); ?>"> GBP</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/ca.svg'); ?>"> CAD</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/ke.svg'); ?>"> KES</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/jm.svg'); ?>"> JMD</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/au.svg'); ?>"> AUD</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/nz.svg'); ?>"> NZD</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/cn.svg'); ?>"> CNY</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/jp.svg'); ?>"> JPY</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/ug.svg'); ?>"> UGS</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/tz.svg'); ?>"> TZS</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/eg.svg'); ?>"> EGP</option>
+                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/za.svg'); ?>"> SAR</option>
                                 </select>
                                 <input style="width: auto;" autocomplete="FALSE" type="number" placeholder="0.00" name="group_goal" />
                             </div>
