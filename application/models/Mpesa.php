@@ -1,6 +1,6 @@
 <?php
 
-class Mpesamodel extends CI_Model
+class Mpesa extends CI_Model
 {
     public function generate_token()
     {
