@@ -6,7 +6,7 @@ class Onboarding extends CI_Controller
 {
     public function __construct()
     {
-        if ($this->session()->get('sombo') != true) {
+        if ($this->session->userdata('sombo') != true) {
             redirect('http://radio.garden/visit/nairobi/xKaC0mlq');
         }
     }

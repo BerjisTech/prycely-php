@@ -6,7 +6,7 @@ class Home extends CI_Controller
 {
 	public function __construct()
 	{
-		if ($this->session()->get('sombo') != true) {
+		if ($this->session->userdata('sombo') != true) {
 			redirect('http://radio.garden/visit/nairobi/xKaC0mlq');
 		}
 	}
@@ -22,6 +22,6 @@ class Home extends CI_Controller
 
 	public function dbtest()
 	{
-		print_r(session()->get('sombo'));
+		print_r($this->session->get('sombo'));
 	}
 }
