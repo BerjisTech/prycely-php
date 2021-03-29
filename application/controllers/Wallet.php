@@ -6,7 +6,7 @@ class Wallet extends CI_Controller
 {
 	public function __construct()
 	{
-		if (session()->get('sombo') != true) {
+		if ($this->session()->get('sombo') != true) {
 			redirect('http://radio.garden/visit/nairobi/xKaC0mlq');
 		}
 	}
