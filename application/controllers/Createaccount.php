@@ -1,4 +1,6 @@
 <?php
+ob_start();
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Createaccount extends CI_Controller
 {

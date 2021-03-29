@@ -1,6 +1,6 @@
 <?php
-
-
+ob_start();
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Wallet extends CI_Controller
 {
@@ -42,8 +42,6 @@ class Wallet extends CI_Controller
 
 	public function test_mpesa()
 	{
-		// echo env('MPESA_CONSUMER_KEY') . ':' . env('MPESA_CONSUMER_SECRET');
-		$mpesa = new \App\Models\Mpesamodel();
-		echo $mpesa->generate_token()['token'];
+		echo $this->Mpesa->generate_token()['token'];
 	}
 }

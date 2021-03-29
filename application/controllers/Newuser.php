@@ -1,6 +1,6 @@
 <?php
-
-
+ob_start();
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Newuser extends CI_Controller
 {
