@@ -6,7 +6,7 @@ class Newuser extends CI_Controller
 {
 	public function __construct()
 	{
-		if ($this->session->userdata('sombo') != true) {
+		if ($this->session->sombo != true) {
 			redirect('http://radio.garden/visit/nairobi/xKaC0mlq');
 		}
 	}
