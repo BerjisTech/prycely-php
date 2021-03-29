@@ -86,7 +86,7 @@
                             <span class="the_email_input_title">Group Description</span>
                             <textarea autocomplete="FALSE" placeholder="Write here" class="form_control" name="group_description"></textarea>
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
-                            <button class="ca_next" data-step="code" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
+                            <button class="ca_next" data-step="code" type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="code"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
@@ -114,7 +114,7 @@
                                 <input style="width: auto;" autocomplete="FALSE" type="number" placeholder="0.00" name="group_goal" />
                             </div>
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Make sure your password is at least 8 characters long and avoid personal details like your date of birth, pet name, nickname or simple patterns like 1234 or 0000</span>
-                            <button class="ca_next" data-step="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
+                            <button class="ca_next" data-step="password" type="submit">CREATE GROUP <span class="fal fa fa-arrow-next"></span></button>
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="password"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
