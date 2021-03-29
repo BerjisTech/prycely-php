@@ -20,4 +20,14 @@ class Createaccount extends CI_Controller
         // print_r($this->db->query('SELECT * FROM shops'));
         $this->load->view('auth/create_account');
     }
+
+    public function send_welcome($email)
+    {
+        $data[] = '';
+        $msg = $this->load->view('email_templates/welcome', $data,  TRUE);
+        $sub = 'Welcome to Chama';
+        $to = $email;
+        $from = 'no-reply@chama.com';
+        $this->Email->do_email($msg, $sub, $to, $from);
+    }
 }
