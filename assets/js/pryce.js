@@ -1,4 +1,4 @@
-let base_url = 'https://' + window.location.hostname + '/';
+let base_url = 'http://' + window.location.hostname + '/chama/';
 
 console.log('Go pryce');
 

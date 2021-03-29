@@ -27,7 +27,7 @@
                     <div class="col-md-8 col-sm-7 col-xs-6">
                     </div>
                     <div class="col-md-4 col-sm-5 col-xs-6 text-right">
-                        <a href="" onclick="window.history.back()">cancel</a>
+                        <a href="" onclick="window.history.go(-1)">cancel</a>
                     </div>
                 </div>
                 <div class="row">
