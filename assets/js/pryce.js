@@ -24,7 +24,7 @@ if (page.includes('createaccount') === true) {
     $('.ca_next').on('click', (e) => {
         e.preventDefault()
         let this_step = $(this).attr('data-step')
-        console.log()
+        console.log(this_step)
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]').val()
             console.log(the_person.email)
@@ -78,6 +78,7 @@ if (page.includes('createaccount') === true) {
             }
         }
         if (this_step == 'password') {
+            the_person.password = $('input[name="user_password"]')
             window.location.href = base_url + "overview"
         }
     })
