@@ -27,25 +27,26 @@ if (page.includes('createaccount') === true) {
         console.log()
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]').val()
-            $.ajax({
-                url: base_url + '/auth/send_code/',
-                method: 'POST',
-                data: { 'the_email': the_person.email },
-                success: function (r) {
-                    console.log(r)
-                    if (r === base_check('the_proceed')) {
+            console.log(the_person.email)
+            if (the_person.email == '') {
+                $('<p class="error bg-danger">You have to type your email first</p>').insertBefore($('input[name="user_email"]'));
+            } else {
+                $.ajax({
+                    url: base_url + '/auth/send_code/',
+                    method: 'POST',
+                    data: { 'the_email': the_person.email },
+                    success: (r) => {
+                        console.log(r)
                         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                         $('.the_email').hide()
                         $('.the_code').show()
-                    }else{
+                    },
+                    error: () => {
+                        console.log('Error');
                         $('<p class="error bg-danger">Something wnet wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
                     }
-                },
-                error: function () {
-                    console.log('Error');
-                    $('<p class="error bg-danger">Something wnet wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
-                }
-            })
+                })
+            }
 
         }
         if (this_step == 'code') {
