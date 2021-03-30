@@ -26,7 +26,10 @@ if (page.includes('createaccount') === true) {
         console.log()
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]')
-            fetch('/auth/send_code/' + the_person.email).then((v) => {
+            fetch('/auth/send_code/' + the_person.email, {
+                credentials: 'same-origin',
+                method: 'GET'
+            }).then((v) => {
                 if (v === base_check('the_proceed')) {
                     $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                     $('.the_email').hide()
@@ -37,7 +40,10 @@ if (page.includes('createaccount') === true) {
         }
         if (this_step == 'code') {
             the_code = $('input[name="user_code"]')
-            fetch('/auth/check_code/' + the_code).then((v) => {
+            fetch('/auth/check_code/' + the_code, {
+                credentials: 'same-origin',
+                method: 'GET'
+            }).then((v) => {
                 if (v === base_check('the_proceed')) {
                     $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                     $('.the_code').hide()
