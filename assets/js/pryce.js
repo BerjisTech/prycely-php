@@ -32,12 +32,13 @@ if (page.includes('createaccount') === true) {
                 method: 'POST',
                 data: { 'the_email': the_person.email },
                 success: function (r) {
-
                     console.log(r)
                     if (r === base_check('the_proceed')) {
                         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                         $('.the_email').hide()
                         $('.the_code').show()
+                    }else{
+                        $('<p class="error bg-danger">Something wnet wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
                     }
                 },
                 error: function () {
