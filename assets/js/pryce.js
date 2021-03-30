@@ -21,7 +21,7 @@ if (page.includes('createaccount') === true) {
         $('.the_email').show()
     })
 
-    $('.ca_next').on('click', (e) => {
+    $('.ca_next').on('click', (e, this) => {
         e.preventDefault()
         console.log($(this))
         console.log($(this).attr())
