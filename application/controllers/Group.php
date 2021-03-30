@@ -33,7 +33,7 @@ class Group extends CI_Controller
         $this->load->view('index', $data);
     }
 
-    public function create($group_id)
+    public function create()
     {
         $this->load->view('group/create');
     }
