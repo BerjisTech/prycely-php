@@ -23,7 +23,8 @@ if (page.includes('createaccount') === true) {
         $('.the_email').show()
     })
 
-    $('.ca_next').on('click', (e) => {
+    $('.ca_next').on('click', function (e) {
+        e.preventDefault()
         console.log($(this))
         console.log($(this).attr())
         let this_step = $(this).attr('data-step')
