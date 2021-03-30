@@ -24,7 +24,6 @@ if (page.includes('createaccount') === true) {
     })
 
     $('.ca_next').on('click', (e) => {
-        e.preventDefault()
         console.log($(this))
         console.log($(this).attr())
         let this_step = $(this).attr('data-step')
