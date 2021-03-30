@@ -17,7 +17,8 @@ if (page.includes('createaccount') === true) {
 
     $('.user_type_chooser').on('click', function () {
         let this_step = $(this).attr('data-type')
-        the_person.email = $(this).attr('data-person-type')
+        the_person.type = $(this).attr('data-person-type')
+        console.log(the_person)
         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
         $('.yourself').hide()
         $('.the_email').show()
@@ -26,8 +27,8 @@ if (page.includes('createaccount') === true) {
     $('.ca_next').on('click', function (e) {
         e.preventDefault()
         console.log($(this))
-        console.log($(this).attr())
-        let this_step = $(this).attr('data-step')
+        console.log($(this).data())
+        let this_step = $(this).data('step')
         console.log(this_step)
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]').val()
