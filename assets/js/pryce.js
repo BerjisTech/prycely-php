@@ -21,39 +21,51 @@ if (page.includes('createaccount') === true) {
         $('.the_email').show()
     })
 
-    $('.ca_next').on('click', function () {
+    $('.ca_next').on('click', (e) => {
+        e.preventDefault()
         let this_step = $(this).attr('data-step')
         console.log()
         if (this_step == 'email') {
-            the_person.email = $('input[name="user_email"]')
-            fetch(base_url + '/auth/send_code/', {
-                credentials: 'same-origin',
-                method: "POST",
-                body: { 'the_email': the_person.email }
-            }).then((v) => {
-                if (v === base_check('the_proceed')) {
-                    $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
-                    $('.the_email').hide()
-                    $('.the_code').show()
+            the_person.email = $('input[name="user_email"]').val()
+            $.ajax({
+                url: base_url + '/auth/send_code/',
+                method: 'POST',
+                data: { 'the_email': the_person.email },
+                success: function (r) {
+
+                    console.log(r)
+                    if (r === base_check('the_proceed')) {
+                        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+                        $('.the_email').hide()
+                        $('.the_code').show()
+                    }
+                },
+                error: function () {
+                    console.log('Error');
+                    $('<p class="error bg-danger">Something wnet wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
                 }
             })
 
         }
         if (this_step == 'code') {
-            the_code = $('input[name="user_code"]')
-            fetch(base_url + '/auth/check_code/' + the_code, {
-                credentials: 'same-origin',
-                method: 'GET'
-            }).then((v) => {
-                if (v === base_check('the_proceed')) {
-                    $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
-                    $('.the_code').hide()
-                    $('.the_password').show()
-                } else {
+            the_code = $('input[name="user_code"]').val()
 
+            $.ajax({
+                url: base_url + '/auth/check_code/' + the_code,
+                method: 'GET',
+                success: function (r) {
+                    console.log(r)
+                    if (r === base_check('the_proceed')) {
+                        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+                        $('.the_code').hide()
+                        $('.the_password').show()
+                    }
+                },
+                error: function () {
+                    console.log('Error');
+                    $('<p class="error bg-danger">The codes don\'t match</p>').insertBefore($('input[name="user_code"]'));
                 }
             })
-
         }
         if (this_step == 'password') {
             window.location.href = base_url + "overview"

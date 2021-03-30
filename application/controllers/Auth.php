@@ -28,6 +28,7 @@ class Auth extends CI_Controller
 
     public function send_code()
     {
+        $this->session->destroy();
         $email = $this->input->post('the_email');
         $the_create_account_code = mt_rand(100000, 999999);
         $this->Email->do_email($the_create_account_code, 'Your code Mother Fucker', $email, 'support@sleekupsell.com');
