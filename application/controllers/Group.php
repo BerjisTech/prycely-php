@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Group extends CI_Controller

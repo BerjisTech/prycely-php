@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Wallet extends CI_Controller

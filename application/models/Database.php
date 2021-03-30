@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Database extends CI_Model
 {
-    public function select($select = NULL, $where = NULL, $limit = NULL, $join = NULL, $table)
+    public function select($select = NULL, $where = NULL, $limit = NULL, $join = NULL, $table = NULL)
     {
         if ($select != NULL) $this->db->select($select);
         if ($where != NULL) $this->db->where($where);

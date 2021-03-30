@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Overview extends CI_Controller

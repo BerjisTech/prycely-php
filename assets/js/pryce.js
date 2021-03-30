@@ -27,8 +27,6 @@
                 }
             })
 
-
-
             $('.back_link').on('click', function () {
                 let this_step = $(this).attr('data-step');
                 if (this_step == 'email') {
@@ -46,6 +44,13 @@
                     $('.the_code').show();
                     $('.the_password').hide();
                 }
+            })
+
+            $('.user_type_chooser').on('click', function () {
+                let this_step = $(this).attr('data-type');
+                $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4');
+                $('.yourself').hide();
+                $('.the_email').show();
             })
         }
 
@@ -81,13 +86,6 @@
         function log_errors(from, data, e) {
 
         }
-
-        $('.user_type_chooser').on('click', function () {
-            let this_step = $(this).attr('data-type');
-            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4');
-            $('.yourself').hide();
-            $('.the_email').show();
-        })
 
         $('.switch-tab').on('click', function () {
             let to_be_switched = $(this).attr('data-hide');
