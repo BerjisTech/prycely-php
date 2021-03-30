@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
@@ -14,9 +14,8 @@ class Auth extends CI_Controller
         $this->output->set_header('Pragma: no-cache');
         $this->output->set_header("Expires: Mon, 26 Jul 2020 05:00:00 GMT");
         date_default_timezone_set("Africa/Nairobi");
-        
     }
-    
+
     public function index()
     {
         $this->session->set_userdata('sombo', true);
@@ -25,5 +24,23 @@ class Auth extends CI_Controller
 
     public function login()
     {
+    }
+
+    public function send_code()
+    {
+        $email = $this->input->post('the_email');
+        $the_create_account_code = mt_rand(100000, 999999);
+        $this->Email->do_email($the_create_account_code, 'Your code Mother Fucker', $email, 'support@sleekupsell.com');
+        $this->session->the_create_account_code = $the_create_account_code;
+        return base64_encode('the_proceed');
+    }
+
+    public function check_code($code)
+    {
+        if ($code != $this->session->the_create_account_code) {
+            return base64_encode('the_fuck_you');
+        } else {
+            return base64_encode('the_proceed');
+        }
     }
 }
