@@ -51,23 +51,31 @@ if (page.includes('createaccount') === true) {
         }
         if (this_step == 'code') {
             the_code = $('input[name="user_code"]').val()
+            console.log(the_code)
 
-            $.ajax({
-                url: base_url + '/auth/check_code/' + the_code,
-                method: 'GET',
-                success: function (r) {
-                    console.log(r)
-                    if (r === base_check('the_proceed')) {
-                        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
-                        $('.the_code').hide()
-                        $('.the_password').show()
+            if (the_code == '') {
+                $('<p class="error bg-danger">Kindly check that you\'ve typed the code</p>').insertBefore($('input[name="user_code"]'));
+            }
+            else {
+                $.ajax({
+                    url: base_url + '/auth/check_code/' + the_code,
+                    method: 'GET',
+                    success: function (r) {
+                        console.log(r)
+                        if (r === base_check('the_proceed')) {
+                            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+                            $('.the_code').hide()
+                            $('.the_password').show()
+                        } else {
+                            $('<p class="error bg-danger">The code enetered isn\'t correct</p>').insertBefore($('input[name="user_code"]'));
+                        }
+                    },
+                    error: function () {
+                        console.log('Error');
+                        $('<p class="error bg-danger">There\'s something webkitConvertPointFromNodeToPage, kindly try again</p>').insertBefore($('input[name="user_code"]'));
                     }
-                },
-                error: function () {
-                    console.log('Error');
-                    $('<p class="error bg-danger">The codes don\'t match</p>').insertBefore($('input[name="user_code"]'));
-                }
-            })
+                })
+            }
         }
         if (this_step == 'password') {
             window.location.href = base_url + "overview"
