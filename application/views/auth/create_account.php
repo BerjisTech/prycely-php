@@ -32,16 +32,16 @@
                         <a href="#">English <span class="fa fa-chevron-down"></span></a>
                     </div>
                 </div>
-                <form>
+                <form autocomplete="autocomplete_off_hack_xfr4!k" autocapitalize="ON" name="the_person_form">
                     <div class="row">
                         <div class="col-xs-12 yourself">
                             <h3 class="the_title">Tell us about yourself</h3>
                             <div class="user_type">
                                 <table>
                                     <tbody>
-                                        <tr class="user_type_chooser" data-type="company">
-                                            <td><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></td>
-                                            <td class="user-type">Company<span>Best suited for Companies</span></td>
+                                        <tr class="user_type_chooser" data-type="personal" data-person-type="1">
+                                            <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
+                                            <td class="user-type">Individual<span>Best suited for Individuals and Personal use</span></td>
                                             <td><span class="fa fa-chevron-right"></span></td>
                                         </tr>
                                     </tbody>
@@ -50,7 +50,7 @@
                             <div class="user_type">
                                 <table>
                                     <tbody>
-                                        <tr class="user_type_chooser" data-type="freelancer">
+                                        <tr class="user_type_chooser" data-type="freelancer" data-person-type="2">
                                             <td><img src="<?php echo base_url('assets/images/freelancer.jpg'); ?>" /></td>
                                             <td class="user-type">Freelancer<span>Best suited for Freelancers</span></td>
                                             <td><span class="fa fa-chevron-right"></span></td>
@@ -61,9 +61,9 @@
                             <div class="user_type">
                                 <table>
                                     <tbody>
-                                        <tr class="user_type_chooser" data-type="personal">
-                                            <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
-                                            <td class="user-type">Individual<span>Best suited for Individuals and Personal use</span></td>
+                                        <tr class="user_type_chooser" data-type="company" data-person-type="3">
+                                            <td><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></td>
+                                            <td class="user-type">Company<span>Best suited for Companies</span></td>
                                             <td><span class="fa fa-chevron-right"></span></td>
                                         </tr>
                                     </tbody>
@@ -76,7 +76,7 @@
                             <span class="the_subtitle">You'll need to log in and access your account</span>
                             <div class="the_email_input">
                                 <span class="the_email_input_title">Email Address</span>
-                                <input autocomplete="FALSE" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@mail.com" class="form_control" name="user_email" />
+                                <input autocomplete="autocomplete_off_hack_xfr4!k" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@mail.com" class="form_control" name="user_email" />
                                 <button type="submit" class="ca_next" data-step="email">NEXT <span class="fal fa fa-arrow-next"></span></button>
                                 <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                             </div>
@@ -87,7 +87,7 @@
                             <span class="the_subtitle">Enter the 6-digit confirmation code we've sent you at <span class="email_with_code"></span> to confirm your email address</span>
                             <div class="the_email_input">
                                 <span class="the_email_input_title">Confirmation Code</span>
-                                <input autocomplete="FALSE" type="text" pattern="[a-zA-Z0-9]{3}-[a-zA-Z0-9]{3}" placeholder="XXX-XXX" class="form_control" name="user_code" />
+                                <input autocomplete="autocomplete_off_hack_xfr4!k" type="text" pattern="[a-zA-Z0-9]{3}-[a-zA-Z0-9]{3}" placeholder="XXX-XXX" class="form_control" name="user_code" />
                                 <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
                                 <button class="ca_next" data-step="code" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                             </div>
@@ -98,7 +98,7 @@
                             <span class="the_subtitle">Choose a secure password that you can easily remember</span>
                             <div class="the_email_input">
                                 <span class="the_email_input_title">Password</span>
-                                <input autocomplete="FALSE" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="******" class="form_control" name="user_password" />
+                                <input autocomplete="new-password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="******" class="form_control" name="user_password" />
                                 <span class="resend_code"><span class="fal fa fa-info-circle"></span> Make sure your password is at least 8 characters long and avoid personal details like your date of birth, pet name, nickname or simple patterns like 1234 or 0000</span>
                                 <button class="ca_next" data-step="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                             </div>
