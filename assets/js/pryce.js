@@ -67,6 +67,7 @@ if (page.includes('createaccount') === true) {
                     method: 'GET',
                     success: function (r) {
                         console.log(r)
+                        base_check('the_proceed')
                         if (r === base_check('the_proceed')) {
                             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                             $('.the_code').hide()
