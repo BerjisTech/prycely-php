@@ -43,7 +43,7 @@ if (page.includes('createaccount') === true) {
                     },
                     error: () => {
                         console.log('Error');
-                        $('<p class="error bg-danger">Something wnet wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
+                        $('<p class="error bg-danger">Something went wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
                     }
                 })
             }
