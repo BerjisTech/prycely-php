@@ -18,23 +18,24 @@ if (page.includes('createaccount') === true) {
     $('.user_type_chooser').on('click', function () {
         let this_step = $(this).attr('data-type')
         the_person.type = $(this).attr('data-person-type')
-        console.log(the_person)
         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
         $('.yourself').hide()
         $('.the_email').show()
     })
 
     $('.ca_next').on('click', function (e) {
+
         e.preventDefault()
-        console.log($(this))
-        console.log($(this).data())
         let this_step = $(this).data('step')
-        console.log(this_step)
+        let html_fallback = $(this).html()
+        $('p.error').remove()
+
+        $(this).html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]').val()
-            console.log(the_person.email)
             if (the_person.email == '') {
-                $('<p class="error bg-danger">You have to type your email first</p>').insertBefore($('input[name="user_email"]'));
+                $(this).html('NEXT')
+                $('<p class="error bg-danger" style="padding: 10px;">You have to type your email first</p>').insertBefore($('input[name="user_email"]'))
             } else {
                 $.ajax({
                     url: base_url + '/auth/send_code/',
@@ -45,10 +46,12 @@ if (page.includes('createaccount') === true) {
                         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                         $('.the_email').hide()
                         $('.the_code').show()
+                        $(this).html('NEXT')
                     },
                     error: () => {
-                        console.log('Error');
-                        $('<p class="error bg-danger">Something went wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'));
+                        $(this).html('NEXT')
+                        console.log('Error')
+                        $('<p class="error bg-danger" style="padding: 10px;">Something went wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'))
                     }
                 })
             }
@@ -56,36 +59,69 @@ if (page.includes('createaccount') === true) {
         }
         if (this_step == 'code') {
             the_code = $('input[name="user_code"]').val()
-            console.log(the_code)
-
             if (the_code == '') {
-                $('<p class="error bg-danger">Kindly check that you\'ve typed the code</p>').insertBefore($('input[name="user_code"]'));
+                $(this).html('CONFIRM CODE')
+                $('<p class="error bg-danger" style="padding: 10px;">Kindly check that you\'ve typed the code</p>').insertBefore($('input[name="user_code"]'))
             }
             else {
                 $.ajax({
                     url: base_url + '/auth/check_code/' + the_code,
                     method: 'GET',
                     success: function (r) {
-                        console.log(r)
-                        base_check('the_proceed')
-                        if (r === base_check('the_proceed')) {
+                        if (r === 'the_proceed') {
                             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                             $('.the_code').hide()
                             $('.the_password').show()
+                            $(this).html('CONFIRM CODE')
                         } else {
-                            $('<p class="error bg-danger">The code enetered isn\'t correct</p>').insertBefore($('input[name="user_code"]'));
+                            $(this).html('CONFIRM CODE')
+                            $('<p class="error bg-danger" style="padding: 10px;">The code enetered isn\'t correct</p>').insertBefore($('input[name="user_code"]'))
                         }
                     },
                     error: function () {
-                        console.log('Error');
-                        $('<p class="error bg-danger">There\'s something webkitConvertPointFromNodeToPage, kindly try again</p>').insertBefore($('input[name="user_code"]'));
+                        $(this).html('CONFIRM CODE')
+                        $('<p class="error bg-danger" style="padding: 10px;">There\'s something went wrong, kindly try again</p>').insertBefore($('input[name="user_code"]'))
                     }
                 })
             }
         }
         if (this_step == 'password') {
-            the_person.password = $('input[name="user_password"]')
-            window.location.href = base_url + "overview"
+            the_person.password = $('input[name="user_password"]').val()
+
+            if (the_person.password == '') {
+                $(this).html('CREATE ACCOUNT')
+                $('<p class="error bg-danger" style="padding: 10px;">Empty password</p>').insertBefore($('input[name="user_password"]'))
+                return false
+            }
+
+            if (the_person.password.length < 6) {
+                $(this).html('CREATE ACCOUNT')
+                $('<p class="error bg-danger" style="padding: 10px;">Password should be at least 6 characters long</p>').insertBefore($('input[name="user_password"]'))
+                return false
+            }
+
+            if (the_person.password.length > 15) {
+                $(this).html('CREATE ACCOUNT')
+                $('<p class="error bg-danger" style="padding: 10px;">WHY!!! Why do you need such a long password. How do you intend to remember this</p>').insertBefore($('input[name="user_password"]'))
+                return false;
+            }
+
+            $.ajax({
+                url: base_url + '/auth/create_account',
+                method: 'POST',
+                data: {
+                    'the_person_type': the_person.email,
+                    'the_person_email': the_person.email,
+                    'the_person_password': the_person.email,
+                },
+                success: (r) => {
+                    console.log(r)
+                    // window.location.href = base_url + "onboarding"
+                },
+                error: (e) => {
+
+                }
+            })
         }
     })
 
