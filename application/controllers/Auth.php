@@ -48,12 +48,21 @@ class Auth extends CI_Controller
     public function create_account()
     {
         $data = $this->input->post();
-        $this->hash_password($data['password']);
+        $data['hashed_pass'] = $this->hash_password($data['the_person_password']);
         echo json_encode($data);
     }
 
     private function hash_password($password)
     {
         return password_hash($password, PASSWORD_BCRYPT);
+    }
+
+    private function check_pass($fromForm, $fromDB)
+    {
+        if (password_verify($fromForm, $fromDB)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

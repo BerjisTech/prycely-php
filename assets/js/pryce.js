@@ -60,7 +60,7 @@ if (page.includes('createaccount') === true) {
         if (this_step == 'code') {
             the_code = $('input[name="user_code"]').val()
             if (the_code == '') {
-                $(this).html('CONFIRM CODE')
+                $(this).html('LET\'S TRY THAT AGAIN')
                 $('<p class="error bg-danger" style="padding: 10px;">Kindly check that you\'ve typed the code</p>').insertBefore($('input[name="user_code"]'))
             }
             else {
@@ -72,14 +72,14 @@ if (page.includes('createaccount') === true) {
                             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                             $('.the_code').hide()
                             $('.the_password').show()
-                            $(this).html('CONFIRM CODE')
+                            $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
                         } else {
-                            $(this).html('CONFIRM CODE')
+                            $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
                             $('<p class="error bg-danger" style="padding: 10px;">The code enetered isn\'t correct</p>').insertBefore($('input[name="user_code"]'))
                         }
                     },
                     error: function () {
-                        $(this).html('CONFIRM CODE')
+                        $(this).html('LET\'S TRY THAT AGAIN')
                         $('<p class="error bg-danger" style="padding: 10px;">There\'s something went wrong, kindly try again</p>').insertBefore($('input[name="user_code"]'))
                     }
                 })
@@ -89,19 +89,19 @@ if (page.includes('createaccount') === true) {
             the_person.password = $('input[name="user_password"]').val()
 
             if (the_person.password == '') {
-                $(this).html('CREATE ACCOUNT')
+                $(this).html('LET\'S TRY THAT AGAIN')
                 $('<p class="error bg-danger" style="padding: 10px;">Empty password</p>').insertBefore($('input[name="user_password"]'))
                 return false
             }
 
             if (the_person.password.length < 6) {
-                $(this).html('CREATE ACCOUNT')
+                $(this).html('LET\'S TRY THAT AGAIN')
                 $('<p class="error bg-danger" style="padding: 10px;">Password should be at least 6 characters long</p>').insertBefore($('input[name="user_password"]'))
                 return false
             }
 
             if (the_person.password.length > 15) {
-                $(this).html('CREATE ACCOUNT')
+                $(this).html('LET\'S TRY THAT AGAIN')
                 $('<p class="error bg-danger" style="padding: 10px;">WHY!!! Why do you need such a long password. How do you intend to remember this</p>').insertBefore($('input[name="user_password"]'))
                 return false;
             }
@@ -110,12 +110,13 @@ if (page.includes('createaccount') === true) {
                 url: base_url + '/auth/create_account',
                 method: 'POST',
                 data: {
-                    'the_person_type': the_person.email,
+                    'the_person_type': the_person.type,
                     'the_person_email': the_person.email,
-                    'the_person_password': the_person.email,
+                    'the_person_password': the_person.password,
                 },
                 success: (r) => {
-                    console.log(r)
+                    $(this).html('YAY!!')
+                    console.log(JSON.parse(r))
                     // window.location.href = base_url + "onboarding"
                 },
                 error: (e) => {
