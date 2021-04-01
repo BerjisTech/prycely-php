@@ -24,6 +24,12 @@ class Auth extends CI_Controller
 
     public function login()
     {
+        $this->load->view('auth/login');
+    }
+
+    public function recover()
+    {
+        $this->load->view('auth/recover');
     }
 
     public function send_code()

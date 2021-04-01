@@ -219,3 +219,8 @@
 input[name="user_code"] {
     text-transform: capitalize;
 }
+
+.the_email_title {
+    font-weight: 700;
+    font-size: 20px;
+}
