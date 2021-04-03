@@ -48,7 +48,7 @@ class Auth extends CI_Controller
             $this->Email->do_email($message, 'Chama Verification Code', $email, 'support@sleekupsell.com');
             $this->session->the_create_account_code = $the_create_account_code;
 
-            echo 'the_proceed';
+            print_r('the_proceed');
         }
     }
 

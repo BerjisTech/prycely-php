@@ -56,7 +56,7 @@
                                                                             <table border="0" align="center" cellpadding="0" cellspacing="0">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td data-btn="Hero Button" align="center" style="background-color:#191919;display:block; mso-padding-alt:10px 28px 10px 28px;"><a data-font="Primary" href="http://domain.com/" style="color:#FFFFFF;display:block;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;line-height:24px;padding:14px 28px 14px 28px;text-decoration:none;white-space:nowrap;" data-lm-link="true"><?php echo $code; ?></a></td>
+                                                                                        <td data-btn="Hero Button" align="center" style="background-color:#191919;display:block; mso-padding-alt:10px 28px 10px 28px;"><span data-font="Primary" style="color:#FFFFFF;display:block;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;line-height:24px;padding:14px 28px 14px 28px;text-decoration:none;white-space:nowrap;"><?php echo $code; ?></span></td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
