@@ -73,7 +73,7 @@ if (page.includes('createaccount') === true) {
                     method: 'GET',
                     success: function (r) {
                         if (r === 'the_proceed') {
-                            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+                            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-password-intro.mp4')
                             $('.the_code').hide()
                             $('.the_password').show()
                             $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
