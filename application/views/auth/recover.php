@@ -25,7 +25,7 @@
             <div class="col-sm-6 left_home_panel">
 
                 <div class="col-sm-2 hidden-xs"></div>
-                <form autocomplete="off" autocapitalize="ON" class="col-sm-8 col-xs-12 the_email_input" name="the_login_form">
+                <form autocomplete="off" autocapitalize="ON" class="col-sm-8 col-xs-12 the_email_input" name="the_recover_form">
                     <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" style="margin: 0px;" /> <span class="logo-text">MonMax</span></a>
                     <br /><br />
                     <p class="the_email_title">Change your password</p>
@@ -40,6 +40,51 @@
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
                         <button type="submit" name="the_submit" style="width: auto; margin-top: auto;">Login</button>
+                        <a href="<?php echo base_url('auth/recover'); ?>" class="pull-right" style="margin-top: 12px;">Forgot password?</a>
+                    </div>
+                    <hr />
+                    <div>
+                        <p>Don't have an account? <a href="<?php echo base_url('createaccount'); ?>">Open an account</a></p>
+                    </div>
+                </form>
+
+                <form autocomplete="off" autocapitalize="ON" class="hidden col-sm-8 col-xs-12 the_email_input" name="the_code_form">
+                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" style="margin: 0px;" /> <span class="logo-text">MonMax</span></a>
+                    <br /><br />
+                    <p class="the_email_title">Verify code</p>
+                    <br />
+                    <small>Check your email for the code we sent you.</small>
+                    <br /><br />
+                    <div class="col-xs-12 input-group">
+                        <input autocomplete="off" type="text" name="the_code" />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col-xs-12 input-group" style="vertical-align: middle;">
+                        <button type="submit" name="the_code_submit" style="width: auto; margin-top: auto;">Login</button>
+                        <a href="<?php echo base_url('auth/recover'); ?>" class="pull-right" style="margin-top: 12px;">Forgot password?</a>
+                    </div>
+                    <hr />
+                    <div>
+                        <p>Don't have an account? <a href="<?php echo base_url('createaccount'); ?>">Open an account</a></p>
+                    </div>
+                </form>
+
+                <form autocomplete="off" autocapitalize="ON" class="hidden col-sm-8 col-xs-12 the_email_input" name="the_password_form">
+                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" style="margin: 0px;" /> <span class="logo-text">MonMax</span></a>
+                    <br /><br />
+                    <p class="the_email_title">Change your password</p>
+                    <br />
+                    <small>Choose a new password</small>
+                    <br /><br />
+                    <div class="col-xs-12 input-group">
+                        <label>New password</label>
+                        <input autocomplete="off" type="password" name="the_password" />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col-xs-12 input-group" style="vertical-align: middle;">
+                        <button type="submit" name="the_password_submit" style="width: auto; margin-top: auto;">Login</button>
                         <a href="<?php echo base_url('auth/recover'); ?>" class="pull-right" style="margin-top: 12px;">Forgot password?</a>
                     </div>
                     <hr />

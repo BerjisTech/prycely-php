@@ -180,6 +180,84 @@ if (page.includes('/auth/login') === true) {
     })
 }
 
+if (page.includes('/auth/recover') === true) {
+    $('form[name="the_recover_form"]').on('submit', (e) => {
+        e.preventDefault()
+        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $.ajax({
+            url: base_url + 'auth/recover_code',
+            method: 'POST',
+            data: $('form[name="the_recover_form"]').serialize(),
+            success: (r) => {
+                if (r.includes('the_new_password')) {
+                    $('form[name="the_recover_form"]').hide()
+                    $('form[name="the_code_form"]').show()
+                } else {
+                    $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN')
+                    $('.the_login_error').remove();
+                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_submit"]'))
+                }
+            },
+            error: (r) => {
+                console.log(r)
+                $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN');
+                $('.the_login_error').remove();
+                $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_submit"]'))
+            }
+        })
+    })
+
+    $('form[name="the_code_form"]').on('submit', (e) => {
+        e.preventDefault()
+        $('button[name="the_code_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $.ajax({
+            url: base_url + 'auth/check_code',
+            method: 'POST',
+            data: $('form[name="the_code_form"]').serialize(),
+            success: (r) => {
+                if (r.includes('the_new_password')) {
+                    $('form[name="the_code_form"]').hide()
+                    $('form[name="the_password_form"]').show()
+                } else {
+                    $('button[name="the_code_submit"]').html('LET\'S TRY THAT AGAIN')
+                    $('.the_login_error').remove();
+                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_code_submit"]'))
+                }
+            },
+            error: (r) => {
+                console.log(r)
+                $('button[name="the_code_submit"]').html('LET\'S TRY THAT AGAIN');
+                $('.the_login_error').remove();
+                $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_code_submit"]'))
+            }
+        })
+    })
+
+    $('form[name="the_password_form"]').on('submit', (e) => {
+        e.preventDefault()
+        $('button[name="the_password_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $.ajax({
+            url: base_url + 'auth/change_password',
+            method: 'POST',
+            data: $('form[name="the_password_form"]').serialize(),
+            success: (r) => {
+                if (r.includes('the_new_password')) {
+                    window.location.href = base_url + 'settings'
+                } else {
+                    $('button[name="the_password_submit"]').html('LET\'S TRY THAT AGAIN')
+                    $('.the_login_error').remove();
+                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_password_submit"]'))
+                }
+            },
+            error: (r) => {
+                console.log(r)
+                $('button[name="the_password_submit"]').html('LET\'S TRY THAT AGAIN');
+                $('.the_login_error').remove();
+                $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_password_submit"]'))
+            }
+        })
+    })
+}
 
 $('.switch-tab').on('click', function () {
     if ($(this).attr('class').includes('active')) {

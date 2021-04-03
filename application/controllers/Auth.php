@@ -77,6 +77,41 @@ class Auth extends CI_Controller
         }
     }
 
+    public function recover_code()
+    {
+        $email = $this->input->post('the_email');
+
+        $where = array('the_person_email' => $email);
+        if ($this->Database->count($where, 'the_people') == 0) {
+            echo 'Check that the email is correct';
+        } else {
+            $the_create_account_code = mt_rand(100000, 999999);
+            $data['code'] = $the_create_account_code;
+            $view = 'email_templates/verify_code';
+            $message = $this->load->view($view, $data, TRUE);
+
+            $this->Email->do_email($message, 'Password Recovery Code', $email, 'support@sleekupsell.com');
+            $this->session->the_create_account_code = $the_create_account_code;
+            $this->session->the_person_temp_email = $email;
+
+            print_r('the_proceed');
+        }
+    }
+
+    public function change_password()
+    {
+        $this->Database->update(
+            array(
+                'the_person_email' => $this->session->the_person_temp_email
+            ),
+            array(
+                'the_person_password' => $this->hash_password($this->input->post('password'))
+            ),
+            'the_people'
+        );
+        echo 'the_proceed';
+    }
+
     public function kuingia()
     {
         $select_single = $this->Database->select_single('the_person_password, the_person_type, the_person_id', array('the_person_email' => $this->input->post('the_person_email')),  NULL, 'the_people');
@@ -93,7 +128,7 @@ class Auth extends CI_Controller
                         'the_login_time' => time(),
                         'the_login_ip' => $this->getIPAddress(),
                         'the_login_success' => 'yes',
-                        'the_login_password_attempt' => 'user_' . $select_single->the_person_id . '_currect_password'
+                        'the_login_password_attempt' => 'user_' . $select_single->the_person_id . '_correct_password'
                     ),
                     'the_logins'
                 );
