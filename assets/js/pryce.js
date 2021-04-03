@@ -163,7 +163,7 @@ if (page.includes('/auth/login') === true) {
             method: 'POST',
             success: (r) => {
                 if (r.includes('the_login')) {
-
+                    window.location.href = base_url + 'overview'
                 } else {
                     $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();

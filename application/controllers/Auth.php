@@ -79,17 +79,36 @@ class Auth extends CI_Controller
 
     public function kuingia()
     {
-
-        $select_single = $this->Database->select('the_person_password', array('the_person_email' => $this->input->post('the_person_email')), $join = NULL, 'the_people');
+        $select_single = $this->Database->select_single('the_person_password, the_person_type, the_person_id', array('the_person_email' => $this->input->post('the_person_email')),  NULL, 'the_people');
 
         if ($select_single !== NULL) {
-            print_r($select_single);
             if ($this->check_pass($this->input->post('the_person_password'), $select_single->the_person_password) === true) {
-                $this->session->the_person_password = $this->input->post('the_person_password');
+                $this->session->the_person_password = $select_single->the_person_password;
                 $this->session->the_person_email = $this->input->post('the_person_email');
-                $this->session->the_person_type = $this->input->post('the_person_type');
+                $this->session->the_person_type = $select_single->the_person_type;
+                $this->session->the_person_id = $select_single->the_person_id;
+                $this->Database->insert(
+                    array(
+                        'the_login_user' => $select_single->the_person_id,
+                        'the_login_time' => time(),
+                        'the_login_ip' => $this->getIPAddress(),
+                        'the_login_success' => 'yes',
+                        'the_login_password_attempt' => 'user_' . $select_single->the_person_id . '_currect_password'
+                    ),
+                    'the_logins'
+                );
                 echo 'the_login';
             } else {
+                $this->Database->insert(
+                    array(
+                        'the_login_user' => $select_single->the_person_id,
+                        'the_login_time' => time(),
+                        'the_login_ip' => $this->getIPAddress(),
+                        'the_login_success' => 'no',
+                        'the_login_password_attempt' => $this->input->post('the_person_password')
+                    ),
+                    'the_logins'
+                );
                 echo 'Very very wrong password 😂';
             }
         } else {
@@ -115,5 +134,11 @@ class Auth extends CI_Controller
         } else {
             return false;
         }
+    }
+
+    private function getIPAddress()
+    {
+        $ip = $this->input->ip_address();
+        return $ip;
     }
 }
