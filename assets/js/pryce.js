@@ -9,6 +9,11 @@ let base_url = 'http://' + window.location.hostname + '/chama/'
 console.log('Go pryce')
 const page = window.location.pathname
 
+$(document).on('focus', ':input', function () {
+    $(this).attr('autocomplete', 'off');
+});
+
+
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -16,7 +21,6 @@ if (page.includes('createaccount') === true) {
     console.log('Create account')
 
     $('.user_type_chooser').on('click', function () {
-        let this_step = $(this).attr('data-type')
         the_person.type = $(this).attr('data-person-type')
         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
         $('.yourself').hide()

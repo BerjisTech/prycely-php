@@ -34,10 +34,10 @@ class Auth extends CI_Controller
 
     public function send_code()
     {
-        // $email = $this->input->post('the_email');
-        // $the_create_account_code = mt_rand(100000, 999999);
-        // $this->Email->do_email($the_create_account_code, 'Your code Mother Fucker', $email, 'support@sleekupsell.com');
-        // $this->session->the_create_account_code = $the_create_account_code;
+        $email = $this->input->post('the_email');
+        $the_create_account_code = mt_rand(100000, 999999);
+        $this->Email->do_email($the_create_account_code, 'Your code Mother Fucker', $email, 'support@sleekupsell.com');
+        $this->session->the_create_account_code = $the_create_account_code;
         $this->session->the_create_account_code = 000000;
         echo base64_encode('the_proceed');
     }
@@ -54,7 +54,10 @@ class Auth extends CI_Controller
     public function create_account()
     {
         $data = $this->input->post();
-        $data['hashed_pass'] = $this->hash_password($data['the_person_password']);
+        $data['the_person_password'] = $this->hash_password($data['the_person_password']);
+        $data['the_person_join'] = time();
+        $data['the_person_verified'] = 1;
+        $this->Database->insert($data, 'the_people');
         echo json_encode($data);
     }
 

@@ -51,7 +51,7 @@
                 </form>
             </div>
             <div class="col-sm-6 hidden-xs right_home_panel">
-                <div class="bO" id="lottie-container-ember5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);">
+                <div style="width: 50%; min-width: 300px; margin-left: 20%; margin-top: 20%;" class="bO" id="lottie-container-ember5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);">
                         <defs>
                             <clipPath id="__lottie_element_2">
                                 <rect width="1000" height="1000" x="0" y="0"></rect>
