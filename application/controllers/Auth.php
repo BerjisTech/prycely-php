@@ -35,15 +35,20 @@ class Auth extends CI_Controller
     public function send_code()
     {
         $email = $this->input->post('the_email');
-        $the_create_account_code = mt_rand(100000, 999999);
 
-        $data['code'] = $the_create_account_code;
-        $view = 'email_templates/verify_code';
-        $message = $this->load->view($view, $data);
+        $where = array('the_person_email' => $email);
+        if ($this->Database->count($where, 'the_people') > 0) {
+            echo 'This email has already been used';
+        } else {
+            $the_create_account_code = mt_rand(100000, 999999);
+            $data['code'] = $the_create_account_code;
+            $view = 'email_templates/verify_code';
+            $message = $this->load->view($view, $data, TRUE);
 
-        $this->Email->do_email($message, 'Chama Verification Code', $email, 'support@sleekupsell.com');
-        $this->session->the_create_account_code = $the_create_account_code;
-        echo base64_encode('the_proceed');
+            $this->Email->do_email($message, 'Chama Verification Code', $email, 'support@sleekupsell.com');
+            $this->session->the_create_account_code = $the_create_account_code;
+            echo 'the_proceed';
+        }
     }
 
     public function check_code($code)
@@ -63,6 +68,7 @@ class Auth extends CI_Controller
         $data['the_person_verified'] = 1;
         if ($this->Database->insert($data, 'the_people') == true) {
             $this->session->set_userdata($data);
+            echo 'SHABAAAAM!!!';
         }
     }
 

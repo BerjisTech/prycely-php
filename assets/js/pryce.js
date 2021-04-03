@@ -47,13 +47,18 @@ if (page.includes('createaccount') === true) {
                     data: { 'the_email': the_person.email },
                     success: (r) => {
                         console.log(r)
-                        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
-                        $('.the_email').hide()
-                        $('.the_code').show()
-                        $(this).html('NEXT')
+                        if (r == 'the_proceed') {
+                            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+                            $('.the_email').hide()
+                            $('.the_code').show()
+                            $(this).html('NEXT')
+                        } else {
+                            $(this).html('LET\'S TRY THAT AGAIN')
+                            $('<p class="error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('input[name="user_email"]'))
+                        }
                     },
                     error: () => {
-                        $(this).html('NEXT')
+                        $(this).html('ERROR!')
                         console.log('Error')
                         $('<p class="error bg-danger" style="padding: 10px;">Something went wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'))
                     }
@@ -120,8 +125,7 @@ if (page.includes('createaccount') === true) {
                 },
                 success: (r) => {
                     $(this).html('YAY!!')
-                    console.log(JSON.parse(r))
-                    // window.location.href = base_url + "onboarding"
+                    window.location.href = base_url + "onboarding"
                 },
                 error: (e) => {
 
