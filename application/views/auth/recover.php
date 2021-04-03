@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>On Boarding</title>
+    <title>Recover Password</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
@@ -30,7 +30,7 @@
                     <br /><br />
                     <p class="the_email_title">Change your password</p>
                     <br />
-                    <small>Forgot your password? Enter the email address you usually use to sign in to your company's Qonto account!</small>
+                    <small>Forgot your password? Enter the email address you usually use to sign in to your account!</small>
                     <br /><br />
                     <div class="col-xs-12 input-group">
                         <label>Email adress</label>
@@ -40,7 +40,7 @@
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
                         <button type="submit" name="the_submit" style="width: auto; margin-top: auto;">Login</button>
-                        <a href="<?php echo base_url('auth/recover'); ?>" class="pull-right" style="margin-top: 12px;">Forgot password?</a>
+
                     </div>
                     <hr />
                     <div>
@@ -48,7 +48,7 @@
                     </div>
                 </form>
 
-                <form autocomplete="off" autocapitalize="ON" class="hidden col-sm-8 col-xs-12 the_email_input" name="the_code_form">
+                <form autocomplete="off" autocapitalize="ON" style="display: none;" class="col-sm-8 col-xs-12 the_email_input" name="the_code_form">
                     <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" style="margin: 0px;" /> <span class="logo-text">MonMax</span></a>
                     <br /><br />
                     <p class="the_email_title">Verify code</p>
@@ -62,7 +62,7 @@
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
                         <button type="submit" name="the_code_submit" style="width: auto; margin-top: auto;">Login</button>
-                        <a href="<?php echo base_url('auth/recover'); ?>" class="pull-right" style="margin-top: 12px;">Forgot password?</a>
+
                     </div>
                     <hr />
                     <div>
@@ -70,7 +70,7 @@
                     </div>
                 </form>
 
-                <form autocomplete="off" autocapitalize="ON" class="hidden col-sm-8 col-xs-12 the_email_input" name="the_password_form">
+                <form autocomplete="off" autocapitalize="ON" style="display: none;" class="col-sm-8 col-xs-12 the_email_input" name="the_password_form">
                     <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/logo.png'); ?>" class="logo" style="margin: 0px;" /> <span class="logo-text">MonMax</span></a>
                     <br /><br />
                     <p class="the_email_title">Change your password</p>
@@ -85,7 +85,7 @@
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
                         <button type="submit" name="the_password_submit" style="width: auto; margin-top: auto;">Login</button>
-                        <a href="<?php echo base_url('auth/recover'); ?>" class="pull-right" style="margin-top: 12px;">Forgot password?</a>
+
                     </div>
                     <hr />
                     <div>

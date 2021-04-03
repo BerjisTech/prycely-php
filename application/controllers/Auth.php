@@ -87,7 +87,7 @@ class Auth extends CI_Controller
         } else {
             $the_create_account_code = mt_rand(100000, 999999);
             $data['code'] = $the_create_account_code;
-            $view = 'email_templates/verify_code';
+            $view = 'email_templates/recover_code';
             $message = $this->load->view($view, $data, TRUE);
 
             $this->Email->do_email($message, 'Password Recovery Code', $email, 'support@sleekupsell.com');
@@ -98,6 +98,15 @@ class Auth extends CI_Controller
         }
     }
 
+    public function check_recovery_code()
+    {
+        if ($this->input->post('the_code') != $this->session->the_create_account_code) {
+            echo 'the_fuck_you';
+        } else {
+            echo 'the_proceed';
+        }
+    }
+
     public function change_password()
     {
         $this->Database->update(
@@ -105,10 +114,11 @@ class Auth extends CI_Controller
                 'the_person_email' => $this->session->the_person_temp_email
             ),
             array(
-                'the_person_password' => $this->hash_password($this->input->post('password'))
+                'the_person_password' => $this->hash_password($this->input->post('the_password'))
             ),
             'the_people'
         );
+
         echo 'the_proceed';
     }
 
@@ -144,7 +154,7 @@ class Auth extends CI_Controller
                     ),
                     'the_logins'
                 );
-                echo 'Very very wrong password 😂';
+                echo 'Very very wrong password 😂<br />' . $select_single->the_person_password . '<br />' . $this->hash_password($this->input->post('the_person_password'));
             }
         } else {
             echo 'Check you if the email is correct';

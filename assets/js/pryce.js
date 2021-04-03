@@ -183,13 +183,14 @@ if (page.includes('/auth/login') === true) {
 if (page.includes('/auth/recover') === true) {
     $('form[name="the_recover_form"]').on('submit', (e) => {
         e.preventDefault()
+        $('.the_login_error').remove();
         $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
         $.ajax({
             url: base_url + 'auth/recover_code',
             method: 'POST',
             data: $('form[name="the_recover_form"]').serialize(),
             success: (r) => {
-                if (r.includes('the_new_password')) {
+                if (r.includes('the_proceed')) {
                     $('form[name="the_recover_form"]').hide()
                     $('form[name="the_code_form"]').show()
                 } else {
@@ -209,13 +210,14 @@ if (page.includes('/auth/recover') === true) {
 
     $('form[name="the_code_form"]').on('submit', (e) => {
         e.preventDefault()
+        $('.the_login_error').remove();
         $('button[name="the_code_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
         $.ajax({
-            url: base_url + 'auth/check_code',
+            url: base_url + 'auth/check_recovery_code',
             method: 'POST',
             data: $('form[name="the_code_form"]').serialize(),
             success: (r) => {
-                if (r.includes('the_new_password')) {
+                if (r.includes('the_proceed')) {
                     $('form[name="the_code_form"]').hide()
                     $('form[name="the_password_form"]').show()
                 } else {
@@ -235,14 +237,15 @@ if (page.includes('/auth/recover') === true) {
 
     $('form[name="the_password_form"]').on('submit', (e) => {
         e.preventDefault()
+        $('.the_login_error').remove();
         $('button[name="the_password_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
         $.ajax({
             url: base_url + 'auth/change_password',
             method: 'POST',
             data: $('form[name="the_password_form"]').serialize(),
             success: (r) => {
-                if (r.includes('the_new_password')) {
-                    window.location.href = base_url + 'settings'
+                if (r.includes('the_proceed')) {
+                    window.location.href = base_url + 'auth/login'
                 } else {
                     $('button[name="the_password_submit"]').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();
