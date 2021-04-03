@@ -15,7 +15,11 @@ class Database extends CI_Model
 
     public function insert($data, $table)
     {
-        return $this->db->insert($table, $data);
+        if ($this->db->insert($table, $data)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function delete($where, $table)

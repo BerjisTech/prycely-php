@@ -43,7 +43,6 @@ class Auth extends CI_Controller
 
         $this->Email->do_email($message, 'Chama Verification Code', $email, 'support@sleekupsell.com');
         $this->session->the_create_account_code = $the_create_account_code;
-        $this->session->the_create_account_code = 000000;
         echo base64_encode('the_proceed');
     }
 
@@ -62,8 +61,9 @@ class Auth extends CI_Controller
         $data['the_person_password'] = $this->hash_password($data['the_person_password']);
         $data['the_person_join'] = time();
         $data['the_person_verified'] = 1;
-        $this->Database->insert($data, 'the_people');
-        echo json_encode($data);
+        if ($this->Database->insert($data, 'the_people') == true) {
+            $this->session->set_userdata($data);
+        }
     }
 
     private function hash_password($password)

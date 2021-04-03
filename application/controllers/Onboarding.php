@@ -18,9 +18,10 @@ class Onboarding extends CI_Controller
             redirect('http://radio.garden/visit/nairobi/xKaC0mlq');
         }
     }
-    
+
     public function index()
     {
+        print_r($this->session);
         $this->load->view('auth/onboarding');
     }
 }
