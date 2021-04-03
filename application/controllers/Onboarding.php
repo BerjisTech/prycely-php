@@ -21,7 +21,6 @@ class Onboarding extends CI_Controller
 
     public function index()
     {
-        print_r($this->session);
         $this->load->view('auth/onboarding');
     }
 }

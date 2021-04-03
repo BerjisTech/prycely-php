@@ -1,13 +1,20 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+$user_details = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+if ($user_details->the_person_first == '' or $user_details->the_person_last == '' or $user_details->the_person_last == '') {
+    redirect(base_url('onboarding'));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>
-        <?php 
-            if(isset($page_title)){
-                echo $page_title.' | ';
-            }
+        <?php
+        if (isset($page_title)) {
+            echo $page_title . ' | ';
+        }
         ?> MonMax
     </title>
     <meta name="description" content="The small framework with powerful features">
