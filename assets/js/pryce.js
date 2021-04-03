@@ -47,7 +47,7 @@ if (page.includes('createaccount') === true) {
                     data: { 'the_email': the_person.email },
                     success: (r) => {
                         console.log(r)
-                        if (r == 'the_proceed') {
+                        if (r.includes('the_proceed')) {
                             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                             $('.the_email').hide()
                             $('.the_code').show()

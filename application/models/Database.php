@@ -31,4 +31,9 @@ class Database extends CI_Model
     {
         return $this->db->where($where)->set($data)->update($table);
     }
+
+    public function count($where, $table)
+    {
+        return $this->db->get_where($table, $where)->num_rows();
+    }
 }
