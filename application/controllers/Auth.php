@@ -73,6 +73,12 @@ class Auth extends CI_Controller
         }
     }
 
+    public function kwenda()
+    {
+        $this->session->sess_destroy();
+        redirect(base_url());
+    }
+
     private function hash_password($password)
     {
         return password_hash($password, PASSWORD_BCRYPT);

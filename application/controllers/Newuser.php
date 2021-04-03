@@ -14,8 +14,8 @@ class Newuser extends CI_Controller
         $this->output->set_header("Expires: Mon, 26 Jul 2020 05:00:00 GMT");
         date_default_timezone_set("Africa/Nairobi");
 
-        if ($this->session->sombo != true) {
-            redirect('http://radio.garden/visit/nairobi/xKaC0mlq');
+        if (!isset($this->session->the_person_email)) {
+            redirect(base_url('p/wrong_turn'));
         }
     }
 	public function index()

@@ -15,4 +15,8 @@ class P extends CI_Controller
         $view = 'email_templates/' . $template;
         $this->load->view($view, $data);
     }
+
+    public function wrong_turn()
+    {
+    }
 }
