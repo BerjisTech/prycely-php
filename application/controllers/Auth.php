@@ -36,7 +36,12 @@ class Auth extends CI_Controller
     {
         $email = $this->input->post('the_email');
         $the_create_account_code = mt_rand(100000, 999999);
-        $this->Email->do_email($the_create_account_code, 'Your code Mother Fucker', $email, 'support@sleekupsell.com');
+
+        $data['code'] = $the_create_account_code;
+        $view = 'email_templates/verify_code';
+        $message = $this->load->view($view, $data);
+
+        $this->Email->do_email($message, 'Chama Verification Code', $email, 'support@sleekupsell.com');
         $this->session->the_create_account_code = $the_create_account_code;
         $this->session->the_create_account_code = 000000;
         echo base64_encode('the_proceed');
