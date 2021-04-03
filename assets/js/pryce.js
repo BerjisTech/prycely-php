@@ -9,11 +9,6 @@ let base_url = 'http://' + window.location.hostname + '/chama/'
 console.log('Go pryce')
 const page = window.location.pathname
 
-$(document).on('focus', ':input', function () {
-    $(this).attr('autocomplete', 'off');
-});
-
-
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -124,8 +119,12 @@ if (page.includes('createaccount') === true) {
                     'the_person_password': the_person.password,
                 },
                 success: (r) => {
-                    $(this).html('YAY!!')
-                    window.location.href = base_url + "onboarding"
+                    if (r.includes('the_proceed')) {
+                        window.location.href = base_url + "onboarding"
+                    } else {
+                        $(this).html('LET\'S TRY THAT AGAIN')
+                        $('<p class="error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('input[name="user_password"]'))
+                    }
                 },
                 error: (e) => {
 
@@ -151,6 +150,33 @@ if (page.includes('createaccount') === true) {
             $('.the_code').show()
             $('.the_password').hide()
         }
+    })
+}
+
+if (page.includes('/auth/login') === true) {
+    $('form[name="the_login_form"]').on('submit', (e) => {
+        e.preventDefault()
+        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $.ajax({
+            url: base_url + 'auth/kuingia',
+            data: $('form[name="the_login_form"]').serialize(),
+            method: 'POST',
+            success: (r) => {
+                if (r.includes('the_login')) {
+
+                } else {
+                    $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN')
+                    $('.the_login_error').remove();
+                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_submit"]'))
+                }
+            },
+            error: (r) => {
+                console.log(r)
+                $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN');
+                $('.the_login_error').remove();
+                $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_submit"]'))
+            }
+        })
     })
 }
 

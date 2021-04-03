@@ -68,8 +68,32 @@ class Auth extends CI_Controller
         $data['the_person_join'] = time();
         $data['the_person_verified'] = 1;
         if ($this->Database->insert($data, 'the_people') == true) {
-            $this->session->set_userdata($data);
-            echo 'SHABAAAAM!!!';
+            $this->session->the_person_password = $data['the_person_password'];
+            $this->session->the_person_email = $data['the_person_email'];
+            $this->session->the_person_type = $data['the_person_type'];
+            echo 'the_proceed';
+        } else {
+            echo 'Something went wrong';
+        }
+    }
+
+    public function kuingia()
+    {
+
+        $select_single = $this->Database->select('the_person_password', array('the_person_email' => $this->input->post('the_person_email')), $join = NULL, 'the_people');
+
+        if ($select_single !== NULL) {
+            print_r($select_single);
+            if ($this->check_pass($this->input->post('the_person_password'), $select_single->the_person_password) === true) {
+                $this->session->the_person_password = $this->input->post('the_person_password');
+                $this->session->the_person_email = $this->input->post('the_person_email');
+                $this->session->the_person_type = $this->input->post('the_person_type');
+                echo 'the_login';
+            } else {
+                echo 'Very very wrong password 😂';
+            }
+        } else {
+            echo 'Check you if the email is correct';
         }
     }
 

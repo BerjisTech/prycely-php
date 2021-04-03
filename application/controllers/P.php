@@ -18,5 +18,6 @@ class P extends CI_Controller
 
     public function wrong_turn()
     {
+        $this->load->view('errors/html/wrong_turn');
     }
 }

@@ -31,12 +31,12 @@
                     <p class="the_email_title">Welcome back</p>
                     <div class="col-xs-12 input-group">
                         <label>Email adress</label>
-                        <input autocomplete="off" type="email" name="the_email" />
+                        <input autocomplete="off" type="email" name="the_person_email" />
                     </div>
                     <br />
                     <div class="col-xs-12 input-group">
                         <label>Password</label>
-                        <input autocomplete="off" type="password" name="the_password" />
+                        <input autocomplete="off" type="password" name="the_person_password" />
                     </div>
                     <br />
                     <br />

@@ -13,6 +13,15 @@ class Database extends CI_Model
         return $this->db->get($table)->result_array();
     }
 
+    public function select_single($select = NULL, $where = NULL, $join = NULL, $table = NULL)
+    {
+        if ($select != NULL) $this->db->select($select);
+        if ($where != NULL) $this->db->where($where);
+        if ($join != NULL) $this->db->join($join);
+
+        return $this->db->get($table)->row();
+    }
+
     public function insert($data, $table)
     {
         if ($this->db->insert($table, $data)) {
