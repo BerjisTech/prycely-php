@@ -20,6 +20,7 @@ if (page.includes('createaccount') === true) {
         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
         $('.yourself').hide()
         $('.the_email').show()
+        window.location.replace(base_url + 'createaccount#email')
     })
 
     $('.ca_next').on('click', function (e) {
@@ -47,6 +48,7 @@ if (page.includes('createaccount') === true) {
                             $('.the_email').hide()
                             $('.the_code').show()
                             $(this).html('NEXT')
+                            window.location.replace(base_url + 'createaccount#code')
                         } else {
                             $(this).html('LET\'S TRY THAT AGAIN')
                             $('<p class="error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('input[name="user_email"]'))
@@ -77,6 +79,7 @@ if (page.includes('createaccount') === true) {
                             $('.the_code').hide()
                             $('.the_password').show()
                             $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
+                            window.location.replace(base_url + 'createaccount#password')
                         } else {
                             $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
                             $('<p class="error bg-danger" style="padding: 10px;">The code enetered isn\'t correct</p>').insertBefore($('input[name="user_code"]'))
@@ -135,22 +138,44 @@ if (page.includes('createaccount') === true) {
 
     $('.back_link').on('click', function () {
         let this_step = $(this).attr('data-step')
-        if (this_step == 'email') {
+        if (this_step == 'email' || window.location.href.includes('createaccount#email')) {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-country-loop.mp4')
             $('.yourself').show()
             $('.the_email').hide()
+            window.location.replace(base_url + 'createaccount#type')
         }
-        if (this_step == 'code') {
+        if (this_step == 'code' || window.location.href.includes('createaccount#code')) {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
             $('.the_email').show()
             $('.the_code').hide()
+            window.location.replace(base_url + 'createaccount#email')
         }
-        if (this_step == 'password') {
+        if (this_step == 'password' || window.location.href.includes('createaccount#password')) {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
             $('.the_code').show()
             $('.the_password').hide()
+            window.location.replace(base_url + 'createaccount#code')
         }
     })
+
+    if (window.location.href.includes('createaccount#type')) {
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-country-loop.mp4')
+        $('.yourself').show()
+        $('.the_email').hide()
+        window.location.replace(base_url + 'createaccount#type')
+    }
+    if (window.location.href.includes('createaccount#email')) {
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
+        $('.the_email').show()
+        $('.the_code').hide()
+        window.location.replace(base_url + 'createaccount#email')
+    }
+    if (window.location.href.includes('createaccount#code')) {
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+        $('.the_code').show()
+        $('.the_password').hide()
+        window.location.replace(base_url + 'createaccount#code')
+    }
 }
 
 if (page.includes('/auth/login') === true) {
