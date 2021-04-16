@@ -159,6 +159,116 @@ if (page.includes('createaccount') === true) {
     })
 }
 
+if (page.includes('/onboarding') === true) {
+
+    setTimeout(function () {
+        $('.process-step .process-stepper:first').animate({ fontSize: "20px", fontWeight: "700" }, 300)
+        $('.process-step .process-stepper:first span:first').hide(500)
+        $('.process-flow').animate({ height: "13%" }, 500)
+    }, 300);
+
+    $('.finishPersonal').on('click', (e) => {
+        e.preventDefault()
+        $.ajax({
+            url: base_url + 'onboarding/personal',
+            method: 'GET',
+            data: $('.formPersonal').serialize(),
+            success: (response) => {
+                if (response.includes('the_proceed')) {
+                    $('.process-step .process-stepper:first').animate({ fontSize: "16px", fontWeight: "300" }, 300)
+                    $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "20px", fontWeight: "700" }, 300)
+
+                    $('.process-step .process-stepper:first span:first').show(500)
+                    $('.process-step .process-stepper:nth-child(2) span:first').hide(500)
+
+                    $('.process-flow').animate({ height: "38%" }, 700)
+                    $('.formPersonal').animate({ width: 'toggle' }, 300);
+                }
+            }
+        })
+
+    })
+
+    $('.finishPhoto').on('click', (e) => {
+        e.preventDefault()
+        $.ajax({
+            url: base_url + 'onboarding/photo',
+            method: 'GET',
+            data: $('.formPhoto').serialize(),
+            success: (response) => {
+                if (response.includes('the_proceed')) {
+                    $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "16px", fontWeight: "300" }, 500)
+                    $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "20px", fontWeight: "700" }, 500)
+
+                    $('.process-step .process-stepper:nth-child(2) span:first').show(500)
+                    $('.process-step .process-stepper:nth-child(3) span:first').hide(500)
+
+                    $('.process-flow').animate({ height: "63%" }, 500)
+                    $('.formPhoto').animate({ width: 'toggle' }, 300);
+                }
+            }
+        })
+    })
+
+    $('.finishAddress').on('click', (e) => {
+        e.preventDefault()
+        $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "16px", fontWeight: "300" }, 300)
+        $('.process-step .process-stepper:last').animate({ fontSize: "20px", fontWeight: "700" }, 300)
+
+        $('.process-step .process-stepper:nth-child(3) span:first').show(500)
+        $('.process-step .process-stepper:last span:first').hide(500)
+        $('.process-flow').animate({ height: "89%" }, 500)
+
+        $.ajax({
+            url: base_url + 'onboarding/address',
+            method: 'GET',
+            data: $('.formAddress').serialize(),
+            success: (response) => {
+                if (response.includes('the_proceed')) {
+                    $('.process-step .process-stepper:last').animate({ fontSize: "16px", fontWeight: "300" }, 300)
+                    $('.process-step .process-stepper:last span:first').show(500)
+                    $('.process-flow').animate({ height: "100%" }, 500)
+                    $('.finishAddress').css({ background: "#ffffff" })
+                    $('.startPhoto').hide()
+                    $('.finishAddress').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+                    setTimeout(function () {
+
+                    }, 1000);
+
+                } else {
+                    $('.startPhoto').show()
+                }
+            },
+            error: (e) => {
+                $('.startPhoto').show()
+            }
+        })
+    })
+
+    $('.startPersonal').on('click', () => {
+        $('.process-step .process-stepper:first').animate({ fontSize: "20px", fontWeight: "700" }, 300)
+        $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "16px", fontWeight: "300" }, 300)
+
+        $('.process-step .process-stepper:first span:first').hide(500)
+        $('.process-step .process-stepper:nth-child(2) span:first').show(500)
+
+        $('.process-flow').animate({ height: "13%" }, 500)
+        $('.formPersonal').animate({ width: 'toggle' }, 300);
+    })
+
+    $('.startPhoto').on('click', () => {
+        $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "20px", fontWeight: "700" }, 300)
+        $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "16px", fontWeight: "300" }, 300)
+
+        $('.process-step .process-stepper:nth-child(2) span:first').hide(500)
+        $('.process-step .process-stepper:nth-child(3) span:first').show(500)
+
+        $('.process-flow').animate({ height: "38%" }, 700)
+        $('.formPhoto').animate({ width: 'toggle' }, 300);
+    })
+
+}
+
 if (page.includes('/auth/login') === true) {
     $('form[name="the_login_form"]').on('submit', (e) => {
         e.preventDefault()

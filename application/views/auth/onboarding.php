@@ -43,8 +43,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
         </div>
     </div>
-    <div class="main-content">
-
+    <div class="main-content" style="padding: 0px;">
+        <div class="onboarding-main">
+            <form class="onboarding-pane formPersonal">
+                <button type="submit" class="finishPersonal onBoardNext">Next<span class="entypo-right-thin"></span></button>
+            </form>
+            <form class="onboarding-pane formPhoto">
+                <span class="entypo-left-thin startPersonal onBoardBack">Back</span>
+                <button type="submit" class="finishPhoto onBoardNext">Next<span class="entypo-right-thin"></span></button>
+            </form>
+            <form class="onboarding-pane formAddress">
+                <span class="entypo-left-thin startPhoto onBoardBack">Back</span>
+                <button type="submit" class="finishAddress onBoardNext">Finish</span></button>
+            </form>
+        </div>
     </div>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/chama/application/views/base/footer.php'); ?>

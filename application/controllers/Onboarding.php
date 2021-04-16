@@ -25,4 +25,19 @@ class Onboarding extends CI_Controller
 
         $this->load->view('auth/onboarding', $data);
     }
+
+    public function personal()
+    {
+        echo 'the_proceed';
+    }
+
+    public function photo()
+    {
+        echo 'the_proceed';
+    }
+
+    public function address()
+    {
+        echo 'the_proceed';
+    }
 }
