@@ -658,3 +658,49 @@ body {
     font-weight: 200;
     color: #535151;
 }
+
+.flow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.flow .process {
+    width: 5px;
+    padding: 1px;
+    border-radius: 5px;
+    background: #C6C8E0;
+    height: 100%;
+}
+
+.flow .process .process-flow {
+    width: 5px;
+    padding: 1px;
+    border-radius: 5px;
+    background: #7D2AE8;
+    height: 50%;
+    transition: max-height 0.15s ease-out;
+}
+
+.flow .process-step {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+    border-radius: 5px;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.flow .process-step .process-stepper {
+    display: flex;
+    height: 25%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flow .process-step .process-stepper span {
+    padding: 0px 3px;
+}

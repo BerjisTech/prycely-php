@@ -21,6 +21,8 @@ class Onboarding extends CI_Controller
 
     public function index()
     {
-        $this->load->view('auth/onboarding');
+        $data['page_title'] = 'On Boarding';
+
+        $this->load->view('auth/onboarding', $data);
     }
 }

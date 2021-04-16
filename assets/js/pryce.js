@@ -30,7 +30,7 @@ if (page.includes('createaccount') === true) {
         let html_fallback = $(this).html()
         $('p.error').remove()
 
-        $(this).html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $(this).html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]').val()
             if (the_person.email == '') {
@@ -162,7 +162,7 @@ if (page.includes('createaccount') === true) {
 if (page.includes('/auth/login') === true) {
     $('form[name="the_login_form"]').on('submit', (e) => {
         e.preventDefault()
-        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
         $.ajax({
             url: base_url + 'auth/kuingia',
             data: $('form[name="the_login_form"]').serialize(),
@@ -190,7 +190,7 @@ if (page.includes('/auth/recover') === true) {
     $('form[name="the_recover_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
-        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
         $.ajax({
             url: base_url + 'auth/recover_code',
             method: 'POST',
@@ -217,7 +217,7 @@ if (page.includes('/auth/recover') === true) {
     $('form[name="the_code_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
-        $('button[name="the_code_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $('button[name="the_code_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
         $.ajax({
             url: base_url + 'auth/check_recovery_code',
             method: 'POST',
@@ -244,7 +244,7 @@ if (page.includes('/auth/recover') === true) {
     $('form[name="the_password_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
-        $('button[name="the_password_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100%; height: auto" />')
+        $('button[name="the_password_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
         $.ajax({
             url: base_url + 'auth/change_password',
             method: 'POST',

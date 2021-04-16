@@ -92,4 +92,16 @@
         width: auto;
         max-width: 70vw;
     }
+    .flow .process-step {
+        align-items: center;
+        justify-content: center;
+    }
+    .flow .process-step .process-stepper .step-name {
+        display: none;
+    }
+    .onboarder {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 }

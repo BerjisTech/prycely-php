@@ -1,10 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-$user_details = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
-if ($user_details->the_person_first == '' or $user_details->the_person_last == '' or $user_details->the_person_last == '') {
-    redirect(base_url('onboarding'));
+if (isset($user_details)) {
+    if ($user_details->the_person_first == '' or $user_details->the_person_last == '' or $user_details->the_person_last == '') redirect(base_url('onboarding'));
+} else {
+    redirect(base_url('p/wrongturn'));
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

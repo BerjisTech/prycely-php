@@ -23,7 +23,9 @@ class Wallet extends CI_Controller
 	{
 		$data['page_name'] = 'wallet/index';
 		$data['page_title'] = 'Wallet';
-		$this->load->view('index', $data);
+		$data['user_details'] = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+
+$this->load->view('index', $data);
 	}
 
 	public function personal()

@@ -23,14 +23,18 @@ class Group extends CI_Controller
     {
         $data['page_name'] = 'group/index';
         $data['page_title'] = 'Group';
-        $this->load->view('index', $data);
+        $data['user_details'] = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+
+$this->load->view('index', $data);
     }
 
     public function g($group_id)
     {
         $data['page_name'] = 'group/group';
         $data['page_title'] = 'Diani Vacation';
-        $this->load->view('index', $data);
+        $data['user_details'] = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+
+$this->load->view('index', $data);
     }
 
     public function create()

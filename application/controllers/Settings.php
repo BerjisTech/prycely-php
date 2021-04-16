@@ -23,6 +23,8 @@ class Settings extends CI_Controller
     {
         $data['page_name'] = 'settings/index';
         $data['page_title'] = 'Settings';
-        $this->load->view('index', $data);
+        $data['user_details'] = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+
+$this->load->view('index', $data);
     }
 }
