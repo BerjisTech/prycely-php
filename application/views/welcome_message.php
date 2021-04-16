@@ -82,7 +82,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<header class="header_area">
 			<nav class="navbar navbar-expand-lg menu_one menu_four">
 				<div class="container">
-					<a class="navbar-brand sticky_logo" href="#"><img src="<?php echo base_url("assets/frontend/img/logo2.png"); ?>" srcset="img/logo2x-2.png 2x" alt="logo"><img src="<?php echo base_url("assets/frontend/img/logo.png"); ?>" srcset="img/logo2x.png 2x" alt=""></a>
+					<a class="navbar-brand sticky_logo" href="#"><img src="<?php echo base_url("assets/images/logo.png"); ?>" srcset="<?php echo base_url("assets/images/logo.png"); ?>" alt="logo" style="width: 70px;"><img src="<?php echo base_url("assets/images/logo.png"); ?>" srcset="img/logo2x.png 2x" alt="" style="width: 70px;"></a>
 					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="menu_toggle">
 							<span class="hamburger">
@@ -137,7 +137,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<h1 class="f_p f_700 f_size_50 w_color">The simpler, safer way to pay and get paid.</h1>
 					<p class="w_color f_p f_size_18">Why I say old chap that is, spiffing jolly good a load of old tosh spend a penny tosser arse over tit excuse.!</p>
 					<div class="action_btn d-flex align-items-center mt_60">
-						<a href="#" class="btn_hover agency_banner_btn">Sign Up for Free</a>
+						<a href="createaccount" class="btn_hover agency_banner_btn">Sign Up for Free</a>
 						<a href="#" class="agency_banner_btn_two">Find Out More<i class="ti-arrow-right"></i></a>
 					</div>
 				</div>
@@ -167,7 +167,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<h2>Quick & Easy Process</h2>
 							<p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
-							<a href="#" class="btn_hover agency_banner_btn pay_btn">Sign Up for Free</a>
+							<a href="createaccount" class="btn_hover agency_banner_btn pay_btn">Sign Up for Free</a>
 							<a href="#" class="btn_hover agency_banner_btn pay_btn pay_btn_two">Find Out More</a>
 						</div>
 					</div>
@@ -273,8 +273,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<h2>Quick & Easy Process</h2>
 							<p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
-							<a href="#" class="btn_hover agency_banner_btn pay_btn">Sign Up for Free</a>
-							<a href="#" class="btn_hover agency_banner_btn pay_btn pay_btn_two">Sign Up for Free</a>
+							<a href="createaccount" class="btn_hover agency_banner_btn pay_btn">Sign Up for Free</a>
+							<a href="createaccount" class="btn_hover agency_banner_btn pay_btn pay_btn_two">Sign Up for Free</a>
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -338,7 +338,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 					<h2 class="f_p t_color f_700">Join 200 million PayPal users worldwide.</h2>
 					<p>All you need is an email address or mobile phone number to transfer money. If they<br> don't have an account, they can create one quickly, for free.</p>
-					<a href="#" class="btn_hover agency_banner_btn pay_btn pay_btn_two">Sign Up for Free</a>
+					<a href="createaccount" class="btn_hover agency_banner_btn pay_btn pay_btn_two">Sign Up for Free</a>
 				</div>
 			</div>
 		</section>
@@ -349,7 +349,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-lg-5 col-md-6">
 							<div class="f_widget company_widget pr_100">
-								<a href="index.html" class="f-logo"><img src="<?php echo base_url("assets/frontend/img/logo.png"); ?>" srcset="img/logo2x.png 2x" alt=""></a>
+								<a href="index.html" class="f-logo"><img src="<?php echo base_url("assets/images/logo.png"); ?>" srcset="<?php echo base_url("assets/images/logo.png"); ?>" alt="logo" style="width: 70px;"></a>
 								<p class="f_400 f_p f_size_16 mb-0 l_height28 mt_40">Tickety-boo victoria sponge only a quid I don't want no agro morish bum bag gutted mate up the duff, bloke blag cup of char super bugger all mate.!</p>
 								<div class="f_social_icon_two mt_30">
 									<a href="#"><i class="ti-facebook"></i></a>
