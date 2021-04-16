@@ -138,44 +138,25 @@ if (page.includes('createaccount') === true) {
 
     $('.back_link').on('click', function () {
         let this_step = $(this).attr('data-step')
-        if (this_step == 'email' || window.location.href.includes('createaccount#email')) {
+        if (this_step == 'email') {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-country-loop.mp4')
             $('.yourself').show()
             $('.the_email').hide()
             window.location.replace(base_url + 'createaccount#type')
         }
-        if (this_step == 'code' || window.location.href.includes('createaccount#code')) {
+        if (this_step == 'code') {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
             $('.the_email').show()
             $('.the_code').hide()
             window.location.replace(base_url + 'createaccount#email')
         }
-        if (this_step == 'password' || window.location.href.includes('createaccount#password')) {
+        if (this_step == 'password') {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
             $('.the_code').show()
             $('.the_password').hide()
             window.location.replace(base_url + 'createaccount#code')
         }
     })
-
-    if (window.location.href.includes('createaccount#type')) {
-        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-country-loop.mp4')
-        $('.yourself').show()
-        $('.the_email').hide()
-        window.location.replace(base_url + 'createaccount#type')
-    }
-    if (window.location.href.includes('createaccount#email')) {
-        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
-        $('.the_email').show()
-        $('.the_code').hide()
-        window.location.replace(base_url + 'createaccount#email')
-    }
-    if (window.location.href.includes('createaccount#code')) {
-        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
-        $('.the_code').show()
-        $('.the_password').hide()
-        window.location.replace(base_url + 'createaccount#code')
-    }
 }
 
 if (page.includes('/auth/login') === true) {
