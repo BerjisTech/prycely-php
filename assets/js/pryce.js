@@ -9,6 +9,19 @@ let base_url = 'http://' + window.location.hostname + '/chama/'
 console.log('Go pryce')
 const page = window.location.pathname
 
+const changeImage = (input, placeholder) => {
+    $(placeholder).attr('src', base_url + 'assets/images/loader.gif')
+    if (input.files && input.files[0]) {
+        var reader = new FileReader()
+
+        reader.onload = function (e) {
+            console.log(e.target.result)
+            $(placeholder).attr('src', e.target.result)
+        }
+
+        reader.readAsDataURL(input.files[0])
+    }
+}
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -30,7 +43,7 @@ if (page.includes('createaccount') === true) {
         let html_fallback = $(this).html()
         $('p.error').remove()
 
-        $(this).html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+        $(this).html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
         if (this_step == 'email') {
             the_person.email = $('input[name="user_email"]').val()
             if (the_person.email == '') {
@@ -51,7 +64,7 @@ if (page.includes('createaccount') === true) {
                             window.location.replace(base_url + 'createaccount#code')
                         } else {
                             $(this).html('LET\'S TRY THAT AGAIN')
-                            $('<p class="error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('input[name="user_email"]'))
+                            $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('input[name="user_email"]'))
                         }
                     },
                     error: () => {
@@ -126,7 +139,7 @@ if (page.includes('createaccount') === true) {
                         window.location.href = base_url + "onboarding"
                     } else {
                         $(this).html('LET\'S TRY THAT AGAIN')
-                        $('<p class="error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('input[name="user_password"]'))
+                        $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('input[name="user_password"]'))
                     }
                 },
                 error: (e) => {
@@ -160,6 +173,10 @@ if (page.includes('createaccount') === true) {
 }
 
 if (page.includes('/onboarding') === true) {
+
+    $('[name="the_person_photo"]').on('change', () => {
+        changeImage(this, '.the_person_photo_placeholder')
+    });
 
     setTimeout(function () {
         $('.process-step .process-stepper:first').animate({ fontSize: "20px", fontWeight: "700" }, 300)
@@ -230,7 +247,7 @@ if (page.includes('/onboarding') === true) {
                     $('.process-flow').animate({ height: "100%" }, 500)
                     $('.finishAddress').css({ background: "#ffffff" })
                     $('.startPhoto').hide()
-                    $('.finishAddress').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+                    $('.finishAddress').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
                     setTimeout(function () {
 
                     }, 1000);
@@ -272,7 +289,7 @@ if (page.includes('/onboarding') === true) {
 if (page.includes('/auth/login') === true) {
     $('form[name="the_login_form"]').on('submit', (e) => {
         e.preventDefault()
-        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+        $('button[name="the_submit"]').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
         $.ajax({
             url: base_url + 'auth/kuingia',
             data: $('form[name="the_login_form"]').serialize(),
@@ -283,7 +300,7 @@ if (page.includes('/auth/login') === true) {
                 } else {
                     $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();
-                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_submit"]'))
+                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('button[name="the_submit"]'))
                 }
             },
             error: (r) => {
@@ -300,7 +317,7 @@ if (page.includes('/auth/recover') === true) {
     $('form[name="the_recover_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
-        $('button[name="the_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+        $('button[name="the_submit"]').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
         $.ajax({
             url: base_url + 'auth/recover_code',
             method: 'POST',
@@ -312,7 +329,7 @@ if (page.includes('/auth/recover') === true) {
                 } else {
                     $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();
-                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_submit"]'))
+                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('button[name="the_submit"]'))
                 }
             },
             error: (r) => {
@@ -327,7 +344,7 @@ if (page.includes('/auth/recover') === true) {
     $('form[name="the_code_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
-        $('button[name="the_code_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+        $('button[name="the_code_submit"]').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
         $.ajax({
             url: base_url + 'auth/check_recovery_code',
             method: 'POST',
@@ -339,7 +356,7 @@ if (page.includes('/auth/recover') === true) {
                 } else {
                     $('button[name="the_code_submit"]').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();
-                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_code_submit"]'))
+                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('button[name="the_code_submit"]'))
                 }
             },
             error: (r) => {
@@ -354,7 +371,7 @@ if (page.includes('/auth/recover') === true) {
     $('form[name="the_password_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
-        $('button[name="the_password_submit"]').html('<img src="' + base_url + 'assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />')
+        $('button[name="the_password_submit"]').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
         $.ajax({
             url: base_url + 'auth/change_password',
             method: 'POST',
@@ -365,7 +382,7 @@ if (page.includes('/auth/recover') === true) {
                 } else {
                     $('button[name="the_password_submit"]').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();
-                    $('<p class="the_login_error bg-danger" style="padding: 10px;">' + r + '</p>').insertBefore($('button[name="the_password_submit"]'))
+                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('button[name="the_password_submit"]'))
                 }
             },
             error: (r) => {

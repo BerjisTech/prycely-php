@@ -46,9 +46,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="main-content" style="padding: 0px;">
         <div class="onboarding-main">
             <form class="onboarding-pane formPersonal">
+                <h2 class="ob_pane_title">Your personal info</h2>
+
+                <div class="input-group">
+                    <label for="the_person_first_name">First name</label>
+                    <input type="text" name="the_person_first_name" class="form-control" placeholder="Your first name here" required />
+                </div>
+                <div class="input-group">
+                    <label for="the_person_last_name">Last name</label>
+                    <input type="text" name="the_person_last_name" class="form-control" placeholder="Your last name here" required />
+                </div>
                 <button type="submit" class="finishPersonal onBoardNext">Next<span class="entypo-right-thin"></span></button>
             </form>
             <form class="onboarding-pane formPhoto">
+                <div class="text-center">
+                    <img class="the_person_photo_placeholder img img-rounded img-placeholder" src="#" alt="your image" style="width: 200px;" /><br />
+                    <label for="the_person_photo">Choose an image<input type="file" name="the_person_photo" /></label>
+
+                </div>
                 <span class="entypo-left-thin startPersonal onBoardBack">Back</span>
                 <button type="submit" class="finishPhoto onBoardNext">Next<span class="entypo-right-thin"></span></button>
             </form>
