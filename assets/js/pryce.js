@@ -9,19 +9,6 @@ let base_url = 'http://' + window.location.hostname + '/chama/'
 console.log('Go pryce')
 const page = window.location.pathname
 
-const changeImage = (input, placeholder) => {
-    $(placeholder).attr('src', base_url + 'assets/images/loader.gif')
-    if (input.files && input.files[0]) {
-        var reader = new FileReader()
-
-        reader.onload = function (e) {
-            console.log(e.target.result)
-            $(placeholder).attr('src', e.target.result)
-        }
-
-        reader.readAsDataURL(input.files[0])
-    }
-}
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -174,10 +161,6 @@ if (page.includes('createaccount') === true) {
 
 if (page.includes('/onboarding') === true) {
 
-    $('[name="the_person_photo"]').on('change', () => {
-        changeImage(this, '.the_person_photo_placeholder')
-    });
-
     setTimeout(function () {
         $('.process-step .process-stepper:first').animate({ fontSize: "20px", fontWeight: "700" }, 300)
         $('.process-step .process-stepper:first span:first').hide(500)
@@ -191,6 +174,7 @@ if (page.includes('/onboarding') === true) {
             method: 'GET',
             data: $('.formPersonal').serialize(),
             success: (response) => {
+                console.log(response)
                 if (response.includes('the_proceed')) {
                     $('.process-step .process-stepper:first').animate({ fontSize: "16px", fontWeight: "300" }, 300)
                     $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "20px", fontWeight: "700" }, 300)
@@ -208,11 +192,16 @@ if (page.includes('/onboarding') === true) {
 
     $('.finishPhoto').on('click', (e) => {
         e.preventDefault()
+        console.log(new FormData($('.formPhoto')[0]))
         $.ajax({
             url: base_url + 'onboarding/photo',
-            method: 'GET',
-            data: $('.formPhoto').serialize(),
+            method: 'POST',
+            data: new FormData($('.formPhoto')[0]),
+            cache: false,
+            contentType: false,
+            processData: false,
             success: (response) => {
+                console.log(response)
                 if (response.includes('the_proceed')) {
                     $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "16px", fontWeight: "300" }, 500)
                     $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "20px", fontWeight: "700" }, 500)

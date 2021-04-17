@@ -28,16 +28,45 @@ class Onboarding extends CI_Controller
 
     public function personal()
     {
-        echo 'the_proceed';
+        $this->updateUser($this->input->get());
     }
 
     public function photo()
     {
-        echo 'the_proceed';
+        $config = array(
+            'upload_path' => "./uploads/",
+            'allowed_types' => 'gif|jpg|png',
+            'overwrite' => TRUE,
+            'max_size' => "2048000",
+            'file_name' => SHA1($this->session->the_person_id)
+        );
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('the_person_photo')) {
+            $image = $this->upload->data();
+            $data = array('the_person_photo' => $image['file_name']);
+            $this->updateUser($data);
+        } else {
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+        }
     }
 
     public function address()
     {
+        echo 'the_proceed';
+    }
+
+    private function updateUser($data)
+    {
+
+        $where = array(
+            'the_person_email' => $this->session->the_person_email
+        );
+
+        // $this->Database->update($where, $data, 'the_people');
+
         echo 'the_proceed';
     }
 }
