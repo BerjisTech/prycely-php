@@ -25,6 +25,6 @@ class Overview extends CI_Controller
         $data['page_title'] = 'Overview';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
-$this->load->view('index', $data);
+        $this->load->view('index', $data);
     }
 }
