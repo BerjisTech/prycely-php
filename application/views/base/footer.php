@@ -23,5 +23,4 @@
 <!-- <script src="<?php echo base_url('assets/js/neon-custom.js'); ?>" id="script-resource-17"></script> Demo Settings -->
 <!-- <script src="<?php echo base_url('assets/js/neon-demo.js'); ?>" id="script-resource-18"></script> -->
 <!--script src="<?php echo base_url('assets/js/neon-skins.js'); ?>" id="script-resource-19"></script-->
-<script src="<?php echo base_url('assets/js/select2/select2.min.js'); ?>" id="script-resource-9"></script>
 <script src="<?php echo base_url('assets/js/bootstrap-datepicker.js'); ?>" id="script-resource-12"></script>

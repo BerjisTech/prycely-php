@@ -25,15 +25,17 @@ class Wallet extends CI_Controller
 		$data['page_title'] = 'Wallet';
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
-$this->load->view('index', $data);
+		$this->load->view('index', $data);
 	}
 
-	public function personal()
+	public function create()
 	{
-	}
+		$data['map'] = directory_map('assets/images/flags', FALSE, TRUE);
+		$data['page_name'] = 'wallet/create';
+		$data['page_title'] = 'Create New Wallet';
+		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
-	public function group($group_id = "")
-	{
+		$this->load->view('index', $data);
 	}
 
 	public function add()
@@ -44,15 +46,5 @@ $this->load->view('index', $data);
 	public function delete($wallet_id = "")
 	{
 		echo 'delete wallet';
-	}
-
-	public function edit($wallet_id = "")
-	{
-		echo 'edit wallet';
-	}
-
-	public function test_mpesa()
-	{
-		echo $this->Mpesa->generate_token()['token'];
 	}
 }

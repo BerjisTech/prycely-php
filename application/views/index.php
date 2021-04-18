@@ -17,7 +17,7 @@ if (isset($user_details)) {
         if (isset($page_title)) {
             echo $page_title . ' | ';
         }
-        ?> MonMax
+        ?> Prycely
     </title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

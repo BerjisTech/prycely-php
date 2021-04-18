@@ -1,3 +1,4 @@
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="row">
     <div class="col-sm-8">
         <div class="row">
@@ -125,7 +126,7 @@
     </div>
     <div class="col-sm-4 wallet-panel right-card switch-card hidden-xs">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 overviewWallets">
                 <p class="transaction-title">My Wallets</p>
                 <table class="table transaction-table table-hover">
                     <tr>
@@ -169,7 +170,8 @@
                     </tr>
                 </table>
                 <span class="more_groups"><a href="<?php echo base_url('wallet'); ?>">View all wallets<span class="fal fa fa-arrow-right"></span></a></span>
-
+            </div>
+            <div class="col-sm-12 overviewGroups">
                 <p class="transaction-title">My Groups</p>
                 <table class="table transaction-table table-hover">
                     <tr class="go_to_group" data-id="group_id">
@@ -201,7 +203,8 @@
                     </tr>
                 </table>
                 <span class="more_groups"><a href="<?php echo base_url('group'); ?>">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
-
+            </div>
+            <div class="col-sm-12 overviewCards">
                 <p class="transaction-title">Cards</p>
                 <div class="cc visa">
                     <svg style="width:100%; opacity: 0.3;">
