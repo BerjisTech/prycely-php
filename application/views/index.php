@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 if (isset($user_details)) {
-    if ($user_details->the_person_first == '' or $user_details->the_person_last == '' or $user_details->the_person_last == '') redirect(base_url('onboarding'));
+    if ($user_details->the_person_first_name == '' or $user_details->the_person_last_name == '' or $user_details->the_person_last_name == '') redirect(base_url('onboarding'));
 } else {
     redirect(base_url('p/wrongturn'));
 }

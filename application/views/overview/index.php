@@ -126,11 +126,7 @@
     <div class="col-sm-4 wallet-panel right-card switch-card hidden-xs">
         <div class="row">
             <div class="col-sm-12">
-                <div class="balance-card">
-                    <span class="balance-title">Account Balance</span>
-                    <span class="balance-amount">$25,386</span>
-                </div>
-                <p class="transaction-title">My Wallet</p>
+                <p class="transaction-title">My Wallets</p>
                 <table class="table transaction-table table-hover">
                     <tr>
                         <td class="t-img">

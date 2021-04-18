@@ -28,6 +28,7 @@ class Onboarding extends CI_Controller
 
     public function personal()
     {
+        $_GET['the_person_details_date'] = time();
         $this->updateUser($this->input->get());
     }
 
@@ -45,17 +46,21 @@ class Onboarding extends CI_Controller
 
         if ($this->upload->do_upload('the_person_photo')) {
             $image = $this->upload->data();
-            $data = array('the_person_photo' => $image['file_name']);
+            $data = array(
+                'the_person_photo' => $image['file_name'],
+                'the_person_details_date' => time()
+            );
             $this->updateUser($data);
         } else {
             $error = array('error' => $this->upload->display_errors());
-            print_r($error);
+            echo $this->upload->display_errors();
         }
     }
 
     public function address()
     {
-        echo 'the_proceed';
+        $_GET['the_person_details_date'] = time();
+        $this->updateUser($this->input->get());
     }
 
     private function updateUser($data)
@@ -65,7 +70,7 @@ class Onboarding extends CI_Controller
             'the_person_email' => $this->session->the_person_email
         );
 
-        // $this->Database->update($where, $data, 'the_people');
+        $this->Database->update($where, $data, 'the_people');
 
         echo 'the_proceed';
     }

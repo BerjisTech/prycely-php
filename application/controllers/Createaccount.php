@@ -24,9 +24,9 @@ class Createaccount extends CI_Controller
     {
         $data[] = '';
         $msg = $this->load->view('email_templates/welcome', $data,  TRUE);
-        $sub = 'Welcome to Chama';
+        $sub = 'Welcome to Prycely';
         $to = $email;
-        $from = 'no-reply@chama.com';
+        $from = 'no-reply@prycely.com';
         $this->Email->do_email($msg, $sub, $to, $from);
     }
 }

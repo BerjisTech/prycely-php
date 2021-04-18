@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-	<title>Chama</title>
+	<title>Prycely</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/css/bootstrap.min.css"); ?>">
 	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/bootstrap-selector/css/bootstrap-select.min.css"); ?>">

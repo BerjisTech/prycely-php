@@ -49,7 +49,7 @@
                                                                         <td data-text="Hero Title" data-font="Primary" align="center" valign="middle" style="font-family:'Poppins',sans-serif;color:#191919;font-size:56px;line-height:66px;font-weight:600;letter-spacing:0px;padding:0;padding-bottom:20px;" contenteditable="true" data-gramm="false" class="">YOU'RE MAKING THE BEST CHOICE IN LIFE TODAY</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td data-text="Hero Description" data-font="Primary" align="center" valign="middle" style="font-family:'Poppins',sans-serif;color:#191919;font-size:14px;line-height:22px;font-weight:500;letter-spacing:0px;padding:0;padding-bottom:40px;" contenteditable="true" data-gramm="false" class="">Here's your chama's verification code.</td>
+                                                                        <td data-text="Hero Description" data-font="Primary" align="center" valign="middle" style="font-family:'Poppins',sans-serif;color:#191919;font-size:14px;line-height:22px;font-weight:500;letter-spacing:0px;padding:0;padding-bottom:40px;" contenteditable="true" data-gramm="false" class="">Here's your prycely's verification code.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td align="center" valign="middle">

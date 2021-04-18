@@ -13,9 +13,8 @@ body {
 
 .side_bar {
     display: flex;
-    height: 85vh;
+    height: 100vh;
     position: fixed;
-    left: 2.5vw;
     top: 7.5vh;
     width: 150px;
     flex-direction: column;
@@ -52,7 +51,7 @@ body {
     height: 70px;
     border-radius: 100%;
     margin-bottom: 10px;
-    background-image: url('https://fraser-pryce.herokuapp.com/assets/images/logo.png');
+    background-image: url('http://localhost/prycely/assets/images/logo.png');
     background-position: 50% 50% !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -63,11 +62,11 @@ body {
 
 .main-content {
     display: table;
-    margin-left: 20vw;
+    margin-left: 15vw;
     padding: 20px 50px;
     border-radius: 10px 0px 0px 10px;
     background: #FFFFFF;
-    width: 80vw;
+    width: 85vw;
     right: 0vw;
     min-height: 100vh;
     box-shadow: -8px 0 32px 0 rgba( 31, 38, 135, 0.37);
@@ -160,30 +159,6 @@ body {
     border-radius: 10px;
     padding-top: 20px;
     min-height: 100vh !important;
-}
-
-.balance-card {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: table;
-    color: #ffffff;
-    border-radius: 20px;
-    border: none;
-    padding: 20px 30px;
-    width: 100%;
-    background-image: linear-gradient(to left bottom, #3455ff, #006bff, #007dff, #008dff, #169cff, #00a9ff, #00b6ff, #00c1fc, #00cdf5, #00d8e9, #20e1d7, #5ee8c4);
-    box-shadow: 0 8px 12px 0 rgba( 31, 38, 135, 0.27);
-    /* backdrop-filter: blur( 10.5px);
-    -webkit-backdrop-filter: blur( 10.5px); */
-}
-
-.balance-card .balance-title {
-    display: table;
-}
-
-.balance-card .balance-amount {
-    font-size: 30px;
-    font-weight: 500;
 }
 
 .transactions-card {
@@ -714,7 +689,7 @@ body {
     flex-direction: row;
 }
 
-.onboarding-pane {
+.formPhoto, .formPersonal, .formAddress {
     display: flex;
     width: 80vw;
     height: 100vh;
@@ -722,8 +697,11 @@ body {
     background: #ffffff;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding-left: 50px;
+}
+
+.formAddress .col-sm-12 {
+    margin-top: 40px;
 }
 
 .ob_pane_title {
@@ -748,6 +726,15 @@ body {
     max-width: 70vw !important;
 }
 
+.formAddress :is(select, input) {
+    border-radius: 5px !important;
+    border: 2px solid #828486;
+    padding: 0px 20px !important;
+    font-weight: 600 !important;
+    text-align: left;
+    height: 50px;
+}
+
 .onBoardBack {
     position: absolute;
     bottom: 20px;
@@ -755,9 +742,13 @@ body {
     cursor: pointer;
 }
 
-.onBoardBack:hover {
+.onBoardBack span:hover {
     font-size: 19px;
     transition: all 0.56s;
+}
+
+.skipPhoto {
+    color: rgba( 190, 190, 190, 1);
 }
 
 .onBoardNext {

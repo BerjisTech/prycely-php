@@ -5,7 +5,7 @@ const Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0
 const base_check = (b64) => {
     return Base64.encode(b64).replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '')
 }
-let base_url = 'http://' + window.location.hostname + '/chama/'
+let base_url = 'http://' + window.location.hostname + '/prycely/'
 console.log('Go pryce')
 const page = window.location.pathname
 
@@ -169,6 +169,14 @@ if (page.includes('/onboarding') === true) {
 
     $('.finishPersonal').on('click', (e) => {
         e.preventDefault()
+        $('.the_login_error').remove()
+
+        if ($('[name="the_person_first_name"]').val() === '' || $('[name="the_person_last_name"]').val() === '') {
+            $(this).html('LET\'S TRY THAT AGAIN')
+            $('.formPersonal').prepend($(`<div class="the_login_error bg-danger" style="padding: 10px;">You must enter both your <strong>first</strong> and <strong>last</strong> names</div>`))
+            return false;
+        }
+
         $.ajax({
             url: base_url + 'onboarding/personal',
             method: 'GET',
@@ -184,6 +192,9 @@ if (page.includes('/onboarding') === true) {
 
                     $('.process-flow').animate({ height: "38%" }, 700)
                     $('.formPersonal').animate({ width: 'toggle' }, 300);
+                } else {
+                    $(this).html('LET\'S TRY THAT AGAIN')
+                    $('.formPersonal').prepend($(`<div class="the_login_error bg-danger" style="padding: 10px;">${response}</div>`))
                 }
             }
         })
@@ -192,6 +203,7 @@ if (page.includes('/onboarding') === true) {
 
     $('.finishPhoto').on('click', (e) => {
         e.preventDefault()
+        $('.the_login_error').remove()
         console.log(new FormData($('.formPhoto')[0]))
         $.ajax({
             url: base_url + 'onboarding/photo',
@@ -201,7 +213,6 @@ if (page.includes('/onboarding') === true) {
             contentType: false,
             processData: false,
             success: (response) => {
-                console.log(response)
                 if (response.includes('the_proceed')) {
                     $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "16px", fontWeight: "300" }, 500)
                     $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "20px", fontWeight: "700" }, 500)
@@ -211,13 +222,41 @@ if (page.includes('/onboarding') === true) {
 
                     $('.process-flow').animate({ height: "63%" }, 500)
                     $('.formPhoto').animate({ width: 'toggle' }, 300);
+                } else {
+                    $(this).html('LET\'S TRY THAT AGAIN')
+                    $('.formPhoto').prepend($(`<div class="the_login_error bg-danger" style="padding: 10px;">${response}</div>`))
                 }
             }
         })
     })
 
+    $('.skipPhoto').on('click', () => {
+        $('.the_login_error').remove()
+        $('.process-step .process-stepper:nth-child(2)').animate({ fontSize: "16px", fontWeight: "300" }, 500)
+        $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "20px", fontWeight: "700" }, 500)
+
+        $('.process-step .process-stepper:nth-child(2) span:first').show(500)
+        $('.process-step .process-stepper:nth-child(3) span:first').hide(500)
+
+        $('.process-flow').animate({ height: "63%" }, 500)
+        $('.formPhoto').animate({ width: 'toggle' }, 300);
+    })
+
     $('.finishAddress').on('click', (e) => {
         e.preventDefault()
+
+        if ($('[name="the_person_street"]').val() === '' ||
+            $('[name="the_person_address"]').val() === '' ||
+            $('[name="the_person_postal"]').val() === '' ||
+            $('[name="the_person_country"]').val() === '' ||
+            $('[name="the_person_county"]').val() === '' ||
+            $('[name="the_person_city"]').val() === '') {
+            $(this).html('LET\'S TRY THAT AGAIN')
+            $('.formAddress').prepend($(`<div class="the_login_error bg-danger" style="padding: 10px;">All Fields are required</div>`))
+            return false;
+        }
+
+        $('.the_login_error').remove()
         $('.process-step .process-stepper:nth-child(3)').animate({ fontSize: "16px", fontWeight: "300" }, 300)
         $('.process-step .process-stepper:last').animate({ fontSize: "20px", fontWeight: "700" }, 300)
 
@@ -230,6 +269,7 @@ if (page.includes('/onboarding') === true) {
             method: 'GET',
             data: $('.formAddress').serialize(),
             success: (response) => {
+                console.log(response)
                 if (response.includes('the_proceed')) {
                     $('.process-step .process-stepper:last').animate({ fontSize: "16px", fontWeight: "300" }, 300)
                     $('.process-step .process-stepper:last span:first').show(500)
@@ -238,10 +278,13 @@ if (page.includes('/onboarding') === true) {
                     $('.startPhoto').hide()
                     $('.finishAddress').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
                     setTimeout(function () {
-
+                        window.location.href = base_url + 'overview'
                     }, 1000);
 
                 } else {
+                    $(this).html('LET\'S TRY THAT AGAIN')
+                    $('.formAddress').prepend($(`<div class="the_login_error bg-danger" style="padding: 10px;">${response}</div>`))
+
                     $('.startPhoto').show()
                 }
             },
@@ -391,25 +434,6 @@ $('.switch-tab').on('click', function () {
         $('.switch-tab').removeClass('active')
         $(this).addClass('active')
     }
-})
-
-$('a').on('click', function () {
-
-    let link_data = {
-        'page': window.location.href,
-        'date': new Date(),
-        'class': $(this).attr('class'),
-        'id': $(this).attr('id'),
-        'text': $(this).html()
-    }
-    console.log(link_data)
-    $.ajax({
-        url: base_url + 'internals/link_stats',
-        data: link_data,
-        method: 'POST',
-        success: function () { },
-        error: function (e) { log_errors('link_stats', link_data, e) }
-    })
 })
 
 function log_errors(from, data, e) {

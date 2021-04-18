@@ -23,7 +23,7 @@ class Group extends CI_Controller
     {
         $data['page_name'] = 'group/index';
         $data['page_title'] = 'Group';
-        $data['user_details'] = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+        $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
 $this->load->view('index', $data);
     }
@@ -32,7 +32,7 @@ $this->load->view('index', $data);
     {
         $data['page_name'] = 'group/group';
         $data['page_title'] = 'Diani Vacation';
-        $data['user_details'] = $this->Database->select_single('the_person_first, the_person_last, the_person_last', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+        $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
 $this->load->view('index', $data);
     }

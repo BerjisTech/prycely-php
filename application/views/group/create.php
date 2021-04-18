@@ -38,7 +38,7 @@
                                 <tbody>
                                     <tr class="user_type_chooser" data-type="company">
                                         <td><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></td>
-                                        <td class="user-type">CHAMA<span>Casual savings between close friends. 250 Members Max</span></td>
+                                        <td class="user-type">PRYCELY<span>Casual savings between close friends. 250 Members Max</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
                                     </tr>
                                 </tbody>
@@ -66,7 +66,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <span class="go_back"><a href="<?php echo base_url() ?>" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back" onclick="window.history.back();"><span class="fal fa fa-arrow-left"></span> Go Back</span>
                     </div>
                     <div class="col-xs-12 the_email" style="display: none;">
                         <h3 class="the_title">Choose Group Name</h3>
