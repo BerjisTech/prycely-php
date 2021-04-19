@@ -24,6 +24,7 @@ class Overview extends CI_Controller
         $data['page_name'] = 'overview/index';
         $data['page_title'] = 'Overview';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+        $data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->limit('3')->get('the_wallets')->result_array();
 
         $this->load->view('index', $data);
     }

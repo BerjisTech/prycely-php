@@ -129,45 +129,21 @@
             <div class="col-sm-12 overviewWallets">
                 <p class="transaction-title">My Wallets</p>
                 <table class="table transaction-table table-hover">
-                    <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/ke.svg'); ?>');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">KES - Local</span>
-                            <span class="transaction-status">Recipient and Sender</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount complete">KES 230,000</span>
-                            <span class="transaction-time">KES 2,300</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/us.svg'); ?>');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">USD - Foreign</span>
-                            <span class="transaction-status">Recipient</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount complete">$ 23,000</span>
-                            <span class="transaction-time">$ 200 pending</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/gb.svg'); ?>');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">GBP - Foreign</span>
-                            <span class="transaction-status">Recipient</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount complete">GBP 23</span>
-                            <span class="transaction-time">GBP 500 pending</span>
-                        </td>
-                    </tr>
+                    <?php foreach ($wallets as $key => $wallet) : ?>
+                        <tr onclick="window.location.href = '<?php echo base_url('wallet/view/' . $wallet['the_wallet_id']); ?>'">
+                            <td class="t-img">
+                                <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/') . substr($wallet['the_wallet_currency'], 0, 2); ?>.svg');"></p>
+                            </td>
+                            <td class="transaction-details">
+                                <span class="transaction-title"><?php echo $wallet['the_wallet_currency']; ?></span>
+                                <span class="transaction-status">Opened <?php echo date('d M, Y', $wallet['the_wallet_open_date']); ?></span>
+                            </td>
+                            <td class="transaction-td">
+                                <span class="transaction-amount complete"><?php echo $wallet['the_wallet_currency']; ?> <?php echo $wallet['the_wallet_balance']; ?></span>
+                                <span class="transaction-time"><?php echo $wallet['the_wallet_currency']; ?> <?php echo $wallet['the_wallet_balance_pending']; ?> pending</span>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
                 <span class="more_groups"><a href="<?php echo base_url('wallet'); ?>">View all wallets<span class="fal fa fa-arrow-right"></span></a></span>
             </div>
