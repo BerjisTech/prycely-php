@@ -763,10 +763,9 @@ body {
     height: 50px;
 }
 
-.walletPage {
+.walletPage, .the_form_wallet_currency {
     display: flex;
     width: 80vw;
-    height: 100vh;
     position: relative;
     background: #ffffff;
     flex-direction: column;
@@ -782,7 +781,7 @@ body {
     margin-top: 40px;
 }
 
-.the_wallet_currency {
+.get_wallet_currency {
     height: 50px !important;
     width: auto;
     max-width: 70vw;

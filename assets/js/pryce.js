@@ -436,7 +436,8 @@ if (page.includes('/auth/recover') === true) {
 
 if (page.includes('/wallet/create') === true) {
     $('.the_wallet_currencies').hide()
-    $('.the_wallet_currency').on('input', () => {
+    
+    $('.get_wallet_currency').on('input', () => {
         $.ajax({
             url: base_url + 'p/currency',
             method: 'GET',
@@ -448,18 +449,23 @@ if (page.includes('/wallet/create') === true) {
         })
     })
 
-    $('.the_wallet_create_button').on('input', () => {
+    $('.the_wallet_create_button').on('click', (e) => {
+        e.preventDefault()
+        let data = { 'the_wallet_currency': $('.submit_the_wallet_currency').val() }
         $.ajax({
             url: base_url + 'wallet/add',
             method: 'GET',
             data: $('.walletPage').serialize(),
             success: (wallet_result) => {
-                if (wallet_result.includes('the_proceed')) { }
-                else {
+
+                console.log(wallet_result)
+                if (wallet_result.includes('Error:')) {
                     $('.the_wallet_create_button').html('LET\'S TRY THAT AGAIN')
                     $('.the_login_error').remove();
-                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('.the_wallet_create_button'))
+                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${wallet_result}</p>`).insertBefore($('.the_wallet_create_button'))
+                    return false;
                 }
+                window.location.href = base_url + "wallet/view/" + wallet_result
 
             }
         })

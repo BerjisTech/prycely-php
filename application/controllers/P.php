@@ -19,9 +19,9 @@ class P extends CI_Controller
     public function currency()
     {
         $result = $this->db
-            ->like('currency', $this->input->get('the_wallet_currency'))
-            ->or_like('code', $this->input->get('the_wallet_currency'))
-            ->or_like('country', $this->input->get('the_wallet_currency'))
+            ->like('currency', $this->input->get('get_wallet_currency'))
+            ->or_like('code', $this->input->get('get_wallet_currency'))
+            ->or_like('country', $this->input->get('get_wallet_currency'))
             ->get('currency')->result_array();
         foreach ($result as $currency) {
             echo '<span class="currency_list" onclick="logCurrency(\'' . $currency['country'] . '\', \'' . $currency['code'] . '\', \'' . $currency['currency'] . '\')">
