@@ -795,7 +795,8 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(6, 6, 6, 0.3);
-    height: 200px;
+    height: auto;
+    max-height: 200px;
     overflow-Y: auto;
     width: auto;
     max-width: 70vw;
@@ -806,4 +807,17 @@ body {
 .the_wallet_currencies span {
     margin: 5px 10px;
     cursor: pointer;
+    padding: 5px;
+}
+
+.the_wallet_currencies span:hover {
+    background: rgba( 190, 190, 190, 0.3);
+}
+
+.the_wallet_create_button {
+    background: #7D2AE8;
+    border: 1px solid #7D2AE8;
+    padding: 20px 30px;
+    color: #ffffff;
+    margin-top: 40px;
 }

@@ -16,6 +16,21 @@ class P extends CI_Controller
         $this->load->view($view, $data);
     }
 
+    public function currency()
+    {
+        $result = $this->db
+            ->like('currency', $this->input->get('the_wallet_currency'))
+            ->or_like('code', $this->input->get('the_wallet_currency'))
+            ->or_like('country', $this->input->get('the_wallet_currency'))
+            ->get('currency')->result_array();
+        foreach ($result as $currency) {
+            echo '<span class="currency_list" onclick="logCurrency(\'' . $currency['country'] . '\', \'' . $currency['code'] . '\', \'' . $currency['currency'] . '\')">
+                    <img src="' . base_url('assets/images/flags/') . substr($currency['code'], 0, 2) . '.svg" style="width: 50px;" />
+                    ' . $currency['currency'] . ' (' . $currency['code'] . ') ' . $currency['country'] .
+                '</span>';
+        }
+    }
+
     public function wrong_turn()
     {
         $this->load->view('errors/html/wrong_turn');

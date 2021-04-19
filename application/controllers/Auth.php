@@ -154,7 +154,7 @@ class Auth extends CI_Controller
                     ),
                     'the_logins'
                 );
-                echo 'Very very wrong password 😂<br />' . $select_single->the_person_password . '<br />' . $this->hash_password($this->input->post('the_person_password'));
+                echo 'Very very wrong password 😂';
             }
         } else {
             echo 'Check you if the email is correct';

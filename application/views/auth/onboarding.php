@@ -56,6 +56,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <label for="the_person_last_name">Last name</label>
                     <input type="text" name="the_person_last_name" class="form-control" placeholder="Your last name here" />
                 </div>
+                <?php
+                $csrf = array(
+                    'name' => $this->security->get_csrf_token_name(),
+                    'hash' => $this->security->get_csrf_hash()
+                );
+                ?>
+                <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                 <button type="submit" class="finishPersonal onBoardNext">Next<span class="entypo-right-thin"></span></button>
             </form>
             <form class="onboarding-pane formPhoto" enctype="multipart/form-data">
@@ -77,6 +84,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <span class="entypo-left-thin startPersonal">Back</span>
                     <span class="entypo-cancel danger skipPhoto">Skip</span>
                 </span>
+                <?php
+                $csrf = array(
+                    'name' => $this->security->get_csrf_token_name(),
+                    'hash' => $this->security->get_csrf_hash()
+                );
+                ?>
+                <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                 <button type="submit" class="finishPhoto onBoardNext">Next<span class="entypo-right-thin"></span></button>
             </form>
             <form class="onboarding-pane formAddress">
@@ -359,6 +373,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </div>
                 <span class="entypo-left-thin startPhoto onBoardBack">Back</span>
+                <?php
+                $csrf = array(
+                    'name' => $this->security->get_csrf_token_name(),
+                    'hash' => $this->security->get_csrf_hash()
+                );
+                ?>
+                <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                 <button type="submit" class="finishAddress onBoardNext">Finish</span></button>
             </form>
         </div>

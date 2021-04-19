@@ -100,6 +100,13 @@
                                 <span class="the_email_input_title">Password</span>
                                 <input autocomplete="new-password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="******" class="form_control" name="user_password" />
                                 <span class="resend_code"><span class="fal fa fa-info-circle"></span> Make sure your password is at least 8 characters long and avoid personal details like your date of birth, pet name, nickname or simple patterns like 1234 or 0000</span>
+                                <?php
+                                $csrf = array(
+                                    'name' => $this->security->get_csrf_token_name(),
+                                    'hash' => $this->security->get_csrf_hash()
+                                );
+                                ?>
+                                <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                                 <button class="ca_next" data-step="password" type="submit">Confirm <span class="fal fa fa-arrow-next"></span></button>
                             </div>
                             <span class="go_back"><a href="#" class="back_link" data-step="password"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>

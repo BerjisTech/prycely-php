@@ -30,7 +30,7 @@ class Wallet extends CI_Controller
 
 	public function create()
 	{
-		$data['map'] = directory_map('assets/images/flags', FALSE, TRUE);
+		$data['currencies'] = $this->db->get('currency')->result_array();
 		$data['page_name'] = 'wallet/create';
 		$data['page_title'] = 'Create New Wallet';
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
@@ -40,6 +40,28 @@ class Wallet extends CI_Controller
 
 	public function add()
 	{
+		$data = array(
+			'the_wallet_id' => '',
+			'the_wallet_user' => $this->session->the_user_id,
+			'the_wallet_currency' => $this->input->get('code'),
+			'the_wallet_balance' => 0,
+			'the_wallet_open_date' => time(),
+			'the_wallet_status' => 1
+		);
+
+		if ($this->db->where('the_wallet_user', $data['the_wallet_user'])->where('the_wallet_currency', $this->input->get('code'))->get('the_wallets')->num_rows() > 0) {
+			die('You already have a ' + $this->input->get('code') + ' wallet');
+			exit();
+		}
+
+		if ($this->security->xss_clean($data, TRUE) == FALSE) {
+			die('Something went wrong');
+			exit();
+		}
+
+		
+
+
 		echo 'add wallet';
 	}
 

@@ -102,6 +102,13 @@
                         <form>
                             <div class="input-group">
                                 <input class="form-control" name="phone_number" />
+                                <?php
+                                $csrf = array(
+                                    'name' => $this->security->get_csrf_token_name(),
+                                    'hash' => $this->security->get_csrf_hash()
+                                );
+                                ?>
+                                <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                             </div>
                         </form>
                     </div>

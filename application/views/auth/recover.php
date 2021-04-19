@@ -39,6 +39,13 @@
                     <br />
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
+                        <?php
+                        $csrf = array(
+                            'name' => $this->security->get_csrf_token_name(),
+                            'hash' => $this->security->get_csrf_hash()
+                        );
+                        ?>
+                        <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                         <button type="submit" name="the_submit" style="width: auto; margin-top: auto;">Login</button>
 
                     </div>
@@ -61,6 +68,13 @@
                     <br />
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
+                        <?php
+                        $csrf = array(
+                            'name' => $this->security->get_csrf_token_name(),
+                            'hash' => $this->security->get_csrf_hash()
+                        );
+                        ?>
+                        <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                         <button type="submit" name="the_code_submit" style="width: auto; margin-top: auto;">Login</button>
 
                     </div>
@@ -84,6 +98,13 @@
                     <br />
                     <br />
                     <div class="col-xs-12 input-group" style="vertical-align: middle;">
+                        <?php
+                        $csrf = array(
+                            'name' => $this->security->get_csrf_token_name(),
+                            'hash' => $this->security->get_csrf_hash()
+                        );
+                        ?>
+                        <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
                         <button type="submit" name="the_password_submit" style="width: auto; margin-top: auto;">Login</button>
 
                     </div>

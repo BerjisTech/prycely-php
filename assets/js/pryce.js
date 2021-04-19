@@ -9,6 +9,13 @@ let base_url = 'http://' + window.location.hostname + '/prycely/'
 console.log('Go pryce')
 const page = window.location.pathname
 
+const logCurrency = (country, code, currency) => {
+    console.log(`${country}, ${code}, ${currency}`)
+    $('[name="the_wallet_currency"').val(code)
+    $('.the_wallet_currency').val(`${currency} (${code}) - ${country}`)
+    $('.the_wallet_currencies').hide()
+}
+
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -422,6 +429,38 @@ if (page.includes('/auth/recover') === true) {
                 $('button[name="the_password_submit"]').html('LET\'S TRY THAT AGAIN');
                 $('.the_login_error').remove();
                 $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_password_submit"]'))
+            }
+        })
+    })
+}
+
+if (page.includes('/wallet/create') === true) {
+    $('.the_wallet_currencies').hide()
+    $('.the_wallet_currency').on('input', () => {
+        $.ajax({
+            url: base_url + 'p/currency',
+            method: 'GET',
+            data: $('.walletPage').serialize(),
+            success: (currency_list) => {
+                $('.the_wallet_currencies').show()
+                $('.the_wallet_currencies').html(currency_list)
+            }
+        })
+    })
+
+    $('.the_wallet_create_button').on('input', () => {
+        $.ajax({
+            url: base_url + 'wallet/add',
+            method: 'GET',
+            data: $('.walletPage').serialize(),
+            success: (wallet_result) => {
+                if (wallet_result.includes('the_proceed')) { }
+                else {
+                    $('.the_wallet_create_button').html('LET\'S TRY THAT AGAIN')
+                    $('.the_login_error').remove();
+                    $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('.the_wallet_create_button'))
+                }
+
             }
         })
     })

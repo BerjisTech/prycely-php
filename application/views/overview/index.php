@@ -247,4 +247,4 @@
         </div>
     </div>
 </div>
-<?php include('tour.php'); ?>
+<!--?php include('tour.php'); ?-->
