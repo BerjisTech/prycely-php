@@ -1,9 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Mpesa extends CI_Model
+
+class Mpesa extends CI_Controller
 {
-    public function generate_token()
+    public function index()
+    {
+    }
+
+    private function generat_token()
     {
         $accessToken = "";
         $status = 0;

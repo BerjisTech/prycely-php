@@ -9,9 +9,9 @@ class ComposerStaticInit8df2b3e8d19b7c7099abd8689f09526c
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
     );
 
@@ -27,7 +27,6 @@ class ComposerStaticInit8df2b3e8d19b7c7099abd8689f09526c
         'S' => 
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Safaricom\\Mpesa\\' => 16,
         ),
         'P' => 
         array (
@@ -75,10 +74,6 @@ class ComposerStaticInit8df2b3e8d19b7c7099abd8689f09526c
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
-        'Safaricom\\Mpesa\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/safaricom/mpesa/src',
         ),
         'Psr\\Log\\' => 
         array (
