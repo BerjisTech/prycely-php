@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'https://prycely.com',
+	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '890Berjis*()',
+	'password' => '',
 	'database' => 'chama',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
