@@ -23,8 +23,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://prycely.com/';
-
+$config['base_url'] = 'https://sleekupsell.com/';
+// $root = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'];
+// $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+// $config['base_url'] = $root;
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -35,7 +37,7 @@ $config['base_url'] = 'https://prycely.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -380,7 +382,7 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
+$config['sess_save_path'] = sys_get_temp_dir();
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
@@ -448,7 +450,7 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-$config['csrf_protection'] = TRUE;
+$config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
@@ -521,3 +523,16 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+$config['shopify_api_key'] = 'ad1d8c0159547e886af6d777c058e4d9';
+$config['shopify_secret'] = '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';
+$config['redirect_url'] = '/generate_token';
+
+$config['protocol']  = 'smtp';
+$config['smtp_host'] = 'ssl://smtp.googlemail.com';
+$config['smtp_user'] = 'your_email';
+$config['smtp_pass'] = 'your_password';
+$config['smtp_port'] = 465;
+$config['charset']   = 'utf-8';
+$config['mailtype']  = 'html';
+$config['newline']   = "\r\n";
