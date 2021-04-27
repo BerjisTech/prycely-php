@@ -4,4 +4,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
 #do you have the previous source..which was working
 #it's this one. Let me open the other app that works
-#The other app works just fine
+#The other app works just fine  digital ocean??
+#its nginx or apache apache2 get the apche error log is that /etc/apache/error.log?

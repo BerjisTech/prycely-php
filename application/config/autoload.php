@@ -57,9 +57,8 @@ $autoload['packages'] = array();
 | in the controller:
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
-|   'form_validation', 'database', 'session'
 */
-$autoload['libraries'] = array('form_validation', 'database', 'session');
+$autoload['libraries'] = array();
 
 /*
 | -------------------------------------------------------------------
@@ -89,15 +88,8 @@ $autoload['drivers'] = array();
 | Prototype:
 |
 |	$autoload['helper'] = array('url', 'file');
-|   'url','file','form','security','string','inflector','directory','download','string'
 */
-//
-// It does that for all of these helpers. If I remove URL it'll bring up the same error for the next helper in line
-//Codeigniter has that as helper not helpers...yes got that but it didnt gave error for the url on
-// I'll have to copy paste the original foler from codeigniter
-//do you have compser installedyeah
-
-$autoload['helper'] = array('url','file','form','security','string','inflector','directory','download','string');
+$autoload['helper'] = array();
 
 /*
 | -------------------------------------------------------------------
@@ -140,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Database', 'Email');
+$autoload['model'] = array();

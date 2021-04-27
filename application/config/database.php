@@ -68,6 +68,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | make active.  By default there is only one group (the 'default' group).
 |
 | The $query_builder variables lets you determine whether or not to load
+yeah, but ift works fine though I can't test that on digital ocean because I'm stuck at the url helper erro page
+//on localhost how ur login page works..is the auth not verifying anything from db
+it is, this db file looks empty because I just copy pasted codeigniters files,ok
 | the query builder class.
 */
 $active_group = 'default';
@@ -76,9 +79,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
+	'username' => '',
 	'password' => '',
-	'database' => 'chama',
+	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

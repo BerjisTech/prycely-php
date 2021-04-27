@@ -5,7 +5,7 @@ const Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0
 const base_check = (b64) => {
     return Base64.encode(b64).replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '')
 }
-let base_url = 'https://prycely.com/'
+let base_url = 'http://localhost/prycely/'
 console.log('Go pryce')
 const page = window.location.pathname
 
