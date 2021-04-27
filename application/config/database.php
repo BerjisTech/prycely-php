@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'https://prycely.com',
 	'username' => 'root',
 	'password' => '890Berjis*()',
-	'database' => 'prycely',
+	'database' => 'chama',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
