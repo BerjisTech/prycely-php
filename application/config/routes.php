@@ -49,11 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$default_controller = "Welcome";
-$controller_exceptions = array('Auth','Createaccount', 'Group', 'Home', 'Internals', 'Mobilemoney', 'Mpesa', 'Newuser', 'Onboarding', 'Overview', 'p', 'Settings', 'Swift', 'Thecalls', 'Wallet');
-
-$route['default_controller'] = $default_controller;
-$route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_controller.'/$1';
-
+$route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
