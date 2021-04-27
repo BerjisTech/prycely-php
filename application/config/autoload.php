@@ -93,7 +93,8 @@ $autoload['drivers'] = array();
 */
 //
 // It does that for all of these helpers. If I remove URL it'll bring up the same error for the next helper in line
-$autoload['helpers'] = array('url','file','form','security','string','inflector','directory','download','string');
+//Codeigniter has that as helper not helpers...yes got that but it didnt gave error for the url one
+$autoload['helpers'] = array('url','file','security','string','inflector','directory','download','string');
 
 /*
 | -------------------------------------------------------------------
