@@ -13,18 +13,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 	<title>Prycely</title>
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/css/bootstrap.min.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/bootstrap-selector/css/bootstrap-select.min.css"); ?>">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/bootstrap-selector/css/bootstrap-select.min.css">
 	<!--icon font css-->
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/themify-icon/themify-icons.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/flaticon/flaticon.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/animation/animate.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/owl-carousel/assets/owl.carousel.min.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/magnify-pop/magnific-popup.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/nice-select/nice-select.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/vendors/elagent/style.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/css/style.css"); ?>">
-	<link rel="stylesheet" href="<?php echo base_url("assets/frontend/css/responsive.css"); ?>">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/themify-icon/themify-icons.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/flaticon/flaticon.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/animation/animate.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/owl-carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/magnify-pop/magnific-popup.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/nice-select/nice-select.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/vendors/elagent/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/responsive.css">
 </head>
 
 <body>
@@ -82,7 +82,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<header class="header_area">
 			<nav class="navbar navbar-expand-lg menu_one menu_four">
 				<div class="container">
-					<a class="navbar-brand sticky_logo" href="#"><img src="<?php echo base_url("assets/images/logo.png"); ?>" srcset="<?php echo base_url("assets/images/logo.png"); ?>" alt="logo" style="width: 70px;"><img src="<?php echo base_url("assets/images/logo.png"); ?>" srcset="img/logo2x.png 2x" alt="" style="width: 70px;"></a>
+					<a class="navbar-brand sticky_logo" href="#"><img src="<?php echo base_url(); ?>assets/images/logo.png" srcset="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" style="width: 70px;"><img src="<?php echo base_url(); ?>assets/images/logo.png" srcset="img/logo2x.png 2x" alt="" style="width: 70px;"></a>
 					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="menu_toggle">
 							<span class="hamburger">
@@ -143,9 +143,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="animation_img_two wow fadeInRight" data-wow-delay="0.5s">
-				<img src="<?php echo base_url("assets/frontend/img/home9/mac.png"); ?>" alt="">
+				<img src="<?php echo base_url(); ?>assets/frontend/img/home9/mac.png" alt="">
 			</div>
-			<img class=" svg_intro_bottom" src="<?php echo base_url("assets/frontend/img/home9/shape.png"); ?>" alt="">
+			<img class=" svg_intro_bottom" src="<?php echo base_url(); ?>assets/frontend/img/home9/shape.png" alt="">
 		</section>
 
 		<section class="payment_features_area">
@@ -156,14 +156,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row featured_item">
 					<div class="col-lg-6">
 						<div class="payment_featured_img wow fadeInLeft" data-wow-delay="0.2s">
-							<img src="<?php echo base_url("assets/frontend/img/home9/featured_img.png"); ?>" alt="">
+							<img src="<?php echo base_url(); ?>assets/frontend/img/home9/featured_img.png" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6 d-flex align-items-center">
 						<div class="payment_features_content pl_70 wow fadeInRight" data-wow-delay="0.3s">
 							<div class="icon">
-								<img class="img_shape" src="<?php echo base_url("assets/frontend/img/home9/icon_shape.png"); ?>" alt="">
-								<img class="icon_img" src="<?php echo base_url("assets/frontend/img/home9/icon1.png"); ?>" alt="">
+								<img class="img_shape" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon_shape.png" alt="">
+								<img class="icon_img" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon1.png" alt="">
 							</div>
 							<h2>Quick & Easy Process</h2>
 							<p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
@@ -175,14 +175,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row flex-row-reverse featured_item">
 					<div class="col-lg-6">
 						<div class="payment_featured_img img_two wow fadeInRight" data-wow-delay="0.3s">
-							<img src="<?php echo base_url("assets/frontend/img/home9/featured_img_two.png"); ?>" alt="">
+							<img src="<?php echo base_url(); ?>assets/frontend/img/home9/featured_img_two.png" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6 d-flex align-items-center">
 						<div class="payment_features_content pr_70 wow fadeInLeft" data-wow-delay="0.4s">
 							<div class="icon">
-								<img class="img_shape" src="<?php echo base_url("assets/frontend/img/home9/icon_shape.png"); ?>" alt="">
-								<img class="icon_img" src="<?php echo base_url("assets/frontend/img/home9/icon2.png"); ?>" alt="">
+								<img class="img_shape" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon_shape.png" alt="">
+								<img class="icon_img" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon2.png" alt="">
 							</div>
 							<h2>Quick & Easy Process</h2>
 							<p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
@@ -201,7 +201,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="service-content wow fadeInRight" data-wow-delay="0.2s">
 							<div class="pay_icon">
 								<div class="icon_shape"></div>
-								<img src="<?php echo base_url("assets/frontend/img/home9/icon3.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/icon3.png" alt="">
 							</div>
 							<h2 class="f_p w_color f_700">Our Services</h2>
 							<p class="f_p w_color">Why I say old chap that is, spiffing jolly good a load of old tosh spend a penny tosser arse over.!</p>
@@ -211,7 +211,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="row">
 							<div class="col-md-6 media payment_service_item wow fadeInUp" data-wow-delay="0.2s">
 								<div class="icon">
-									<img src="<?php echo base_url("assets/frontend/img/home9/icon4.png"); ?>" alt="">
+									<img src="<?php echo base_url(); ?>assets/frontend/img/home9/icon4.png" alt="">
 								</div>
 								<div class="media-body">
 									<h3 class="f_size_20 f_p w_color f_600">Safer</h3>
@@ -220,7 +220,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<div class="col-md-6 media payment_service_item wow fadeInUp" data-wow-delay="0.3s">
 								<div class="icon">
-									<img src="<?php echo base_url("assets/frontend/img/home9/icon7.png"); ?>" alt="">
+									<img src="<?php echo base_url(); ?>assets/frontend/img/home9/icon7.png" alt="">
 								</div>
 								<div class="media-body">
 									<h3 class="f_size_20 f_p w_color f_600">Flexible</h3>
@@ -229,7 +229,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<div class="col-md-6 media payment_service_item wow fadeInUp" data-wow-delay="0.4s">
 								<div class="icon">
-									<img src="<?php echo base_url("assets/frontend/img/home9/icon5.png"); ?>" alt="">
+									<img src="<?php echo base_url(); ?>assets/frontend/img/home9/icon5.png" alt="">
 								</div>
 								<div class="media-body">
 									<h3 class="f_size_20 f_p w_color f_600">Convinient</h3>
@@ -238,7 +238,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<div class="col-md-6 media payment_service_item wow fadeInUp" data-wow-delay="0.5s">
 								<div class="icon">
-									<img src="<?php echo base_url("assets/frontend/img/home9/icon8.png"); ?>" alt="">
+									<img src="<?php echo base_url(); ?>assets/frontend/img/home9/icon8.png" alt="">
 								</div>
 								<div class="media-body">
 									<h3 class="f_size_20 f_p w_color f_600">Protected</h3>
@@ -247,7 +247,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<div class="col-md-6 media payment_service_item wow fadeInUp" data-wow-delay="0.6s">
 								<div class="icon">
-									<img src="<?php echo base_url("assets/frontend/img/home9/icon6.png"); ?>" alt="">
+									<img src="<?php echo base_url(); ?>assets/frontend/img/home9/icon6.png" alt="">
 								</div>
 								<div class="media-body">
 									<h3 class="f_size_20 f_p w_color f_600">World wide</h3>
@@ -268,8 +268,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-lg-6">
 						<div class="payment_features_content pr_70 wow fadeInLeft" data-wow-delay="0.2s">
 							<div class="icon">
-								<img class="img_shape" src="<?php echo base_url("assets/frontend/img/home9/icon_shape.png"); ?>" alt="">
-								<img class="icon_img" src="<?php echo base_url("assets/frontend/img/home9/icon2.png"); ?>" alt="">
+								<img class="img_shape" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon_shape.png" alt="">
+								<img class="icon_img" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon2.png" alt="">
 							</div>
 							<h2>Quick & Easy Process</h2>
 							<p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
@@ -280,28 +280,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-lg-6">
 						<div class="payment_clients_inner">
 							<div class="clients_item one wow fadeInLeft" data-wow-delay="0.2s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo1.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo1.png" alt="">
 							</div>
 							<div class="clients_item two wow fadeInLeft" data-wow-delay="0.3s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo2.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo2.png" alt="">
 							</div>
 							<div class="clients_item three wow fadeInLeft" data-wow-delay="0.4s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo3.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo3.png" alt="">
 							</div>
 							<div class="clients_item four wow fadeInLeft" data-wow-delay="0.5s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo4.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo4.png" alt="">
 							</div>
 							<div class="clients_item five wow fadeInLeft" data-wow-delay="0.6s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo5.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo5.png" alt="">
 							</div>
 							<div class="clients_item six wow fadeInLeft" data-wow-delay="0.7s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo6.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo6.png" alt="">
 							</div>
 							<div class="clients_item seven wow fadeInLeft" data-wow-delay="0.8s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo7.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo7.png" alt="">
 							</div>
 							<div class="clients_item eight wow fadeInLeft" data-wow-delay="0.8s">
-								<img src="<?php echo base_url("assets/frontend/img/home9/logo8.png"); ?>" alt="">
+								<img src="<?php echo base_url(); ?>assets/frontend/img/home9/logo8.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -322,7 +322,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 					<div class="col-lg-5">
 						<div class="testimonial_img">
-							<img src="<?php echo base_url("assets/frontend/img/home9/testimonial_img.png"); ?>" alt="">
+							<img src="<?php echo base_url(); ?>assets/frontend/img/home9/testimonial_img.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -334,7 +334,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="payment_action_content text-center wow fadeInUp" data-wow-delay="0.2s">
 					<div class="pay_icon">
 						<div class="icon_shape"></div>
-						<img class="icon_img" src="<?php echo base_url("assets/frontend/img/home9/icon2.png"); ?>" alt="">
+						<img class="icon_img" src="<?php echo base_url(); ?>assets/frontend/img/home9/icon2.png" alt="">
 					</div>
 					<h2 class="f_p t_color f_700">Join 200 million PayPal users worldwide.</h2>
 					<p>All you need is an email address or mobile phone number to transfer money. If they<br> don't have an account, they can create one quickly, for free.</p>
@@ -349,7 +349,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-lg-5 col-md-6">
 							<div class="f_widget company_widget pr_100">
-								<a href="index.html" class="f-logo"><img src="<?php echo base_url("assets/images/logo.png"); ?>" srcset="<?php echo base_url("assets/images/logo.png"); ?>" alt="logo" style="width: 70px;"></a>
+								<a href="index.html" class="f-logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" srcset="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" style="width: 70px;"></a>
 								<p class="f_400 f_p f_size_16 mb-0 l_height28 mt_40">Tickety-boo victoria sponge only a quid I don't want no agro morish bum bag gutted mate up the duff, bloke blag cup of char super bugger all mate.!</p>
 								<div class="f_social_icon_two mt_30">
 									<a href="#"><i class="ti-facebook"></i></a>
@@ -418,19 +418,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="<?php echo base_url("assets/frontend/js/jquery-3.2.1.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/js/propper.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/js/bootstrap.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/wow/wow.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/sckroller/jquery.parallax-scroll.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/owl-carousel/owl.carousel.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/imagesloaded/imagesloaded.pkgd.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/isotope/isotope-min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/magnify-pop/jquery.magnific-popup.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/bootstrap-selector/js/bootstrap-select.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/vendors/nice-select/jquery.nice-select.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/js/plugins.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/frontend/js/main.js"); ?>"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/js/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/js/propper.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/wow/wow.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/sckroller/jquery.parallax-scroll.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/isotope/isotope-min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/magnify-pop/jquery.magnific-popup.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/bootstrap-selector/js/bootstrap-select.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/vendors/nice-select/jquery.nice-select.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/js/plugins.js"></script>
+	<script src="<?php echo base_url(); ?>assets/frontend/js/main.js"></script>
 </body>
 
 </html>
