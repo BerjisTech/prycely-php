@@ -91,7 +91,9 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 |   'url','file','form','security','string','inflector','directory','download','string'
 */
-$autoload['helper'] = array('url','file','form','security','string','inflector','directory','download','string');
+//
+// It does that for all of these helpers. If I remove URL it'll bring up the same error for the next helper in line
+$autoload['helpers'] = array('url','file','form','security','string','inflector','directory','download','string');
 
 /*
 | -------------------------------------------------------------------
