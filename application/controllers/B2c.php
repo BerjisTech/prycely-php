@@ -7,6 +7,7 @@ class B2c extends CI_Controller
     public function index()
     {
         $request = file_get_contents('php://input');
+        print_r($request);
         $this->db->insert('errors', array('error' => json_encode($request)));
         $TransactionType = $request['TransactionType'];
         $MpesaCode = $request["TransID"];
