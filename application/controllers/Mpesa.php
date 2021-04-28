@@ -174,7 +174,9 @@ class Mpesa extends CI_Controller
     {
         try {
             $request = file_get_contents('php://input');
-            error_log(json_encode($request), 3, "/var/www/prycely/transactions.log");
+            $transLog = fopen("transaction_errors.txt", "w");
+            fwrite($transLog, json_encode($request));
+            fclose($transLog);
 
             //when success
             $MerchantRequestID = $request['Body']['stkCallback']['MerchantRequestID'];
@@ -212,7 +214,9 @@ class Mpesa extends CI_Controller
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
         } catch (\Throwable $th) {
-            error_log($th, "/var/www/prycely/my-errors.log");
+            $errorLog = fopen("error.log", "w");
+            fwrite($errorLog, $th);
+            fclose($errorLog);
         }
     }
 
