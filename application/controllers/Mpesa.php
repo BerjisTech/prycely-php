@@ -212,7 +212,7 @@ class Mpesa extends CI_Controller
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
         } catch (\Throwable $th) {
-            $this->db->insert('errors', array('error', $th));
+            $this->db->insert('errors', array('error' => $th));
         }
     }
 
