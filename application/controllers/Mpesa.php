@@ -177,8 +177,9 @@ class Mpesa extends CI_Controller
             // print_r($request);
             $this->db->insert('errors', array('error' => $request));
             $request = json_decode($request, true);
+            print_r($request);
             echo $request['Body']['stkCallback']['ResultCode'];
-            echo $request['Body']['stkCallback']['ResultDesc'];;
+            echo $request['Body']['stkCallback']['ResultDesc'];
 
             //when success
             $MerchantRequestID = $request['Body']['stkCallback']['MerchantRequestID'];
@@ -211,9 +212,10 @@ class Mpesa extends CI_Controller
                 //0 = pending
                 //1 = success
                 //2 = failed
-                $stkRequest['response_result_code'] = $ResultCode;
-                $stkRequest['response_result_desc'] = $ResultDesc;
+                $stkRequest['response_result_code'] = $request['Body']['stkCallback']['ResultCode'];
+                $stkRequest['response_result_desc'] = $request['Body']['stkCallback']['ResultDesc'];
 
+                print_r($stkRequest);
                 $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', 1)->update('the_transactions');
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
