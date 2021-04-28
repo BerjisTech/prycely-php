@@ -175,7 +175,7 @@ class Mpesa extends CI_Controller
         try {
             $request = file_get_contents('php://input');
             $request = json_decode($request, TRUE);
-            print_r($request);
+            // print_r($request);
             $this->db->insert('errors', array('error' => json_encode($request)));
 
             //when success
@@ -189,13 +189,13 @@ class Mpesa extends CI_Controller
 
             // $stkRequest->transaction;
             // $transaction = $stkRequest['transaction'];
-            $user = $this->db->where('the_transaction_reference', $MerchantRequestID)->get('the_transactions')->row()->the_transaction_user;
+            // $user = $this->db->where('the_transaction_reference', $MerchantRequestID)->get('the_transactions')->row()->the_transaction_user;
 
             //initialize non-common variables
             $statusRes = 2;
             $stkRes = 3;
 
-            if ($ResultCode == '0') //success
+            if ($ResultCode == 0 || $ResultCode == '0') //success
             {
                 $statusRes = 1;
                 $stkRes = 2;
