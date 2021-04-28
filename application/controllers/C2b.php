@@ -6,7 +6,7 @@ class C2b extends CI_Controller
 {
     public function index()
     {
-        $request = $this->input->post();
+        $request = $_POST;
         $TransactionType = $request['TransactionType'];
         $MpesaCode = $request["TransID"];
         $PayBillBalance = $request["OrgAccountBalance"];
