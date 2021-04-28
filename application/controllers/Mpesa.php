@@ -165,6 +165,7 @@ class Mpesa extends CI_Controller
             );
 
             $this->db->insert('stk', $stkRequest);
+            $this->db->insert('the_transactions', $currentTrans);
         }
     }
 
@@ -205,8 +206,35 @@ class Mpesa extends CI_Controller
 
             $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', 1)->update('the_transactions');
             $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
-
         }
+    }
+
+    public function paybill($MpesaCode, $which, $purpose, $level)
+    {
+
+        $group = 0;
+        $wallet = $which;
+        if ($level == '2') {
+            $group = $which;
+            $wallet = 0;
+        }
+
+        $currentTrans = array(
+            'the_transaction_user' => $this->session->the_person_id,
+            'the_transaction_end' => time(),
+            'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
+            'the_transaction_currency' => 'KES',
+            'the_transaction_reference' => $MpesaCode,
+            'the_transaction_level' => $level, // 2 group/ 1 personal
+            'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
+            'the_transaction_wallet' => $wallet,
+            'the_transaction_group' => $group,
+            'the_transaction_purpose' => $purpose,
+            'the_transaction_comment' => 'Paybill Payment',
+            'the_transaction_mode' => 'Mpesa Paybill'
+        );
+
+        $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
     }
 
     private function generateAccessToken()
