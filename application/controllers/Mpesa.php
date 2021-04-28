@@ -142,6 +142,7 @@ class Mpesa extends CI_Controller
             //1 = success
             //2 = failed
             $stkRequest['status'] = $status;
+            $stkRequest['status'] = $amount;
             $stkRequest['response_result_code'] = $ResultCode;
             $stkRequest['response_result_desc'] = $ResultDesc;
 
