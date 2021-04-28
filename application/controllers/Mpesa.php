@@ -57,6 +57,7 @@ class Mpesa extends CI_Controller
 
         $group = 0;
         $wallet = 'KES';
+        
         if ($level == '2') {
             $group = $which;
             $wallet = 0;
