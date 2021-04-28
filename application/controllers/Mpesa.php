@@ -176,9 +176,9 @@ class Mpesa extends CI_Controller
             $request = file_get_contents('php://input');
             // print_r($request);
             $this->db->insert('errors', array('error' => $request));
-            json_encode($request);
+            $request = json_decode($request, true);
             echo $request['Body']['stkCallback']['ResultCode'];
-            echo $request['Body']['stkCallback']['ResultDesc'];
+            echo $request['Body']['stkCallback']['ResultDesc'];;
 
             //when success
             $MerchantRequestID = $request['Body']['stkCallback']['MerchantRequestID'];
