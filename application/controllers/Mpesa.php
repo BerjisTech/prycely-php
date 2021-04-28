@@ -176,7 +176,7 @@ class Mpesa extends CI_Controller
             $request = file_get_contents('php://input');
             // print_r($request);
             $this->db->insert('errors', array('error' => $request));
-            json_decode($request, true);
+            json_encode($request);
             echo $request['Body']['stkCallback']['ResultCode'];
             echo $request['Body']['stkCallback']['ResultDesc'];
 
