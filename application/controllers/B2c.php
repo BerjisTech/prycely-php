@@ -46,7 +46,7 @@ class B2c extends CI_Controller
         );
 
         $paybillings = array(
-            'request' => $request,
+            'request' => json_encode($request),
             'TransactionType' => $TransactionType,
             'MpesaCode' => $MpesaCode,
             'PayBillBalance' => $PayBillBalance,
