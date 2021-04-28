@@ -56,7 +56,7 @@ class C2b extends CI_Controller
             'FirstName' => $FirstName,
             'LastName' => $LastName,
             'MiddleName' => $MiddleName,
-            'phoneVals' => $phoneVals,
+            'phoneVals' => json_encode($phoneVals),
             'phone' => $phone,
             'ShortCode' => $ShortCode,
             'accountNumber' => $accountNumber
