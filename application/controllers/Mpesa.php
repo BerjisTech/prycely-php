@@ -56,7 +56,7 @@ class Mpesa extends CI_Controller
     {
 
         $group = 0;
-        $wallet = $which;
+        $wallet = 'KES';
         if ($level == '2') {
             $group = $which;
             $wallet = 0;
@@ -171,41 +171,47 @@ class Mpesa extends CI_Controller
 
     public function stkcallback()
     {
-        $request = file_get_contents('php://input');
-        //when success
-        $MerchantRequestID = $request['Body']['stkCallback']['MerchantRequestID'];
-        $CheckoutRequestID = $request['Body']['stkCallback']['CheckoutRequestID'];
-        $ResultCode = $request['Body']['stkCallback']['ResultCode'];
-        $ResultDesc = $request['Body']['stkCallback']['ResultDesc'];
+        try {
+            $request = file_get_contents('php://input');
+            error_log(json_encode($request), 3, "/var/www/prycely/transactions.log");
 
-        $stkRequest = $this->db->where('merchant_req_id', $MerchantRequestID)->get();
-        $stkRequest->transaction;
-        $transaction = $stkRequest['transaction'];
-        $user = $this->db->where('the_transaction_reference', $MerchantRequestID)->get('the_transactions')->row()->the_transaction_user;
+            //when success
+            $MerchantRequestID = $request['Body']['stkCallback']['MerchantRequestID'];
+            $CheckoutRequestID = $request['Body']['stkCallback']['CheckoutRequestID'];
+            $ResultCode = $request['Body']['stkCallback']['ResultCode'];
+            $ResultDesc = $request['Body']['stkCallback']['ResultDesc'];
 
-        //initialize non-common variables
-        $statusRes = 2;
-        $stkRes = 3;
+            $stkRequest = $this->db->where('merchant_req_id', $MerchantRequestID)->get();
+            $stkRequest->transaction;
+            $transaction = $stkRequest['transaction'];
+            $user = $this->db->where('the_transaction_reference', $MerchantRequestID)->get('the_transactions')->row()->the_transaction_user;
 
-        if ($ResultCode == '0') //success
-        {
-            $statusRes = 1;
-            $stkRes = 2;
-            $amount = $request['Body']['stkCallback']['CallbackMetadata']['Item'][0]['Value'];
-            $MpesaReceiptNumber = $request['Body']['stkCallback']['CallbackMetadata']['Item'][1]['Value'];
-            // $TransactionDate = $request['Body']['stkCallback']['CallbackMetadata']['Item'][3]['Value'];
-            // $PhoneNumber = $request['Body']['stkCallback']['CallbackMetadata']['Item'][4]['Value'];
-            $stkRequest['mpesa_trans_id'] = $MpesaReceiptNumber; //(Mpesa reference number)
-            $stkRequest['merchant_req_id'] = $MerchantRequestID;
-            $stkRequest['checkout_req_id'] = $CheckoutRequestID;
-            //0 = pending
-            //1 = success
-            //2 = failed
-            $stkRequest['response_result_code'] = $ResultCode;
-            $stkRequest['response_result_desc'] = $ResultDesc;
+            //initialize non-common variables
+            $statusRes = 2;
+            $stkRes = 3;
 
-            $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', 1)->update('the_transactions');
-            $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
+            if ($ResultCode == '0') //success
+            {
+                $statusRes = 1;
+                $stkRes = 2;
+                $amount = $request['Body']['stkCallback']['CallbackMetadata']['Item'][0]['Value'];
+                $MpesaReceiptNumber = $request['Body']['stkCallback']['CallbackMetadata']['Item'][1]['Value'];
+                // $TransactionDate = $request['Body']['stkCallback']['CallbackMetadata']['Item'][3]['Value'];
+                // $PhoneNumber = $request['Body']['stkCallback']['CallbackMetadata']['Item'][4]['Value'];
+                $stkRequest['mpesa_trans_id'] = $MpesaReceiptNumber; //(Mpesa reference number)
+                $stkRequest['merchant_req_id'] = $MerchantRequestID;
+                $stkRequest['checkout_req_id'] = $CheckoutRequestID;
+                //0 = pending
+                //1 = success
+                //2 = failed
+                $stkRequest['response_result_code'] = $ResultCode;
+                $stkRequest['response_result_desc'] = $ResultDesc;
+
+                $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', 1)->update('the_transactions');
+                $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
+            }
+        } catch (\Throwable $th) {
+            error_log($th, "/var/www/prycely/my-errors.log");
         }
     }
 
