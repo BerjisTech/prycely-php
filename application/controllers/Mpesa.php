@@ -184,9 +184,11 @@ class Mpesa extends CI_Controller
             $ResultCode = $request['Body']['stkCallback']['ResultCode'];
             $ResultDesc = $request['Body']['stkCallback']['ResultDesc'];
 
-            $stkRequest = $this->db->where('merchant_req_id', $MerchantRequestID)->get();
-            $stkRequest->transaction;
-            $transaction = $stkRequest['transaction'];
+            $stkRequest = $this->db->where('merchant_req_id', $MerchantRequestID)->get('the_transactions')->result_array();
+            print_r($stkRequest);
+
+            // $stkRequest->transaction;
+            // $transaction = $stkRequest['transaction'];
             $user = $this->db->where('the_transaction_reference', $MerchantRequestID)->get('the_transactions')->row()->the_transaction_user;
 
             //initialize non-common variables
