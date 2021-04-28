@@ -7,6 +7,8 @@ class C2b extends CI_Controller
     public function index()
     {
         $request = file_get_contents('php://input');
+        $request = json_decode($request, TRUE);
+        print_r($request);
         $this->db->insert('errors', array('error' => json_encode($request)));
         $TransactionType = $request['TransactionType'];
         $MpesaCode = $request["TransID"];
@@ -44,7 +46,7 @@ class C2b extends CI_Controller
         );
 
         $paybillings = array(
-            'request' => $request,
+            'request' => json_encode($request),
             'TransactionType' => $TransactionType,
             'MpesaCode' => $MpesaCode,
             'PayBillBalance' => $PayBillBalance,
