@@ -173,7 +173,7 @@ class Mpesa extends CI_Controller
     public function stkcallback()
     {
         try {
-            $request = file_get_contents('php://input');
+            $request = $this->input->post();
             $this->db->insert('errors', array('error', json_encode($request)));
 
             //when success
