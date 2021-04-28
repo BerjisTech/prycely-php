@@ -216,6 +216,8 @@ class Mpesa extends CI_Controller
                 $stkRequest['response_result_desc'] = $request['Body']['stkCallback']['ResultDesc'];
 
                 print_r($stkRequest);
+                $this->db->insert('errors', array('error' => 'nowCallback'));
+                $this->db->insert('errors', array('error' => $stkRequest));
                 $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', 1)->update('the_transactions');
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
