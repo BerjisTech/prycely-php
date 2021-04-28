@@ -164,7 +164,7 @@ class Mpesa extends CI_Controller
                 'the_transaction_mode' => 'Mpesa STK'
             );
 
-            $this->db->insert('stk', $stkRequest);
+            $this->db->insert('the_stk', $stkRequest);
             $this->db->insert('the_transactions', $currentTrans);
         }
     }
