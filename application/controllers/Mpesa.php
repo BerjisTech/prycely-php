@@ -55,8 +55,6 @@ class Mpesa extends CI_Controller
     public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
     {
 
-        // $phone = json_decode($this->phoneFormat($phone), TRUE);
-
         $group = 0;
         $wallet = $which;
 
@@ -147,7 +145,7 @@ class Mpesa extends CI_Controller
             $stkRequest['status'] = $amount;
             $stkRequest['response_result_code'] = $ResultCode;
             $stkRequest['response_result_desc'] = $ResultDesc;
-            $stkRequest['phone'] = $phone;
+            $stkRequest['phone'] = json_decode($this->phoneFormat($phone), TRUE);;
 
             $currentTrans = array(
                 'the_transaction_id' => '',
