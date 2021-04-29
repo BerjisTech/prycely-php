@@ -289,4 +289,26 @@ class Mpesa extends CI_Controller
         $array = array('status' => $status, 'token' => $accessToken, 'description' => $description);
         return $array;
     }
+
+    public function refreshAllPending()
+    {
+        $pending = $this->db->where('the_transaction_status !=', 1)->get('the_transactions');
+
+        $mpesaStk = array_filter($pending, function ($mode) {
+            return ($mode['the_transaction_mode'] == 'Mpesa STK');
+        });
+        $paybill = array_filter($pending, function ($mode) {
+            return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
+        });
+
+        print_r(
+            $mpesaStk
+        );
+
+        echo '<br /><br /><br />';
+
+        print_r(
+            $paybill
+        );
+    }
 }
