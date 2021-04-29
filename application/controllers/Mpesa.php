@@ -351,25 +351,26 @@ class Mpesa extends CI_Controller
             echo 'to ' . $url . '<br />';
             echo 'Refreshing ' . $transStk['the_transaction_reference'] . '<br />';
             print_r($payload);
+            echo '<br /><br /><br /><br /><br />';
 
-            // build the urlencoded data
-            $postvars = http_build_query($payload);
+            // // build the urlencoded data
+            // $postvars = http_build_query($payload);
 
-            // open connection
-            $ch = curl_init();
+            // // open connection
+            // $ch = curl_init();
 
-            // set the url, number of POST vars, POST data
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, count($payload));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+            // // set the url, number of POST vars, POST data
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, count($payload));
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
 
-            // execute post
-            $result = curl_exec($ch);
+            // // execute post
+            // $result = curl_exec($ch);
 
-            // close connection
-            curl_close($ch);
-            echo '<br />';
-            print_r($result);
+            // // close connection
+            // curl_close($ch);
+            // echo '<br />';
+            // print_r($result);
             echo 'refresh sent <br />';
         }
 
@@ -382,25 +383,26 @@ class Mpesa extends CI_Controller
             echo 'to ' . $url . '<br />';
             echo 'Refreshing ' . $transPaybill['MpesaCode'] . '<br />';
             print_r($payload);
+            echo '<br /><br /><br /><br /><br />';
 
-            // build the urlencoded data
-            $postvars = http_build_query($payload);
+            // // build the urlencoded data
+            // $postvars = http_build_query($payload);
 
-            // open connection
-            $ch = curl_init();
+            // // open connection
+            // $ch = curl_init();
 
-            // set the url, number of POST vars, POST data
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, count($payload));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+            // // set the url, number of POST vars, POST data
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, count($payload));
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
 
-            // execute post
-            $result = curl_exec($ch);
+            // // execute post
+            // $result = curl_exec($ch);
 
-            // close connection
-            curl_close($ch);
-            echo '<br />';
-            print_r($result);
+            // // close connection
+            // curl_close($ch);
+            // echo '<br />';
+            // print_r($result);
             echo 'refresh sent <br />';
         }
     }
