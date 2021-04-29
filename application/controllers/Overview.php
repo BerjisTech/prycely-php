@@ -17,7 +17,7 @@ class Overview extends CI_Controller
 
     public function index()
     {
-        $data['transactions'] = $this->db->where('the_transaction_user', $this->session->the_person_id)->get('transactions')->result_array();
+        $data['transactions'] = $this->db->where('the_transaction_user', $this->session->the_person_id)->get('the_transactions')->result_array();
         $data['page_name'] = 'overview/index';
         $data['page_title'] = 'Overview';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
