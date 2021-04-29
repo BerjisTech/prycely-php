@@ -32,7 +32,7 @@ class Wallet extends CI_Controller
 		foreach ($dates as $date) {
             $collection_date = date('dmY', $date['the_transaction_date']);
             $collection_stamp = date('d M', $date['the_transaction_date']);
-			$transactions[$date[$collection_stamp]] = $this->db
+			$transactions[$collection_stamp] = $this->db
 				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC")->result_array();
 		}
 
