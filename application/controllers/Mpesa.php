@@ -334,68 +334,75 @@ class Mpesa extends CI_Controller
             ->join('the_paybill', 'the_transactions.the_transaction_reference = the_paybill.MpesaCode')
             ->get('the_transactions')->result_array();
 
-        
-        print_r($pending);
+        echo $this->db->last_query();
 
-        foreach ($pending as $transPending) {
-            if ($transPending['the_transaction_mode'] == 'Mpesa STK') {
-                $payload = json_decode('{"Body":{"stkCallback":{"MerchantRequestID":"' . $transPending['the_transaction_reference'] . '","CheckoutRequestID":"' . $transPending['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transPending['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transPending['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transPending['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}', TRUE);
-                $url = base_url('mpesa/stkcallback');
-                echo 'to ' . $url . '<br />';
-                echo 'Refreshing ' . $transPending['the_transaction_reference'] . '<br />';
-                print_r($payload);
+        $mpesaStk = array_filter($pending, function ($mode) {
+            return ($mode['the_transaction_mode'] == 'Mpesa STK');
+        });
+        $paybill = array_filter($pending, function ($mode) {
+            return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
+        });
 
-                // build the urlencoded data
-                $postvars = http_build_query($payload);
+        print_r($mpesaStk);
+        print_r($paybill);
 
-                // open connection
-                $ch = curl_init();
+        foreach ($mpesaStk as $transStk) {
+            $payload = json_decode('{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}', TRUE);
+            $url = base_url('mpesa/stkcallback');
+            echo 'to ' . $url . '<br />';
+            echo 'Refreshing ' . $transStk['the_transaction_reference'] . '<br />';
+            print_r($payload);
 
-                // set the url, number of POST vars, POST data
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, count($payload));
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+            // build the urlencoded data
+            $postvars = http_build_query($payload);
 
-                // execute post
-                $result = curl_exec($ch);
+            // open connection
+            $ch = curl_init();
 
-                // close connection
-                curl_close($ch);
-                echo '<br />';
-                print_r($result);
-                echo 'refresh sent <br />';
-            }
+            // set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, count($payload));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
 
-            if ($transPending['the_transaction_mode'] == 'Mpesa Paybill') {
-                $request = $transPending['request'];
-                $request = json_decode($request, TRUE);
-                $payload = $request;
-                $url = base_url('b2c');
+            // execute post
+            $result = curl_exec($ch);
 
-                echo 'to ' . $url . '<br />';
-                echo 'Refreshing ' . $transPending['MpesaCode'] . '<br />';
-                print_r($payload);
+            // close connection
+            curl_close($ch);
+            echo '<br />';
+            print_r($result);
+            echo 'refresh sent <br />';
+        }
 
-                // build the urlencoded data
-                $postvars = http_build_query($payload);
+        foreach ($paybill as $transPaybill) {
+            $request = $transPaybill['request'];
+            $request = json_decode($request, TRUE);
+            $payload = $request;
+            $url = base_url('b2c');
 
-                // open connection
-                $ch = curl_init();
+            echo 'to ' . $url . '<br />';
+            echo 'Refreshing ' . $transPaybill['MpesaCode'] . '<br />';
+            print_r($payload);
 
-                // set the url, number of POST vars, POST data
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, count($payload));
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+            // build the urlencoded data
+            $postvars = http_build_query($payload);
 
-                // execute post
-                $result = curl_exec($ch);
+            // open connection
+            $ch = curl_init();
 
-                // close connection
-                curl_close($ch);
-                echo '<br />';
-                print_r($result);
-                echo 'refresh sent <br />';
-            }
+            // set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, count($payload));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+
+            // execute post
+            $result = curl_exec($ch);
+
+            // close connection
+            curl_close($ch);
+            echo '<br />';
+            print_r($result);
+            echo 'refresh sent <br />';
         }
     }
 }
