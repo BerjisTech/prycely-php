@@ -415,6 +415,7 @@ class Mpesa extends CI_Controller
 
         foreach ($paybill as $transPaybill) {
             $request = $transPaybill['request'];
+            json_encode($request);
             $request = array(
                 'TransactionType' => $request['TransactionType'],
                 'TransID' => $request['TransID'],
