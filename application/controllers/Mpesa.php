@@ -204,7 +204,6 @@ class Mpesa extends CI_Controller
                 $stkRequest['merchant_req_id'] = $MerchantRequestID;
                 $stkRequest['checkout_req_id'] = $CheckoutRequestID;
                 $stkRequest['status'] = $statusRes;
-                $stkRequest['response_result_code'] = $stkRes;
                 //0 = pending
                 //1 = success
                 //2 = failed
