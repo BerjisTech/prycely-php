@@ -333,20 +333,20 @@ class Mpesa extends CI_Controller
             ->join('the_stk', 'the_transactions.the_transaction_reference = the_stk.mpesa_trans_id')
             ->get('the_transactions')->result_array();
 
-        echo $this->db->last_query() . '<br />';
+        // echo $this->db->last_query() . '<br />';
 
         $paybill = $this->db
             // ->where('the_transaction_status !=', 1)
             ->join('the_paybill', 'the_transactions.the_transaction_reference = the_paybill.MpesaCode')
             ->get('the_transactions')->result_array();
 
-        echo $this->db->last_query() . '<br />';
+        // echo $this->db->last_query() . '<br />';
 
-        print_r($mpesaStk);
-        echo '<br /><br /><br /><br /><br />';
-        print_r($paybill);
-        echo '<br /><br /><br /><br /><br />';
-        echo '<br /><br /><br /><br /><br />';
+        // print_r($mpesaStk);
+        // echo '<br /><br /><br /><br /><br />';
+        // print_r($paybill);
+        // echo '<br /><br /><br /><br /><br />';
+        // echo '<br /><br /><br /><br /><br />';
 
         foreach ($mpesaStk as $transStk) {
             $payload = array(
@@ -398,22 +398,16 @@ class Mpesa extends CI_Controller
             print_r($payload);
             echo '<br /><br /><br /><br /><br />';
 
-            // build the urlencoded data
-            $postvars = http_build_query($payload);
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json'
+            ));
 
-            // open connection
-            $ch = curl_init();
-
-            // set the url, number of POST vars, POST data
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, count($payload));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-
-            // execute post
             $result = curl_exec($ch);
 
-            // close connection
-            curl_close($ch);
             echo '<br />';
             print_r($result);
             echo 'refresh sent <br />';
@@ -446,18 +440,14 @@ class Mpesa extends CI_Controller
             print_r($payload);
             echo '<br /><br /><br /><br /><br />';
 
-            // build the urlencoded data
-            $postvars = http_build_query($payload);
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json'
+            ));
 
-            // open connection
-            $ch = curl_init();
-
-            // set the url, number of POST vars, POST data
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, count($payload));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-
-            // execute post
             $result = curl_exec($ch);
 
             // close connection
