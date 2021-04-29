@@ -55,12 +55,12 @@ class Mpesa extends CI_Controller
     public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
     {
 
-        $group = 0;
+        $group = NULL;
         $wallet = $which;
 
         if ($level == '2') {
             $group = $which;
-            $wallet = 0;
+            $wallet = NULL;
         }
 
         $token = $this->generateAccessToken();
@@ -157,7 +157,7 @@ class Mpesa extends CI_Controller
                 'the_transaction_status' => 2, // 0 failed / 1 success / 2 pending / 3 error
                 'the_transaction_currency' => 'KES',
                 'the_transaction_reference' => $MerchantRequestID,
-                'the_transaction_category' => 0, //
+                'the_transaction_category' => NULL, //
                 'the_transaction_level' => $level, // 2 group/ 1 personal
                 'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
                 'the_transaction_wallet' => $wallet,
