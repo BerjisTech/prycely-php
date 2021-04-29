@@ -39,7 +39,7 @@
                 <p class="transaction-title">Transactions</p>
 
                 <?php foreach ($transactions as $date) : ?>
-                    <span><?php print_r($date); ?></span>
+                    <span><?php print_r($transactions); ?></span>
                     <table class="table transaction-table table-hover">
                         <?php foreach ($transactions as $key => $transaction) : ?>
                             <tr>
