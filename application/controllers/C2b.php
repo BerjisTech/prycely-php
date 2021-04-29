@@ -32,7 +32,7 @@ class C2b extends CI_Controller
             'the_transaction_start' => time(),
             'the_transaction_end' => time(),
             'the_transaction_amount' => $amount,
-            'the_transaction_status' => 2, // 0 failed / 1 success / 2 pending / 3 error
+            'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
             'the_transaction_currency' => 'KES',
             'the_transaction_reference' => $MpesaCode,
             'the_transaction_category' => 0, //
@@ -62,13 +62,17 @@ class C2b extends CI_Controller
             'accountNumber' => $accountNumber
         );
 
-        $this->db->insert('the_transactions', $currentTrans);
         $this->db->insert('the_paybill', $paybillings);
+        
+        if ($this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions')->num_rows() > 0) {
+            $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
+        } else {
+            $this->db->insert('the_transactions', $currentTrans);
+        }
     }
 
     private function phoneFormat($phone)
-    {
-        //initialize valuables
+    { //initialize valuables
         $status = FALSE;
         $formattedPhone = '';
         //remove white spaces
