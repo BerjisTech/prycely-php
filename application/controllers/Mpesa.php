@@ -349,8 +349,49 @@ class Mpesa extends CI_Controller
         echo '<br /><br /><br /><br /><br />';
 
         foreach ($mpesaStk as $transStk) {
-            $payload = '{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}';
-            $payload = json_decode($payload, TRUE);
+            $payload = array(
+                'Body' =>
+                array(
+                    'stkCallback' =>
+                    array(
+                        'MerchantRequestID' => $transStk['merchant_req_id'],
+                        'CheckoutRequestID' => $transStk['checkout_req_id'],
+                        'ResultCode' => 0,
+                        'ResultDesc' => 'The service request is processed successfully.',
+                        'CallbackMetadata' =>
+                        array(
+                            'Item' =>
+                            array(
+                                0 =>
+                                array(
+                                    'Name' => 'Amount',
+                                    'Value' => $transStk['the_transaction_amount'],
+                                ),
+                                1 =>
+                                array(
+                                    'Name' => 'MpesaReceiptNumber',
+                                    'Value' => $transStk['mpesa_trans_id'],
+                                ),
+                                2 =>
+                                array(
+                                    'Name' => 'Balance',
+                                ),
+                                3 =>
+                                array(
+                                    'Name' => 'TransactionDate',
+                                    'Value' => $transStk['the_transaction_date'],
+                                ),
+                                4 =>
+                                array(
+                                    'Name' => 'PhoneNumber',
+                                    'Value' => 254725227513,
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            );
+
             $url = base_url('mpesa/stkcallback');
             echo '<strong>STK Refresh</strong> to ' . $url . '<br />';
             echo 'Refreshing ' . $transStk['the_transaction_reference'] . '<br />';
@@ -380,9 +421,24 @@ class Mpesa extends CI_Controller
 
         foreach ($paybill as $transPaybill) {
             $request = $transPaybill['request'];
-            $request = json_encode($request);
+            $request = array(
+                'TransactionType' => $request['TransactionType'],
+                'TransID' => $request['TransID'],
+                'TransTime' => $request['TransTime'],
+                'TransAmount' => $request['TransAmount'],
+                'BusinessShortCode' => $request['BusinessShortCode'],
+                'BillRefNumber' => $request['BillRefNumber'],
+                'InvoiceNumber' => $request['InvoiceNumber'],
+                'OrgAccountBalance' => $request['OrgAccountBalance'],
+                'ThirdPartyTransID' => $request['ThirdPartyTransID'],
+                'MSISDN' => $request['MSISDN'],
+                'FirstName' => $request['FirstName'],
+                'MiddleName' => $request['MiddleName'],
+                'LastName' => $request['LastNamee']
+            );
+
             $payload = $request;
-            $payload = json_decode($payload, TRUE);
+
             $url = base_url('b2c');
 
             echo '<strong>Paybill Refresh</strong> to ' . $url . '<br />';
@@ -391,7 +447,7 @@ class Mpesa extends CI_Controller
             echo '<br /><br /><br /><br /><br />';
 
             // build the urlencoded data
-            $postvars = http_build_query(json_decode($payload, TRUE));
+            $postvars = http_build_query($payload);
 
             // open connection
             $ch = curl_init();
