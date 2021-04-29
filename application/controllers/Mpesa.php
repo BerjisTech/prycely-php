@@ -292,12 +292,12 @@ class Mpesa extends CI_Controller
 
     public function refreshAllPending()
     {
-        $pending = $this->db->where('the_transaction_status !=', 1)->get('the_transactions');
+        $pending = $this->db->where('the_transaction_status !=', 1)->get('the_transactions')->result_array();
 
-        $mpesaStk = array_filter(json_decode($pending, TRUE), function ($mode) {
+        $mpesaStk = array_filter($pending, function ($mode) {
             return ($mode['the_transaction_mode'] == 'Mpesa STK');
         });
-        $paybill = array_filter(json_decode($pending, TRUE), function ($mode) {
+        $paybill = array_filter($pending, function ($mode) {
             return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
         });
 
