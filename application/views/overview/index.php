@@ -50,7 +50,7 @@
                             </td>
                             <td class="transaction-td">
                                 <span class="transaction-amount"><?php echo $get['the_transaction_currency'] . ' ' . number_format($get['the_transaction_amount']) ?></span>
-                                <span class="transaction-time"><?php echo date('h:i:s a', $get['the_transacation_date']); ?></span>
+                                <span class="transaction-time"><?php echo date('h:i:s a', $get['the_transaction_date']); ?></span>
                             </td>
                         </tr>
                     <?php endforeach; ?>
