@@ -25,26 +25,6 @@ class C2b extends CI_Controller
         $ShortCode = $request["BusinessShortCode"];
         $accountNumber = strtoupper($request['BillRefNumber']);
 
-        $currentTrans = array(
-            'the_transaction_id' => '',
-            'the_transaction_user' => '',
-            'the_transaction_date' => time(),
-            'the_transaction_start' => time(),
-            'the_transaction_end' => time(),
-            'the_transaction_amount' => $amount,
-            'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
-            'the_transaction_currency' => 'KES',
-            'the_transaction_reference' => $MpesaCode,
-            'the_transaction_category' => 0, //
-            'the_transaction_level' => '', // 2 group/ 1 personal
-            'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
-            'the_transaction_wallet' => '',
-            'the_transaction_group' => '',
-            'the_transaction_purpose' => '',
-            'the_transaction_comment' => 'Paybill Payment',
-            'the_transaction_mode' => 'Mpesa Paybill'
-        );
-
         $paybillings = array(
             'request' => json_encode($request),
             'TransactionType' => $TransactionType,
@@ -65,9 +45,12 @@ class C2b extends CI_Controller
         $this->db->insert('the_paybill', $paybillings);
 
         if ($this->db->where('mpesa_trans_id', $MpesaCode)->get('the_stk')->num_rows() > 0) {
-            $currentTrans['the_transaction_level'] = '1'; // 2 group/ 1 personal
-            $currentTrans['the_transaction_comment'] = 'Showing STK';
-            $currentTrans['the_transaction_mode'] = 'Mpesa STK';
+            $currentTrans = array(
+                'the_transaction_end' => time(),
+                'the_transaction_amount' => $amount,
+                'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
+                'the_transaction_reference' => $MpesaCode,
+            );
             $this->db
                 ->where(
                     'the_transaction_reference',
@@ -76,6 +59,25 @@ class C2b extends CI_Controller
                 ->set($currentTrans)
                 ->update('the_transactions');
         } else {
+            $currentTrans = array(
+                'the_transaction_id' => '',
+                'the_transaction_user' => '',
+                'the_transaction_date' => time(),
+                'the_transaction_start' => time(),
+                'the_transaction_end' => time(),
+                'the_transaction_amount' => $amount,
+                'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
+                'the_transaction_currency' => 'KES',
+                'the_transaction_reference' => $MpesaCode,
+                'the_transaction_category' => 0, //
+                'the_transaction_level' => '', // 2 group/ 1 personal
+                'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
+                'the_transaction_wallet' => '',
+                'the_transaction_group' => '',
+                'the_transaction_purpose' => '',
+                'the_transaction_comment' => 'Paybill Payment',
+                'the_transaction_mode' => 'Mpesa Paybill'
+            );
             $this->db->insert('the_transactions', $currentTrans);
         }
     }
