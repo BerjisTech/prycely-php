@@ -46,7 +46,7 @@
                                     <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
                                 </td>
                                 <td class="transaction-details">
-                                    <span class="transaction-title">Netflix</span>
+                                    <span class="transaction-title"><?php echo $transaction['the_transaction_purpose']; ?></span>
                                     <?php if ($transaction['the_transaction_status'] == 1) : ?>
                                         <span class="transaction-status complete">
                                             complete
