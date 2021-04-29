@@ -17,17 +17,22 @@ class Overview extends CI_Controller
 
     public function index()
     {
-        $data['dates'] = $this->db
+        $dates = $this->db
             ->select('the_transaction_date')
             ->where('the_transaction_user', $this->session->the_person_id)
             ->group_by('Day(the_transaction_date)')
+            ->limit('10')
+            ->order_by('the_transaction_date', 'DESC')
             ->get('the_transactions')->result_array();
-            
-        $data['transactions'] = $this->db
-            ->select('the_transaction_date')
-            ->where('the_transaction_user', $this->session->the_person_id)
-            ->group_by('Day(the_transaction_date)')
-            ->get('the_transactions')->result_array();
+
+        foreach ($dates as $date) {
+            $transactions[$date['the_transaction_date']] = $this->db
+                ->where('the_transaction_user', $this->session->the_person_id)
+                ->where('Day(the_transaction_date)  ', date('d', $date['the_transaction_date']))
+                ->get('the_transactions')->result_array();
+        }
+
+        $data['transactions'] = $transactions;
         $data['page_name'] = 'overview/index';
         $data['page_title'] = 'Overview';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');

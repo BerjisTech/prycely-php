@@ -38,9 +38,9 @@
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
 
-                <table class="table transaction-table table-hover">
-                    <?php foreach ($dates as $date) : ?>
-                        <span>15th February, 2021</span>
+                <?php foreach ($transactions as $date) : ?>
+                    <span><?php print_r($date); ?></span>
+                    <table class="table transaction-table table-hover">
                         <?php foreach ($transactions as $key => $transaction) : ?>
                             <tr>
                                 <td class="t-img">
@@ -66,8 +66,8 @@
                                 </td>
                             </tr>
                         <?php endforeach; ?>
-                    <?php endforeach; ?>
-                </table>
+                    </table>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
