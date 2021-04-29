@@ -90,20 +90,20 @@ class C2b extends CI_Controller
     private function updateWallet($MpesaCode)
     {
         $transaction = $this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions')->row();
-        $this->db->insert('errors', array('error' => $this->db->last_query));
+        $this->db->insert('errors', array('error' => $this->db->last_query()));
 
         $user_id = $transaction->the_transaction_user;
         $wallet = $transaction->the_transaction_wallet;
 
         $new_total = $this->db->select('SUM(the_transaction_amount) as total')->where('the_transaction_user', $user_id)->where('the_transaction_status', 1)->get('the_transactions')->row()->total;
-        $this->db->insert('errors', array('error' => $this->db->last_query));
+        $this->db->insert('errors', array('error' => $this->db->last_query()));
         $pending_total = $this->db->select('SUM(the_transaction_amount) as total')->where('the_transaction_user', $user_id)->where('the_transaction_status', 2)->get('the_transactions')->row()->total;
-        $this->db->insert('errors', array('error' => $this->db->last_query));
+        $this->db->insert('errors', array('error' => $this->db->last_query()));
 
         $this->db->where('the_wallet_user', $user_id)->where('the_wallet_id', $wallet)->set('the_wallet_balance', $new_total)->update('the_wallets');
-        $this->db->insert('errors', array('error' => $this->db->last_query));
+        $this->db->insert('errors', array('error' => $this->db->last_query()));
         $this->db->where('the_wallet_user', $user_id)->where('the_wallet_id', $wallet)->set('the_wallet_balance_pending', $pending_total)->update('the_wallets');
-        $this->db->insert('errors', array('error' => $this->db->last_query));
+        $this->db->insert('errors', array('error' => $this->db->last_query()));
     }
 
     private function phoneFormat($phone)
