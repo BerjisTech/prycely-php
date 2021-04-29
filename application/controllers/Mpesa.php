@@ -343,6 +343,7 @@ class Mpesa extends CI_Controller
         echo $this->db->last_query() . '<br />';
 
         print_r($mpesaStk);
+        echo '<br /><br /><br /><br /><br />';
         print_r($paybill);
 
         foreach ($mpesaStk as $transStk) {
