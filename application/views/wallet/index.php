@@ -52,9 +52,6 @@
             <table class="table transaction-table table-hover">
                 <?php foreach ($date as $transaction) : ?>
                     <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
-                        </td>
                         <td class="transaction-details">
                             <span class="transaction-title"><?php echo $transaction['the_transaction_purpose']; ?></span>
                             <?php if ($transaction['the_transaction_status'] == 1) : ?>
