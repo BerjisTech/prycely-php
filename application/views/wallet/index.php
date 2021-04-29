@@ -31,7 +31,7 @@
             <?php foreach ($wallets as $key => $wallet) : ?>
                 <tr onclick="window.location.href = '<?php echo base_url('wallet/view/' . $wallet['the_wallet_id']); ?>'">
                     <td class="t-img">
-                        <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/') . substr($wallet['the_wallet_currency'], 0, 2); ?>.svg');"></p>
+                        <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet['the_wallet_currency'], 0, 2)); ?>.svg');"></p>
                     </td>
                     <td class="transaction-details">
                         <span class="transaction-title"><?php echo $wallet['the_wallet_currency']; ?></span>

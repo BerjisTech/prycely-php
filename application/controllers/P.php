@@ -25,7 +25,7 @@ class P extends CI_Controller
             ->get('currency')->result_array();
         foreach ($result as $currency) {
             echo '<span class="currency_list" onclick="logCurrency(\'' . $currency['country'] . '\', \'' . $currency['code'] . '\', \'' . $currency['currency'] . '\')">
-                    <img src="' . base_url('assets/images/flags/') . substr($currency['code'], 0, 2) . '.svg" style="width: 50px;" />
+                    <img src="' . base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)) . '.svg" style="width: 50px;" />
                     ' . $currency['currency'] . ' (' . $currency['code'] . ') ' . $currency['country'] .
                 '</span>';
         }
