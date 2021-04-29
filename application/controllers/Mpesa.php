@@ -356,7 +356,7 @@ class Mpesa extends CI_Controller
             echo '<br /><br /><br /><br /><br />';
 
             // build the urlencoded data
-            $postvars = http_build_query($payload);
+            $postvars = http_build_query(json_decode($payload, TRUE));
 
             // open connection
             $ch = curl_init();
@@ -389,7 +389,7 @@ class Mpesa extends CI_Controller
             echo '<br /><br /><br /><br /><br />';
 
             // build the urlencoded data
-            $postvars = http_build_query($payload);
+            $postvars = http_build_query(json_decode($payload, TRUE));
 
             // open connection
             $ch = curl_init();
