@@ -6,7 +6,86 @@ class B2c extends CI_Controller
 {
     public function index()
     {
-        
+        $request = file_get_contents('php://input');
+        $request = json_decode($request, TRUE);
+        print_r($request);
+        $this->db->insert('errors', array('error' => json_encode($request)));
+        $TransactionType = $request['TransactionType'];
+        $MpesaCode = $request["TransID"];
+        $PayBillBalance = $request["OrgAccountBalance"];
+        $ThirdPartyTransID = $request["ThirdPartyTransID"];
+        $InvoiceNumber = $request["InvoiceNumber"];
+        $amount = $request["TransAmount"];
+        $FirstName = isset($request["FirstName"]) ? $request["FirstName"] : "";
+        $LastName = isset($request["LastName"]) ? $request["LastName"] : "";
+        $MiddleName = isset($request["MiddleName"]) ? $request["MiddleName"] : "";
+        $phone = $request["MSISDN"];
+        $phoneVals = json_decode($this->phoneFormat($phone), TRUE);
+        $phone = $phoneVals["formattedPhone"];
+        $ShortCode = $request["BusinessShortCode"];
+        $accountNumber = strtoupper($request['BillRefNumber']);
+
+        $paybillings = array(
+            'request' => json_encode($request),
+            'TransactionType' => $TransactionType,
+            'MpesaCode' => $MpesaCode,
+            'PayBillBalance' => $PayBillBalance,
+            'ThirdPartyTransID' => $ThirdPartyTransID,
+            'InvoiceNumber' => $InvoiceNumber,
+            'amount' => $amount,
+            'FirstName' => $FirstName,
+            'LastName' => $LastName,
+            'MiddleName' => $MiddleName,
+            'phoneVals' => json_encode($phoneVals),
+            'phone' => $phone,
+            'ShortCode' => $ShortCode,
+            'accountNumber' => $accountNumber
+        );
+
+        $this->db->insert('the_paybill', $paybillings);
+
+        if ($this->db->where('mpesa_trans_id', $MpesaCode)->get('the_stk')->num_rows() > 0) {
+            $currentTrans = array(
+                'the_transaction_end' => time(),
+                'the_transaction_amount' => $amount,
+                'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
+                'the_transaction_reference' => $MpesaCode,
+            );
+            $this->db
+                ->where(
+                    'the_transaction_reference',
+                    $this->db->where('mpesa_trans_id', $MpesaCode)->get('the_stk')->row()->merchant_req_id
+                )
+                ->set($currentTrans)
+                ->update('the_transactions');
+        } else {
+            $currentTrans = array(
+                'the_transaction_id' => '',
+                'the_transaction_user' => '',
+                'the_transaction_date' => time(),
+                'the_transaction_start' => time(),
+                'the_transaction_end' => time(),
+                'the_transaction_amount' => $amount,
+                'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
+                'the_transaction_currency' => 'KES',
+                'the_transaction_reference' => $MpesaCode,
+                'the_transaction_category' => 0, //
+                'the_transaction_level' => '', // 2 group/ 1 personal
+                'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
+                'the_transaction_wallet' => '',
+                'the_transaction_group' => '',
+                'the_transaction_purpose' => '',
+                'the_transaction_comment' => 'Paybill Payment',
+                'the_transaction_mode' => 'Mpesa Paybill'
+            );
+            $this->db->insert('the_transactions', $currentTrans);
+        }
+
+        $transaction = $this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions')->row();
+        $user_id = $transaction->the_transaction_user;
+        $wallet = $transaction->the_transaction_wallet;
+        $new_total = $this->db->select('SUM(amount) as total')->where('the_transaction_user', $user_id)->where('the_transaction_status', 1)->get('the_transactions')->row()->total;
+        $this->db->where('the_wallet_user', $user_id)->where('the_wallet_id', $wallet)->set('amount', $new_total)->update('the_wallets');
     }
 
     private function phoneFormat($phone)
