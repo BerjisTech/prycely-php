@@ -145,7 +145,7 @@ class Mpesa extends CI_Controller
             $stkRequest['status'] = $amount;
             $stkRequest['response_result_code'] = $ResultCode;
             $stkRequest['response_result_desc'] = $ResultDesc;
-            $stkRequest['phone'] = json_decode($this->phoneFormat($phone), TRUE);;
+            $stkRequest['phone'] = json_decode($this->phoneFormat($phone), TRUE);
 
             $currentTrans = array(
                 'the_transaction_id' => '',
@@ -321,6 +321,6 @@ class Mpesa extends CI_Controller
             }
         }
         $array = array('status' => $status, 'formattedPhone' => $formattedPhone);
-        return json_encode($array);
+        return $phone;
     }
 }
