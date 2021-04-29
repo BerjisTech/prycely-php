@@ -28,7 +28,6 @@ class Overview extends CI_Controller
         foreach ($dates as $date) {
             $transactions[$date['the_transaction_date']] = $this->db
                 ->query('SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), "%d") = '.date('d', $date['the_transaction_date']))->result_array();
-            echo $this->db->last_query();
         }
 
         $data['transactions'] = $transactions;
