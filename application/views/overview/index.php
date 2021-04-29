@@ -38,7 +38,7 @@
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
                 <?php foreach ($transactions as $key => $date) : ?>
-                    <span><?php echo date('d M, Y', $key); ?></span>
+                    <span><?php echo $key; ?></span>
                     <table class="table transaction-table table-hover">
                         <?php foreach ($date as $transaction) : ?>
                             <tr>

@@ -18,18 +18,19 @@ class Overview extends CI_Controller
     public function index()
     {
         $dates = $this->db
-            ->select('the_transaction_date')
-            ->where('the_transaction_user', $this->session->the_person_id)
-            ->group_by('Day(the_transaction_date)')
-            ->limit('10')
-            ->order_by('the_transaction_date', 'DESC')
-            ->get('the_transactions')->result_array();
+			->select('the_transaction_date')
+			->where('the_transaction_user', $this->session->the_person_id)
+			->group_by('Day(the_transaction_date)')
+			->limit('10')
+			->order_by('the_transaction_date', 'DESC')
+			->get('the_transactions')->result_array();
 
-        foreach ($dates as $date) {
-            $collection_date = date('d', $date['the_transaction_date']);
-            $transactions[$date['the_transaction_date']] = $this->db
-                ->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d') = $collection_date ORDER BY `the_transaction_id` DESC")->result_array();
-        }
+		foreach ($dates as $date) {
+            $collection_date = date('dmY', $date['the_transaction_date']);
+            $collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
+			$transactions[$collection_stamp] = $this->db
+				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC")->result_array();
+		}
 
         $data['transactions'] = $transactions;
         $data['page_name'] = 'overview/index';
