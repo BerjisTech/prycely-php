@@ -57,7 +57,7 @@
                                 <?php endif; ?>
                             </td>
                             <td class="transaction-td">
-                                <span class="transaction-amount"><?php echo $transaction['the_transaction_currency'] . ' ' . number_format($transaction['the_transaction_amount']) ?></span>
+                                <span class="transaction-amount <?php if ($transaction['the_transaction_type'] == 1){ echo "complete"; } ?>"><?php echo $transaction['the_transaction_currency'] . ' ' . number_format($transaction['the_transaction_amount']) ?></span>
                                 <span class="transaction-time"><?php echo date('h:i:s a', $transaction['the_transaction_date']); ?></span>
                             </td>
                         </tr>
