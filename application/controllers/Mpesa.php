@@ -188,13 +188,6 @@ class Mpesa extends CI_Controller
             $ResultCode = $request['Body']['stkCallback']['ResultCode'];
             $ResultDesc = $request['Body']['stkCallback']['ResultDesc'];
 
-            // $stkRequest = $this->db->where('merchant_req_id', $MerchantRequestID)->get('the_stk')->result_array();
-            // print_r($stkRequest);
-
-            // $stkRequest->transaction;
-            // $transaction = $stkRequest['transaction'];
-            // $user = $this->db->where('the_transaction_reference', $MerchantRequestID)->get('the_transactions')->row()->the_transaction_user;
-
             //initialize non-common variables
             $statusRes = 2;
             $stkRes = 3;
@@ -211,6 +204,7 @@ class Mpesa extends CI_Controller
                 $stkRequest['merchant_req_id'] = $MerchantRequestID;
                 $stkRequest['checkout_req_id'] = $CheckoutRequestID;
                 $stkRequest['status'] = $statusRes;
+                $stkRequest['response_result_code'] = $stkRes;
                 //0 = pending
                 //1 = success
                 //2 = failed
