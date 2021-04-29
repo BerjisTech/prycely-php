@@ -30,9 +30,12 @@ class Wallet extends CI_Controller
 			->get('the_transactions')->result_array();
 
 		foreach ($dates as $date) {
-			$transactions[$date['the_transaction_date']] = $this->db
-				->query('SELECT * FROM `the_transactions` ORDER BY `the_transaction_id` DESC WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), "%d") = ' . date('d', $date['the_transaction_date']))->result_array();
+            $collection_date = date('d', $date['the_transaction_date']);
+			$transactions[$date['$collection_date']] = $this->db
+				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d') = $collection_date ORDER BY `the_transaction_id` DESC")->result_array();
 		}
+
+		echo json_encode($transactions);
 
 		$data['transactions'] = $transactions;
 
