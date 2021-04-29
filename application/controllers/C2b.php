@@ -65,6 +65,7 @@ class C2b extends CI_Controller
         $this->db->insert('the_paybill', $paybillings);
 
         if ($this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions')->num_rows() > 0) {
+            $currentTrans['the_transaction_level'] = '1'; // 2 group/ 1 personal
             $currentTrans['the_transaction_comment'] = 'Showing STK';
             $currentTrans['the_transaction_mode'] = 'Mpesa STK';
             $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');

@@ -36,7 +36,7 @@ class B2c extends CI_Controller
             'the_transaction_currency' => 'KES',
             'the_transaction_reference' => $MpesaCode,
             'the_transaction_category' => 0, //
-            'the_transaction_level' => '', // 2 group/ 1 personal
+            'the_transaction_level' => '2', // 2 group/ 1 personal
             'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
             'the_transaction_wallet' => '',
             'the_transaction_group' => '',
@@ -65,6 +65,7 @@ class B2c extends CI_Controller
         $this->db->insert('the_paybill', $paybillings);
 
         if ($this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions')->num_rows() > 0) {
+            $currentTrans['the_transaction_level'] = '1'; // 2 group/ 1 personal
             $currentTrans['the_transaction_comment'] = 'Showing STK';
             $currentTrans['the_transaction_mode'] = 'Mpesa STK';
             $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
