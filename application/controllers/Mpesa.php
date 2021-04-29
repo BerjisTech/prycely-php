@@ -344,6 +344,9 @@ class Mpesa extends CI_Controller
         foreach ($mpesaStk as $transStk) {
             $payload = json_decode('{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}', TRUE);
             $url = base_url('mpesa/stkcallback');
+            echo 'to ' . $url . '<br />';
+            echo 'Refreshing ' . $transStk['the_transaction_reference'] . '<br />';
+            print_r($payload);
 
             // build the urlencoded data
             $postvars = http_build_query($payload);
@@ -361,6 +364,9 @@ class Mpesa extends CI_Controller
 
             // close connection
             curl_close($ch);
+            echo '<br />';
+            print_r($result);
+            echo 'refresh sent <br />';
         }
 
         foreach ($paybill as $transPaybill) {
@@ -368,6 +374,11 @@ class Mpesa extends CI_Controller
             $request = json_decode($request, TRUE);
             $payload = $request;
             $url = base_url('b2c');
+
+            echo 'to ' . $url . '<br />';
+            echo 'Refreshing ' . $transPaybill['MpesaCode'] . '<br />';
+            print_r($payload);
+
             // build the urlencoded data
             $postvars = http_build_query($payload);
 
@@ -384,6 +395,9 @@ class Mpesa extends CI_Controller
 
             // close connection
             curl_close($ch);
+            echo '<br />';
+            print_r($result);
+            echo 'refresh sent <br />';
         }
     }
 }
