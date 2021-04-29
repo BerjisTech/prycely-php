@@ -341,6 +341,9 @@ class Mpesa extends CI_Controller
             return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
         });
 
+        print_r($mpesaStk);
+        print_r($paybill);
+
         foreach ($mpesaStk as $transStk) {
             $payload = json_decode('{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}', TRUE);
             $url = base_url('mpesa/stkcallback');
