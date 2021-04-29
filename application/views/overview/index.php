@@ -39,6 +39,7 @@
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
                 <table class="table transaction-table table-hover">
+                <?php print_r($transactions); ?>
                     <?php foreach ($transactions as $key => $transaction) : ?>
                         <tr>
                             <td class="t-img">
