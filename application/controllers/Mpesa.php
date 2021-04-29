@@ -55,6 +55,8 @@ class Mpesa extends CI_Controller
     public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
     {
 
+        $phone = json_decode($this->phoneFormat($phone), TRUE);
+
         $group = 0;
         $wallet = $which;
 
@@ -145,6 +147,7 @@ class Mpesa extends CI_Controller
             $stkRequest['status'] = $amount;
             $stkRequest['response_result_code'] = $ResultCode;
             $stkRequest['response_result_desc'] = $ResultDesc;
+            $stkRequest['phone'] = $phone;
 
             $currentTrans = array(
                 'the_transaction_id' => '',
@@ -290,13 +293,46 @@ class Mpesa extends CI_Controller
         return $array;
     }
 
+    private function phoneFormat($phone)
+    { //initialize valuables
+        $status = FALSE;
+        $formattedPhone = '';
+        //remove white spaces
+        $phone = trim($phone);
+        $phone = str_replace(" ", "", $phone);
+        //remove -, (, and )
+        $phone = str_replace("-", "", $phone);
+        $phone = str_replace("(", "", $phone);
+        $phone = str_replace(")", "", $phone);
+        //validate - all should begin with 254
+        if (strlen($phone) >= 9 && strlen($phone) <= 13) {
+            if (substr($phone, 0, 2) == "07") {
+                $phone = substr_replace($phone, "254", 0, 1);
+            } elseif (substr($phone, 0, 4) == "+254") {
+                $phone = substr_replace($phone, "", 0, 1);
+            } elseif (substr($phone, 0, 1) === "7") {
+                $phone = substr_replace($phone, "254", 0, 0);
+            } elseif (substr($phone, 0, 1) === "1") {
+                $phone = substr_replace($phone, "254", 0, 0);
+            } elseif (substr($phone, 0, 2) == "01") {
+                $phone = substr_replace($phone, "254", 0, 1);
+            }
+            if (substr($phone, 0, 3) == "254" && strlen($phone) == 12 && is_numeric($phone)) {
+                $status = TRUE;
+                $formattedPhone = $phone;
+            }
+        }
+        $array = array('status' => $status, 'formattedPhone' => $formattedPhone);
+        return json_encode($array);
+    }
+
     public function refreshAllPending()
     {
         $pending = $this->db
-        ->where('the_transaction_status !=', 1)
-        ->join('the_stk')
-        ->join('the_paybill')
-        ->get('the_transactions')->result_array();
+            // ->where('the_transaction_status !=', 1)
+            ->join('the_stk', 'the_transactions.the_transaction_reference = the_stk.mpesa_trans_id')
+            ->join('the_paybill', 'the_transactions.the_transaction_reference = the_paybill.MpesaCode')
+            ->get('the_transactions')->result_array();
 
         $mpesaStk = array_filter($pending, function ($mode) {
             return ($mode['the_transaction_mode'] == 'Mpesa STK');
@@ -306,11 +342,48 @@ class Mpesa extends CI_Controller
         });
 
         foreach ($mpesaStk as $transStk) {
-            $payload = '{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['the_transaction_reference'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":1},{"Name":"MpesaReceiptNumber","Value":"PDS2C4TBXI"},{"Name":"Balance"},{"Name":"TransactionDate","Value":20210428142918},{"Name":"PhoneNumber","Value":254725227513}]}}}}';
+            $payload = json_decode('{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}', TRUE);
+            $url = base_url('mpesa/stkcallback');
+
+            // build the urlencoded data
+            $postvars = http_build_query($payload);
+
+            // open connection
+            $ch = curl_init();
+
+            // set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, count($payload));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+
+            // execute post
+            $result = curl_exec($ch);
+
+            // close connection
+            curl_close($ch);
         }
 
         foreach ($paybill as $transPaybill) {
-            $payload = '{"TransactionType":"Hehe","TransID":"MGR66HFTd7","TransTime":"3798798ww","TransAmount":"15","BusinessShortCode":"4072015","BillRefNumber":"tutu","InvoiceNumber":"wsww","OrgAccountBalance":"888844","ThirdPartyTransID":"4888484","MSISDN":"254726712505","FirstName":"Hillary","MiddleName":"H","LastName":"Tao"}';
+            $request = $transPaybill['request'];
+            $request = json_decode($request, TRUE);
+            $payload = $request;
+            $url = base_url('b2c');
+            // build the urlencoded data
+            $postvars = http_build_query($payload);
+
+            // open connection
+            $ch = curl_init();
+
+            // set the url, number of POST vars, POST data
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, count($payload));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+
+            // execute post
+            $result = curl_exec($ch);
+
+            // close connection
+            curl_close($ch);
         }
     }
 }
