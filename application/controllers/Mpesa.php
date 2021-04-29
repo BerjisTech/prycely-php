@@ -161,7 +161,7 @@ class Mpesa extends CI_Controller
                 'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
                 'the_transaction_wallet' => $wallet,
                 'the_transaction_group' => $group,
-                'the_transaction_purpose' => $purpose,
+                'the_transaction_purpose' => urldecode($purpose),
                 'the_transaction_comment' => 'Showing STK',
                 'the_transaction_mode' => 'Mpesa STK'
             );
