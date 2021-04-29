@@ -26,6 +26,7 @@ class Overview extends CI_Controller
             ->get('the_transactions')->result_array();
 
         foreach ($dates as $date) {
+            print_r($dates);
             $transactions[$date['the_transaction_date']] = $this->db
                 ->where('the_transaction_user', $this->session->the_person_id)
                 ->where('Day(the_transaction_date)  ', date('d', $date['the_transaction_date']))
