@@ -334,15 +334,8 @@ class Mpesa extends CI_Controller
             ->join('the_paybill', 'the_transactions.the_transaction_reference = the_paybill.MpesaCode')
             ->get('the_transactions')->result_array();
 
-        $mpesaStk = array_filter($pending, function ($mode) {
-            return ($mode['the_transaction_mode'] == 'Mpesa STK');
-        });
-        $paybill = array_filter($pending, function ($mode) {
-            return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
-        });
-
-        print_r($mpesaStk);
-        print_r($paybill);
+        
+        print_r($pending);
 
         foreach ($pending as $transPending) {
             if ($transPending['the_transaction_mode'] == 'Mpesa STK') {
