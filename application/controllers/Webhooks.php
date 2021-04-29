@@ -12,7 +12,7 @@ class Webhooks extends CI_Controller
     {
         if (!isset($sabanduklo)) {
             $this->Email->do_email(
-                'Some tried accessing sabanduklo on ' . date('d M, Y', time()) . 'at ' . date('H:m:s', time()),
+                'Some tried accessing sabanduklo on ' . date('d M, Y', time()) . 'at ' . date('h:i:s a', time()),
                 'Funny call',
                 'prycely@gmail.com, berjistechnologies@gmail.com',
                 'support@sleekupsell.com'
@@ -22,7 +22,7 @@ class Webhooks extends CI_Controller
 
         if ($sabanduklo != 'sabanduklobankulo') {
             $this->Email->do_email(
-                'Some tried accessing sabanduklo using ' . $sabanduklo . ' on ' . date('d M, Y', time()) . 'at ' . date('H:m:s', time()),
+                'Some tried accessing sabanduklo using ' . $sabanduklo . ' on ' . date('d M, Y', time()) . 'at ' . date('h:i:s a', time()),
                 'Funny call',
                 'prycely@gmail.com, berjistechnologies@gmail.com',
                 'support@sleekupsell.com'
@@ -40,7 +40,7 @@ class Webhooks extends CI_Controller
             );
         } else {
             $this->Email->do_email(
-                'Some tried accessing sabanduklo without a post request on ' . date('d M, Y', time()) . 'at ' . date('H:m:s', time()),
+                'Some tried accessing sabanduklo without a post request on ' . date('d M, Y', time()) . 'at ' . date('h:i:s a', time()),
                 'Funny call',
                 'prycely@gmail.com, berjistechnologies@gmail.com',
                 'support@sleekupsell.com'

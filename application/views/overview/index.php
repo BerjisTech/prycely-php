@@ -39,8 +39,7 @@
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
                 <table class="table transaction-table table-hover">
-                <?php print_r($transactions); ?>
-                    <?php foreach ($transactions as $key => $transaction) : ?>
+                    <?php foreach ($transactions as $key => $get) : ?>
                         <tr>
                             <td class="t-img">
                                 <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
@@ -50,53 +49,11 @@
                                 <span class="transaction-status">Processing</span>
                             </td>
                             <td class="transaction-td">
-                                <span class="transaction-amount">$ 15</span>
-                                <span class="transaction-time">3:49 pm</span>
+                                <span class="transaction-amount"><?php echo $get . $the_transaction_currency . ' ' . number_format($get . $the_transaction_amount) ?></span>
+                                <span class="transaction-time"><?php echo date('h:i:s a', $get . $the_transacation_date); ?></span>
                             </td>
                         </tr>
                     <?php endforeach; ?>
-                </table>
-                <p>14th February, 2021</p>
-                <table class="table transaction-table table-hover">
-                    <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">Java House</span>
-                            <span class="transaction-status">Complete</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount">$ 23</span>
-                            <span class="transaction-time">8:34 pm</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/1269971823090978817/748sBk9P_400x400.jpg');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">OnlyFans Payouts</span>
-                            <span class="transaction-status">Processing</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount complete">+ $ 24,350</span>
-                            <span class="transaction-time">4:17 pm</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_google_adsense_color_1x_web_512dp.max-500x500.png');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">Adsense</span>
-                            <span class="transaction-status">Complete</span>
-                        </td>
-                        <td class="transaction-td">
-                            <span class="transaction-amount complete">+ $ 137,500</span>
-                            <span class="transaction-time">2:45 pm</span>
-                        </td>
-                    </tr>
                 </table>
             </div>
         </div>
