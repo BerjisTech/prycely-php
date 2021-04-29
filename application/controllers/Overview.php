@@ -28,7 +28,7 @@ class Overview extends CI_Controller
         foreach ($dates as $date) {
             $transactions[$date['the_transaction_date']] = $this->db
                 ->where('the_transaction_user', $this->session->the_person_id)
-                ->where('date_format(from_unixtime(the_transaction_date), "%d"))', date('d', $date['the_transaction_date']))
+                ->where('date_format(from_unixtime(the_transaction_date), "%d")) =', date('d', $date['the_transaction_date']))
                 ->get('the_transactions')->result_array();
                 echo $this->db->last_query();
         }
