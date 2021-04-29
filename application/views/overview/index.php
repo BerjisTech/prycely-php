@@ -42,8 +42,8 @@
                     <?php
                     $lastDate = null;
                     foreach ($transactions as $key => $transaction) :
-                        $date = date('Y-m-d', $transaction['the_transaction_user']);
-                        $time = date('H:i', $transaction['the_transaction_user']);
+                        $date = date('Y-m-d', $transaction['the_transaction_date']);
+                        $time = date('H:i', $transaction['the_transaction_date']);
                         if (is_null($lastDate) || $lastDate !== $date) {
                             echo "<h2>{$date}</h2>";
                         }
