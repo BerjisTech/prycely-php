@@ -294,10 +294,10 @@ class Mpesa extends CI_Controller
     {
         $pending = $this->db->where('the_transaction_status !=', 1)->get('the_transactions');
 
-        $mpesaStk = array_filter($pending, function ($mode) {
+        $mpesaStk = array_filter(json_decode($pending, TRUE), function ($mode) {
             return ($mode['the_transaction_mode'] == 'Mpesa STK');
         });
-        $paybill = array_filter($pending, function ($mode) {
+        $paybill = array_filter(json_decode($pending, TRUE), function ($mode) {
             return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
         });
 
