@@ -36,8 +36,6 @@ class Wallet extends CI_Controller
 				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC")->result_array();
 		}
 
-		echo json_encode($transactions);
-
 		$data['transactions'] = $transactions;
 
 		$data['page_name'] = 'wallet/index';
