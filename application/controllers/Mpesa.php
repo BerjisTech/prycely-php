@@ -349,7 +349,7 @@ class Mpesa extends CI_Controller
         echo '<br /><br /><br /><br /><br />';
 
         foreach ($mpesaStk as $transStk) {
-            $payload = json_encode('{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}');
+            $payload = '{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['checkout_req_id'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":' . $transStk['the_transaction_amount'] . '},{"Name":"MpesaReceiptNumber","Value":' . $transStk['mpesa_trans_id'] . '},{"Name":"Balance"},{"Name":"TransactionDate","Value":' . date('YmdHis', $transStk['the_transaction_date']) . '},{"Name":"PhoneNumber","Value":254725227513}]}}}}';
             $payload = json_decode($payload, TRUE);
             $url = base_url('mpesa/stkcallback');
             echo '<strong>STK Refresh</strong> to ' . $url . '<br />';
@@ -358,7 +358,7 @@ class Mpesa extends CI_Controller
             echo '<br /><br /><br /><br /><br />';
 
             // build the urlencoded data
-            $postvars = http_build_query(json_decode($payload, TRUE));
+            $postvars = http_build_query($payload);
 
             // open connection
             $ch = curl_init();
