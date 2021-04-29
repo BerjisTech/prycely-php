@@ -145,7 +145,7 @@ class Mpesa extends CI_Controller
             $stkRequest['status'] = $amount;
             $stkRequest['response_result_code'] = $ResultCode;
             $stkRequest['response_result_desc'] = $ResultDesc;
-            $stkRequest['phone'] = json_decode($this->phoneFormat($phone), TRUE);
+            $stkRequest['phone'] = $this->phoneFormat($phone);
 
             $currentTrans = array(
                 'the_transaction_id' => '',
