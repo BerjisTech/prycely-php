@@ -39,7 +39,15 @@
                 <p class="transaction-title">Transactions</p>
                 <span>15th February, 2021</span>
                 <table class="table transaction-table table-hover">
-                    <?php foreach ($transactions as $key => $transaction) : ?>
+                    <?php
+                    $lastDate = null;
+                    foreach ($transactions as $key => $transaction) :
+                        $date = date('Y-m-d', $transaction['the_transaction_user']);
+                        $time = date('H:i', $transaction['the_transaction_user']);
+                        if (is_null($lastDate) || $lastDate !== $date) {
+                            echo "<h2>{$date}</h2>";
+                        }
+                    ?>
                         <tr>
                             <td class="t-img">
                                 <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
