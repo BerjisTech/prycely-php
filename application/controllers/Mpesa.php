@@ -165,6 +165,8 @@ class Mpesa extends CI_Controller
                 'the_transaction_comment' => 'Showing STK',
                 'the_transaction_mode' => 'Mpesa STK'
             );
+            $stkRequest = $this->security->xss_clean($stkRequest);
+            $currentTrans = $this->security->xss_clean($currentTrans);
 
             $this->db->insert('the_stk', $stkRequest);
             $this->db->insert('the_transactions', $currentTrans);
@@ -210,6 +212,7 @@ class Mpesa extends CI_Controller
                 $stkRequest['response_result_code'] = $request['Body']['stkCallback']['ResultCode'];
                 $stkRequest['response_result_desc'] = $request['Body']['stkCallback']['ResultDesc'];
 
+                $stkRequest = $this->security->xss_clean($stkRequest);
                 print_r($stkRequest);
                 $this->db->insert('errors', array('error' => 'nowCallback'));
                 $this->db->insert('errors', array('error' => json_encode($stkRequest)));
