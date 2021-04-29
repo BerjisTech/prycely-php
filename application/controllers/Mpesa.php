@@ -398,24 +398,24 @@ class Mpesa extends CI_Controller
             print_r($payload);
             echo '<br /><br /><br /><br /><br />';
 
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/json'
-            ));
+            // $ch = curl_init($url);
+            // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            //     'Content-Type: application/json'
+            // ));
 
-            $result = curl_exec($ch);
+            // $result = curl_exec($ch);
 
-            echo '<br />';
-            print_r($result);
+            // echo '<br />';
+            // print_r($result);
             echo 'refresh sent <br />';
         }
 
         foreach ($paybill as $transPaybill) {
             $request = $transPaybill['request'];
-            json_encode($request);
+            $request = json_encode($request);
             $request = array(
                 'TransactionType' => $request['TransactionType'],
                 'TransID' => $request['TransID'],
