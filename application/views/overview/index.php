@@ -37,40 +37,35 @@
         <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
-                <span>15th February, 2021</span>
+
                 <table class="table transaction-table table-hover">
-                    <?php
-                    $lastDate = null;
-                    foreach ($transactions as $key => $transaction) :
-                        $date = date('Y-m-d', $transaction['the_transaction_date']);
-                        $time = date('H:i', $transaction['the_transaction_date']);
-                        if (is_null($lastDate) || $lastDate !== $date) {
-                            echo "<h2>{$date}</h2>";
-                        }
-                    ?>
-                        <tr>
-                            <td class="t-img">
-                                <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
-                            </td>
-                            <td class="transaction-details">
-                                <span class="transaction-title">Netflix</span>
-                                <?php if ($transaction['the_transaction_status'] == 1) : ?>
-                                    <span class="transaction-status complete">
-                                        complete
-                                    </span>
-                                <?php else : ?>
-                                    <span class="transaction-status">
-                                        failed
-                                    </span>
-                                <?php endif; ?>
-                            </td>
-                            <td class="transaction-td">
-                                <span class="transaction-amount <?php if ($transaction['the_transaction_type'] == 1) {
-                                                                    echo "complete";
-                                                                } ?>"><?php echo $transaction['the_transaction_currency'] . ' ' . number_format($transaction['the_transaction_amount']) ?></span>
-                                <span class="transaction-time"><?php echo date('h:i:s a', $transaction['the_transaction_date']); ?></span>
-                            </td>
-                        </tr>
+                    <?php foreach ($dates as $date) : ?>
+                        <span>15th February, 2021</span>
+                        <?php foreach ($transactions as $key => $transaction) : ?>
+                            <tr>
+                                <td class="t-img">
+                                    <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
+                                </td>
+                                <td class="transaction-details">
+                                    <span class="transaction-title">Netflix</span>
+                                    <?php if ($transaction['the_transaction_status'] == 1) : ?>
+                                        <span class="transaction-status complete">
+                                            complete
+                                        </span>
+                                    <?php else : ?>
+                                        <span class="transaction-status">
+                                            failed
+                                        </span>
+                                    <?php endif; ?>
+                                </td>
+                                <td class="transaction-td">
+                                    <span class="transaction-amount <?php if ($transaction['the_transaction_type'] == 1) {
+                                                                        echo "complete";
+                                                                    } ?>"><?php echo $transaction['the_transaction_currency'] . ' ' . number_format($transaction['the_transaction_amount']) ?></span>
+                                    <span class="transaction-time"><?php echo date('h:i:s a', $transaction['the_transaction_date']); ?></span>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
                 </table>
             </div>

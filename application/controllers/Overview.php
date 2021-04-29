@@ -17,8 +17,14 @@ class Overview extends CI_Controller
 
     public function index()
     {
+        $data['dates'] = $this->db
+            ->select('the_transaction_date')
+            ->where('the_transaction_user', $this->session->the_person_id)
+            ->group_by('Day(the_transaction_date)')
+            ->get('the_transactions')->result_array();
+            
         $data['transactions'] = $this->db
-            ->select('*', 'date_format(from_unixtime(the_transaction_date), "%d") AS date')
+            ->select('the_transaction_date')
             ->where('the_transaction_user', $this->session->the_person_id)
             ->group_by('Day(the_transaction_date)')
             ->get('the_transactions')->result_array();
