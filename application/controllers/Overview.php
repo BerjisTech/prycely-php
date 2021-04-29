@@ -27,7 +27,7 @@ class Overview extends CI_Controller
 
         foreach ($dates as $date) {
             $transactions[$date['the_transaction_date']] = $this->db
-                ->query('SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), "%d") = '.date('d', $date['the_transaction_date']))->result_array();
+                ->query('SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), "%d") = ' . date('d', $date['the_transaction_date']))->result_array();
         }
 
         $data['transactions'] = $transactions;
@@ -37,5 +37,10 @@ class Overview extends CI_Controller
         $data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->limit('3')->get('the_wallets')->result_array();
 
         $this->load->view('index', $data);
+    }
+
+    private function modal($modal)
+    {
+        echo $modal;
     }
 }

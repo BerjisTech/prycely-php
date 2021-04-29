@@ -37,11 +37,12 @@
         <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
-
-                <?php foreach ($transactions as $date) : ?>
-                    <span><?php print_r(json_encode($date)); echo date('d M, Y', $date['the_transaction_date']); ?></span>
+                <?php $this->modal('ModAL'); ?>
+                <?php foreach ($transactions as $key => $date) : ?>
+                    <span><?php print_r(json_encode($date));
+                            echo date('d M, Y', $key); ?></span>
                     <table class="table transaction-table table-hover">
-                        <?php foreach ($transactions as $key => $transaction) : ?>
+                        <?php foreach ($date as $transaction) : ?>
                             <tr>
                                 <td class="t-img">
                                     <p class="transaction-image" style="background: url('https://yt3.ggpht.com/ytc/AAUvwni_LdnpDi-SOIhjp4Kxo2l_yVBoYsfdDCpUM5VDzg=s900-c-k-c0x00ffffff-no-rj');"></p>
