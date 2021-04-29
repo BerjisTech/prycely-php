@@ -156,7 +156,7 @@ class Mpesa extends CI_Controller
                 'the_transaction_amount' => $amount,
                 'the_transaction_status' => 2, // 0 failed / 1 success / 2 pending / 3 error
                 'the_transaction_currency' => 'KES',
-                'the_transaction_reference' => $MpesaReceiptNumber,
+                'the_transaction_reference' => $MerchantRequestID,
                 'the_transaction_category' => 0, //
                 'the_transaction_level' => $level, // 2 group/ 1 personal
                 'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
@@ -220,7 +220,6 @@ class Mpesa extends CI_Controller
                 print_r($stkRequest);
                 $this->db->insert('errors', array('error' => 'nowCallback'));
                 $this->db->insert('errors', array('error' => json_encode($stkRequest)));
-                $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->set('the_transaction_status', 1)->update('the_transactions');
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
         } catch (\Throwable $th) {
