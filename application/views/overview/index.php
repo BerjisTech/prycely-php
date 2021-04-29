@@ -37,7 +37,6 @@
         <div class="row switch-transactions">
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
-                <?php $this->modal('ModAL'); ?>
                 <?php foreach ($transactions as $key => $date) : ?>
                     <span><?php print_r(json_encode($date));
                             echo date('d M, Y', $key); ?></span>
