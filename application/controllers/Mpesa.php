@@ -142,7 +142,6 @@ class Mpesa extends CI_Controller
             //1 = success
             //2 = failed
             $stkRequest['status'] = $status;
-            $stkRequest['status'] = $amount;
             $stkRequest['response_result_code'] = $ResultCode;
             $stkRequest['response_result_desc'] = $ResultDesc;
             $stkRequest['phone'] = $this->phoneFormat($phone);
@@ -220,6 +219,9 @@ class Mpesa extends CI_Controller
                 print_r($stkRequest);
                 $this->db->insert('errors', array('error' => 'nowCallback'));
                 $this->db->insert('errors', array('error' => json_encode($stkRequest)));
+
+                $this->db->where('the_transaction_reference', $MerchantRequestID)->set('status', $statusRes)->update('the_transactions');
+                $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->set('status', $statusRes)->update('the_transactions');
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
         } catch (\Throwable $th) {
