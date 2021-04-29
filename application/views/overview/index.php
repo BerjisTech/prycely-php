@@ -38,7 +38,17 @@
             <div class="col-sm-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
                 <?php foreach ($transactions as $key => $date) : ?>
-                    <span><?php echo $key; ?></span>
+                    <span>
+                        <?php
+                        if ($key == date('j\<\s\u\p\>S\<\/\s\u\p\> M', time())) {
+                            echo 'Today';
+                        } else if ($key == date('j\<\s\u\p\>S\<\/\s\u\p\> M', strtotime("-1 days"))) {
+                            echo 'Yesterday';
+                        } else {
+                            echo $key;
+                        }
+                        ?>
+                    </span>
                     <table class="table transaction-table table-hover">
                         <?php foreach ($date as $transaction) : ?>
                             <tr>
