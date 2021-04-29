@@ -55,7 +55,7 @@ class Mpesa extends CI_Controller
     public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
     {
 
-        $phone = json_decode($this->phoneFormat($phone), TRUE);
+        // $phone = json_decode($this->phoneFormat($phone), TRUE);
 
         $group = 0;
         $wallet = $which;
