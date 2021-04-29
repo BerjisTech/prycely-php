@@ -155,7 +155,7 @@ class Mpesa extends CI_Controller
                 'the_transaction_amount' => $amount,
                 'the_transaction_status' => 2, // 0 failed / 1 success / 2 pending / 3 error
                 'the_transaction_currency' => 'KES',
-                'the_transaction_reference' => $MerchantRequestID,
+                'the_transaction_reference' => $MpesaReceiptNumber,
                 'the_transaction_category' => 0, //
                 'the_transaction_level' => $level, // 2 group/ 1 personal
                 'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
@@ -219,7 +219,7 @@ class Mpesa extends CI_Controller
                 print_r($stkRequest);
                 $this->db->insert('errors', array('error' => 'nowCallback'));
                 $this->db->insert('errors', array('error' => json_encode($stkRequest)));
-                $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', 1)->update('the_transactions');
+                $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->set('the_transaction_status', 1)->update('the_transactions');
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
             }
         } catch (\Throwable $th) {
@@ -292,7 +292,11 @@ class Mpesa extends CI_Controller
 
     public function refreshAllPending()
     {
-        $pending = $this->db->where('the_transaction_status !=', 1)->get('the_transactions')->result_array();
+        $pending = $this->db
+        ->where('the_transaction_status !=', 1)
+        ->join('the_stk')
+        ->join('the_paybill')
+        ->get('the_transactions')->result_array();
 
         $mpesaStk = array_filter($pending, function ($mode) {
             return ($mode['the_transaction_mode'] == 'Mpesa STK');
@@ -301,14 +305,12 @@ class Mpesa extends CI_Controller
             return ($mode['the_transaction_mode'] == 'Mpesa Paybill');
         });
 
-        print_r(
-            $mpesaStk
-        );
+        foreach ($mpesaStk as $transStk) {
+            $payload = '{"Body":{"stkCallback":{"MerchantRequestID":"' . $transStk['the_transaction_reference'] . '","CheckoutRequestID":"' . $transStk['the_transaction_reference'] . '","ResultCode":0,"ResultDesc":"The service request is processed successfully.","CallbackMetadata":{"Item":[{"Name":"Amount","Value":1},{"Name":"MpesaReceiptNumber","Value":"PDS2C4TBXI"},{"Name":"Balance"},{"Name":"TransactionDate","Value":20210428142918},{"Name":"PhoneNumber","Value":254725227513}]}}}}';
+        }
 
-        echo '<br /><br /><br />';
-
-        print_r(
-            $paybill
-        );
+        foreach ($paybill as $transPaybill) {
+            $payload = '{"TransactionType":"Hehe","TransID":"MGR66HFTd7","TransTime":"3798798ww","TransAmount":"15","BusinessShortCode":"4072015","BillRefNumber":"tutu","InvoiceNumber":"wsww","OrgAccountBalance":"888844","ThirdPartyTransID":"4888484","MSISDN":"254726712505","FirstName":"Hillary","MiddleName":"H","LastName":"Tao"}';
+        }
     }
 }
