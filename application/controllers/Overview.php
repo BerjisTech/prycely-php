@@ -20,7 +20,7 @@ class Overview extends CI_Controller
         $data['transactions'] = $this->db
             ->select('*', 'date_format(from_unixtime(the_transaction_date), "%d") AS date')
             ->where('the_transaction_user', $this->session->the_person_id)
-            ->group_by('the_transaction_date')
+            ->group_by('Day(the_transaction_date)')
             ->get('the_transactions')->result_array();
         $data['page_name'] = 'overview/index';
         $data['page_title'] = 'Overview';
