@@ -48,7 +48,7 @@
     <div class="col-sm-4 hidden-xs right-card">
         <p class="transaction-title">Recent Transactions</p>
         <?php foreach ($transactions as $key => $date) : ?>
-            <span><?php echo date('d M, Y', $key); ?></span>
+            <span><?php echo $key; ?></span>
             <table class="table transaction-table table-hover">
                 <?php foreach ($date as $transaction) : ?>
                     <tr>
