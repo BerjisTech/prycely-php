@@ -210,6 +210,7 @@ class Mpesa extends CI_Controller
                 $stkRequest['mpesa_trans_id'] = $MpesaReceiptNumber; //(Mpesa reference number)
                 $stkRequest['merchant_req_id'] = $MerchantRequestID;
                 $stkRequest['checkout_req_id'] = $CheckoutRequestID;
+                $stkRequest['status'] = $statusRes;
                 //0 = pending
                 //1 = success
                 //2 = failed
