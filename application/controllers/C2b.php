@@ -85,7 +85,9 @@ class C2b extends CI_Controller
         $user_id = $transaction->the_transaction_user;
         $wallet = $transaction->the_transaction_wallet;
         $new_total = $this->db->select('SUM(amount) as total')->where('the_transaction_user', $user_id)->where('the_transaction_status', 1)->get('the_transactions')->row()->total;
-        $this->db->where('the_wallet_user', $user_id)->where('the_wallet_id', $wallet)->set('the_transaction_amount', $new_total)->update('the_wallets');
+        $pending_total = $this->db->select('SUM(amount) as total')->where('the_transaction_user', $user_id)->where('the_transaction_status', 2)->get('the_transactions')->row()->total;
+        $this->db->where('the_wallet_user', $user_id)->where('the_wallet_id', $wallet)->set('the_wallet_balance', $new_total)->update('the_wallets');
+        $this->db->where('the_wallet_user', $user_id)->where('the_wallet_id', $wallet)->set('the_wallet_pending', $pending_total)->update('the_wallets');
     }
 
     private function phoneFormat($phone)
