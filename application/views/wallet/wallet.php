@@ -17,13 +17,13 @@
 				<input type="number" value="1000" />
 			</div>
 			<div class="transfer-wallet-details">
-				<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
+				<img width="100" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
 				<span>1,000 <?php echo $wallets[0]['the_wallet_currency']; ?></span>
 				</span class="entypo-down-open"></span>
 
 				<div>
 					<?php foreach ($wallets as $fetch) : ?>
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
+						<img width="100" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
 						<span>1,000 <?php echo $fetch['the_wallet_currency']; ?></span>
 					<?php endforeach; ?>
 				</div>
