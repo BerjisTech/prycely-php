@@ -30,8 +30,8 @@ class Wallet extends CI_Controller
 			->get('the_transactions')->result_array();
 
 		foreach ($dates as $date) {
-            $collection_date = date('dmY', $date['the_transaction_date']);
-            $collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
+			$collection_date = date('dmY', $date['the_transaction_date']);
+			$collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
 			$transactions[$collection_stamp] = $this->db
 				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC LIMIT 10")->result_array();
 		}
@@ -97,5 +97,10 @@ class Wallet extends CI_Controller
 
 	public function view($wallet_id)
 	{
+		$data['wallet'] = $this->db->where('the_wallet_id', $wallet_id)->get('the_wallets')->row();
+		$data['page_name'] = 'wallet';
+		$data['page_title'] = 'Wallet';
+
+		$this->load->view('index', $data);
 	}
 }
