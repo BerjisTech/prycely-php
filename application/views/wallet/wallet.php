@@ -23,8 +23,10 @@
 
 				<div>
 					<?php foreach ($wallets as $fetch) : ?>
-						<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
-						<span>1,000 <?php echo $fetch['the_wallet_currency']; ?></span>
+						<div>
+							<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
+							<span>1,000 <?php echo $fetch['the_wallet_currency']; ?></span>
+						</div>
 					<?php endforeach; ?>
 				</div>
 			</div>
