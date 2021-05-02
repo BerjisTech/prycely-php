@@ -110,7 +110,7 @@ class Wallet extends CI_Controller
 			$collection_date = date('dmY', $date['the_transaction_date']);
 			$collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
 			$transactions[$collection_stamp] = $this->db
-				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND WHERE `the_transaction_wallet` = $wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC LIMIT 10")->result_array();
+				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_wallet` = $wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC LIMIT 10")->result_array();
 		}
 
 		$data['transactions'] = $transactions;
