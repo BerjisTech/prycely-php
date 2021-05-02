@@ -90,7 +90,7 @@ class Wallet extends CI_Controller
 		}
 	}
 
-	public function delete($wallet_id = "")
+	public function delete($wallet_id)
 	{
 		$this->db->where('the_wallet_id', $wallet_id)->delete('the_wallets');
 		echo 'delete wallet';
