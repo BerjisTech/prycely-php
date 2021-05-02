@@ -100,7 +100,7 @@ class Wallet extends CI_Controller
 	{
 		$data['wallet'] = $this->db->where('the_wallet_id', $wallet_id)->get('the_wallets')->row();
 		$data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->get('the_wallets')->result_array();
-		$data['page_name'] = 'wallet';
+		$data['page_name'] = 'wallet/wallet';
 		$data['page_title'] = 'Wallet';
 
 		$this->load->view('index', $data);
