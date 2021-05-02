@@ -1,66 +1,3 @@
-<div class="row">
-	<div class="col-sm-8">
-		<p class="">Transfer to your other wallets</p>
-		<div class="transfer-from-this">
-			<div class="transfer-amount-details">
-				<span>You send</span>
-				<input type="number" value="1000" />
-			</div>
-			<div class="transfer-wallet-details">
-				<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-				<span><?php echo $wallet->the_wallet_currency; ?></span>
-			</div>
-		</div>
-		<div class="transfer-from-this">
-			<div class="transfer-amount-details">
-				<span>They receive</span>
-				<input type="number" value="1000" />
-			</div>
-			<div class="transfer-wallet-details">
-				<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
-				<span>1,000 <?php echo $wallets[0]['the_wallet_currency']; ?></span>
-				</span class="entypo-down-open"></span>
-
-				<div>
-					<?php foreach ($wallets as $fetch) : ?>
-						<div>
-							<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
-							<span>1,000 <?php echo $fetch['the_wallet_currency']; ?></span>
-						</div>
-					<?php endforeach; ?>
-				</div>
-			</div>
-		</div>
-		<div class="transfer-bottom">
-			<div class="converted-amount">
-				<span>Amount we'll convert</span>
-				<span>1,000 KES</span>
-			</div>
-			<div class="conversion-fees">
-				<span>Amount we'll convert</span>
-				<span>1,000 KES</span>
-			</div>
-			<button>SEND MONEY</button>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="exchange-rates">
-			<div class="exchange-top">
-				<span>Exchange Rates</span>
-				<span><span class="entypo-record savings"></span> KES</span>
-				<span><span class="entypo-record expenses"></span> USD</span>
-			</div>
-			<div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-sm-6"></div>
-	<div class="col-sm-6"></div>
-</div>
-
-
 <script>
 	jQuery(document).ready(function($) {
 
@@ -124,3 +61,65 @@
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 </script>
+
+<div class="row">
+	<div class="col-sm-8">
+		<p class="">Transfer to your other wallets</p>
+		<div class="transfer-from-this">
+			<div class="transfer-amount-details">
+				<span>You send</span>
+				<input type="number" value="1000" />
+			</div>
+			<div class="transfer-wallet-details">
+				<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+				<span><?php echo $wallet->the_wallet_currency; ?></span>
+			</div>
+		</div>
+		<div class="transfer-from-this">
+			<div class="transfer-amount-details">
+				<span>They receive</span>
+				<input type="number" value="1000" />
+			</div>
+			<div class="transfer-wallet-details">
+				<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
+				<span>1,000 <?php echo $wallets[0]['the_wallet_currency']; ?></span>
+				</span class="entypo-down-open"></span>
+
+				<div>
+					<?php foreach ($wallets as $fetch) : ?>
+						<div>
+							<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
+							<span>1,000 <?php echo $fetch['the_wallet_currency']; ?></span>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+		<div class="transfer-bottom">
+			<div class="converted-amount">
+				<span>Amount we'll convert</span>
+				<span>1,000 KES</span>
+			</div>
+			<div class="conversion-fees">
+				<span>Amount we'll convert</span>
+				<span>1,000 KES</span>
+			</div>
+			<button>SEND MONEY</button>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="exchange-rates">
+			<div class="exchange-top">
+				<span>Exchange Rates</span>
+				<span><span class="entypo-record savings"></span> KES</span>
+				<span><span class="entypo-record expenses"></span> USD</span>
+			</div>
+			<div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6"></div>
+	<div class="col-sm-6"></div>
+</div>
