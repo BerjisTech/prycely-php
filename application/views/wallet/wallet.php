@@ -7,7 +7,7 @@
 				<input type="number" value="1000" />
 			</div>
 			<div class="transfer-wallet-details">
-				<img width="100" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet['the_wallet_currency'], 0, 2)); ?>.svg" />
+				<img width="100" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
 				<span><?php echo $wallet->the_wallet_currency; ?></span>
 			</div>
 		</div>
