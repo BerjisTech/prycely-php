@@ -68,8 +68,7 @@
 		var line_chart = Morris.Line({
 			element: 'line-chart',
 			data: [
-				<?php
-				for ($m = 7; $m > -1; $m--) : ?> {
+				<?php for ($m = 7; $m > -1; $m--) : ?> {
 						y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
 						a: getRandomInt(10000, 1000),
 						b: getRandomInt(10000, 1000)
