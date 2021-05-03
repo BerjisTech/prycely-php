@@ -904,7 +904,7 @@ body {
 
 .transfer-wallet-details .currency-drop .currency-select {
     display        : flex;
-    flex-direction : row;
+    flex-direction : column;
     justify-content: center;
     align-items    : center;
     background     : #F7F7F9;
