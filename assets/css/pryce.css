@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     width: 100vw !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
@@ -8,6 +9,7 @@ body {
     background: #F2F2F7 !important;
     font-family: Segoe UI;
 }
+
 
 /* Side Bar */
 
@@ -57,6 +59,7 @@ body {
     background-size: cover !important;
     border: 1px solid #dddddd;
 }
+
 
 /* Main Content */
 
@@ -174,7 +177,8 @@ body {
     cursor: pointer;
 }
 
-.transaction-table, .transaction-table tr {
+.transaction-table,
+.transaction-table tr {
     width: 100%;
 }
 
@@ -182,7 +186,9 @@ body {
     width: 40px;
 }
 
-.transaction-table, .transaction-table tr, .transaction-table td {
+.transaction-table,
+.transaction-table tr,
+.transaction-table td {
     border: none !important;
     border-top: none !important;
     vertical-align: middle;
@@ -206,19 +212,22 @@ body {
     text-align: right;
 }
 
-.transaction-title, .transaction-amount {
+.transaction-title,
+.transaction-amount {
     display: table;
     font-weight: 800;
 }
 
-.transaction-status, .transaction-time {
+.transaction-status,
+.transaction-time {
     display: table;
     font-weight: 50;
     font-size: 12px;
     color: #c0c0c0;
 }
 
-.transaction-amount, .transaction-time {
+.transaction-amount,
+.transaction-time {
     width: 100%;
     text-align: right;
 }
@@ -345,7 +354,9 @@ body {
     margin-bottom: 30px;
 }
 
-.top a, .top a:hover, .top a:active {
+.top a,
+.top a:hover,
+.top a:active {
     font-weight: 400;
     text-decoration: none;
     color: #007bff;
@@ -379,7 +390,8 @@ body {
     cursor: pointer;
 }
 
-.entypo-inner:hover, .entypo-current .entypo-inner {
+.entypo-inner:hover,
+.entypo-current .entypo-inner {
     background: #F1F3FF;
 }
 
@@ -389,7 +401,8 @@ body {
     padding: 5px;
 }
 
-.entypo-inner:hover span:first-of-type, .entypo-current span:first-of-type {
+.entypo-inner:hover span:first-of-type,
+.entypo-current span:first-of-type {
     color: #7083FF;
     border-color: #7083FF;
 }
@@ -399,7 +412,8 @@ body {
     margin-top: 10px;
 }
 
-.entypo-inner:hover span:last-of-type, .entypo-current span:last-of-type {
+.entypo-inner:hover span:last-of-type,
+.entypo-current span:last-of-type {
     color: #000000;
     font-weight: 700px;
 }
@@ -572,7 +586,8 @@ body {
     cursor: pointer;
 }
 
-.chat-card .input-group textarea, .chat-card .input-group .form-control {
+.chat-card .input-group textarea,
+.chat-card .input-group .form-control {
     resize: none !important;
 }
 
@@ -689,7 +704,9 @@ body {
     flex-direction: row;
 }
 
-.formPhoto, .formPersonal, .formAddress {
+.formPhoto,
+.formPersonal,
+.formAddress {
     display: flex;
     width: 80vw;
     height: 100vh;
@@ -726,7 +743,8 @@ body {
     max-width: 70vw !important;
 }
 
-.formAddress :is(select, input) {
+.formAddress :is(select,
+input) {
     border-radius: 5px !important;
     border: 2px solid #828486;
     padding: 0px 20px !important;
@@ -763,7 +781,8 @@ body {
     height: 50px;
 }
 
-.walletPage, .the_form_wallet_currency {
+.walletPage,
+.the_form_wallet_currency {
     display: flex;
     width: 80vw;
     position: relative;

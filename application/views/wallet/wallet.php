@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-sm-8">
-		<p class="">Transfer to your other wallets</p>
+		<p class="transfer-title">Transfer to your other wallets</p>
 		<div class="transfer-from-this">
 			<div class="transfer-amount-details">
 				<span>You send</span>

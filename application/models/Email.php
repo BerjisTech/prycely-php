@@ -14,8 +14,8 @@ class Email extends CI_Model
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_port' => 465,
-            'smtp_user' => 'support@sleekupsell.com',
-            'smtp_pass' => '890Berjis*()',
+            'smtp_user' => 'prycely@gmail.com',
+            'smtp_pass' => '890Prycely*()',
             'mailtype' => 'html',
             'charset' => 'iso-8859-1'
         );
@@ -24,7 +24,7 @@ class Email extends CI_Model
         $this->email->set_newline("\r\n");
 
         $this->email->to($to);
-        $this->email->from($from, 'Sleek Upsell');
+        $this->email->from($from, 'Prycely');
         $this->email->subject($sub);
         $this->email->message($msg);
 
