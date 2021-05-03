@@ -1,12 +1,12 @@
 html,
 body {
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width     : 100vw !important;
+    max-width : 100vw !important;
     overflow-x: hidden !important;
 }
 
 body {
-    background: #F2F2F7 !important;
+    background : #F2F2F7 !important;
     font-family: Segoe UI;
 }
 
@@ -14,29 +14,29 @@ body {
 /* Side Bar */
 
 .side_bar {
-    display: flex;
-    height: 100vh;
-    position: fixed;
-    top: 7.5vh;
-    width: 150px;
-    flex-direction: column;
-    transition: all 0.56s;
-    text-align: center;
-    align-items: center;
-    justify-content: flex-start;
-    /* background: rgba( 255, 255, 255, 0.30);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 6.5px);
+    display                : flex;
+    height                 : 100vh;
+    position               : fixed;
+    top                    : 7.5vh;
+    width                  : 150px;
+    flex-direction         : column;
+    transition             : all 0.56s;
+    text-align             : center;
+    align-items            : center;
+    justify-content        : flex-start;
+    /* background          : rgba( 255, 255, 255, 0.30);
+    box-shadow             : 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter        : blur( 6.5px);
     -webkit-backdrop-filter: blur( 6.5px);
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18); */
+    border-radius          : 10px;
+    border                 : 1px solid rgba( 255, 255, 255, 0.18); */
 }
 
 .nav_links {
-    font-size: large;
-    padding: 10px 5px;
-    text-align: left;
-    width: 100%;
+    font-size   : large;
+    padding     : 10px 5px;
+    text-align  : left;
+    width       : 100%;
     padding-left: 30px;
 }
 
@@ -49,76 +49,76 @@ body {
 }
 
 .user_icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 100%;
-    margin-bottom: 10px;
-    background-image: url('https://prycely.com/assets/images/logo.png');
+    width              : 70px;
+    height             : 70px;
+    border-radius      : 100%;
+    margin-bottom      : 10px;
+    background-image   : url('https://prycely.com/assets/images/logo.png');
     background-position: 50% 50% !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    border: 1px solid #dddddd;
+    background-repeat  : no-repeat !important;
+    background-size    : cover !important;
+    border             : 1px solid #dddddd;
 }
 
 
 /* Main Content */
 
 .main-content {
-    display: table;
-    margin-left: 15vw;
-    padding: 20px 50px;
+    display      : table;
+    margin-left  : 15vw;
+    padding      : 20px 50px;
     border-radius: 10px 0px 0px 10px;
-    background: #FFFFFF;
-    width: 85vw;
-    right: 0vw;
-    min-height: 100vh;
-    box-shadow: -8px 0 32px 0 rgba( 31, 38, 135, 0.37);
+    background   : #FFFFFF;
+    width        : 85vw;
+    right        : 0vw;
+    min-height   : 100vh;
+    box-shadow   : -8px 0 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .slide-icons-parent {
     padding-right: 20px !important;
-    padding-left: 0px !important;
+    padding-left : 0px !important;
 }
 
 .slide-icons {
-    display: flex;
-    overflow-x: auto;
-    padding-left: 0px !important;
-    margin-left: 0px !important;
-    box-shadow: 0 0 32px 0 rgba( 31, 38, 135, 0.37);
+    display      : flex;
+    overflow-x   : auto;
+    padding-left : 0px !important;
+    margin-left  : 0px !important;
+    box-shadow   : 0 0 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
 }
 
 .slide-icon {
-    margin: 10px 10px 10px 0px;
-    text-align: center;
-    padding: 7px;
-    width: 80px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+    margin         : 10px 10px 10px 0px;
+    text-align     : center;
+    padding        : 7px;
+    width          : 80px;
+    cursor         : pointer;
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction : column;
 }
 
 .slide-icon .fa {
-    border: 1px solid rgba(131, 161, 254, 0.38);
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
+    border         : 1px solid rgba(131, 161, 254, 0.38);
+    border-radius  : 100%;
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-    background: #F3F6FA;
-    width: 40px;
-    height: 40px;
-    margin-bottom: 5px;
+    background     : #F3F6FA;
+    width          : 40px;
+    height         : 40px;
+    margin-bottom  : 5px;
 }
 
 .slide-icon span {
-    display: flex;
-    width: auto;
-    min-width: 50px;
-    max-width: 90px;
-    align-items: center;
+    display        : flex;
+    width          : auto;
+    min-width      : 50px;
+    max-width      : 90px;
+    align-items    : center;
     justify-content: center;
 }
 
@@ -127,27 +127,27 @@ body {
 }
 
 .row-tabs {
-    margin-top: 10px;
+    margin-top   : 10px;
     margin-bottom: 10px;
     border-radius: 50px;
-    background: #F7F9F9;
-    margin-right: 20px !important;
-    padding: 13px 7px;
+    background   : #F7F9F9;
+    margin-right : 20px !important;
+    padding      : 13px 7px;
 }
 
 .row-tabs span {
-    margin: 0px;
-    padding: 7px 12px;
+    margin       : 0px;
+    padding      : 7px 12px;
     border-radius: 50px;
-    cursor: pointer;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor       : pointer;
+    transition   : cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .row-tabs .active {
-    border: 1px solid rgba( 255, 255, 255, 0.6);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.27);
-    backdrop-filter: blur( 6.5px);
-    -webkit-backdrop-filter: blur( 6.5px);
+    border                 : 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.27);
+    backdrop-filter        : blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
 }
 
 .wallet-panel {
@@ -155,17 +155,17 @@ body {
 }
 
 .right-card {
-    background: rgba( 247, 248, 250, 1);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.27);
-    backdrop-filter: blur( 6.5px);
-    -webkit-backdrop-filter: blur( 6.5px);
-    border-radius: 10px;
-    padding-top: 20px;
-    min-height: 100vh !important;
+    background             : rgba(247, 248, 250, 1);
+    box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.27);
+    backdrop-filter        : blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-radius          : 10px;
+    padding-top            : 20px;
+    min-height             : 100vh !important;
 }
 
 .transactions-card {
-    padding-top: 20px;
+    padding-top     : 20px;
     /* padding-right: 20px; */
 }
 
@@ -189,8 +189,8 @@ body {
 .transaction-table,
 .transaction-table tr,
 .transaction-table td {
-    border: none !important;
-    border-top: none !important;
+    border        : none !important;
+    border-top    : none !important;
     vertical-align: middle;
 }
 
@@ -199,13 +199,13 @@ body {
 }
 
 .transaction-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+    width              : 40px;
+    height             : 40px;
+    border-radius      : 100%;
     background-position: 50% 50% !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    border: 1px solid #dddddd;
+    background-repeat  : no-repeat !important;
+    background-size    : cover !important;
+    border             : 1px solid #dddddd;
 }
 
 .transaction-td {
@@ -214,21 +214,21 @@ body {
 
 .transaction-title,
 .transaction-amount {
-    display: table;
+    display    : table;
     font-weight: 800;
 }
 
 .transaction-status,
 .transaction-time {
-    display: table;
+    display    : table;
     font-weight: 50;
-    font-size: 12px;
-    color: #c0c0c0;
+    font-size  : 12px;
+    color      : #c0c0c0;
 }
 
 .transaction-amount,
 .transaction-time {
-    width: 100%;
+    width     : 100%;
     text-align: right;
 }
 
@@ -237,18 +237,18 @@ body {
 }
 
 .more_groups {
-    margin-bottom: 20px;
-    cursor: pointer;
-    display: table;
-    width: 100%;
-    text-align: left !important;
-    color: rgba(163, 159, 159, 0.623);
+    margin-bottom  : 20px;
+    cursor         : pointer;
+    display        : table;
+    width          : 100%;
+    text-align     : left !important;
+    color          : rgba(163, 159, 159, 0.623);
     text-decoration: underline;
-    font-size: medium;
+    font-size      : medium;
 }
 
 .more_groups:last-of-type {
-    margin-top: 20px;
+    margin-top   : 20px;
     margin-bottom: 20px;
 }
 
@@ -261,14 +261,14 @@ body {
 }
 
 .cc {
-    position: relative;
-    font-size: 16px;
-    color: white;
-    width: 100%;
-    height: 174px;
+    position     : relative;
+    font-size    : 16px;
+    color        : white;
+    width        : 100%;
+    height       : 174px;
     border-radius: 16px;
-    box-shadow: 0px 0px 18px -1px #2e2e2e57;
-    margin-top: 20px;
+    box-shadow   : 0px 0px 18px -1px #2e2e2e57;
+    margin-top   : 20px;
 }
 
 .cc.visa {
@@ -280,33 +280,33 @@ body {
 }
 
 .cc:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
+    content         : "";
+    position        : absolute;
+    width           : 100%;
+    height          : 100%;
+    border-radius   : 16px;
     background-image: linear-gradient(to top, transparent, #FFFFFF);
-    opacity: 30%;
+    opacity         : 30%;
 }
 
 .cc svg {
     position: absolute;
-    top: 80px;
+    top     : 80px;
 }
 
 .cc svg path {
-    fill: transparent;
-    stroke: #FFFFFF;
-    stroke-width: 2px;
+    fill          : transparent;
+    stroke        : #FFFFFF;
+    stroke-width  : 2px;
     stroke-linecap: round;
 }
 
 .cc .container {
-    width: 100%;
-    position: absolute;
-    top: 25px;
-    display: flex;
-    align-items: center;
+    width          : 100%;
+    position       : absolute;
+    top            : 25px;
+    display        : flex;
+    align-items    : center;
     justify-content: space-between;
 }
 
@@ -316,8 +316,8 @@ body {
 
 .cc .holder {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
+    bottom  : 25px;
+    left    : 25px;
 }
 
 .cc .holder span {
@@ -326,7 +326,7 @@ body {
 
 .cc .holder span.name {
     font-size: 14px;
-    color: #CCCCCC;
+    color    : #CCCCCC;
 }
 
 .cc .holder span.number {
@@ -334,43 +334,43 @@ body {
 }
 
 .graph-wrapper {
-    width: 100%;
+    width    : 100%;
     max-width: 750px;
-    margin: 0 auto;
+    margin   : 0 auto;
 }
 
 .money_graph {
-    height: 300px;
-    width: 100%;
-    max-width: 750px;
-    padding: 25px;
+    height          : 300px;
+    width           : 100%;
+    max-width       : 750px;
+    padding         : 25px;
     background-color: #FFF;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius   : 5px;
+    box-shadow      : 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .top {
-    margin-top: 30px;
+    margin-top   : 30px;
     margin-bottom: 30px;
 }
 
 .top a,
 .top a:hover,
 .top a:active {
-    font-weight: 400;
+    font-weight    : 400;
     text-decoration: none;
-    color: #007bff;
-    margin-right: 20px;
+    color          : #007bff;
+    margin-right   : 20px;
 }
 
 .group-navi {
-    display: table;
-    width: 100%;
+    display      : table;
+    width        : 100%;
     border-radius: 20px;
-    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
+    box-shadow   : 0 0 22px 0 rgb(31 38 135 / 27%);
     margin-bottom: 20px;
-    background: #ffffff;
-    padding: 0px !important;
+    background   : #ffffff;
+    padding      : 0px !important;
 }
 
 .group-entypo {
@@ -378,16 +378,16 @@ body {
 }
 
 .entypo-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
     justify-content: center;
-    border-radius: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #9DA7B9;
-    height: 100px;
-    cursor: pointer;
+    border-radius  : 20px;
+    padding-top    : 10px;
+    padding-bottom : 10px;
+    color          : #9DA7B9;
+    height         : 100px;
+    cursor         : pointer;
 }
 
 .entypo-inner:hover,
@@ -397,58 +397,58 @@ body {
 
 .group-entypo span:first-of-type {
     border-radius: 10px;
-    border: 2px solid #9DA7B9;
-    padding: 5px;
+    border       : 2px solid #9DA7B9;
+    padding      : 5px;
 }
 
 .entypo-inner:hover span:first-of-type,
 .entypo-current span:first-of-type {
-    color: #7083FF;
+    color       : #7083FF;
     border-color: #7083FF;
 }
 
 .group-entypo span:last-of-type {
     font-weight: lighter;
-    margin-top: 10px;
+    margin-top : 10px;
 }
 
 .entypo-inner:hover span:last-of-type,
 .entypo-current span:last-of-type {
-    color: #000000;
+    color      : #000000;
     font-weight: 700px;
 }
 
 .group-balance-preview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
     justify-content: center;
-    height: 300px;
-    border-radius: 20px;
-    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height         : 300px;
+    border-radius  : 20px;
+    box-shadow     : 0 0 22px 0 rgb(31 38 135 / 27%);
+    margin-top     : 10px;
+    margin-bottom  : 10px;
 }
 
 .group-balance-chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
     justify-content: center;
-    border-radius: 20px;
-    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
-    margin-top: 10px;
-    margin-bottom: 20px;
+    border-radius  : 20px;
+    box-shadow     : 0 0 22px 0 rgb(31 38 135 / 27%);
+    margin-top     : 10px;
+    margin-bottom  : 20px;
 }
 
 .gbc-top {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
+    width          : 100%;
+    padding        : 20px;
+    display        : flex;
+    flex-direction : row;
     justify-content: space-around;
-    align-items: baseline;
-    align-content: space-around;
+    align-items    : baseline;
+    align-content  : space-around;
 }
 
 .gbc-top span {
@@ -456,7 +456,7 @@ body {
 }
 
 .gbc-top span:first-of-type {
-    flex-grow: 4;
+    flex-grow  : 4;
     font-weight: 700;
 }
 
@@ -473,51 +473,51 @@ body {
 }
 
 .gp-bals {
-    padding-top: 20px;
+    padding-top   : 20px;
     padding-bottom: 20px;
-    font-size: 50px;
-    font-weight: 800;
+    font-size     : 50px;
+    font-weight   : 800;
 }
 
 .gp-bals sup {
-    font-size: 10px;
+    font-size  : 10px;
     font-weight: 500;
 }
 
 .gp-grow {
-    font-weight: 500;
-    color: #2ECB8B;
-    background: #E6F9F1;
-    padding: 2%;
+    font-weight  : 500;
+    color        : #2ECB8B;
+    background   : #E6F9F1;
+    padding      : 2%;
     border-radius: 10px;
 }
 
 .chat-card {
-    position: fixed !important;
-    padding: 0px !important;
-    max-width: 27vw !important;
-    height: 100vh !important;
-    top: 0px !important;
-    right: 0px !important;
+    position  : fixed !important;
+    padding   : 0px !important;
+    max-width : 27vw !important;
+    height    : 100vh !important;
+    top       : 0px !important;
+    right     : 0px !important;
     box-shadow: 7px 0 22px inset rgb(31 38 135 / 27%) !important;
 }
 
 .chat-block {
-    display: flex;
-    height: 100vh;
-    width: auto;
-    max-width: 27vw;
-    align-items: center;
+    display        : flex;
+    height         : 100vh;
+    width          : auto;
+    max-width      : 27vw;
+    align-items    : center;
     justify-content: center;
-    flex-direction: column;
-    padding: 3%;
+    flex-direction : column;
+    padding        : 3%;
 }
 
 .chat-block .input-group {
-    max-height: 10vh;
-    z-index: 3;
+    max-height   : 10vh;
+    z-index      : 3;
     border-radius: 10px !important;
-    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%) !important;
+    box-shadow   : 0 0 22px 0 rgb(31 38 135 / 27%) !important;
 }
 
 .chat-card .btn-danger {
@@ -539,16 +539,16 @@ body {
 .chat-body {
     max-height: 80vh;
     overflow-Y: auto;
-    flex-grow: 4;
-    padding: 10px 5px 10px 0px;
-    width: 100%;
-    max-width: 27vw;
-    display: block;
+    flex-grow : 4;
+    padding   : 10px 5px 10px 0px;
+    width     : 100%;
+    max-width : 27vw;
+    display   : block;
 }
 
 .chat-body::-webkit-scrollbar {
     background-color: #fff;
-    width: 16px
+    width           : 16px
 }
 
 .chat-body::-webkit-scrollbar-track {
@@ -561,13 +561,13 @@ body {
 
 .chat-body::-webkit-scrollbar-thumb {
     background-color: #C1C1C1;
-    border-radius: 16px;
-    border: 5px solid #fff
+    border-radius   : 16px;
+    border          : 5px solid #fff
 }
 
 .chat-body::-webkit-scrollbar-thumb:hover {
     background-color: #C1C1C1;
-    border: 4px solid #f4f4f4
+    border          : 4px solid #f4f4f4
 }
 
 .chat-body::-webkit-scrollbar-button {
@@ -596,39 +596,39 @@ body {
 }
 
 .chat-bubble {
-    display: table;
-    width: auto;
-    max-width: 20vw;
-    height: auto;
+    display      : table;
+    width        : auto;
+    max-width    : 20vw;
+    height       : auto;
     border-radius: 10px;
-    background: #FFFFFF;
-    margin: 3px 0px;
-    padding: 4px;
-    box-shadow: 0 0 12px 0 rgb(31 38 135 / 17%);
+    background   : #FFFFFF;
+    margin       : 3px 0px;
+    padding      : 4px;
+    box-shadow   : 0 0 12px 0 rgb(31 38 135 / 17%);
 }
 
 .chat-user {
     font-weight: 700;
-    display: table;
-    color: #535151;
-    width: 100%;
-    text-align: left;
-    padding: 3px 0px;
-    font-size: 15px;
+    display    : table;
+    color      : #535151;
+    width      : 100%;
+    text-align : left;
+    padding    : 3px 0px;
+    font-size  : 15px;
 }
 
 .chat-img {
-    width: 100%;
-    display: table;
-    text-align: center;
-    max-height: 250px;
+    width        : 100%;
+    display      : table;
+    text-align   : center;
+    max-height   : 250px;
     margin-bottom: 5px;
 }
 
 .chat-img img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
+    width     : auto;
+    max-width : 100%;
+    height    : auto;
     max-height: 100%;
 }
 
@@ -641,54 +641,54 @@ body {
 }
 
 .chat-text {
-    display: table;
-    width: 100%;
-    text-align: left;
-    padding: 3px 0px;
+    display    : table;
+    width      : 100%;
+    text-align : left;
+    padding    : 3px 0px;
     font-weight: 200;
-    color: #535151;
+    color      : #535151;
 }
 
 .flow {
-    width: 100%;
-    display: flex;
+    width         : 100%;
+    display       : flex;
     flex-direction: row;
-    height: 100%;
-    align-items: flex-start;
+    height        : 100%;
+    align-items   : flex-start;
 }
 
 .flow .process {
-    width: 5px;
-    padding: 1px;
+    width        : 5px;
+    padding      : 1px;
     border-radius: 5px;
-    background: #C6C8E0;
-    height: 100%;
+    background   : #C6C8E0;
+    height       : 100%;
 }
 
 .flow .process .process-flow {
-    width: 5px;
-    padding: 1px;
+    width        : 5px;
+    padding      : 1px;
     border-radius: 5px;
-    background: #7D2AE8;
-    height: 0%;
-    transition: max-height 0.15s ease-out;
+    background   : #7D2AE8;
+    height       : 0%;
+    transition   : max-height 0.15s ease-out;
 }
 
 .flow .process-step {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    flex-grow: 4;
-    border-radius: 5px;
-    height: 100%;
-    align-items: flex-start;
+    flex-grow     : 4;
+    border-radius : 5px;
+    height        : 100%;
+    align-items   : flex-start;
 }
 
 .flow .process-step .process-stepper {
-    display: flex;
-    height: 25%;
-    align-items: center;
+    display        : flex;
+    height         : 25%;
+    align-items    : center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction : row;
 }
 
 .flow .process-step .process-stepper span {
@@ -696,25 +696,25 @@ body {
 }
 
 .onboarding-main {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    display       : flex;
+    width         : 100%;
+    height        : 100%;
+    overflow-y    : hidden;
+    overflow-x    : hidden;
     flex-direction: row;
 }
 
 .formPhoto,
 .formPersonal,
 .formAddress {
-    display: flex;
-    width: 80vw;
-    height: 100vh;
-    position: relative;
-    background: #ffffff;
+    display       : flex;
+    width         : 80vw;
+    height        : 100vh;
+    position      : relative;
+    background    : #ffffff;
     flex-direction: column;
-    align-items: center;
-    padding-left: 50px;
+    align-items   : center;
+    padding-left  : 50px;
 }
 
 .formAddress .col-sm-12 {
@@ -723,119 +723,167 @@ body {
 
 .ob_pane_title {
     font-weight: 600;
-    margin: 40px 10px;
+    margin     : 40px 10px;
 }
 
 .formPersonal .input-group {
-    margin: 10px !important;
-    display: flex !important;
+    margin        : 10px !important;
+    display       : flex !important;
     flex-direction: column;
 }
 
 .formPersonal input {
     border-radius: 5px !important;
-    border: 2px solid #828486;
-    padding: 20px !important;
-    font-weight: 600 !important;
-    text-align: left;
-    width: auto !important;
-    min-width: 40vw !important;
-    max-width: 70vw !important;
+    border       : 2px solid #828486;
+    padding      : 20px !important;
+    font-weight  : 600 !important;
+    text-align   : left;
+    width        : auto !important;
+    min-width    : 40vw !important;
+    max-width    : 70vw !important;
 }
 
 .formAddress :is(select,
-input) {
+    input) {
     border-radius: 5px !important;
-    border: 2px solid #828486;
-    padding: 0px 20px !important;
-    font-weight: 600 !important;
-    text-align: left;
-    height: 50px;
+    border       : 2px solid #828486;
+    padding      : 0px 20px !important;
+    font-weight  : 600 !important;
+    text-align   : left;
+    height       : 50px;
 }
 
 .onBoardBack {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    cursor: pointer;
+    bottom  : 20px;
+    left    : 20px;
+    cursor  : pointer;
 }
 
 .onBoardBack span:hover {
-    font-size: 19px;
+    font-size : 19px;
     transition: all 0.56s;
 }
 
 .skipPhoto {
-    color: rgba( 190, 190, 190, 1);
+    color: rgba(190, 190, 190, 1);
 }
 
 .onBoardNext {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: #7D2AE8;
-    border: 1px solid #7D2AE8;
+    position     : absolute;
+    bottom       : 20px;
+    right        : 20px;
+    background   : #7D2AE8;
+    border       : 1px solid #7D2AE8;
     border-radius: 7px;
-    color: #ffffff;
-    width: 150px;
-    height: 50px;
+    color        : #ffffff;
+    width        : 150px;
+    height       : 50px;
 }
 
 .walletPage,
 .the_form_wallet_currency {
-    display: flex;
-    width: 80vw;
-    position: relative;
-    background: #ffffff;
+    display       : flex;
+    width         : 80vw;
+    position      : relative;
+    background    : #ffffff;
     flex-direction: column;
-    align-items: center;
-    padding-left: 50px;
-    align-items: center;
+    align-items   : center;
+    padding-left  : 50px;
+    align-items   : center;
 }
 
 .walletTitle {
-    font-weight: 600;
-    font-size: 20px;
+    font-weight  : 600;
+    font-size    : 20px;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top   : 40px;
 }
 
 .get_wallet_currency {
-    height: 50px !important;
-    width: auto;
-    max-width: 70vw;
-    min-width: 40vw;
-    border: 1px solid rgba(6, 6, 6, 0.3);
+    height       : 50px !important;
+    width        : auto;
+    max-width    : 70vw;
+    min-width    : 40vw;
+    border       : 1px solid rgba(6, 6, 6, 0.3);
     margin-bottom: 10px;
 }
 
 .the_wallet_currencies {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    border: 1px solid rgba(6, 6, 6, 0.3);
-    height: auto;
-    max-height: 200px;
-    overflow-Y: auto;
-    width: auto;
-    max-width: 70vw;
-    min-width: 40vw;
-    margin-bottom: 40px;
+    border        : 1px solid rgba(6, 6, 6, 0.3);
+    height        : auto;
+    max-height    : 200px;
+    overflow-Y    : auto;
+    width         : auto;
+    max-width     : 70vw;
+    min-width     : 40vw;
+    margin-bottom : 40px;
 }
 
 .the_wallet_currencies span {
-    margin: 5px 10px;
-    cursor: pointer;
+    margin : 5px 10px;
+    cursor : pointer;
     padding: 5px;
 }
 
 .the_wallet_currencies span:hover {
-    background: rgba( 190, 190, 190, 0.3);
+    background: rgba(190, 190, 190, 0.3);
 }
 
 .the_wallet_create_button {
     background: #7D2AE8;
-    border: 1px solid #7D2AE8;
-    padding: 20px 30px;
-    color: #ffffff;
+    border    : 1px solid #7D2AE8;
+    padding   : 20px 30px;
+    color     : #ffffff;
     margin-top: 40px;
+}
+
+.transfer-title {
+    font-weight: 700;
+    font-size  : 18px;
+}
+
+.transfer-from-this,
+.transfer-to-this {
+    width         : 100%;
+    display       : flex;
+    flex-direction: row;
+    background    : #ffffff;
+    border        : 1px solid #7D2AE8;
+}
+
+.transfer-amount-details {
+    display        : flex;
+    flex-grow      : 4;
+    flex-direction : column;
+    justify-content: start;
+    align-items    : flex-start;
+}
+
+.transfer-wallet-details {
+    display        : flex;
+    flex-grow      : 4;
+    flex-direction : row;
+    justify-content: center;
+    align-items    : center;
+    background     : #F7F7F9;
+}
+
+.transfer-amount-details span {
+    color    : #BFC5D2;
+    font-size: 12px;
+}
+
+.transfer-amount-details input {
+    font-size  : 20px;
+    font-weight: 800;
+    border     : none;
+    background : none;
+    color      : #293551;
+}
+
+.transfer-wallet-details img {
+    width: 50px;
 }

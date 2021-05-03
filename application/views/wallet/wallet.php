@@ -7,25 +7,25 @@
 				<input type="number" value="1000" />
 			</div>
 			<div class="transfer-wallet-details">
-				<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+				<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
 				<span><?php echo $wallet->the_wallet_currency; ?></span>
 			</div>
 		</div>
-		<div class="transfer-from-this">
+		<div class="transfer-to-this">
 			<div class="transfer-amount-details">
 				<span>They receive</span>
 				<input type="number" value="1000" />
 			</div>
 			<div class="transfer-wallet-details">
-				<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
-				<span>1,000 <?php echo $wallets[0]['the_wallet_currency']; ?></span>
-				</span class="entypo-down-open"></span>
+				<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
+				<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
+				<span class="entypo-down-open"></span>
 
 				<div>
 					<?php foreach ($wallets as $fetch) : ?>
 						<div>
-							<img width="50" src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
-							<span>1,000 <?php echo $fetch['the_wallet_currency']; ?></span>
+							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
+							<span><?php echo $fetch['the_wallet_currency']; ?></span>
 						</div>
 					<?php endforeach; ?>
 				</div>
