@@ -852,6 +852,7 @@ body {
     flex-direction: row;
     background    : #ffffff;
     border        : 1px solid #7D2AE8;
+    padding       : 9px;
 }
 
 .transfer-amount-details {
