@@ -853,6 +853,7 @@ body {
     background    : #ffffff;
     border        : 1px solid #7D2AE8;
     padding       : 9px;
+    margin        : 10px;
 }
 
 .transfer-amount-details {
