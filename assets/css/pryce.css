@@ -887,3 +887,8 @@ body {
 .transfer-wallet-details img {
     width: 50px;
 }
+
+.transfer-wallet-details span:first-of-type {
+    font-weight: 700;
+    color      : #2A3551;
+}
