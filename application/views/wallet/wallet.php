@@ -20,15 +20,15 @@
 				<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
 				<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
 				<span class="entypo-down-open"></span>
+			</div>
 
-				<div class="currency-drop">
-					<?php foreach ($wallets as $fetch) : ?>
-						<div class="currency-select">
-							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
-							<span><?php echo $fetch['the_wallet_currency']; ?></span>
-						</div>
-					<?php endforeach; ?>
-				</div>
+			<div class="currency-drop">
+				<?php foreach ($wallets as $fetch) : ?>
+					<div class="currency-select">
+						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
+						<span><?php echo $fetch['the_wallet_currency']; ?></span>
+					</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 		<div class="transfer-bottom">
