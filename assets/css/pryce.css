@@ -896,7 +896,7 @@ body {
     color      : #2A3551;
 }
 
-.transfer-to-this .currency-drop {
+.currency-drop {
     display        : flex;
     align-items    : flex-start;
     justify-content: flex-start;
