@@ -21,7 +21,6 @@
 				<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
 				<span class="entypo-down-open"></span>
 			</div>
-
 			<div class="currency-drop">
 				<?php foreach ($wallets as $fetch) : ?>
 					<div class="currency-select">
