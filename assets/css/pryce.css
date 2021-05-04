@@ -896,7 +896,7 @@ body {
     color      : #2A3551;
 }
 
-.transfer-to-this .transfer-wallet-details:hover > .currency-drop {
+.transfer-to-this .transfer-wallet-details:hover + .currency-drop {
     display: flex;
 }
 
