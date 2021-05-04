@@ -885,6 +885,7 @@ body {
     border     : none;
     background : none;
     color      : #293551;
+    width      : 100%;
 }
 
 .transfer-wallet-details img {
