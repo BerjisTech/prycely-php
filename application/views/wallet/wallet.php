@@ -36,7 +36,7 @@
 				<span>1,000 KES</span>
 			</div>
 			<div class="conversion-fees">
-				<span>Amount we'll convert</span>
+				<span>Total fees</span>
 				<span>1,000 KES</span>
 			</div>
 			<button>SEND MONEY</button>
