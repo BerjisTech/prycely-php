@@ -944,6 +944,7 @@ body {
 .transfer-bottom {
     display       : flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .converted-amount,
