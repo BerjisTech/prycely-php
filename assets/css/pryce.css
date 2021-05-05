@@ -945,6 +945,8 @@ body {
     display        : flex;
     flex-direction : row;
     justify-content: space-between;
+    padding        : 9px;
+    margin         : 10px;
 }
 
 .converted-amount,
