@@ -47,8 +47,9 @@
 	</div>
 	<div class="col-sm-4">
 		<div class="panelCard">
-			<span>My Wallet balance</span>
-			<span><?php echo $wallet->the_wallet_currency . ' ' . $wallet->the_wallet_balance; ?></span>
+			<span class="gp-txt">Total balance</span>
+			<span class="gp-bals"> <?php echo '<sup>' . $wallet->the_wallet_currency . '</sup> ' . $wallet->the_wallet_balance; ?></span>
+			<span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
 		</div>
 	</div>
 </div>
