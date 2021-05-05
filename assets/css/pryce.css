@@ -962,7 +962,7 @@ body {
 }
 
 .converted-amount span:last-of-type {
-    color      : #2A3551;
+    color      : #7D2AE8;
     font-weight: 800;
 }
 
@@ -972,8 +972,8 @@ body {
 }
 
 .transfer-bottom button:last-of-type {
-    padding         : 20px;
+    padding         : 20px 40px;
     color           : #ffffff;
     border          : none;
-    background-color: #2A3551;
+    background-color: #7D2AE8;
 }
