@@ -10,7 +10,7 @@
 				<div class="transfer-wallet-details">
 					<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
 					<span><?php echo $wallet->the_wallet_currency; ?></span>
-					<span class="entypo-down-open" style="display: hidden;"></span>
+					<span class="entypo-down-open" style="color: #F7F7F9;"></span>
 				</div>
 			</div>
 			<div class="transfer-to-this">
