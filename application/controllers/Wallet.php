@@ -102,7 +102,6 @@ class Wallet extends CI_Controller
 			->select('the_transaction_date')
 			->where('the_transaction_user', $this->session->the_person_id)
 			->group_by('date_format(from_unixtime(the_transaction_date), "%d")')
-			->limit('10')
 			->order_by('the_transaction_date', 'DESC')
 			->get('the_transactions')->result_array();
 
