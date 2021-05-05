@@ -980,5 +980,6 @@ body {
 }
 
 .panelCard {
-    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
+    border-radius: 10px;
+    box-shadow   : 0 0 22px 0 rgb(31 38 135 / 27%);
 }
