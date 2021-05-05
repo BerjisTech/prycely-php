@@ -964,11 +964,13 @@ body {
 .converted-amount span:last-of-type {
     color      : #7D2AE8;
     font-weight: 800;
+    font-size  : 20px;
 }
 
 .conversion-fees span:last-of-type {
     color      : #121F3E;
     font-weight: 800;
+    font-size  : 20px;
 }
 
 .transfer-bottom button:last-of-type {
