@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-8 panelCard">
 		<p class="transfer-title">Transfer to your other wallets</p>
 		<div class="transfer-from-this">
 			<div class="transfer-amount-details">
@@ -43,14 +43,14 @@
 			<button>SEND MONEY</button>
 		</div>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-4 panelCard">
 		<span>My Wallet balance</span>
 		<span><?php echo $wallet->the_wallet_currency . ' ' . $wallet->the_wallet_balance; ?></span>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-sm-6">
+	<div class="col-sm-6 panelCard">
 		<?php foreach ($transactions as $key => $date) : ?>
 			<span>
 				<?php
@@ -90,7 +90,7 @@
 			<hr />
 		<?php endforeach; ?>
 	</div>
-	<div class="col-sm-6">
+	<div class="col-sm-6 panelCard">
 		<div class="exchange-rates">
 			<div class="exchange-top">
 				<span>Transaction Overview</span>

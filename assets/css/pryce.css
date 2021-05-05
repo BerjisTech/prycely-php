@@ -978,3 +978,7 @@ body {
     border          : none;
     background-color: #7D2AE8;
 }
+
+.panelCard {
+    box-shadow: 0 0 22px 0 rgb(31 38 135 / 27%);
+}
