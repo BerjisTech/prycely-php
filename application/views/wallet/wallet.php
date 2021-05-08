@@ -141,7 +141,7 @@
 		</div>
 	</div>
 	<div class="row group-switched group-transacts" style="display: none;">
-		<div class="panelCard">
+		<div class="col-sm-12 panelCard">
 			<?php foreach ($transactions as $key => $date) : ?>
 				<span>
 					<?php
