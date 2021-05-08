@@ -20,7 +20,7 @@
 				</div>
 				<div class="transfer-wallet-details">
 					<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
-					<span><?php echo $currencies[0]['the_wallet_currency']; ?></span>
+					<span><?php echo $currencies[0]['code']; ?></span>
 					<span class="entypo-down-open"></span>
 				</div>
 				<div class="currency-drop">
