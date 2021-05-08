@@ -478,7 +478,7 @@ if (page.includes('/wallet/view') === true) {
         $('.currency-drop').show()
         $('.currency-drop').css('display', 'flex')
     })
-    const change_detail_currency = (currency, flag) => {
+    function change_detail_currency = (currency, flag) => {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
         $('.transfer-to-this .transfer-wallet-details span:first').html(currency)
         $('.currency-drop').hide();
