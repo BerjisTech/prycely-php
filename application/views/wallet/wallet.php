@@ -24,11 +24,13 @@
 					<span class="entypo-down-open"></span>
 				</div>
 				<div class="currency-drop">
-					<?php foreach ($currencies as $currency) : ?>
-						<div class="currency-select" data-currency="<?php echo $currency['code']; ?>" data-flag="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg">
-							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-							<span><?php echo $currency['code']; ?></span>
-						</div>
+					<?php foreach ($currencies as $key => $currency) : ?>
+						<?php if ($key > 0) : ?>
+							<div class="currency-select" onclick="change_detail_currency('<?php echo $currency['code']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
+								<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
+								<span><?php echo $currency['code']; ?></span>
+							</div>
+						<?php endif; ?>
 					<?php endforeach; ?>
 				</div>
 			</div>
