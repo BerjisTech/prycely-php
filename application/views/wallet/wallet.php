@@ -19,15 +19,15 @@
 					<input type="number" value="1000" />
 				</div>
 				<div class="transfer-wallet-details">
-					<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
-					<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
+					<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
+					<span><?php echo $currencies[0]['the_wallet_currency']; ?></span>
 					<span class="entypo-down-open"></span>
 				</div>
 				<div class="currency-drop">
-					<?php foreach ($wallets as $fetch) : ?>
+					<?php foreach ($currencies as $currency) : ?>
 						<div class="currency-select">
-							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($fetch['the_wallet_currency'], 0, 2)); ?>.svg" />
-							<span><?php echo $fetch['the_wallet_currency']; ?></span>
+							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies['code'], 0, 2)); ?>.svg" />
+							<span><?php echo $currencies['code']; ?></span>
 						</div>
 					<?php endforeach; ?>
 				</div>
