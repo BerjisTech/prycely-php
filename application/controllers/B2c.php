@@ -6,7 +6,20 @@ class B2c extends CI_Controller
 {
     public function index()
     {
-        
+        $InitiatorName = $this->input->post('');
+        $SecurityCredential = $this->input->post('');
+        $CommandID = $this->input->post('');
+        $Amount = $this->input->post('');
+        $PartyA = $this->input->post('');
+        $PartyB = $this->input->post('');
+        $Remarks = $this->input->post('');
+        $QueueTimeOutURL = $this->input->post('');
+        $ResultURL = $this->input->post('');
+        $Occasion = $this->input->post('');
+
+        $mpesa = new \Safaricom\Mpesa\Mpesa();
+
+        $b2cTransaction = $mpesa->b2c($InitiatorName, $SecurityCredential, $CommandID, $Amount, $PartyA, $PartyB, $Remarks, $QueueTimeOutURL, $ResultURL, $Occasion);
     }
 
     private function phoneFormat($phone)
