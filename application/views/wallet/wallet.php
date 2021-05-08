@@ -25,7 +25,7 @@
 				</div>
 				<div class="currency-drop">
 					<?php foreach ($currencies as $currency) : ?>
-						<div class="currency-select">
+						<div class="currency-select" data-currency="<?php echo $currencies['code']; ?>" data-flag="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies['code'], 0, 2)); ?>.svg">
 							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies['code'], 0, 2)); ?>.svg" />
 							<span><?php echo $currencies['code']; ?></span>
 						</div>

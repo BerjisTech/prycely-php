@@ -897,7 +897,7 @@ body {
     padding    : 5px 10px;
 }
 
-.transfer-to-this .transfer-wallet-details:hover+.currency-drop {
+/* .transfer-to-this .transfer-wallet-details:hover+.currency-drop {
     display        : flex;
     align-items    : flex-start;
     justify-content: flex-start;
@@ -915,7 +915,7 @@ body {
     height         : auto;
     overflow-y     : auto;
     max-height     : 300px;
-}
+} */
 
 .currency-drop {
     display        : none;
