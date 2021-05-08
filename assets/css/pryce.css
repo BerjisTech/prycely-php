@@ -929,7 +929,7 @@ body {
     right          : 55px;
     margin-top     : 50px;
     width          : 140px;
-    z-index        : 2;
+    z-index        : 2000000;
     box-shadow     : 0px 10px 20px rgb(3 3 3 / 30%);
     transition     : all 0.56s;
     height         : auto;
