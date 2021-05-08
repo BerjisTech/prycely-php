@@ -254,6 +254,118 @@ class Mpesa extends CI_Controller
         $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
     }
 
+    public function b2cPayment($recipient, $amount, $b2cId)
+    {
+        $amount = (int)$amount;
+        //initialize responses
+        $status = 0; //failed by default
+        $ConversationID = '';
+        $OriginatorConversationID = '';
+        $ResponseCode = '';
+        $ResponseDescription = '';
+        $now = Carbon::now('Africa/Nairobi');
+        $phoneFormat = json_decode($this->phoneFormat($recipient), TRUE);
+        $phone = $phoneFormat['formattedPhone'];
+        //check if phone is ok
+        $phoneVals = json_decode($this->phoneFormat($recipient), TRUE);
+        if ($phoneVals['status'] == TRUE) {
+            //validate amount
+            if (is_numeric($amount)) {
+                if ($amount >= 50 && $amount <= 70000) {
+                    $amount = floor($amount);
+                    $accessVals = $this->generateAccessToken();
+                    if ($accessVals['status'] == 1) {
+                        $accessToken = "Bearer " . $accessVals['token'];
+                        $securityCredential = 'jTjzInV1b5vwP7eonZrrF4ILRhkgNLfsiT3ENOKrivhT0BU8KaSx5+qI0n3RQUiGjjrp+pHXo0TkatpFMU2Gxj+Bny3r9Ge/ke4APYqHRkvPy0nJZkA1F1brZGRCxEpVb1LXapdGo4U9bTbAIBorR3uw+0XMDJopOrw573E2rIpAkhyklJcjYMtEXlTiWL2vUTDko9J6JVbzAetzI1bcmGMJJDFuQNSeMF4q1KrGt2Nc7XyGzyysQVmKl+pjYP64KtnIEIyra1gFg9npVgs07cU8Wrep6p+HDwIYgy+dAyo/L3moq2uSKaBJq7F+bSJvjGx+f8nSX56UH9PYUCIIVg==';
+                        // The data to send to the API
+                        $postData = array(
+                            "InitiatorName" => "B2CInitiator",
+                            "SecurityCredential" => $securityCredential,
+                            "CommandID" => "BusinessPayment",
+                            "Amount" => $amount,
+                            "PartyA" => '495980',
+                            "PartyB" => $phone,
+                            "Remarks" => "Disbursement",
+                            "QueueTimeOutURL" => 'https://online.sweeshfinance.com/mtx/timeout',
+                            "ResultURL" => 'https://online.sweeshfinance.com/api/mtx/b2c', //callback url
+                            "Occassion" => "Disbursement"
+                        );
+                        $requestBody = json_encode($postData);
+                        // Setup cURL
+                        $ch = curl_init('https://api.safaricom.co.ke/mpesa/b2c/v1/paymentrequest');
+                        curl_setopt_array($ch, array(
+                            CURLOPT_POST => TRUE,
+                            CURLOPT_RETURNTRANSFER => TRUE,
+                            CURLOPT_SSL_VERIFYHOST => FALSE,
+                            CURLOPT_SSL_VERIFYPEER => FALSE,
+                            CURLOPT_HTTPHEADER => array(
+                                'Content-Type: application/json',
+                                'Authorization: ' . $accessToken
+                            ),
+                            CURLOPT_POSTFIELDS => $requestBody
+                        ));
+                        // Send the request
+                        $response = curl_exec($ch);
+                        // Check for errors
+                        if ($response === FALSE) {
+                            die(curl_error($ch));
+                        } else {
+                            $requestVals = json_decode($response, TRUE);
+                            if (count($requestVals) == 4) //sent
+                            {
+                                $ConversationID = $requestVals['ConversationID'];
+                                $OriginatorConversationID = $requestVals['OriginatorConversationID'];
+                                $ResponseCode = $requestVals['ResponseCode'];
+                                $ResponseDescription = $requestVals['ResponseDescription'];
+                                if ($ResponseCode == '0') //success
+                                {
+                                    $status = 1;
+                                } else {
+                                    $status = 3;
+                                }
+                            } else {
+                                if (isset($requestVals['errorCode'])) {
+                                    $status = 4;
+                                    $ConversationID = $requestVals['requestId'];
+                                    $OriginatorConversationID = $requestVals['requestId'];
+                                    $ResponseCode = $requestVals['errorCode'];
+                                    $ResponseDescription = $requestVals['errorMessage'];
+                                }
+                            }
+                        }
+                    } else {
+                        $ResponseDescription = "Could not generate access token";
+                    }
+                } else {
+                    $status = 4;
+                    $ResponseDescription = "Amount must be greater than or equal to 50 and less than or equal to 70,000";
+                }
+            } else {
+                $status = 4;
+                $ResponseDescription = "Amount is not a number";
+            }
+        } else {
+            $status = 4;
+            $ResponseDescription = "Wrong phone format";
+        }
+        $mpesaB2C = MpesaB2C::withoutTrashed()->find($b2cId);
+        $mpesaB2C->time_request_sent = $now;
+        $mpesaB2C->conversation_id = $ConversationID;
+        $mpesaB2C->originator_conversation_id = $OriginatorConversationID;
+        $mpesaB2C->result_description = $ResponseDescription;
+        $mpesaB2C->result_code = $ResponseCode;
+        $mpesaB2C->status = $status;
+        $mpesaB2C->save();
+        $array = array(
+            'status' => $status,
+            'conversation_id' => $ConversationID,
+            'originator_conversation_id' => $OriginatorConversationID,
+            'result_code' => $ResponseCode,
+            'result_description' => $ResponseDescription
+        );
+        return $array;
+    }
+
     private function generateAccessToken()
     {
         $key = $this->db->where('the_app ', '2')->get('the_privates')->row()->the_key;
