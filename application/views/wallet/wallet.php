@@ -188,9 +188,14 @@
 		<div class="col-xs-12">
 			<div class="group-balance-preview">
 				<div class="col-sm-6 top-up-pay">
-					<select>
-						<optgroup></optgroup>
-					</select>
+					<div class="topUpOption mPesa">
+						<div class="tuOptioName">
+							<checkbox name="mPesa" /><label for="mPesa">M-Pesa</label></span>
+						</div>
+						<div class="tuDescription">
+							<span>Lipa na Mpesa</span>
+						</div>
+					</div>
 				</div>
 				<div class="col-sm-6 top-up-confirm">
 				</div>
