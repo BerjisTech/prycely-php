@@ -245,13 +245,15 @@
 		</div>
 		<div class="col-sm-12 panelCard payChoicePanel">
 			<div class="col-sm-8">
-				<div class="payChoice pc-mPesa">
-					<span class="entypo-credit-card"></span>
-					<div class="payChoiceDescription">
-						<span>MPESA</span>
-						<span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
+				<div class="payChoice">
+					<div class="pc-mPesa">
+						<span class="entypo-credit-card"></span>
+						<div class="payChoiceDescription">
+							<span>MPESA</span>
+							<span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
+						</div>
+						<span class="pc-checkbox"></span>
 					</div>
-					<span class="pc-checkbox"></span>
 				</div>
 			</div>
 			<div class="col-sm-4">
