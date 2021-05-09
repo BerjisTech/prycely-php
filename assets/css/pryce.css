@@ -1,3 +1,10 @@
+*:focus {
+    outline           : none !important;
+    border-color      : inherit !important;
+    -webkit-box-shadow: none !important;
+    box-shadow        : none !important;
+}
+
 html,
 body {
     width     : 100vw !important;
@@ -989,7 +996,8 @@ body {
 .tu-currency-drop input:first-of-type,
 .tu-currency-drop input:first-of-type:active,
 .tu-currency-drop input:first-of-type:hover,
-.tu-currency-drop input:first-of-type:focus {
+.tu-currency-drop input:first-of-type:focus,
+.tu-currency-drop input:first-of-type:focus-visible {
     width        : 97% !important;
     border       : none !important;
     border-bottom: 1px solid #7D2AE8 !important;
@@ -997,6 +1005,7 @@ body {
     background   : transparent !important;
     font-size    : 20px !important;
     font-weight  : lighter !important;
+    outline      : none;
 }
 
 .tu-currency-drop .currency-select,
