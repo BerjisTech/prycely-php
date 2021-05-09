@@ -243,7 +243,7 @@
 				<div class="col-sm-3"></div>
 			</div>
 		</div>
-		<div class="row payChoicePanel">
+		<div class="panelCard payChoicePanel">
 			<div class="col-sm-8">
 				<div class="payChoice pc-mPesa">
 					<span class="entypo-credit-card"></span>
