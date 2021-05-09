@@ -1031,10 +1031,16 @@ body {
     padding    : 5px 10px;
 }
 
-.tu-bottom,
 .transfer-bottom {
     display        : flex;
     flex-direction : row;
+    justify-content: space-between;
+    padding        : 9px;
+}
+
+.tu-bottom {
+    display        : flex;
+    flex-direction : column;
     justify-content: space-between;
     padding        : 9px;
 }
@@ -1071,11 +1077,36 @@ body {
 }
 
 .tu-bottom button {
-    flex            : 4;
     padding         : 20px 40px;
     color           : #ffffff;
     border          : none;
     background-color: #7D2AE8;
+}
+
+.tu-bottom-breakdown {
+    display       : none;
+    flex-direction: column;
+}
+
+.tu-bottom-breakdown .bd {
+    width          : 100%;
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+    justify-content: flex-start;
+}
+
+.tu-bottom-breakdown .bd .breakDownTitle,
+.tu-bottom-breakdown .bd.breakDownValue {
+    flex-grow  : 4;
+    flex       : 1;
+    font-weight: 100;
+    color      : rgba(190, 190, 190, 1);
+}
+
+.bdPay .breakDownValue {
+    font-weight: 800;
+    color      : #040B2E;
 }
 
 .panelCard {

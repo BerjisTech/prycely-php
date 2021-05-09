@@ -488,7 +488,11 @@ if (page.includes('/wallet/view') === true) {
         $('.currency-drop').hide()
         $('.main-content').on('click', () => { $('.currency-drop').hide() })
     }
-    function change_tu_currency(code, currency, flag) {
+    function change_tu_currency(wallet_code, code, currency, flag) {
+        $('.tu-bottom-breakdown').css('display', 'none')
+        if (wallet_code !== code) {
+            $('.tu-bottom-breakdown').css('display', 'flex')
+        }
         $('.tu-to-this .tu-wallet-details img').attr('src', flag)
         $('.tu-to-this .tu-wallet-details span:first').html(currency)
         $('.tu-currency-drop').hide()
