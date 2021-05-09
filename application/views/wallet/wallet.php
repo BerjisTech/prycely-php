@@ -185,11 +185,23 @@
 		</div>
 	</div>
 	<div class="row group-switched group-topup" style="display: none;">
-		<div class="col-sm-6 col-xs-12 text-center">
+		<div class="col-xs-12">
 			<div class="group-balance-preview">
-				<form>
-					<div class="input-group">
-						<input class="form-control" name="phone_number" />
+				<div class="col-sm-6 top-up-pay">
+					<form class="walletPage">
+						<div class="walletTitle">
+							Create A Wallet
+						</div>
+
+						<input class="get_wallet_currency" name="get_wallet_currency" placeholder="Search for your currency of choice by name, code or country" />
+						<span class="the_wallet_currencies">
+
+						</span>
+
+						<div>
+							Open A Wallet in any currency
+						</div>
+
 						<?php
 						$csrf = array(
 							'name' => $this->security->get_csrf_token_name(),
@@ -197,14 +209,12 @@
 						);
 						?>
 						<input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
-					</div>
-				</form>
-			</div>
-		</div>
-
-		<div class="col-sm-6 col-xs-12">
-			<div class="group-balance-preview">
-
+						<input type="hidden" name="the_wallet_currency" class="submit_the_wallet_currency" />
+						<button class="the_wallet_create_button">LET'S GO <span class="entypo-right-thin"></span></button>
+					</form>
+				</div>
+				<div class="col-sm-6 top-up-confirm">
+				</div>
 			</div>
 		</div>
 	</div>
