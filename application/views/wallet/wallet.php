@@ -184,8 +184,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="row group-switched group-topup" style="display: none;">
-		<div class="row topUpPanel">
+	<div class="group-switched group-topup" style="display: none;">
+		<div class="topUpPanel">
 			<div class="col-sm-12 panelCard">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
