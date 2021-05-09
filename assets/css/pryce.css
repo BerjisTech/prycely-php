@@ -987,11 +987,13 @@ body {
 }
 
 .tu-currency-drop input:first-of-type {
-    width         : 97%;
-    border        : none;
-    border-bottom : 1px solid #7D2AE8;
-    padding-top   : 10px;
-    padding-bottom: 10px;
+    width        : 97%;
+    border       : none;
+    border-bottom: 1px solid #7D2AE8;
+    padding      : 20px 7px;
+    background   : transparent;
+    font-size    : 20px;
+    font-weight  : lighter;
 }
 
 .tu-currency-drop .currency-select,
