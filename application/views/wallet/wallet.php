@@ -185,63 +185,65 @@
 		</div>
 	</div>
 	<div class="row group-switched group-topup" style="display: none;">
-		<div class="col-sm-12 topUpPanel panelCard">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-				<p class="tu-title">Transfer to your other wallets</p>
-				<div class="tu-from-this">
-					<div class="tu-amount-details">
-						<span>Add</span>
-						<input type="number" value="1000" />
+		<div class="col-sm-12 topUpPanel">
+			<div class="panelCard">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<p class="tu-title">Transfer to your other wallets</p>
+					<div class="tu-from-this">
+						<div class="tu-amount-details">
+							<span>Add</span>
+							<input type="number" value="1000" />
+						</div>
+						<div class="tu-wallet-details">
+							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+							<span><?php echo $wallet->the_wallet_currency; ?></span>
+							<span class="entypo-down-open" style="color: #F7F7F9;"></span>
+						</div>
 					</div>
-					<div class="tu-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-						<span><?php echo $wallet->the_wallet_currency; ?></span>
-						<span class="entypo-down-open" style="color: #F7F7F9;"></span>
+					<div class="tu-to-this">
+						<span>Paying with</span>
+						<div class="tu-wallet-details">
+							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+							<span><?php echo $wallet->the_wallet_currency; ?></span>
+							<span class="entypo-down-open"></span>
+						</div>
+						<div class="tu-currency-drop">
+							<input type="search" name="sCurrency" placeholder="Search currency" />
+							<?php foreach ($currencies as $key => $currency) : ?>
+								<?php if ($key > 0) : ?>
+									<div class="currency-select" onclick="change_tu_currency('<?php echo $wallet->the_wallet_currency; ?>','<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
+										<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
+										<span><?php echo $currency['currency']; ?></span>
+									</div>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<div class="tu-bottom">
+						<div class="tu-bottom-breakdown">
+							<div class="bd bdPay">
+								<span class="breakDownTitle">You will pay</span>
+								<span class="breakDownValue">1,616.41 KES</span>
+							</div>
+							<div class="bd bdFee">
+								<span class="breakDownTitle">Total Fees</span>
+								<span class="breakDownValue">-1,616.41 KES</span>
+							</div>
+							<div class="bd bdConvert">
+								<span class="breakDownTitle">Amount we'll convert</span>
+								<span class="breakDownValue">1,616.41 KES</span>
+							</div>
+							<div class="bd bdRate">
+								<span class="breakDownTitle">Guaranteed rate (for 20 hours)</span>
+								<span class="breakDownValue">0.107</span>
+							</div>
+						</div>
+						<button>SEND MONEY</button>
 					</div>
 				</div>
-				<div class="tu-to-this">
-					<span>Paying with</span>
-					<div class="tu-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-						<span><?php echo $wallet->the_wallet_currency; ?></span>
-						<span class="entypo-down-open"></span>
-					</div>
-					<div class="tu-currency-drop">
-						<input type="search" name="sCurrency" placeholder="Search currency" />
-						<?php foreach ($currencies as $key => $currency) : ?>
-							<?php if ($key > 0) : ?>
-								<div class="currency-select" onclick="change_tu_currency('<?php echo $wallet->the_wallet_currency; ?>','<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
-									<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-									<span><?php echo $currency['currency']; ?></span>
-								</div>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</div>
-				</div>
-				<div class="tu-bottom">
-					<div class="tu-bottom-breakdown">
-						<div class="bd bdPay">
-							<span class="breakDownTitle">You will pay</span>
-							<span class="breakDownValue">1,616.41 KES</span>
-						</div>
-						<div class="bd bdFee">
-							<span class="breakDownTitle">Total Fees</span>
-							<span class="breakDownValue">-1,616.41 KES</span>
-						</div>
-						<div class="bd bdConvert">
-							<span class="breakDownTitle">Amount we'll convert</span>
-							<span class="breakDownValue">1,616.41 KES</span>
-						</div>
-						<div class="bd bdRate">
-							<span class="breakDownTitle">Guaranteed rate (for 20 hours)</span>
-							<span class="breakDownValue">0.107</span>
-						</div>
-					</div>
-					<button>SEND MONEY</button>
-				</div>
+				<div class="col-sm-3"></div>
 			</div>
-			<div class="col-sm-3"></div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6"></div>
