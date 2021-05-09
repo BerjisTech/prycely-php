@@ -185,8 +185,8 @@
 		</div>
 	</div>
 	<div class="row group-switched group-topup" style="display: none;">
-		<div class="col-sm-12 topUpPanel">
-			<div class="panelCard">
+		<div class="row topUpPanel">
+			<div class="col-sm-12 panelCard">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
 					<p class="tu-title">Transfer to your other wallets</p>
