@@ -244,7 +244,7 @@
 			</div>
 		</div>
 		<div class="row payChoicePanel">
-			<div class="col-sm-6">
+			<div class="col-sm-8">
 				<div class="payChoice pc-mPesa">
 					<span class="entypo-credit-card"></span>
 					<div class="payChoiceDescription">
@@ -254,7 +254,7 @@
 					<span class="pc-checkbox"></span>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<div class="tu-trans-details">
 					<span>Details</span>
 					<div class="bd bdPay">
