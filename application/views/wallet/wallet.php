@@ -210,7 +210,7 @@
 								<span class="entypo-down-open"></span>
 							</div>
 							<div class="tu-currency-drop">
-								<input type="search" name="sCurrency" />
+								<input type="search" name="sCurrency" placeholder="Search currency"/>
 								<?php foreach ($currencies as $key => $currency) : ?>
 									<?php if ($key > 0) : ?>
 										<div class="currency-select" onclick="change_tu_currency('<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">

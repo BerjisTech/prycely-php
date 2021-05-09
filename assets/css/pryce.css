@@ -976,7 +976,7 @@ body {
     padding        : 6px;
     position       : absolute;
     right          : 35px;
-    margin-top     : 80px;
+    margin-top     : 90px;
     width          : 88%;
     z-index        : 2000000;
     box-shadow     : 0px 10px 20px rgb(3 3 3 / 30%);
@@ -984,6 +984,14 @@ body {
     height         : auto;
     overflow-y     : auto;
     max-height     : 300px;
+}
+
+.tu-currency-drop input:first-of-type {
+    width         : 97%;
+    border        : none;
+    border-bottom : 1px solid #7D2AE8;
+    padding-top   : 10px;
+    padding-bottom: 10px;
 }
 
 .tu-currency-drop .currency-select,
