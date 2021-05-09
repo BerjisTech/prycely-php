@@ -917,6 +917,7 @@ body {
     width: 50px;
 }
 
+.tu-to-this span:first-of-type,
 .tu-wallet-details span:first-of-type,
 .transfer-wallet-details span:first-of-type {
     font-weight: 700;
