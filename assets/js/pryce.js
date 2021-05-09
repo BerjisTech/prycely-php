@@ -500,8 +500,8 @@ if (page.includes('/wallet/view') === true) {
     }
 
     $('.goToPayChoice').on('click', () => {
-        $('.topUpPanel').animate({ width: 'toggle' }, 300);
-        $('.payChoicePanel').animate({ width: 'toggle' }, 300);
+        $('.topUpPanel').css('display', 'none')
+        $('.payChoicePanel').css('display', 'table')
     })
 }
 
