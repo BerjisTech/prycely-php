@@ -115,7 +115,7 @@ class Wallet extends CI_Controller
 		$data['transactions'] = $transactions;
 
 		$data['wallet'] = $this->db->where('the_wallet_id', $wallet_id)->get('the_wallets')->row();
-		$data['currencies'] = $this->db->order_by('RAND()')->get('currency')->result_array();
+		$data['currencies'] = $this->db->get('currency')->result_array();
 		$data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->get('the_wallets')->result_array();
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 		$data['page_name'] = 'wallet/wallet';

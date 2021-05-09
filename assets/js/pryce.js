@@ -498,6 +498,11 @@ if (page.includes('/wallet/view') === true) {
         $('.tu-currency-drop').hide()
         $('.main-content').on('click', () => { $('.tu-currency-drop').hide() })
     }
+
+    $('.goToPayChoice').on('click', () => {
+        $('.topUpPanel').animate({ width: 'toggle' }, 300);
+        $('.payChoicePanel').animate({ width: 'toggle' }, 300);
+    })
 }
 
 $('.switch-tab').on('click', function () {

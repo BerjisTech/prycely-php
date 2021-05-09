@@ -211,12 +211,10 @@
 						<div class="tu-currency-drop">
 							<input type="search" name="sCurrency" placeholder="Search currency" />
 							<?php foreach ($currencies as $key => $currency) : ?>
-								<?php if ($key > 0) : ?>
-									<div class="currency-select" onclick="change_tu_currency('<?php echo $wallet->the_wallet_currency; ?>','<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
-										<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-										<span><?php echo $currency['currency']; ?></span>
-									</div>
-								<?php endif; ?>
+								<div class="currency-select" onclick="change_tu_currency('<?php echo $wallet->the_wallet_currency; ?>','<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
+									<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
+									<span><?php echo $currency['currency']; ?></span>
+								</div>
 							<?php endforeach; ?>
 						</div>
 					</div>
@@ -239,15 +237,52 @@
 								<span class="breakDownValue">0.107</span>
 							</div>
 						</div>
-						<button>SEND MONEY</button>
+						<button class="goToPayChoice">SEND MONEY</button>
 					</div>
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6"></div>
-			<div class="col-sm-6"></div>
+		<div class="row payChoicePanel">
+			<div class="col-sm-6">
+				<div class="payChoice pc-mPesa">
+					<span class="entypo-credit-card"></span>
+					<div class="payChoiceDescription">
+						<span>MPESA</span>
+						<span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
+					</div>
+					<span class="pc-checkbox"></span>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="tu-trans-details">
+					<span>Details</span>
+					<div class="bd bdPay">
+						<span class="breakDownTitle">You will pay</span>
+						<span class="breakDownValue">1,616.41 KES</span>
+					</div>
+					<div class="bd bdFee">
+						<span class="breakDownTitle">Total Fees</span>
+						<span class="breakDownValue">-1,616.41 KES</span>
+					</div>
+					<div class="bd bdConvert">
+						<span class="breakDownTitle">Amount we'll convert</span>
+						<span class="breakDownValue">1,616.41 KES</span>
+					</div>
+					<div class="bd bdRate">
+						<span class="breakDownTitle">Guaranteed rate (for 20 hours)</span>
+						<span class="breakDownValue">0.107</span>
+					</div>
+					<div class="bd bdGet">
+						<span class="breakDownTitle">You get</span>
+						<span class="breakDownValue">1,616.41 KES</span>
+					</div>
+					<div class="bd bdDate">
+						<span class="breakDownTitle">Should arrive</span>
+						<span class="breakDownValue">in a few seconds</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="row group-switched group-more" style="display: none;">
