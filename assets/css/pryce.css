@@ -909,6 +909,15 @@ body {
     font-size: 12px;
 }
 
+.tu-to-this span:first-of-type {
+    font-size     : 12px;
+    border        : none;
+    background    : none;
+    color         : #BFC5D2;
+    width         : 100%;
+    padding-bottom: 10px;
+}
+
 .tu-to-this span:first-of-type,
 .tu-amount-details input,
 .transfer-amount-details input {
