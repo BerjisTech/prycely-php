@@ -186,50 +186,43 @@
 	</div>
 	<div class="row group-switched group-topup" style="display: none;">
 		<div class="col-xs-12">
-			<div class="topUpAmountPanel panelcard">
-				<p class="tu-title">Transfer to your other wallets</p>
-				<div class="tu-from-this">
-					<div class="tu-amount-details">
-						<span>Add</span>
-						<input type="number" value="1000" />
-					</div>
-					<div class="tu-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-						<span><?php echo $wallet->the_wallet_currency; ?></span>
-						<span class="entypo-down-open" style="color: #F7F7F9;"></span>
-					</div>
-				</div>
-				<div class="tu-to-this">
-					<span>Paying with</span>
-					<div class="tu-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
-						<span><?php echo $currencies[0]['code']; ?></span>
-						<span class="entypo-down-open"></span>
-					</div>
-					<div class="tu-currency-drop">
-						<input type="search" name="sCurrency" />
-						<?php foreach ($currencies as $key => $currency) : ?>
-							<?php if ($key > 0) : ?>
-								<div class="currency-select" onclick="change_detail_currency('<?php echo $currency['code']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
-									<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-									<span><?php echo $currency['code']; ?></span>
-								</div>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</div>
-				</div>
-				<div class="tu-bottom">
-					<button>SEND MONEY</button>
-				</div>
-			</div>
+
 			<div class="topUpPanel panelCard">
 				<div class="col-sm-6 top-up-pay">
-					<div class="topUpOption mPesa">
-						<div class="tuOptioName">
-							<span>M-Pesa</span>
+					<div class="topUpAmountPanel">
+						<p class="tu-title">Transfer to your other wallets</p>
+						<div class="tu-from-this">
+							<div class="tu-amount-details">
+								<span>Add</span>
+								<input type="number" value="1000" />
+							</div>
+							<div class="tu-wallet-details">
+								<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+								<span><?php echo $wallet->the_wallet_currency; ?></span>
+								<span class="entypo-down-open" style="color: #F7F7F9;"></span>
+							</div>
 						</div>
-						<div class="tuDescription">
-							<span>Lipa na Mpesa</span>
+						<div class="tu-to-this">
+							<span>Paying with</span>
+							<div class="tu-wallet-details">
+								<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
+								<span><?php echo $currencies[0]['code']; ?></span>
+								<span class="entypo-down-open"></span>
+							</div>
+							<div class="tu-currency-drop">
+								<input type="search" name="sCurrency" />
+								<?php foreach ($currencies as $key => $currency) : ?>
+									<?php if ($key > 0) : ?>
+										<div class="currency-select" onclick="change_detail_currency('<?php echo $currency['code']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
+											<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
+											<span><?php echo $currency['code']; ?></span>
+										</div>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</div>
+						</div>
+						<div class="tu-bottom">
+							<button>SEND MONEY</button>
 						</div>
 					</div>
 				</div>
