@@ -190,7 +190,7 @@
 				<div class="col-sm-6 top-up-pay">
 					<div class="topUpOption mPesa">
 						<div class="tuOptioName">
-							<checkbox name="mPesa"></checkbox><label for="mPesa">M-Pesa</label></span>
+							<input type="checkbox" name="mPesa"><label for="mPesa">M-Pesa</label></span>
 						</div>
 						<div class="tuDescription">
 							<span>Lipa na Mpesa</span>
