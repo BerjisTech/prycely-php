@@ -203,8 +203,8 @@
 				<div class="tu-to-this">
 					<span>Paying with</span>
 					<div class="tu-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
-						<span><?php echo $currencies[0]['currency']; ?></span>
+						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+						<span><?php echo $wallet->the_wallet_currency; ?></span>
 						<span class="entypo-down-open"></span>
 					</div>
 					<div class="tu-currency-drop">
