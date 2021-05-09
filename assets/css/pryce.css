@@ -858,6 +858,15 @@ body {
     margin        : 10px;
 }
 
+.tu-to-this {
+    display       : flex;
+    flex-direction: column;
+    background    : #ffffff;
+    border        : 1px solid #7D2AE8;
+    padding       : 9px;
+    margin        : 10px;
+}
+
 .tu-amount-details,
 .transfer-amount-details {
     display        : flex;
@@ -867,11 +876,20 @@ body {
     align-items    : flex-start;
 }
 
-.tu-wallet-details,
 .transfer-wallet-details {
     display        : flex;
     flex-direction : row;
     justify-content: center;
+    align-items    : center;
+    background     : #F7F7F9;
+    flex-shrink    : 4;
+    padding        : 6px;
+}
+
+.tu-wallet-details{
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
     align-items    : center;
     background     : #F7F7F9;
     flex-shrink    : 4;
@@ -956,7 +974,7 @@ body {
     padding        : 6px;
     position       : absolute;
     right          : 25px;
-    margin-top     : 50px;
+    margin-top     : 80px;
     width          : 91.5%;
     z-index        : 2000000;
     box-shadow     : 0px 10px 20px rgb(3 3 3 / 30%);
