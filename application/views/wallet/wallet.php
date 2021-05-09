@@ -188,7 +188,7 @@
 		<div class="col-xs-12">
 			<div class="group-balance-preview">
 				<div class="col-sm-6 top-up-pay">
-					<form class="walletPage">
+					<form class="walletTopUpPage">
 						<div class="walletTitle">
 							Create A Wallet
 						</div>
