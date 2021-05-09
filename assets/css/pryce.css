@@ -840,11 +840,14 @@ body {
     margin-top: 40px;
 }
 
+.tu-title,
 .transfer-title {
     font-weight: 700;
     font-size  : 18px;
 }
 
+.tu-from-this,
+.tu-to-this,
 .transfer-from-this,
 .transfer-to-this {
     display       : flex;
@@ -855,6 +858,7 @@ body {
     margin        : 10px;
 }
 
+.tu-amount-details,
 .transfer-amount-details {
     display        : flex;
     flex-grow      : 4;
@@ -863,6 +867,7 @@ body {
     align-items    : flex-start;
 }
 
+.tu-wallet-details,
 .transfer-wallet-details {
     display        : flex;
     flex-direction : row;
@@ -873,11 +878,13 @@ body {
     padding        : 6px;
 }
 
+.tu-amount-details span,
 .transfer-amount-details span {
     color    : #BFC5D2;
     font-size: 12px;
 }
 
+.tu-amount-details input,
 .transfer-amount-details input {
     font-size  : 20px;
     font-weight: 800;
@@ -887,10 +894,12 @@ body {
     width      : 100%;
 }
 
+.tu-wallet-details img,
 .transfer-wallet-details img {
     width: 50px;
 }
 
+.tu-wallet-details span:first-of-type,
 .transfer-wallet-details span:first-of-type {
     font-weight: 700;
     color      : #2A3551;
@@ -937,6 +946,27 @@ body {
     max-height     : 300px;
 }
 
+.tu-currency-drop {
+    display        : none;
+    align-items    : flex-start;
+    justify-content: flex-start;
+    flex-direction : column;
+    background     : #F7F7F9;
+    flex-shrink    : 4;
+    padding        : 6px;
+    position       : absolute;
+    right          : 55px;
+    margin-top     : 50px;
+    width          : 100%;
+    z-index        : 2000000;
+    box-shadow     : 0px 10px 20px rgb(3 3 3 / 30%);
+    transition     : all 0.56s;
+    height         : auto;
+    overflow-y     : auto;
+    max-height     : 300px;
+}
+
+.tu-currency-drop .currency-select,
 .currency-drop .currency-select {
     display        : flex;
     flex-direction : row;
@@ -947,16 +977,19 @@ body {
     padding        : 6px;
 }
 
+.tu-currency-drop .currency-select img,
 .currency-drop .currency-select img {
     width: 50px;
 }
 
+.tu-currency-drop .currency-select span:first-of-type,
 .currency-drop .currency-select span:first-of-type {
     font-weight: 700;
     color      : #2A3551;
     padding    : 5px 10px;
 }
 
+.tu-bottom,
 .transfer-bottom {
     display        : flex;
     flex-direction : row;
@@ -995,6 +1028,14 @@ body {
     background-color: #7D2AE8;
 }
 
+.tu-bottom button {
+    flex            : 4;
+    padding         : 20px 40px;
+    color           : #ffffff;
+    border          : none;
+    background-color: #7D2AE8;
+}
+
 .panelCard {
     border-radius: 20px;
     box-shadow   : 0 0 22px 0 rgb(31 38 135 / 27%);
@@ -1014,4 +1055,3 @@ body {
     margin-top     : 10px;
     margin-bottom  : 10px;
 }
-
