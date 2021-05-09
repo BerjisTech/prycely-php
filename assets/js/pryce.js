@@ -488,7 +488,7 @@ if (page.includes('/wallet/view') === true) {
         $('.currency-drop').hide()
         $('.main-content').on('click', () => { $('.currency-drop').hide() })
     }
-    function change_tu_currency(currency, flag) {
+    function change_tu_currency(code, currency, flag) {
         $('.tu-to-this .transfer-wallet-details img').attr('src', flag)
         $('.tu-to-this .transfer-wallet-details span:first').html(currency)
         $('.tu-currency-drop').hide()

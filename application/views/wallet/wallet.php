@@ -213,7 +213,7 @@
 								<input type="search" name="sCurrency" />
 								<?php foreach ($currencies as $key => $currency) : ?>
 									<?php if ($key > 0) : ?>
-										<div class="currency-select" onclick="change_detail_currency('<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
+										<div class="currency-select" onclick="change_tu_currency('<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
 											<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
 											<span><?php echo $currency['currency']; ?></span>
 										</div>
