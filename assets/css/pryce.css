@@ -1094,6 +1094,7 @@ body {
     flex-direction : row;
     align-items    : center;
     justify-content: flex-start;
+    padding        : 8px 0px;
 }
 
 .tu-bottom-breakdown .bd .breakDownTitle,
@@ -1102,10 +1103,12 @@ body {
     flex       : 1;
     font-weight: 100;
     color      : rgba(190, 190, 190, 1);
+    font-size  : medium;
 }
 
 .bdPay .breakDownValue {
     font-weight: 800;
+    font-size  : larger;
     color      : #040B2E;
 }
 
