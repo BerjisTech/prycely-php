@@ -478,11 +478,21 @@ if (page.includes('/wallet/view') === true) {
         $('.currency-drop').show()
         $('.currency-drop').css('display', 'flex')
     })
+    $('.tu-to-this .tu-wallet-details').on('mouseover', () => {
+        $('.tu-currency-drop').show()
+        $('.tu-currency-drop').css('display', 'flex')
+    })
     function change_detail_currency(currency, flag) {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
         $('.transfer-to-this .transfer-wallet-details span:first').html(currency)
         $('.currency-drop').hide()
         $('.main-content').on('click', () => { $('.currency-drop').hide() })
+    }
+    function change_tu_currency(currency, flag) {
+        $('.tu-to-this .transfer-wallet-details img').attr('src', flag)
+        $('.tu-to-this .transfer-wallet-details span:first').html(currency)
+        $('.tu-currency-drop').hide()
+        $('.main-content').on('click', () => { $('.tu-currency-drop').hide() })
     }
 }
 
