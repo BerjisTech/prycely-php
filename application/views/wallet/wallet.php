@@ -252,7 +252,7 @@
 							<span>MPESA</span>
 							<span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
 						</div>
-						<span class="pc-checkbox"></span>
+						<span class="pc-checkbox entypo-nothing"></span>
 					</div>
 				</div>
 			</div>
@@ -289,7 +289,7 @@
 		</div>
 	</div>
 	<div class="row group-switched group-more" style="display: none;">
-		More acrtions here
+		More actions here
 	</div>
 </div>
 

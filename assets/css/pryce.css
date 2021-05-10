@@ -1167,3 +1167,38 @@ body {
 .payChoicePanel {
     display: none;
 }
+
+.payChoice {
+    display       : flex;
+    flex-direction: column;
+    width         : 100%;
+}
+
+.payChoice [class*="pc-"] {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    cursor         : pointer;
+}
+
+.payChoice [class*="entypo-"] {
+    border         : 1px solid rgba(190, 190, 190, 1);
+    border-radius  : 100%;
+    width          : 35px;
+    height         : 35px;
+    align-items    : center;
+    justify-content: center;
+    display        : flex;
+    cursor         : pointer;
+}
+
+.payChoice [class*="pc-"] .payChoiceDescription {
+    display       : flex;
+    flex-direction: column;
+    margin        : 10px;
+}
+
+.payChoiceDescription span:first-of-type {
+    font-weight: 600;
+    font-size  : larger;
+}
