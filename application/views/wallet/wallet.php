@@ -264,18 +264,17 @@
 					</div>
 				</div>
 				<div class="confirmTransDetailsPanel">
-					<span class="entypo-left-thin"> Pay another way</span>
+					<span class="entypo-left-thin ctdp-title"> Pay another way</span>
 					<div class="ctdp-mPesa">
-						<span>Pay with MPesa</span>
+						<span class="payWith">Pay with MPesa</span>
 						<span>Enter MPesa phone number</span>
-						<input type="number" placeholder="" value="">
+						<input type="number" placeholder="254 712345678" value="">
 						<button>PAY NOW</button>
 
-						<hr />
+						<span class="divider"></span>
+						<span class="dividerOr">or</span>
 
-						<span>or</span>
-
-						<span>Pay with payBill</span>
+						<span class="payWith">Pay with payBill</span>
 						<ul>
 							<li>Go to your MPesa STK</li>
 							<li>Choose Lipa Na Mpesa</li>
@@ -285,7 +284,7 @@
 							<li>Enter your MPesa Pin and pay</li>
 							<li>Use the transaction code to cinfirm payment below</li>
 						</ul>
-						<input type="number" placeholder="" value="">
+						<input type="text" placeholder="PDT7DMW2U3" value="">
 						<button>CONFIRM PAYMENT</button>
 					</div>
 				</div>

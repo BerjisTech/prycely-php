@@ -1226,3 +1226,58 @@ body {
     font-weight: 600;
     font-size  : larger;
 }
+
+.confirmTransDetailsPanel {
+    display       : none;
+    flex-direction: column;
+}
+
+.ctdp-mPesa {
+    display       : flex;
+    flex-direction: column;
+}
+
+.divider {
+    margin       : 40px auto;
+    width        : 75%;
+    border       : none;
+    border-bottom: 1px solid rgba(190, 190, 190, 1);
+}
+
+.dividerOr {
+    margin       : -55px auto 20px;
+    background   : #ffffff;
+    padding      : 5px 10px;
+    border-radius: 100%;
+}
+
+.confirmTransDetailsPanel input {
+    display       : flex;
+    flex-direction: row;
+    background    : #ffffff;
+    border        : 1px solid rgba(190, 190, 190, 1);
+    padding       : 15px 9px;
+    margin        : 10px auto;
+    width         : 100%;
+    text-transform: uppercase;
+}
+
+.confirmTransDetailsPanel button {
+    padding         : 20px 40px;
+    color           : #ffffff;
+    border          : none;
+    background-color: #7D2AE8;
+    margin-top      : 20px;
+    width           : 100%;
+}
+
+.ctdp-title {
+    font-weight  : 600;
+    color        : #7D2AE8;
+    margin-bottom: 20px;
+}
+
+.ctdp-mPesa .payWith {
+    font-size    : 18px;
+    margin-bottom: 10px;
+}

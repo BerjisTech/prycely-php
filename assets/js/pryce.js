@@ -517,7 +517,7 @@ if (page.includes('/wallet/view') === true) {
 
     function confirmTransDetails(choice) {
         $('.payChoice').css('display', 'none')
-        $('.confirmTransDetailsPanel').css('display', 'table')
+        $('.confirmTransDetailsPanel').css('display', 'flex')
     }
 }
 
