@@ -1083,6 +1083,15 @@ body {
     background-color: #7D2AE8;
 }
 
+.confirmTransDetails {
+    padding         : 20px 40px;
+    color           : #ffffff;
+    border          : none;
+    background-color: #7D2AE8;
+    margin-top      : 20px;
+    width           : 100%;
+}
+
 .tu-bottom button {
     padding         : 20px 40px;
     color           : #ffffff;
@@ -1096,6 +1105,7 @@ body {
     flex-direction: column;
 }
 
+.tu-trans-details .bd,
 .tu-bottom-breakdown .bd {
     width          : 100%;
     display        : flex;
@@ -1105,19 +1115,33 @@ body {
     padding        : 8px 0px;
 }
 
-.tu-bottom-breakdown .bd .breakDownTitle,
-.tu-bottom-breakdown .bd.breakDownValue {
-    flex-grow  : 4;
-    flex       : 1;
+.tu-trans-details {
+    border : 1px solid rgba(190, 190, 190, 1);
+    padding: 15px;
+}
+
+.tu-trans-details .bd .breakDownTitle,
+.tu-bottom-breakdown .bd .breakDownTitle {
     font-weight: 100;
     color      : rgba(190, 190, 190, 1);
     font-size  : medium;
 }
 
+.tu-trans-details .bd .breakDownValue,
+.tu-bottom-breakdown .bd .breakDownValue {
+    flex-grow  : 4;
+    flex       : 1;
+    font-weight: 100;
+    color      : rgba(190, 190, 190, 1);
+    font-size  : medium;
+    text-align : right;
+}
+
+.bdGet .breakDownValue,
 .bdPay .breakDownValue {
-    font-weight: 800;
-    font-size  : larger;
-    color      : #040B2E;
+    font-weight: 800 !important;
+    font-size  : larger !important;
+    color      : #040B2E !important;
 }
 
 .panelCard {

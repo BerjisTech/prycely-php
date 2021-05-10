@@ -244,7 +244,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12 panelCard payChoicePanel">
-			<div class="col-sm-8">
+			<div class="col-sm-7">
 				<div class="payChoice">
 					<div class="pc-mPesa">
 						<span class="entypo-credit-card"></span>
@@ -256,7 +256,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				<div class="tu-trans-details">
 					<span>Details</span>
 					<div class="bd bdPay">
@@ -284,6 +284,7 @@
 						<span class="breakDownValue">in a few seconds</span>
 					</div>
 				</div>
+				<button class="confirmTransDetails">PROCEED</button>
 			</div>
 		</div>
 	</div>
