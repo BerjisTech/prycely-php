@@ -189,7 +189,7 @@
 			<div class="col-sm-12 panelCard">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<p class="tu-title">Transfer to your other wallets</p>
+					<p class="tu-title">Topup your <?php echo $wallet->the_wallet_currency; ?> wallet</p>
 					<div class="tu-from-this">
 						<div class="tu-amount-details">
 							<span>Add</span>
@@ -246,13 +246,47 @@
 		<div class="col-sm-12 panelCard payChoicePanel">
 			<div class="col-sm-7">
 				<div class="payChoice">
-					<div class="pc-mPesa">
+					<div onclick="payChoice('mPesa')" class="pc-mPesa">
 						<span class="entypo-credit-card"></span>
 						<div class="payChoiceDescription">
 							<span>MPESA</span>
 							<span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
 						</div>
-						<span class="pc-checkbox entypo-nothing"></span>
+						<span class="pc-checkbox entypo-dot"></span>
+					</div>
+					<div onclick="payChoice('debitCard')" class="pc-debitCard">
+						<span class="entypo-credit-card"></span>
+						<div class="payChoiceDescription">
+							<span>Debit Card</span>
+							<span>Top up your wallet with your debit card. Arrives immediately</span>
+						</div>
+						<span class="pc-checkbox entypo-dot"></span>
+					</div>
+				</div>
+				<div class="confirmTransDetailsPanel">
+					<span class="entypo-left-thin"> Pay another way</span>
+					<div class="ctdp-mPesa">
+						<span>Pay with MPesa</span>
+						<span>Enter MPesa phone number</span>
+						<input type="number" placeholder="" value="">
+						<button>PAY NOW</button>
+
+						<hr />
+
+						<span>or</span>
+
+						<span>Pay with payBill</span>
+						<ul>
+							<li>Go to your MPesa STK</li>
+							<li>Choose Lipa Na Mpesa</li>
+							<li>Select PayBill</li>
+							<li>Enter business number <strong>4072015</strong></li>
+							<li>Account number your <strong>prycely-<?php echo $this->session->the_person_id; ?></strong></li>
+							<li>Enter your MPesa Pin and pay</li>
+							<li>Use the transaction code to cinfirm payment below</li>
+						</ul>
+						<input type="number" placeholder="" value="">
+						<button>CONFIRM PAYMENT</button>
 					</div>
 				</div>
 			</div>

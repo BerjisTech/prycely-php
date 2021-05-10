@@ -1179,6 +1179,17 @@ body {
     align-items    : center;
     justify-content: center;
     cursor         : pointer;
+    border-bottom  : 1px solid rgba(190, 190, 190, 1);
+    padding        : 15px 10px;
+    transition     : all 0.56s;
+}
+
+.payChoice [class*="pc-"]:first-of-type {
+    border-top: 1px solid rgba(190, 190, 190, 1);
+}
+
+.payChoice [class*="pc-"]:hover {
+    background: #F1F3FF;
 }
 
 .payChoice [class*="entypo-"] {
@@ -1190,12 +1201,25 @@ body {
     justify-content: center;
     display        : flex;
     cursor         : pointer;
+    color          : rgba(190, 190, 190, 1);
+}
+
+.pc-checkbox {
+    font-size : 0px;
+    transition: all 0.56s;
+}
+
+.chosen .pc-checkbox {
+    color    : #7D2AE8;
+    font-size: 80px;
+    border   : 3px solid #7D2AE8;
 }
 
 .payChoice [class*="pc-"] .payChoiceDescription {
     display       : flex;
     flex-direction: column;
     margin        : 10px;
+    flex          : 1;
 }
 
 .payChoiceDescription span:first-of-type {

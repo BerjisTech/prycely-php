@@ -482,12 +482,14 @@ if (page.includes('/wallet/view') === true) {
         $('.tu-currency-drop').show()
         $('.tu-currency-drop').css('display', 'flex')
     })
+
     function change_detail_currency(currency, flag) {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
         $('.transfer-to-this .transfer-wallet-details span:first').html(currency)
         $('.currency-drop').hide()
         $('.main-content').on('click', () => { $('.currency-drop').hide() })
     }
+
     function change_tu_currency(wallet_code, code, currency, flag) {
         $('.tu-bottom-breakdown').css('display', 'none')
         if (wallet_code !== code) {
@@ -503,6 +505,20 @@ if (page.includes('/wallet/view') === true) {
         $('.topUpPanel').css('display', 'none')
         $('.payChoicePanel').css('display', 'table')
     })
+
+    function payChoice(choice) {
+        $('.payChoice [class*="pc-"]').removeClass('chosen')
+        $('.pc-' + choice).addClass('chosen')
+        $('.confirmTransDetails').on('click', () => {
+            confirmTransDetails(choice)
+            $('.confirmTransDetails').hide()
+        })
+    }
+
+    function confirmTransDetails(choice) {
+        $('.payChoice').css('display', 'none')
+        $('.confirmTransDetailsPanel').css('display', 'table')
+    }
 }
 
 $('.switch-tab').on('click', function () {
