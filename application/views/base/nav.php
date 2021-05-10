@@ -1,5 +1,5 @@
 <div class="side_bar">
-    <a href="" class="user_icon"></a>
+    <a href="" class="user_icon" style="background-image: url('<?php echo base_url('assets/images/logo.png'); ?>');"></a>
     <a href="<?php if ($page_name != 'overview') {
                     echo base_url('overview');
                 } else {

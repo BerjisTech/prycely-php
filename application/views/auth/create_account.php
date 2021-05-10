@@ -19,7 +19,9 @@
 </head>
 
 <body>
-
+    <script>
+        let base_url = '<?php echo base_url(); ?>'
+    </script>
     <div class="main_content">
         <div class="row main_row">
             <div class="col-sm-8 left_home_panel">

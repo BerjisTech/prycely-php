@@ -21,6 +21,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
+    <script>
+        let base_url = '<?php echo base_url(); ?>'
+    </script>
     <div class="side_bar onboarder">
         <!-- 0% 13% 38% 63% 89% loading & save to db 100%; redirecting you -->
         <div class="flow">
