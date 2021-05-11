@@ -493,6 +493,6 @@ class Mpesa extends CI_Controller
             }
         }
         $array = array('status' => $status, 'formattedPhone' => $formattedPhone);
-        return $phone;
+        return $array;
     }
 }
