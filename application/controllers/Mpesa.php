@@ -254,7 +254,7 @@ class Mpesa extends CI_Controller
         $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
     }
 
-    public function b2cPayment($recipient, $amount, $b2cId)
+    public function b2cPayment($recipient, $amount)
     {
         $amount = (int)$amount;
         //initialize responses
@@ -263,7 +263,7 @@ class Mpesa extends CI_Controller
         $OriginatorConversationID = '';
         $ResponseCode = '';
         $ResponseDescription = '';
-        $now = Carbon::now('Africa/Nairobi');
+        $now = time();
         $phoneFormat = json_decode($this->phoneFormat($recipient), TRUE);
         $phone = $phoneFormat['formattedPhone'];
         //check if phone is ok
@@ -273,21 +273,21 @@ class Mpesa extends CI_Controller
             if (is_numeric($amount)) {
                 if ($amount >= 50 && $amount <= 70000) {
                     $amount = floor($amount);
-                    $accessVals = $this->generateAccessToken();
+                    $accessVals = $this->b2cToken();
                     if ($accessVals['status'] == 1) {
                         $accessToken = "Bearer " . $accessVals['token'];
-                        $securityCredential = 'jTjzInV1b5vwP7eonZrrF4ILRhkgNLfsiT3ENOKrivhT0BU8KaSx5+qI0n3RQUiGjjrp+pHXo0TkatpFMU2Gxj+Bny3r9Ge/ke4APYqHRkvPy0nJZkA1F1brZGRCxEpVb1LXapdGo4U9bTbAIBorR3uw+0XMDJopOrw573E2rIpAkhyklJcjYMtEXlTiWL2vUTDko9J6JVbzAetzI1bcmGMJJDFuQNSeMF4q1KrGt2Nc7XyGzyysQVmKl+pjYP64KtnIEIyra1gFg9npVgs07cU8Wrep6p+HDwIYgy+dAyo/L3moq2uSKaBJq7F+bSJvjGx+f8nSX56UH9PYUCIIVg==';
+                        $securityCredential = $this->db->where('the_app', 3)->get('the_privates')->row()->the_passkey;
                         // The data to send to the API
                         $postData = array(
                             "InitiatorName" => "B2CInitiator",
                             "SecurityCredential" => $securityCredential,
                             "CommandID" => "BusinessPayment",
                             "Amount" => $amount,
-                            "PartyA" => '495980',
+                            "PartyA" => '3012169',
                             "PartyB" => $phone,
                             "Remarks" => "Disbursement",
-                            "QueueTimeOutURL" => 'https://online.sweeshfinance.com/mtx/timeout',
-                            "ResultURL" => 'https://online.sweeshfinance.com/api/mtx/b2c', //callback url
+                            "QueueTimeOutURL" => 'https://prycely.com/validation',
+                            "ResultURL" => 'https://prycely.com/b2c', //callback url
                             "Occassion" => "Disbursement"
                         );
                         $requestBody = json_encode($postData);
@@ -348,14 +348,16 @@ class Mpesa extends CI_Controller
             $status = 4;
             $ResponseDescription = "Wrong phone format";
         }
-        $mpesaB2C = MpesaB2C::withoutTrashed()->find($b2cId);
-        $mpesaB2C->time_request_sent = $now;
-        $mpesaB2C->conversation_id = $ConversationID;
-        $mpesaB2C->originator_conversation_id = $OriginatorConversationID;
-        $mpesaB2C->result_description = $ResponseDescription;
-        $mpesaB2C->result_code = $ResponseCode;
-        $mpesaB2C->status = $status;
-        $mpesaB2C->save();
+
+        $mpesaB2C['time_request_sent'] = $now;
+        $mpesaB2C['conversation_id'] = $ConversationID;
+        $mpesaB2C['originator_conversation_id'] = $OriginatorConversationID;
+        $mpesaB2C['result_description'] = $ResponseDescription;
+        $mpesaB2C['result_code'] = $ResponseCode;
+        $mpesaB2C['status'] = $status;
+
+        // $this->db->insert('the_b2c', $mpesaB2C);
+
         $array = array(
             'status' => $status,
             'conversation_id' => $ConversationID,
@@ -399,6 +401,33 @@ class Mpesa extends CI_Controller
 
         $array = array('status' => $status, 'token' => $accessToken, 'description' => $description);
         return $array;
+    }
+
+    private function b2cToken()
+    {
+        $key = $this->db->where('the_app ', 3)->get('the_privates')->row()->the_key;
+        $secret = $this->db->select('the_secret')->where('the_app ', 3)->get('the_privates')->row()->the_secret;
+        $accessToken = "";
+        $status = 0;
+        $description = "";
+        $url = 'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        $credentials = base64_encode($key . ':' . $secret);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic ' . $credentials)); //setting a custom header
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+        $curl_response = curl_exec($curl);
+        if ($curl_response != FALSE) {
+            $responseVals = json_decode($curl_response, TRUE);
+            $accessToken = $responseVals['access_token'];
+            $status = 1;
+        } else {
+            $description = "Curl Failed: " . curl_error($curl);
+        }
+        $array = array('status' => $status, 'token' => $accessToken, 'description' => $description);
+        return $accessToken;
     }
 
     private function phoneFormat($phone)

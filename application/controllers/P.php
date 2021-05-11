@@ -31,11 +31,22 @@ class P extends CI_Controller
 		}
 	}
 
+	public function search_currency($searchTerm = "")
+	{
+		$result = $this->db
+			->like('currency', $searchTerm)
+			->or_like('code', $searchTerm)
+			->or_like('country', $searchTerm)
+			->get('currency')->result_array();
+
+		echo json_encode($result);
+	}
+
 	public function wrong_turn()
 	{
 		$this->load->view('errors/html/wrong_turn');
 	}
-	
+
 	public function wrongturn()
 	{
 		$this->load->view('errors/html/wrong_turn');

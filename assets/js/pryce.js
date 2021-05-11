@@ -477,17 +477,43 @@ if (page.includes('/wallet/view') === true) {
     $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {
         $('.currency-drop').show()
         $('.currency-drop').css('display', 'flex')
+        $('.main-content').on('click', () => { $('.currency-drop').hide() })
     })
+
     $('.tu-to-this .tu-wallet-details').on('mouseover', () => {
         $('.tu-currency-drop').show()
         $('.tu-currency-drop').css('display', 'flex')
+        $('.main-content').on('click', () => { $('.currency-drop').hide() })
+        $('.tu-currency-drop input').on('click', () => { return false; })
+        $('.tu-currency-drop input').on('input', () => {
+            let search_term = $('.tu-currency-drop input').val()
+            let wallet_code = $('.tu-currency-drop input').data('wallet')
+            $.ajax({
+                url: base_url + 'p/search_currency/' + search_term,
+                success: (currencies) => {
+                    currencies = JSON.parse(currencies)
+                    $('.currency-select').remove()
+                    $(currencies).each((key, currency) => {
+                        let currency_name = currency['currency'];
+                        let currency_code = currency['code'];
+                        let currency_image = currency_code.substring(0, 2).toLowerCase()
+
+                        $('.tu-currency-drop').append(`
+                        <div class="currency-select" onclick="change_tu_currency('${wallet_code}','${currency_code}', '${currency_name}', '${base_url}assets/images/flags/${currency_image}.svg')">
+                            <img src="${base_url}assets/images/flags/${currency_image}.svg" />
+                            <span>${currency_name}</span>
+                        </div>
+                        `)
+                    })
+                }
+            })
+        })
     })
 
     function change_detail_currency(currency, flag) {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
         $('.transfer-to-this .transfer-wallet-details span:first').html(currency)
         $('.currency-drop').hide()
-        $('.main-content').on('click', () => { $('.currency-drop').hide() })
     }
 
     function change_tu_currency(wallet_code, code, currency, flag) {
