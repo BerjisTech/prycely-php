@@ -264,10 +264,10 @@ class Mpesa extends CI_Controller
         $ResponseCode = '';
         $ResponseDescription = '';
         $now = time();
-        $phoneFormat = $this->phoneFormat($recipient);
+        $phoneFormat = json_decode($this->b2cphoneFormat($recipient), TRUE);
         $phone = $phoneFormat['formattedPhone'];
         //check if phone is ok
-        $phoneVals = $this->phoneFormat($recipient);
+        $phoneVals = json_decode($this->b2cphoneFormat($recipient), TRUE);
         if ($phoneVals['status'] == TRUE) {
             //validate amount
             if (is_numeric($amount)) {
@@ -431,6 +431,39 @@ class Mpesa extends CI_Controller
     }
 
     private function phoneFormat($phone)
+    { //initialize valuables
+        $status = FALSE;
+        $formattedPhone = '';
+        //remove white spaces
+        $phone = trim($phone);
+        $phone = str_replace(" ", "", $phone);
+        //remove -, (, and )
+        $phone = str_replace("-", "", $phone);
+        $phone = str_replace("(", "", $phone);
+        $phone = str_replace(")", "", $phone);
+        //validate - all should begin with 254
+        if (strlen($phone) >= 9 && strlen($phone) <= 13) {
+            if (substr($phone, 0, 2) == "07") {
+                $phone = substr_replace($phone, "254", 0, 1);
+            } elseif (substr($phone, 0, 4) == "+254") {
+                $phone = substr_replace($phone, "", 0, 1);
+            } elseif (substr($phone, 0, 1) === "7") {
+                $phone = substr_replace($phone, "254", 0, 0);
+            } elseif (substr($phone, 0, 1) === "1") {
+                $phone = substr_replace($phone, "254", 0, 0);
+            } elseif (substr($phone, 0, 2) == "01") {
+                $phone = substr_replace($phone, "254", 0, 1);
+            }
+            if (substr($phone, 0, 3) == "254" && strlen($phone) == 12 && is_numeric($phone)) {
+                $status = TRUE;
+                $formattedPhone = $phone;
+            }
+        }
+        $array = array('status' => $status, 'formattedPhone' => $formattedPhone);
+        return $phone;
+    }
+
+    private function b2cphoneFormat($phone)
     { //initialize valuables
         $status = FALSE;
         $formattedPhone = '';
