@@ -356,6 +356,8 @@ class Mpesa extends CI_Controller
         $mpesaB2C['result_code'] = $ResponseCode;
         $mpesaB2C['status'] = $status;
 
+        print_r($mpesaB2C);
+
         // $this->db->insert('the_b2c', $mpesaB2C);
 
         $array = array(
@@ -365,6 +367,9 @@ class Mpesa extends CI_Controller
             'result_code' => $ResponseCode,
             'result_description' => $ResponseDescription
         );
+
+        echo '<br /><br /><br />';
+        print_r($array);
         return $array;
     }
 
