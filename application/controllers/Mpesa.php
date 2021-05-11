@@ -432,7 +432,7 @@ class Mpesa extends CI_Controller
             $description = "Curl Failed: " . curl_error($curl);
         }
         $array = array('status' => $status, 'token' => $accessToken, 'description' => $description);
-        return $accessToken;
+        return $array;
     }
 
     private function phoneFormat($phone)
