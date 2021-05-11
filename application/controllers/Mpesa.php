@@ -264,10 +264,10 @@ class Mpesa extends CI_Controller
         $ResponseCode = '';
         $ResponseDescription = '';
         $now = time();
-        $phoneFormat = json_decode($this->phoneFormat($recipient), TRUE);
+        $phoneFormat = $this->phoneFormat($recipient);
         $phone = $phoneFormat['formattedPhone'];
         //check if phone is ok
-        $phoneVals = json_decode($this->phoneFormat($recipient), TRUE);
+        $phoneVals = $this->phoneFormat($recipient);
         if ($phoneVals['status'] == TRUE) {
             //validate amount
             if (is_numeric($amount)) {
