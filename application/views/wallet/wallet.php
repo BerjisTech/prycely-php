@@ -23,20 +23,24 @@
 						<input type="number" value="1000" />
 					</div>
 					<div class="transfer-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
-						<span><?php echo $currencies[0]['code']; ?></span>
-						<span class="entypo-down-open"></span>
+						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
+						<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
+						<span class="entypo-down-open" <?php if (count($wallets) > 1) {
+															echo 'style="color: #F7F7F9;"';
+														} ?>></span>
 					</div>
-					<div class="currency-drop">
-						<?php foreach ($currencies as $key => $currency) : ?>
-							<?php if ($key > 0) : ?>
-								<div class="currency-select" onclick="change_detail_currency('<?php echo $currency['code']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
-									<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-									<span><?php echo $currency['code']; ?></span>
-								</div>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</div>
+					<?php if (count($wallets) > 1) : ?>
+						<div class="currency-drop">
+							<?php foreach ($wallets as $key => $other_wallet) : ?>
+								<?php if ($other_wallet['the_wallet_currency'] != $wallet->the_wallet_currency || $key > 0) : ?>
+									<div class="currency-select" onclick="change_detail_currency('<?php echo $other_wallet['the_wallet_currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($other_wallet['the_wallet_currency'], 0, 2)); ?>.svg')">
+										<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($other_wallet['the_wallet_currency'], 0, 2)); ?>.svg" />
+										<span><?php echo $other_wallet['the_wallet_currency']; ?></span>
+									</div>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
 				</div>
 				<div class="transfer-bottom">
 					<div class="converted-amount">
