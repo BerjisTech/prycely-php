@@ -25,7 +25,7 @@
 					<div class="transfer-wallet-details">
 						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
 						<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
-						<span class="entypo-down-open" <?php if (count($wallets) > 1) {
+						<span class="entypo-down-open" <?php if (count($wallets) == 1) {
 															echo 'style="color: #F7F7F9;"';
 														} ?>></span>
 					</div>

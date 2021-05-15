@@ -103,13 +103,16 @@ class Wallet extends CI_Controller
 			->where('the_transaction_user', $this->session->the_person_id)
 			->group_by('date_format(from_unixtime(the_transaction_date), "%d")')
 			->order_by('the_transaction_date', 'DESC')
+			->limit('6')
 			->get('the_transactions')->result_array();
 
 		foreach ($dates as $date) {
+			$limit = 6;
 			$collection_date = date('dmY', $date['the_transaction_date']);
 			$collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
-			$transactions[$collection_stamp] = $this->db
-				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_wallet` = $wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC LIMIT 10")->result_array();
+			$da_query = $this->db
+				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_wallet` = $wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC LIMIT $limit");
+			$transactions[$collection_stamp] = $da_query->result_array();
 		}
 
 		$data['transactions'] = $transactions;
