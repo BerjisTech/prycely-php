@@ -1,35 +1,8 @@
+<script>
+	const active_user_id = '<?php echo $this->session->the_person_id; ?>';
+</script>
 <div class="row">
-	<div class="row">
-		<div class="col-sm-12">
-			<div class="group-navi">
-				<div class="group-entypo col-sm-3 col-xs-6 entypo-current" data-show="group-overview">
-					<div class="entypo-inner text-center">
-						<span class="entypo-logout"></span>
-						<span class="hidden-xs">Overview</span>
-					</div>
-				</div>
-				<div class="group-entypo col-sm-3 col-xs-6" data-show="group-transacts">
-					<div class="entypo-inner text-center">
-						<span class="entypo-doc-text"></span>
-						<span class="hidden-xs">Statements</span>
-					</div>
-				</div>
-				<div class="group-entypo col-sm-3 col-xs-6" data-show="group-topup">
-					<div class="entypo-inner text-center">
-						<span class="entypo-publish"></span>
-						<span class="hidden-xs">Top Up</span>
-					</div>
-				</div>
-				<div class="group-entypo col-sm-3 col-xs-6" data-show="group-more">
-					<div class="entypo-inner text-center">
-						<span class="entypo-dot-3"></span>
-						<span class="hidden-xs">More</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row group-switched group-overview">
+	<div class="row wallet-switched wallet-overview">
 		<div class="col-sm-8">
 			<div class="panelCard">
 				<p class="transfer-title">Transfer to your other wallets</p>
@@ -83,6 +56,10 @@
 				<span class="gp-txt">Total balance</span>
 				<span class="gp-bals"> <?php echo '<sup>' . $wallet->the_wallet_currency . '</sup> ' . $wallet->the_wallet_balance; ?></span>
 				<span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
+				<div class="topUp-withdraw">
+					<span class="wallet-switcher" data-show="wallet-topup">Top Up</span>
+					<span>Withdraw</span>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-6">
@@ -140,7 +117,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row group-switched group-transacts" style="display: none;">
+	<div class="row wallet-switched wallet-transacts" style="display: none;">
 		<div class="col-sm-12">
 			<div class="panelCard">
 				<?php foreach ($transactions as $key => $date) : ?>
@@ -184,8 +161,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="group-switched group-topup" style="display: none;">
+	<div class="wallet-switched wallet-topup" style="display: none;">
 		<div class="topUpPanel">
+			<span class="entypo-left-thin back-text-arrow-buttons wallet-switcher" data-show="wallet-overview"> Back to wallet</span>
 			<div class="col-sm-12 panelCard">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
@@ -195,7 +173,7 @@
 							<span>Add</span>
 							<input type="number" value="1000" />
 						</div>
-						<div class="tu-wallet-details">
+						<div class="tu-wallet-details" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
 							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
 							<span><?php echo $wallet->the_wallet_currency; ?></span>
 							<span class="entypo-down-open" style="color: #F7F7F9;"></span>
@@ -203,7 +181,7 @@
 					</div>
 					<div class="tu-to-this">
 						<span>Paying with</span>
-						<div class="tu-wallet-details">
+						<div class="tu-wallet-details" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
 							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
 							<span><?php echo $wallet->the_wallet_currency; ?></span>
 							<span class="entypo-down-open"></span>
@@ -246,14 +224,7 @@
 		<div class="col-sm-12 panelCard payChoicePanel">
 			<div class="col-sm-7">
 				<div class="payChoice">
-					<div onclick="payChoice('mPesa')" class="pc-mPesa">
-						<span class="entypo-credit-card"></span>
-						<div class="payChoiceDescription">
-							<span>MPESA</span>
-							<span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
-						</div>
-						<span class="pc-checkbox entypo-dot"></span>
-					</div>
+					<span class="entypo-left-thin ctdp-title"> Back</span>
 					<div onclick="payChoice('debitCard')" class="pc-debitCard">
 						<span class="entypo-credit-card"></span>
 						<div class="payChoiceDescription">
@@ -265,7 +236,7 @@
 				</div>
 				<div class="confirmTransDetailsPanel">
 					<span class="entypo-left-thin ctdp-title"> Pay another way</span>
-					<div class="ctdp-mPesa">
+					<div class="ctpd-custom ctdp-mPesa">
 						<span class="payWith">Pay with MPesa</span>
 						<span>Enter MPesa phone number</span>
 						<input type="number" placeholder="254 712345678" value="">
@@ -320,9 +291,6 @@
 				<button class="confirmTransDetails">PROCEED</button>
 			</div>
 		</div>
-	</div>
-	<div class="row group-switched group-more" style="display: none;">
-		More actions here
 	</div>
 </div>
 
