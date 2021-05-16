@@ -1322,3 +1322,18 @@ body {
     padding      : 20px 5px;
     cursor       : pointer;
 }
+
+.label_save_this {
+    display        : flex;
+    max-width      : 100%;
+    margin-bottom  : 5px;
+    font-weight    : bold;
+    flex-direction : row;
+    width          : 100%;
+    align-items    : baseline;
+    justify-content: flex-start;
+}
+
+.label_save_this input {
+    width: 20px;
+}

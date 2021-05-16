@@ -1,5 +1,8 @@
 <script>
 	const active_user_id = '<?php echo $this->session->the_person_id; ?>';
+	const active_wallet_id = '<?php echo $wallet->the_wallet_currency; ?>';
+	const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg';
+	const active_country_id = '<?php echo $this->session->the_person_id; ?>';
 </script>
 <div class="row">
 	<div class="row wallet-switched wallet-overview">
@@ -185,7 +188,7 @@
 					</div>
 					<div class="tu-to-this">
 						<span>Paying with</span>
-						<div class="tu-wallet-details" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
+						<div class="tu-wallet-details twd" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
 							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
 							<span><?php echo $wallet->the_wallet_currency; ?></span>
 							<span class="entypo-down-open"></span>
@@ -243,8 +246,9 @@
 					<div class="ctpd-custom ctdp-mPesa">
 						<span class="payWith">Pay with MPesa</span>
 						<span>Enter MPesa phone number</span>
-						<input type="number" placeholder="254 712345678" value="">
-						<button>PAY NOW</button>
+						<input type="number" class="ctdp-mpesa-number" placeholder="254 712345678" value="">
+						<label class="label_save_this"><input type="checkbox" name="save_number" />Make this number the primary mpesa number?</label>
+						<button class="ctdp-stk">PAY NOW</button>
 
 						<span class="divider"></span>
 						<span class="dividerOr">or</span>
@@ -260,7 +264,7 @@
 							<li>Use the transaction code to cinfirm payment below</li>
 						</ul>
 						<input type="text" placeholder="PDT7DMW2U3" value="">
-						<button>CONFIRM PAYMENT</button>
+						<button class="ctdp-paybill">CONFIRM PAYMENT</button>
 					</div>
 				</div>
 			</div>
@@ -307,10 +311,17 @@
 		var line_chart = Morris.Line({
 			element: 'line-chart',
 			data: [
-				<?php for ($m = 7; $m > -1; $m--) : ?> {
+				<?php for ($m = 30; $m > -1; $m--) : ?> {
+						<?php
+						$collection_date = date('dmY', strtotime('-' . $m . ' days'));
+						$deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 1 AND `the_transaction_wallet` = $wallet->the_wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+						$withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 2 AND `the_transaction_wallet` = $wallet->the_wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+						?>
 						y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
-						a: getRandomInt(10000, 1000),
-						b: getRandomInt(10000, 1000)
+							a: <?php if ($deposit == '') echo 0;
+								else echo $deposit; ?>,
+							b: <?php if ($withdraw == '') echo 0;
+								else echo $withdraw; ?>
 					},
 				<?php endfor; ?>
 			],
