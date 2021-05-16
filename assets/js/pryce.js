@@ -517,48 +517,29 @@ if (page.includes('/wallet/view') === true) {
     function payChoice(choice) {
         $('.payChoice [class*="pc-"]').removeClass('chosen')
         $('.pc-' + choice).addClass('chosen')
-        $('.confirmTransDetails').on('click', () => {
-            customPaymentsPanel(choice)
-            $('.confirmTransDetails').hide()
-        })
+        customPaymentsPanel(choice)
+        return;
+    }
+
+    function backToPayChoice() {
+        $('.payChoice').css('display', 'flex')
+        $('.confirmTransDetailsPanel').css('display', 'none')
     }
 
     function customPaymentsPanel(choice) {
-        $('.ctpd-custom').remove()
+        $('.confirmTransDetailsPanel').html('<div></div>')
         console.log(choice)
 
-        if (choice !== 'mPesa') {
-            $('.confirmTransDetailsPanelmPesa').remove()
-        }
-        if (choice === 'mPesa') {
-            $(`
-                <div class="ctpd-custom ctdp-mPesa">
-                    <span class="payWith">Pay with MPesa</span>
-                    <span>Enter MPesa phone number</span>
-                    <input type="number" class="ctdp-mpesa-number" placeholder="254 712345678" value="">
-                    <label class="label_save_this"><input type="checkbox" name="save_number" />Make this number the primary mpesa number?</label>
-                    <button class="ctdp-stk">PAY NOW</button>
-
-                    <span class="divider"></span>
-                    <span class="dividerOr">or</span>
-
-                    <span class="payWith">Pay with payBill</span>
-                    <ul>
-                        <li>Go to your MPesa STK</li>
-                        <li>Choose Lipa Na Mpesa</li>
-                        <li>Select PayBill</li>
-                        <li>Enter business number <strong>4072015</strong></li>
-                        <li>Account number your <strong>prycely-<?php echo $this->session->the_person_id; ?></strong></li>
-                        <li>Enter your MPesa Pin and pay</li>
-                        <li>Use the transaction code to cinfirm payment below</li>
-                    </ul>
-                    <input type="text" placeholder="PDT7DMW2U3" value="">
-                    <button class="ctdp-paybill">CONFIRM PAYMENT</button>
-                </div>
-            `).insertAfter('.confirmTransDetailsPanel .ctdp-title')
-        }
-
-
+        $.ajax({
+            url: base_url + 'p/static_files/wallet/' + choice,
+            success: (data) => {
+                $('.confirmTransDetailsPanel').html(data)
+            },
+            error: (data) => {
+                $('.confirmTransDetailsPanel').html('')
+                console.error(data)
+            }
+        })
         confirmTransDetails(choice)
     }
 
@@ -567,7 +548,36 @@ if (page.includes('/wallet/view') === true) {
         $('.confirmTransDetailsPanel').css('display', 'flex')
     }
 
-    customPayments(active_wallet_id)
+    function stk(user_phone, user_save, user_currency, user_amount) {
+
+        $('.ctdp-mpesa-number').css('border-color', 'rgba(190, 190, 190, 1)')
+        $('.the_login_error').remove()
+        console.log(`${user_phone}, ${user_save}, ${user_currency}, ${user_amount}`)
+
+        if (user_phone == '') {
+            $('.ctdp-mpesa-number').css('border-color', '#FF0000')
+            $('<p class="the_login_error bg-danger" style="padding: 10px;">Please enter a valid phone number</p>').insertBefore($('.ctdp-mpesa-number'))
+            return false;
+        }
+
+        if (user_phone.length != 12) {
+            $('.ctdp-mpesa-number').css('border-color', '#FF0000')
+            $('<p class="the_login_error bg-danger" style="padding: 10px;">Please enter a valid mpesa number</p>').insertBefore($('.ctdp-mpesa-number'))
+            return false;
+        }
+
+        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/user_${active_user_id}_wallet_${active_wallet_currency}_topup/user_${active_user_id}_wallet_${active_wallet_currency}_topup/1/${active_wallet_id}/Wallet Top Up`;
+
+        console.log(stk_url)
+        $.ajax({
+            url: stk_url,
+            success: (response) => {
+                console.log(response)
+            }
+        })
+    }
+
+    customPayments(active_wallet_currency)
 
     $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {
         $('.currency-drop').show()
@@ -615,26 +625,10 @@ if (page.includes('/wallet/view') === true) {
         $('.payChoicePanel').css('display', 'none')
     })
 
-    $('.confirmTransDetailsPanel .ctdp-title').on('click', () => {
-        $('.confirmTransDetails').show()
-        $('.payChoice').css('display', 'flex')
-        $('.confirmTransDetailsPanel').css('display', 'none')
-    })
-
     $('.wallet-switcher').on('click', function () {
         $(this).addClass('entypo-current')
         $('.wallet-switched').hide(100)
         $('.' + $(this).attr('data-show')).show(400)
-    })
-
-    $('.ctdp-stk').on('click', () => {
-        let user_phone = $('.ctdp-mpesa-number').val()
-        let save_this_number = $('.ctdp-mPesa name="save_number"').val()
-
-        if (user_phone == '') {
-            $('.ctdp-mPesa name="save_number"').css('border-color', '#FF0000')
-            return false;
-        }
     })
 }
 

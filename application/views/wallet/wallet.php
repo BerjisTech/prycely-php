@@ -1,6 +1,7 @@
 <script>
 	const active_user_id = '<?php echo $this->session->the_person_id; ?>';
-	const active_wallet_id = '<?php echo $wallet->the_wallet_currency; ?>';
+	const active_wallet_id = '<?php echo $wallet->the_wallet_id; ?>';
+	const active_wallet_currency = '<?php echo $wallet->the_wallet_currency; ?>';
 	const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg';
 	const active_country_id = '<?php echo $this->session->the_person_id; ?>';
 </script>
@@ -69,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-4">
 			<div class="panelCard">
 				<?php foreach ($transactions as $key => $date) : ?>
 					<span>
@@ -111,7 +112,7 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-8">
 			<div class="panelCard">
 				<div class="exchange-rates">
 					<div class="exchange-top">
@@ -119,7 +120,7 @@
 						<span><span class="entypo-record in"></span> Money in</span>
 						<span><span class="entypo-record out"></span> Money out</span>
 					</div>
-					<div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
+					<div id="line-chart" class="morrischart" style="height: 450px; position: relative;"></div>
 				</div>
 			</div>
 		</div>
@@ -178,7 +179,7 @@
 					<div class="tu-from-this">
 						<div class="tu-amount-details">
 							<span>Add</span>
-							<input type="number" value="1000" />
+							<input type="number" class="tu-amount" value="1000" />
 						</div>
 						<div class="tu-wallet-details" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
 							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
@@ -242,30 +243,7 @@
 					</div>
 				</div>
 				<div class="confirmTransDetailsPanel">
-					<span class="entypo-left-thin ctdp-title"> Pay another way</span>
-					<div class="ctpd-custom ctdp-mPesa">
-						<span class="payWith">Pay with MPesa</span>
-						<span>Enter MPesa phone number</span>
-						<input type="number" class="ctdp-mpesa-number" placeholder="254 712345678" value="">
-						<label class="label_save_this"><input type="checkbox" name="save_number" />Make this number the primary mpesa number?</label>
-						<button class="ctdp-stk">PAY NOW</button>
 
-						<span class="divider"></span>
-						<span class="dividerOr">or</span>
-
-						<span class="payWith">Pay with payBill</span>
-						<ul>
-							<li>Go to your MPesa STK</li>
-							<li>Choose Lipa Na Mpesa</li>
-							<li>Select PayBill</li>
-							<li>Enter business number <strong>4072015</strong></li>
-							<li>Account number your <strong>prycely-<?php echo $this->session->the_person_id; ?></strong></li>
-							<li>Enter your MPesa Pin and pay</li>
-							<li>Use the transaction code to cinfirm payment below</li>
-						</ul>
-						<input type="text" placeholder="PDT7DMW2U3" value="">
-						<button class="ctdp-paybill">CONFIRM PAYMENT</button>
-					</div>
 				</div>
 			</div>
 			<div class="col-sm-5">
@@ -296,7 +274,6 @@
 						<span class="breakDownValue">in a few seconds</span>
 					</div>
 				</div>
-				<button class="confirmTransDetails">PROCEED</button>
 			</div>
 		</div>
 	</div>

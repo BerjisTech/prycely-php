@@ -51,4 +51,9 @@ class P extends CI_Controller
 	{
 		$this->load->view('errors/html/wrong_turn');
 	}
+
+	public function static_files($folder, $file)
+	{
+		return $this->load->view($folder . '/' . $file, TRUE);
+	}
 }
