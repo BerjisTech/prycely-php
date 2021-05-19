@@ -5,7 +5,7 @@
 	const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg';
 	const active_country_id = '<?php echo $this->session->the_person_id; ?>';
 </script>
-<div class="row">
+<div class="row tuPageContent">
 	<div class="row wallet-switched wallet-overview">
 		<div class="col-sm-8">
 			<div class="panelCard">
@@ -65,7 +65,7 @@
 				<span class="gp-bals"> <?php echo '<sup>' . $wallet->the_wallet_currency . '</sup> ' . $wallet->the_wallet_balance; ?></span>
 				<span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
 				<div class="topUp-withdraw">
-					<span class="wallet-switcher" data-show="wallet-topup">Top Up</span>
+					<span onclick="goToTopUp()">Top Up</span>
 					<span>Withdraw</span>
 				</div>
 			</div>
@@ -121,158 +121,6 @@
 						<span><span class="entypo-record out"></span> Money out</span>
 					</div>
 					<div id="line-chart" class="morrischart" style="height: 450px; position: relative;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row wallet-switched wallet-transacts" style="display: none;">
-		<div class="col-sm-12">
-			<div class="panelCard">
-				<?php foreach ($transactions as $key => $date) : ?>
-					<span>
-						<?php
-						if ($key == date('j\<\s\u\p\>S\<\/\s\u\p\> M', time())) {
-							echo 'Today';
-						} else if ($key == date('j\<\s\u\p\>S\<\/\s\u\p\> M', strtotime("-1 days"))) {
-							echo 'Yesterday';
-						} else {
-							echo $key;
-						}
-						?>
-					</span>
-					<table class="table transaction-table table-hover">
-						<?php foreach ($date as $transaction) : ?>
-							<tr>
-								<td class="transaction-details">
-									<span class="transaction-title"><?php echo $transaction['the_transaction_purpose']; ?></span>
-									<?php if ($transaction['the_transaction_status'] == 1) : ?>
-										<span class="transaction-status complete">
-											complete
-										</span>
-									<?php else : ?>
-										<span class="transaction-status">
-											failed
-										</span>
-									<?php endif; ?>
-								</td>
-								<td class="transaction-td">
-									<span class="transaction-amount <?php if ($transaction['the_transaction_type'] == 1) {
-																		echo "complete";
-																	} ?>"><?php echo $transaction['the_transaction_currency'] . ' ' . number_format($transaction['the_transaction_amount']) ?></span>
-									<span class="transaction-time"><?php echo date('h:i:s a', $transaction['the_transaction_date']); ?></span>
-								</td>
-							</tr>
-						<?php endforeach; ?>
-					</table>
-					<hr />
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</div>
-	<div class="wallet-switched wallet-topup" style="display: none;">
-		<div class="topUpPanel">
-			<span class="entypo-left-thin back-text-arrow-buttons wallet-switcher" data-show="wallet-overview"> Back to wallet</span>
-			<div class="col-sm-12 panelCard">
-				<div class="col-sm-3"></div>
-				<div class="col-sm-6">
-					<p class="tu-title">Topup your <?php echo $wallet->the_wallet_currency; ?> wallet</p>
-					<div class="tu-from-this">
-						<div class="tu-amount-details">
-							<span>Add</span>
-							<input type="number" class="tu-amount" value="1000" />
-						</div>
-						<div class="tu-wallet-details" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
-							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-							<span><?php echo $wallet->the_wallet_currency; ?></span>
-							<span class="entypo-down-open" style="color: #F7F7F9;"></span>
-						</div>
-					</div>
-					<div class="tu-to-this">
-						<span>Paying with</span>
-						<div class="tu-wallet-details twd" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
-							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-							<span><?php echo $wallet->the_wallet_currency; ?></span>
-							<span class="entypo-down-open"></span>
-						</div>
-						<div class="tu-currency-drop">
-							<input type="search" name="sCurrency" data-wallet="<?php echo $wallet->the_wallet_currency; ?>" placeholder="Search currency" />
-							<?php foreach ($currencies as $key => $currency) : ?>
-								<div class="currency-select" onclick="change_tu_currency('<?php echo $wallet->the_wallet_currency; ?>','<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
-									<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-									<span><?php echo $currency['currency']; ?></span>
-								</div>
-							<?php endforeach; ?>
-						</div>
-					</div>
-					<div class="tu-bottom">
-						<div class="tu-bottom-breakdown">
-							<div class="bd bdPay">
-								<span class="breakDownTitle">You will pay</span>
-								<span class="breakDownValue">1,616.41 KES</span>
-							</div>
-							<div class="bd bdFee">
-								<span class="breakDownTitle">Total Fees</span>
-								<span class="breakDownValue">-1,616.41 KES</span>
-							</div>
-							<div class="bd bdConvert">
-								<span class="breakDownTitle">Amount we'll convert</span>
-								<span class="breakDownValue">1,616.41 KES</span>
-							</div>
-							<div class="bd bdRate">
-								<span class="breakDownTitle">Guaranteed rate (for 20 hours)</span>
-								<span class="breakDownValue">0.107</span>
-							</div>
-						</div>
-						<button class="goToPayChoice">SEND MONEY</button>
-					</div>
-				</div>
-				<div class="col-sm-3"></div>
-			</div>
-		</div>
-		<div class="col-sm-12 panelCard payChoicePanel">
-			<div class="col-sm-7">
-				<div class="payChoice">
-					<span class="entypo-left-thin ctdp-title"> Back</span>
-					<div onclick="payChoice('debitCard')" class="pc-debitCard">
-						<span class="entypo-credit-card"></span>
-						<div class="payChoiceDescription">
-							<span>Debit Card</span>
-							<span>Top up your wallet with your debit card. Arrives immediately</span>
-						</div>
-						<span class="pc-checkbox entypo-dot"></span>
-					</div>
-				</div>
-				<div class="confirmTransDetailsPanel">
-
-				</div>
-			</div>
-			<div class="col-sm-5">
-				<div class="tu-trans-details">
-					<span>Details</span>
-					<div class="bd bdPay">
-						<span class="breakDownTitle">You will pay</span>
-						<span class="breakDownValue">1,616.41 KES</span>
-					</div>
-					<div class="bd bdFee">
-						<span class="breakDownTitle">Total Fees</span>
-						<span class="breakDownValue">-1,616.41 KES</span>
-					</div>
-					<div class="bd bdConvert">
-						<span class="breakDownTitle">Amount we'll convert</span>
-						<span class="breakDownValue">1,616.41 KES</span>
-					</div>
-					<div class="bd bdRate">
-						<span class="breakDownTitle">Guaranteed rate (for 20 hours)</span>
-						<span class="breakDownValue">0.107</span>
-					</div>
-					<div class="bd bdGet">
-						<span class="breakDownTitle">You get</span>
-						<span class="breakDownValue">1,616.41 KES</span>
-					</div>
-					<div class="bd bdDate">
-						<span class="breakDownTitle">Should arrive</span>
-						<span class="breakDownValue">in a few seconds</span>
-					</div>
 				</div>
 			</div>
 		</div>

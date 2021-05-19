@@ -495,10 +495,7 @@ if (page.includes('/wallet/view') === true) {
 
     function customPayments(code) {
         console.log(code)
-
-        if (code !== 'KES') {
-            $('.pc-mPesa').remove()
-        }
+        $('.pc-mPesa').remove()
 
         if (code === 'KES') {
             $(`
@@ -519,11 +516,6 @@ if (page.includes('/wallet/view') === true) {
         $('.pc-' + choice).addClass('chosen')
         customPaymentsPanel(choice)
         return;
-    }
-
-    function backToPayChoice() {
-        $('.payChoice').css('display', 'flex')
-        $('.confirmTransDetailsPanel').css('display', 'none')
     }
 
     function customPaymentsPanel(choice) {
@@ -577,21 +569,23 @@ if (page.includes('/wallet/view') === true) {
         })
     }
 
-    customPayments(active_wallet_currency)
+    function paybill(MpesaCode, level) {
+        let paybill_url = base_url + `mpesa/paybill/${MpesaCode}/${active_wallet_id}/user_${active_user_id}_wallet_${active_wallet_currency}_topup/${level}`;
 
-    $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {
-        $('.currency-drop').show()
-        $('.currency-drop').css('display', 'flex')
-        $('.main-content').on('click', () => { $('.currency-drop').hide() })
-    })
+        $.ajax({
+            url: paybill_url,
+            success: (response) => {
+                console.log(response)
+            }
+        })
+    }
 
-    $('.tu-to-this .tu-wallet-details').on('mouseover', () => {
+    function currency_dropper(wallet_code) {
         $('.tu-currency-drop').show()
         $('.tu-currency-drop').css('display', 'flex')
         $('.tu-currency-drop input').on('click', () => { return false; })
         $('.tu-currency-drop input').on('input', () => {
             let search_term = $('.tu-currency-drop input').val()
-            let wallet_code = $('.tu-currency-drop input').data('wallet')
             $.ajax({
                 url: base_url + 'p/search_currency/' + search_term,
                 success: (currencies) => {
@@ -613,22 +607,40 @@ if (page.includes('/wallet/view') === true) {
             })
         })
         $('.main-content').on('click', () => { $('.currency-drop').hide() })
-    })
+    }
 
-    $('.goToPayChoice').on('click', () => {
-        $('.topUpPanel').css('display', 'none')
-        $('.payChoicePanel').css('display', 'table')
-    })
+    function goToPayChoice() {
+        $.ajax({
+            url: base_url + 'p/static_files/wallet/paychoice',
+            success: (data) => {
+                $('.wallet-topup').html(data)
+            },
+            error: (data) => {
+                $('.wallet-topup').html('')
+                console.error(data)
+            }
+        })
+    }
 
-    $('.payChoice .ctdp-title').on('click', () => {
-        $('.topUpPanel').css('display', 'block')
-        $('.payChoicePanel').css('display', 'none')
-    })
+    function goToTopUp() {
+        $.ajax({
+            url: base_url + 'p/static_files/wallet/topup',
+            success: (data) => {
+                $('.tuPageContent').html(data)
+            },
+            error: (data) => {
+                $('.tuPageContent').html('')
+                console.error(data)
+            }
+        })
+    }
 
-    $('.wallet-switcher').on('click', function () {
-        $(this).addClass('entypo-current')
-        $('.wallet-switched').hide(100)
-        $('.' + $(this).attr('data-show')).show(400)
+    customPayments(active_wallet_currency)
+
+    $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {
+        $('.currency-drop').show()
+        $('.currency-drop').css('display', 'flex')
+        $('.main-content').on('click', () => { $('.currency-drop').hide() })
     })
 }
 

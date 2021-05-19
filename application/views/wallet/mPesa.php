@@ -1,4 +1,4 @@
-<span class="entypo-left-thin ctdp-title" onclick="backToPayChoice()"> Pay another way</span>
+<span class="entypo-left-thin ctdp-title" onclick="goToPayChoice()"> Pay another way</span>
 <div class="ctpd-custom ctdp-mPesa">
     <span class="payWith">Pay with MPesa</span>
     <span>Enter MPesa phone number</span>
@@ -19,6 +19,6 @@
         <li>Enter your MPesa Pin and pay</li>
         <li>Use the transaction code to cinfirm payment below</li>
     </ul>
-    <input type="text" placeholder="PDT7DMW2U3" value="">
-    <button class="ctdp-paybill">CONFIRM PAYMENT</button>
+    <input type="text" class="paybillConfirmationCode" placeholder="PDT7DMW2U3" value="">
+    <button class="ctdp-paybill" onclick="paybill($('.paybillConfirmationCode').val(), 1)">CONFIRM PAYMENT</button>
 </div>
