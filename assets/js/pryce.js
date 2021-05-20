@@ -474,6 +474,7 @@ if (page.includes('/wallet/create') === true) {
 
 
 if (page.includes('/wallet/view') === true) {
+
     function change_detail_currency(currency, flag) {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
         $('.transfer-to-this .transfer-wallet-details span:first').html(currency)
@@ -481,6 +482,7 @@ if (page.includes('/wallet/view') === true) {
     }
 
     function change_tu_currency(wallet_code, code, currency, flag) {
+        topup_currency = code
         $('.tu-bottom-breakdown').css('display', 'none')
         if (wallet_code !== code) {
             $('.tu-bottom-breakdown').css('display', 'flex')
@@ -490,14 +492,13 @@ if (page.includes('/wallet/view') === true) {
         $('.twd span:first').html(currency)
         $('.tu-currency-drop').hide()
         $('.main-content').on('click', () => { $('.tu-currency-drop').hide() })
-        customPayments(code)
     }
 
-    function customPayments(code) {
-        console.log(code)
+    function customPayments() {
+        console.log(topup_currency)
         $('.pc-mPesa').remove()
 
-        if (code === 'KES') {
+        if (topup_currency === 'KES') {
             $(`
                 <div onclick="payChoice('mPesa')" class="pc-mPesa">
                     <span class="entypo-credit-card"></span>
@@ -588,10 +589,10 @@ if (page.includes('/wallet/view') === true) {
             let search_term = $('.tu-currency-drop input').val()
             $.ajax({
                 url: base_url + 'p/search_currency/' + search_term,
-                success: (currencies) => {
-                    currencies = JSON.parse(currencies)
+                success: (found_currencies) => {
+                    found_currencies = JSON.parse(found_currencies)
                     $('.currency-select').remove()
-                    $(currencies).each((key, currency) => {
+                    $(found_currencies).each((key, currency) => {
                         let currency_name = currency['currency'];
                         let currency_code = currency['code'];
                         let currency_image = currency_code.substring(0, 2).toLowerCase()
@@ -623,14 +624,18 @@ if (page.includes('/wallet/view') === true) {
     }
 
     function goToTopUp() {
+        let data = [];
+        data.push(wallet)
         $.ajax({
             url: base_url + 'p/static_files/wallet/topup',
-            success: (data) => {
-                $('.tuPageContent').html(data)
+            data: data,
+            method: 'POST',
+            success: (response) => {
+                $('.tuPageContent').html(response)
             },
-            error: (data) => {
+            error: (response) => {
                 $('.tuPageContent').html('')
-                console.error(data)
+                console.error(response)
             }
         })
     }

@@ -1169,10 +1169,6 @@ body {
     padding: 0px !important;
 }
 
-.payChoicePanel {
-    display: none;
-}
-
 .payChoice {
     display       : flex;
     flex-direction: column;

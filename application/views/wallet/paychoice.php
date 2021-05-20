@@ -1,3 +1,6 @@
+<script>
+    customPayments()
+</script>
 <div class="col-sm-12 panelCard payChoicePanel">
     <div class="col-sm-7">
         <div class="payChoice">

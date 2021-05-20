@@ -4,7 +4,7 @@
     <span>Enter MPesa phone number</span>
     <input type="number" class="ctdp-mpesa-number" placeholder="254 712345678" value="">
     <label class="label_save_this"><input type="checkbox" name="save_number" class="save_number" />Make this number the primary mpesa number?</label>
-    <button onclick="stk($('.ctdp-mpesa-number').val(), $('.save_number').val(), $('.twd').attr('data-currency'), $('.tu-amount').val())" class="ctdp-stk">PAY NOW</button>
+    <button onclick="stk($('.ctdp-mpesa-number').val(), $('.save_number').val(), topup_currency,topup_amount)" class="ctdp-stk">PAY NOW</button>
 
     <span class="divider"></span>
     <span class="dividerOr">or</span>

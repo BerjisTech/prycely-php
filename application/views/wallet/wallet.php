@@ -1,9 +1,15 @@
 <script>
-	const active_user_id = '<?php echo $this->session->the_person_id; ?>';
-	const active_wallet_id = '<?php echo $wallet->the_wallet_id; ?>';
-	const active_wallet_currency = '<?php echo $wallet->the_wallet_currency; ?>';
-	const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg';
-	const active_country_id = '<?php echo $this->session->the_person_id; ?>';
+	const active_user_id = '<?php echo $this->session->the_person_id; ?>'
+	const active_wallet_id = '<?php echo $wallet->the_wallet_id; ?>'
+	const active_wallet_currency = '<?php echo $wallet->the_wallet_currency; ?>'
+	const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg'
+	const active_country_id = '<?php echo $this->session->the_person_id; ?>'
+	const wallet = <?php echo json_encode($wallet); ?>;
+	const currencies = <?php echo json_encode($currencies); ?>;
+
+	let topup_currency = active_wallet_currency
+	let topup_amount = 1000
+	$('.tu-amount').val(topup_amount)
 </script>
 <div class="row tuPageContent">
 	<div class="row wallet-switched wallet-overview">

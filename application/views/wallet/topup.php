@@ -1,36 +1,54 @@
-<div class="wallet-switched wallet-topup" style="display: none;">
+<script>
+    $('.tu-wallet-details').attr('data-currency', active_wallet_currency)
+    $('.tu-title').html(`Topup your ${active_wallet_currency} wallet`)
+    $('.tu-wallet-details img').attr('src', active_flag_id)
+    $('.tu-wallet-details span:first').html(active_wallet_currency)
+    $('.twd').attr('onmouseover', `currency_dropper('${active_wallet_currency}')`)
+    $('.twd img').attr('src', active_flag_id)
+    $('.twd span:first').html(active_wallet_currency)
+    $('.sCurrency').attr('data-wallet', `${active_wallet_currency}`)
+    $('.currency-select').remove()
+    $(currencies).each((key, currency) => {
+        let currency_name = currency.currency;
+        let currency_code = currency.code;
+        let currency_image = currency_code.substring(0, 2).toLowerCase()
+
+        $('.tu-currency-drop').append(`
+                        <div class="currency-select" onclick="change_tu_currency('${active_wallet_currency}','${currency_code}', '${currency_name}', '${base_url}assets/images/flags/${currency_image}.svg')">
+                            <img src="${base_url}assets/images/flags/${currency_image}.svg" />
+                            <span>${currency_name}</span>
+                        </div>
+                        `)
+    })
+</script>
+
+<div class="wallet-switched wallet-topup">
     <div class="topUpPanel">
-        <span class="entypo-left-thin back-text-arrow-buttons wallet-switcher" data-show="wallet-overview"> Back to wallet</span>
+        <span class="entypo-left-thin back-text-arrow-buttons wallet-switcher" data-show="wallet-overview" onclick="window.location.reload()"> Back to wallet</span>
         <div class="col-sm-12 panelCard">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
-                <p class="tu-title">Topup your <?php echo $wallet->the_wallet_currency; ?> wallet</p>
+                <p class="tu-title">Topup your wallet</p>
                 <div class="tu-from-this">
                     <div class="tu-amount-details">
                         <span>Add</span>
-                        <input type="number" class="tu-amount" value="1000" />
+                        <input type="number" class="tu-amount" onchange="topup_amount = $(this).val()" value="1000" />
                     </div>
-                    <div class="tu-wallet-details" data-currency="<?php echo $wallet->the_wallet_currency; ?>">
-                        <img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-                        <span><?php echo $wallet->the_wallet_currency; ?></span>
+                    <div class="tu-wallet-details" data-currency="">
+                        <img src="" />
+                        <span></span>
                         <span class="entypo-down-open" style="color: #F7F7F9;"></span>
                     </div>
                 </div>
                 <div class="tu-to-this">
                     <span>Paying with</span>
-                    <div class="tu-wallet-details twd" onmouseover="currency_dropper('<?php echo $wallet->the_wallet_currency; ?>')">
-                        <img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-                        <span><?php echo $wallet->the_wallet_currency; ?></span>
+                    <div class="tu-wallet-details twd" onmouseover="">
+                        <img src="" />
+                        <span></span>
                         <span class="entypo-down-open"></span>
                     </div>
                     <div class="tu-currency-drop">
-                        <input type="search" name="sCurrency" data-wallet="<?php echo $wallet->the_wallet_currency; ?>" placeholder="Search currency" />
-                        <?php foreach ($currencies as $key => $currency) : ?>
-                            <div class="currency-select" onclick="change_tu_currency('<?php echo $wallet->the_wallet_currency; ?>','<?php echo $currency['code']; ?>', '<?php echo $currency['currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
-                                <img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
-                                <span><?php echo $currency['currency']; ?></span>
-                            </div>
-                        <?php endforeach; ?>
+                        <input type="search" name="sCurrency" data-wallet="" placeholder="Search currency" />
                     </div>
                 </div>
                 <div class="tu-bottom">
