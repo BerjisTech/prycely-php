@@ -640,6 +640,19 @@ if (page.includes('/wallet/view') === true) {
         })
     }
 
+    function goToWithdraw() {
+        $.ajax({
+            url: base_url + 'p/static_files/wallet/withdraw',
+            success: (response) => {
+                $('.tuPageContent').html(response)
+            },
+            error: (response) => {
+                $('.tuPageContent').html('')
+                console.error(response)
+            }
+        })
+    }
+
     customPayments(active_wallet_currency)
 
     $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {

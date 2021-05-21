@@ -72,7 +72,7 @@
 				<span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
 				<div class="topUp-withdraw">
 					<span onclick="goToTopUp()">Top Up</span>
-					<span>Withdraw</span>
+					<span onclick="goToWithdraw()">Withdraw</span>
 				</div>
 			</div>
 		</div>

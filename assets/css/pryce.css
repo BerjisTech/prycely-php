@@ -1333,3 +1333,62 @@ body {
 .label_save_this input {
     width: 20px;
 }
+
+.withdrawChoice {
+    display       : flex;
+    flex-direction: column;
+    width         : 100%;
+}
+
+.withdrawChoice [class*="wd-"] {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    cursor         : pointer;
+    border-bottom  : 1px solid rgba(190, 190, 190, 1);
+    padding        : 15px 10px;
+    transition     : all 0.56s;
+}
+
+.withdrawChoice [class*="wd-"]:first-of-type {
+    border-top: 1px solid rgba(190, 190, 190, 1);
+}
+
+.withdrawChoice [class*="wd-"]:hover {
+    background: #F1F3FF;
+}
+
+.withdrawChoice [class*="wd-"] [class*="entypo-"] {
+    border         : 1px solid rgba(190, 190, 190, 1);
+    border-radius  : 100%;
+    width          : 35px;
+    height         : 35px;
+    align-items    : center;
+    justify-content: center;
+    display        : flex;
+    cursor         : pointer;
+    color          : rgba(190, 190, 190, 1);
+}
+
+.wd-checkbox {
+    font-size : 0px;
+    transition: all 0.56s;
+}
+
+.chosen .wd-checkbox {
+    color    : #7D2AE8;
+    font-size: 80px;
+    border   : 3px solid #7D2AE8;
+}
+
+.withdrawChoice [class*="wd-"] .withdrawChoiceDescription {
+    display       : flex;
+    flex-direction: column;
+    margin        : 10px;
+    flex          : 1;
+}
+
+.withdrawChoiceDescription span:first-of-type {
+    font-weight: 600;
+    font-size  : larger;
+}
