@@ -1392,3 +1392,44 @@ body {
     font-weight: 600;
     font-size  : larger;
 }
+
+.withdrawPanel {
+    display       : flex;
+    flex-direction: column;
+}
+
+.withdrawForm {
+    display       : flex;
+    flex-direction: column;
+}
+
+.withdrawForm input {
+    border-radius: 5px !important;
+    border       : 2px solid #828486;
+    padding      : 0px 20px !important;
+    font-weight  : 600 !important;
+    text-align   : left;
+    height       : 50px;
+    margin-top   : 10px;
+    margin-bottom: 20px;
+}
+
+.withdrawProceedCancel {
+    display        : flex;
+    align-items    : baseline;
+    justify-content: space-between;
+}
+
+.withdrawButton {
+    width          : 50%;
+    height         : 50px;
+    text-align     : center;
+    background     : #7D2AE8;
+    color          : #ffffff;
+    font-weight    : 600;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    cursor         : pointer;
+    border         : 1px solid #7D2AE8;
+}

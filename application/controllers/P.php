@@ -56,4 +56,9 @@ class P extends CI_Controller
 	{
 		return $this->load->view($folder . '/' . $file, TRUE);
 	}
+
+	public function static_sub_files($folder, $sub, $file)
+	{
+		return $this->load->view($folder . '/' . $sub . '/' . $file, TRUE);
+	}
 }

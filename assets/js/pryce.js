@@ -524,7 +524,7 @@ if (page.includes('/wallet/view') === true) {
         console.log(choice)
 
         $.ajax({
-            url: base_url + 'p/static_files/wallet/' + choice,
+            url: base_url + 'p/static_sub_files/wallet/topup/' + choice,
             success: (data) => {
                 $('.confirmTransDetailsPanel').html(data)
             },
@@ -643,6 +643,19 @@ if (page.includes('/wallet/view') === true) {
     function goToWithdraw() {
         $.ajax({
             url: base_url + 'p/static_files/wallet/withdraw',
+            success: (response) => {
+                $('.tuPageContent').html(response)
+            },
+            error: (response) => {
+                $('.tuPageContent').html('')
+                console.error(response)
+            }
+        })
+    }
+
+    function withdrawChoice(choice) {
+        $.ajax({
+            url: base_url + 'p/static_sub_files/wallet/withdraw/' + choice,
             success: (response) => {
                 $('.tuPageContent').html(response)
             },
