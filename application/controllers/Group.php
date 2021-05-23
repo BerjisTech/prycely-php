@@ -58,7 +58,8 @@ class Group extends CI_Controller
 
     public function create()
     {
-        $this->load->view('group/create');
+        $data['currencies'] = $this->db->get('currency')->result_array();
+        $this->load->view('group/create', $data);
     }
 
     public function make_first()

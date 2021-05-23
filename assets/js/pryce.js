@@ -886,10 +886,10 @@ if (page.includes('/group/g/') === true) {
 }
 
 if (page.includes('/group/create') === true) {
-    let the_group = { 'type': '', 'name': '', 'goal': '', 'currency': '', 'description': '' }
+    let the_group_type = '', the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_description = ''
 
     $('.user_type_chooser').on('click', function () {
-        the_group.type = $(this).attr('data-type')
+        the_group_type = $(this).attr('data-type')
         $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
         $('.yourself').hide()
         $('.the_name').show()
@@ -906,10 +906,10 @@ if (page.includes('/group/create') === true) {
         $(this).html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
 
         if (this_step == 'name') {
-            the_group.name = $('input[name="group_name"]').val()
-            if (the_group.email == '') {
+            the_group_name = $('input[name="group_name"]').val()
+            if (the_group_name == '') {
                 $(this).html('NEXT')
-                $('<p class="error bg-danger" style="padding: 10px;">You have to type your email first</p>').insertBefore($('input[name="group_name"]'))
+                $('<p class="error bg-danger" style="padding: 10px;">You have to choose a group name first</p>').insertBefore($('input[name="group_name"]'))
             } else {
                 $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
                 $('.the_name').hide()
@@ -919,26 +919,22 @@ if (page.includes('/group/create') === true) {
             }
         }
         if (this_step == 'description') {
-            the_group.description = $('textarea[name="group_description"]').val()
-            if (the_group.description == '') {
-                $(this).html('LET\'S TRY THAT AGAIN')
-                $('<p class="error bg-danger" style="padding: 10px;">Kindly check that you\'ve typed the code</p>').insertBefore($('textarea[name="group_description"]'))
-            }
-            else {
-                $('.right_home_panel video').attr('src', base_url + 'assets/video/register-password-intro.mp4')
-                $('.the_description').hide()
-                $('.the_goal').show()
-                $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
-                window.location.replace(base_url + 'group/create#currency')
-            }
-        }
-        if (this_step == 'goal') {
-            the_group.currency = $('input[name="group_goal"]').val()
-            the_group.goal = $('input[name="group_goal"]').val()
+            the_group_description = $('textarea[name="group_description"]').val()
 
-            if (the_group.goal == '') {
+            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-password-intro.mp4')
+            $('.the_description').hide()
+            $('.the_goal').show()
+            $(this).html('NEXT')
+            window.location.replace(base_url + 'group/create#currency')
+        }
+
+        if (this_step == 'goal') {
+            the_group_currency = $('input[name="group_goal"]').val()
+            the_group_goal = $('input[name="group_goal"]').val()
+
+            if (the_group_goal == '') {
                 $(this).html('LET\'S TRY THAT AGAIN')
-                $('<p class="error bg-danger" style="padding: 10px;">Empty password</p>').insertBefore($('input[name="user_password"]'))
+                $('<p class="error bg-danger" style="padding: 10px;">Empty password</p>').insertBefore($('input[name="group_goal"]'))
                 return false
             }
 
@@ -947,24 +943,31 @@ if (page.includes('/group/create') === true) {
 
     $('.back_link').on('click', function () {
         let this_step = $(this).attr('data-step')
+
         if (this_step == 'name') {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-country-loop.mp4')
             $('.yourself').show()
             $('.the_name').hide()
-            window.location.replace(base_url + 'createaccount#type')
+            window.location.replace(base_url + 'group/create#type')
         }
         if (this_step == 'description') {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
             $('.the_name').show()
             $('.the_description').hide()
-            window.location.replace(base_url + 'createaccount#email')
+            window.location.replace(base_url + 'group/create#email')
         }
         if (this_step == 'goal') {
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
             $('.the_description').show()
             $('.the_goal').hide()
-            window.location.replace(base_url + 'createaccount#code')
+            window.location.replace(base_url + 'group/create#code')
         }
+    })
+
+    $('.goal-details').on('mouseover', () => {
+        $('.goal-currency-drop').show()
+        $('.goal-currency-drop').css('display', 'flex')
+        $('body').on('click', () => { $('.goal-currency-drop').hide() })
     })
 }
 

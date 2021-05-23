@@ -23,6 +23,19 @@
 <body>
     <script>
         let base_url = '<?php echo base_url(); ?>'
+        const currencies = <?php echo json_encode($currencies); ?>;
+
+        $(currencies).each((key, currency) => {
+            let currency_name = currency.currency;
+            let currency_code = currency.code;
+            let currency_image = currency_code.substring(0, 2).toLowerCase()
+
+            $(`<div class="currency-select" onclick="change_group_currency('${currency_code}', '${currency_name}', '${base_url}assets/images/flags/${currency_image}.svg')">
+                    <img src="${base_url}assets/images/flags/${currency_image}.svg" />
+                    <span>${currency_name}</span>
+                </div>
+            `).insertAfter($('[name="sCurrency"]'))
+        })
     </script>
 
     <div class="main_content">
@@ -98,28 +111,23 @@
                     <div class="col-xs-12 the_goal" style="display: none;">
                         <h3 class="the_title">Set a Goal</h3>
                         <span class="the_subtitle">How much do you and your group members intend to raise? This helps everyone keep track of the investment or saings progress</span>
-                        <div class="the_email_input">
-                            <span class="the_email_input_title">Group Goal</span>
-                            <div style="width: 100%;" class="input-group">
-                                <select>
-                                    <option value="USD" data-thumbnail="<?php echo base_url('assets/images/flags/us.svg'); ?>"> USD</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/gb.svg'); ?>"> GBP</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/ca.svg'); ?>"> CAD</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/ke.svg'); ?>"> KES</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/jm.svg'); ?>"> JMD</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/au.svg'); ?>"> AUD</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/nz.svg'); ?>"> NZD</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/cn.svg'); ?>"> CNY</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/jp.svg'); ?>"> JPY</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/ug.svg'); ?>"> UGS</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/tz.svg'); ?>"> TZS</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/eg.svg'); ?>"> EGP</option>
-                                    <option value="GBP" data-thumbnail="<?php echo base_url('assets/images/flags/za.svg'); ?>"> SAR</option>
-                                </select>
-                                <input style="width: auto;" autocomplete="FALSE" type="number" placeholder="0.00" name="group_goal" />
+                        <div class="goal-block-panel">
+                            <div class="goal-block">
+                                <div class="goal-details">
+                                    <img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
+                                    <span><?php echo $currencies[0]['code']; ?></span>
+                                    <span class="entypo-down-open" <?php if (count($currencies) == 1) {
+                                                                        echo 'style="color: #F7F7F9;"';
+                                                                    } ?>></span>
+                                </div>
+                                <div class="goal-amount-details">
+                                    <span>They receive</span>
+                                    <input type="number" name="group_goal" value="1000" />
+                                </div>
+                                <div class="goal-currency-drop">
+                                    <input type="search" name="sCurrency" data-wallet="" placeholder="Search currency" />
+                                </div>
                             </div>
-                            <span class="resend_code"><span class="fal fa fa-info-circle"></span> Make sure your password is at least 8 characters long and avoid personal details like your date of birth, pet name, nickname or simple patterns like 1234 or 0000</span>
-                            <button class="ca_next" data-step="goal" type="submit">CREATE GROUP <span class="fal fa fa-arrow-next"></span></button>
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="goal"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
