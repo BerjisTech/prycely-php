@@ -9,6 +9,8 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     <link rel="stylesheet" href="<?php echo base_url('assets/css/create_account.css?stamp=' . time()); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/css/create_account.mobile.css?stamp=' . time()); ?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/pryce.css?stamp=' . time()); ?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/pryce.mobile.css?stamp=' . time()); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/css/font-icons/entypo/css/entypo.css'); ?>" id="style-resource-2">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/font-icons/font-awesome/css/font-awesome.min.css'); ?>" id="style-resource-1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic" id="style-resource-3">
@@ -19,6 +21,9 @@
 </head>
 
 <body>
+    <script>
+        let base_url = '<?php echo base_url(); ?>'
+    </script>
 
     <div class="main_content">
         <div class="row main_row">
@@ -36,7 +41,7 @@
                         <div class="user_type">
                             <table>
                                 <tbody>
-                                    <tr class="user_type_chooser" data-type="company">
+                                    <tr class="user_type_chooser" data-type="personal">
                                         <td><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></td>
                                         <td class="user-type">PRYCELY<span>Casual savings between close friends. 250 Members Max</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
@@ -47,7 +52,7 @@
                         <div class="user_type">
                             <table>
                                 <tbody>
-                                    <tr class="user_type_chooser" data-type="freelancer">
+                                    <tr class="user_type_chooser" data-type="sacco">
                                         <td><img src="<?php echo base_url('assets/images/freelancer.jpg'); ?>" /></td>
                                         <td class="user-type">SACCO<span>Official Savings. Plus project management. 500 Max</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
@@ -58,7 +63,7 @@
                         <div class="user_type">
                             <table>
                                 <tbody>
-                                    <tr class="user_type_chooser" data-type="personal">
+                                    <tr class="user_type_chooser" data-type="wash">
                                         <td><img src="<?php echo base_url('assets/images/logo.png') ?>" /></td>
                                         <td class="user-type">Wash Wash<span>Laundering. Unlimited members. We are open to money laundering😜</span></td>
                                         <td><span class="fa fa-chevron-right"></span></td>
@@ -68,29 +73,29 @@
                         </div>
                         <span class="go_back" onclick="window.history.back();"><span class="fal fa fa-arrow-left"></span> Go Back</span>
                     </div>
-                    <div class="col-xs-12 the_email" style="display: none;">
+                    <div class="col-xs-12 the_name" style="display: none;">
                         <h3 class="the_title">Choose Group Name</h3>
                         <span class="the_subtitle">They don't have to be unique. Just something that describes your group</span>
                         <div class="the_email_input">
                             <span class="the_email_input_title">Group Name</span>
                             <input autocomplete="FALSE" type="text" placeholder="The Money Group" class="form_control" name="group_name" />
-                            <button type="submit" class="ca_next" data-step="email">NEXT <span class="fal fa fa-arrow-next"></span></button>
+                            <button type="submit" class="ca_next" data-step="name">NEXT <span class="fal fa fa-arrow-next"></span></button>
                             <span class="agreement">By clicking on submit you agree to out <a href="<?php echo base_url('privacy_policy'); ?>">Privacy Policy</a> applicable to the processing of your account</span>
                         </div>
-                        <span class="go_back"><a href="#" class="back_link" data-step="email"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" class="back_link" data-step="name"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-xs-12 the_code" style="display: none;">
-                        <h3 class="the_title">Add A Group Description</h3>
-                        <span class="the_subtitle">Something short about this group.<span class="email_with_code"></span> to confirm your email address</span>
+                    <div class="col-xs-12 the_description" style="display: none;">
+                        <h3 class="the_title">Add A Group Goal</h3>
+                        <span class="the_subtitle">A goal is a milestone and can be one of many you will hit. It's the amount of cash you intend to raise.</span>
                         <div class="the_email_input">
-                            <span class="the_email_input_title">Group Description</span>
+                            <span class="the_email_input_title">Group Goal</span>
                             <textarea autocomplete="FALSE" placeholder="Write here" class="form_control" name="group_description"></textarea>
-                            <span class="resend_code"><span class="fal fa fa-info-circle"></span> Didn't get any code? <a href="<?php echo base_url('privacy_policy'); ?>">Send a new code</a></span>
-                            <button class="ca_next" data-step="code" type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
+                            <span class="resend_code"><span class="fal fa fa-info-circle"></span> This goal can be edited later</span>
+                            <button class="ca_next" data-step="description" type="submit">NEXT <span class="fal fa fa-arrow-next"></span></button>
                         </div>
-                        <span class="go_back"><a href="#" class="back_link" data-step="code"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" class="back_link" data-step="description"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-xs-12 the_password" style="display: none;">
+                    <div class="col-xs-12 the_goal" style="display: none;">
                         <h3 class="the_title">Set a Goal</h3>
                         <span class="the_subtitle">How much do you and your group members intend to raise? This helps everyone keep track of the investment or saings progress</span>
                         <div class="the_email_input">
@@ -114,9 +119,9 @@
                                 <input style="width: auto;" autocomplete="FALSE" type="number" placeholder="0.00" name="group_goal" />
                             </div>
                             <span class="resend_code"><span class="fal fa fa-info-circle"></span> Make sure your password is at least 8 characters long and avoid personal details like your date of birth, pet name, nickname or simple patterns like 1234 or 0000</span>
-                            <button class="ca_next" data-step="password" type="submit">CREATE GROUP <span class="fal fa fa-arrow-next"></span></button>
+                            <button class="ca_next" data-step="goal" type="submit">CREATE GROUP <span class="fal fa fa-arrow-next"></span></button>
                         </div>
-                        <span class="go_back"><a href="#" class="back_link" data-step="password"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
+                        <span class="go_back"><a href="#" class="back_link" data-step="goal"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                 </div>
             </div>

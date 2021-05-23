@@ -472,7 +472,6 @@ if (page.includes('/wallet/create') === true) {
     })
 }
 
-
 if (page.includes('/wallet/view') === true) {
 
     function change_detail_currency(currency, flag) {
@@ -672,6 +671,300 @@ if (page.includes('/wallet/view') === true) {
         $('.currency-drop').show()
         $('.currency-drop').css('display', 'flex')
         $('.main-content').on('click', () => { $('.currency-drop').hide() })
+    })
+}
+
+if (page.includes('/group/g/') === true) {
+
+    function change_detail_currency(currency, flag) {
+        $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
+        $('.transfer-to-this .transfer-wallet-details span:first').html(currency)
+        $('.currency-drop').hide()
+    }
+
+    function change_tu_currency(wallet_code, code, currency, flag) {
+        topup_currency = code
+        $('.tu-bottom-breakdown').css('display', 'none')
+        if (wallet_code !== code) {
+            $('.tu-bottom-breakdown').css('display', 'flex')
+        }
+        $('.twd').attr('data-currency', code)
+        $('.twd img').attr('src', flag)
+        $('.twd span:first').html(currency)
+        $('.tu-currency-drop').hide()
+        $('.main-content').on('click', () => { $('.tu-currency-drop').hide() })
+    }
+
+    function customPayments() {
+        console.log(topup_currency)
+        $('.pc-mPesa').remove()
+
+        if (topup_currency === 'KES') {
+            $(`
+                <div onclick="payChoice('mPesa')" class="pc-mPesa">
+                    <span class="entypo-credit-card"></span>
+                    <div class="payChoiceDescription">
+                        <span>MPESA</span>
+                        <span>Top up your wallet with your mPesa mobile account. Arrives immediately</span>
+                    </div>
+                    <span class="pc-checkbox entypo-dot"></span>
+                </div>
+            `).insertAfter('.payChoice .ctdp-title')
+        }
+    }
+
+    function payChoice(choice) {
+        $('.payChoice [class*="pc-"]').removeClass('chosen')
+        $('.pc-' + choice).addClass('chosen')
+        customPaymentsPanel(choice)
+        return;
+    }
+
+    function customPaymentsPanel(choice) {
+        $('.confirmTransDetailsPanel').html('<div></div>')
+        console.log(choice)
+
+        $.ajax({
+            url: base_url + 'p/static_sub_files/group/topup/' + choice,
+            success: (data) => {
+                $('.confirmTransDetailsPanel').html(data)
+            },
+            error: (data) => {
+                $('.confirmTransDetailsPanel').html('')
+                console.error(data)
+            }
+        })
+        confirmTransDetails(choice)
+    }
+
+    function confirmTransDetails(choice) {
+        $('.payChoice').css('display', 'none')
+        $('.confirmTransDetailsPanel').css('display', 'flex')
+    }
+
+    function stk(user_phone, user_save, user_currency, user_amount) {
+
+        $('.ctdp-mpesa-number').css('border-color', 'rgba(190, 190, 190, 1)')
+        $('.the_login_error').remove()
+        console.log(`${user_phone}, ${user_save}, ${user_currency}, ${user_amount}`)
+
+        if (user_phone == '') {
+            $('.ctdp-mpesa-number').css('border-color', '#FF0000')
+            $('<p class="the_login_error bg-danger" style="padding: 10px;">Please enter a valid phone number</p>').insertBefore($('.ctdp-mpesa-number'))
+            return false;
+        }
+
+        if (user_phone.length != 12) {
+            $('.ctdp-mpesa-number').css('border-color', '#FF0000')
+            $('<p class="the_login_error bg-danger" style="padding: 10px;">Please enter a valid mpesa number</p>').insertBefore($('.ctdp-mpesa-number'))
+            return false;
+        }
+
+        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/user_${active_user_id}_wallet_${active_wallet_currency}_topup/user_${active_user_id}_wallet_${active_wallet_currency}_topup/1/${active_wallet_id}/Wallet Top Up`;
+
+        console.log(stk_url)
+        $.ajax({
+            url: stk_url,
+            success: (response) => {
+                console.log(response)
+            }
+        })
+    }
+
+    function paybill(MpesaCode, level) {
+        let paybill_url = base_url + `mpesa/paybill/${MpesaCode}/${active_wallet_id}/user_${active_user_id}_wallet_${active_wallet_currency}_topup/${level}`;
+
+        $.ajax({
+            url: paybill_url,
+            success: (response) => {
+                console.log(response)
+            }
+        })
+    }
+
+    function currency_dropper(wallet_code) {
+        $('.tu-currency-drop').show()
+        $('.tu-currency-drop').css('display', 'flex')
+        $('.tu-currency-drop input').on('click', () => { return false; })
+        $('.tu-currency-drop input').on('input', () => {
+            let search_term = $('.tu-currency-drop input').val()
+            $.ajax({
+                url: base_url + 'p/search_currency/' + search_term,
+                success: (found_currencies) => {
+                    found_currencies = JSON.parse(found_currencies)
+                    $('.currency-select').remove()
+                    $(found_currencies).each((key, currency) => {
+                        let currency_name = currency['currency'];
+                        let currency_code = currency['code'];
+                        let currency_image = currency_code.substring(0, 2).toLowerCase()
+
+                        $('.tu-currency-drop').append(`
+                        <div class="currency-select" onclick="change_tu_currency('${wallet_code}','${currency_code}', '${currency_name}', '${base_url}assets/images/flags/${currency_image}.svg')">
+                            <img src="${base_url}assets/images/flags/${currency_image}.svg" />
+                            <span>${currency_name}</span>
+                        </div>
+                        `)
+                    })
+                }
+            })
+        })
+        $('.main-content').on('click', () => { $('.currency-drop').hide() })
+    }
+
+    function goToPayChoice() {
+        $.ajax({
+            url: base_url + 'p/static_files/group/paychoice',
+            success: (data) => {
+                $('.wallet-topup').html(data)
+            },
+            error: (data) => {
+                $('.wallet-topup').html('')
+                console.error(data)
+            }
+        })
+    }
+
+    function goToTopUp() {
+        $.ajax({
+            url: base_url + 'p/static_files/group/topup',
+            success: (response) => {
+                $('.switch-transactions').html(response)
+            },
+            error: (response) => {
+                $('.switch-transactions').html('')
+                console.error(response)
+            }
+        })
+    }
+
+    function goToTransactions() {
+        $.ajax({
+            url: base_url + 'p/static_files/group/transactions',
+            success: (response) => {
+                $('.switch-transactions').html(response)
+            },
+            error: (response) => {
+                $('.switch-transactions').html('')
+                console.error(response)
+            }
+        })
+    }
+
+    function goToWithdraw() {
+        $.ajax({
+            url: base_url + 'p/static_files/group/withdraw',
+            success: (response) => {
+                $('.switch-transactions').html(response)
+            },
+            error: (response) => {
+                $('.switch-transactions').html('')
+                console.error(response)
+            }
+        })
+    }
+
+    function withdrawChoice(choice) {
+        $.ajax({
+            url: base_url + 'p/static_sub_files/group/withdraw/' + choice,
+            success: (response) => {
+                $('.switch-transactions').html(response)
+            },
+            error: (response) => {
+                $('.switch-transactions').html('')
+                console.error(response)
+            }
+        })
+    }
+
+    customPayments(active_wallet_currency)
+
+    $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {
+        $('.currency-drop').show()
+        $('.currency-drop').css('display', 'flex')
+        $('.main-content').on('click', () => { $('.currency-drop').hide() })
+    })
+}
+
+if (page.includes('/group/create') === true) {
+    let the_group = { 'type': '', 'name': '', 'goal': '', 'currency': '', 'description': '' }
+
+    $('.user_type_chooser').on('click', function () {
+        the_group.type = $(this).attr('data-type')
+        $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
+        $('.yourself').hide()
+        $('.the_name').show()
+        window.location.replace(base_url + 'group/create#name')
+    })
+
+    $('.ca_next').on('click', function (e) {
+
+        e.preventDefault()
+        let this_step = $(this).data('step')
+        let html_fallback = $(this).html()
+        $('p.error').remove()
+
+        $(this).html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
+
+        if (this_step == 'name') {
+            the_group.name = $('input[name="group_name"]').val()
+            if (the_group.email == '') {
+                $(this).html('NEXT')
+                $('<p class="error bg-danger" style="padding: 10px;">You have to type your email first</p>').insertBefore($('input[name="group_name"]'))
+            } else {
+                $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+                $('.the_name').hide()
+                $('.the_description').show()
+                $(this).html('NEXT')
+                window.location.replace(base_url + 'group/create#goal')
+            }
+        }
+        if (this_step == 'description') {
+            the_group.description = $('textarea[name="group_description"]').val()
+            if (the_group.description == '') {
+                $(this).html('LET\'S TRY THAT AGAIN')
+                $('<p class="error bg-danger" style="padding: 10px;">Kindly check that you\'ve typed the code</p>').insertBefore($('textarea[name="group_description"]'))
+            }
+            else {
+                $('.right_home_panel video').attr('src', base_url + 'assets/video/register-password-intro.mp4')
+                $('.the_description').hide()
+                $('.the_goal').show()
+                $('button[data-step="' + this_step + '"]').html('LET\'S TRY THAT AGAIN')
+                window.location.replace(base_url + 'group/create#currency')
+            }
+        }
+        if (this_step == 'goal') {
+            the_group.currency = $('input[name="group_goal"]').val()
+            the_group.goal = $('input[name="group_goal"]').val()
+
+            if (the_group.goal == '') {
+                $(this).html('LET\'S TRY THAT AGAIN')
+                $('<p class="error bg-danger" style="padding: 10px;">Empty password</p>').insertBefore($('input[name="user_password"]'))
+                return false
+            }
+
+        }
+    })
+
+    $('.back_link').on('click', function () {
+        let this_step = $(this).attr('data-step')
+        if (this_step == 'name') {
+            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-country-loop.mp4')
+            $('.yourself').show()
+            $('.the_name').hide()
+            window.location.replace(base_url + 'createaccount#type')
+        }
+        if (this_step == 'description') {
+            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-email-intro.mp4')
+            $('.the_name').show()
+            $('.the_description').hide()
+            window.location.replace(base_url + 'createaccount#email')
+        }
+        if (this_step == 'goal') {
+            $('.right_home_panel video').attr('src', base_url + 'assets/video/register-confirm-email-loop.mp4')
+            $('.the_description').show()
+            $('.the_goal').hide()
+            window.location.replace(base_url + 'createaccount#code')
+        }
     })
 }
 

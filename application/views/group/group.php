@@ -1,3 +1,17 @@
+<script>
+    const active_user_id = '<?php echo $this->session->the_person_id; ?>'
+    const active_group_id = '<?php echo $group->the_group_id; ?>'
+    const active_group_currency = '<?php echo $group->the_group_currency; ?>'
+    const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($group->the_group_currency, 0, 2)); ?>.svg'
+    const active_country_id = '<?php echo $this->session->the_person_id; ?>'
+    const group = <?php echo json_encode($group); ?>;
+    const currencies = <?php echo json_encode($currencies); ?>;
+
+    let topup_currency = active_group_currency
+    let topup_amount = 1000
+    $('.tu-amount').val(topup_amount)
+</script>
+
 <div class="row">
     <div class="col-sm-8 left-card">
         <div class="row row-tabs visible-xs">
@@ -12,44 +26,16 @@
                 </div>
             </div>
 
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="group-navi">
-                        <div class="group-entypo col-sm-3 col-xs-6 entypo-current" data-show="group-overview">
-                            <div class="entypo-inner text-center">
-                                <span class="entypo-logout"></span>
-                                <span class="hidden-xs">Overview</span>
-                            </div>
-                        </div>
-                        <div class="group-entypo col-sm-3 col-xs-6" data-show="group-transacts">
-                            <div class="entypo-inner text-center">
-                                <span class="entypo-doc-text"></span>
-                                <span class="hidden-xs">Statements</span>
-                            </div>
-                        </div>
-                        <div class="group-entypo col-sm-3 col-xs-6" data-show="group-topup">
-                            <div class="entypo-inner text-center">
-                                <span class="entypo-publish"></span>
-                                <span class="hidden-xs">Top Up</span>
-                            </div>
-                        </div>
-                        <div class="group-entypo col-sm-3 col-xs-6" data-show="group-more">
-                            <div class="entypo-inner text-center">
-                                <span class="entypo-dot-3"></span>
-                                <span class="hidden-xs">More</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row group-switched group-overview">
                 <div class="col-sm-6 col-xs-12 text-center">
-                    <div class="group-balance-preview">
+                    <div class="group-balance-preview group50Top">
                         <span class="gp-txt">Total balance</span>
                         <span class="gp-bals"><sup>$</sup>12,319</span>
                         <span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
+                        <div class="topUp-withdraw">
+                            <span onclick="goToTopUp()">Top Up</span>
+                            <span onclick="goToWithdraw()">Withdraw</span>
+                        </div>
                     </div>
                 </div>
 
@@ -69,59 +55,6 @@
                         <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
                     </div>
                 </div>
-            </div>
-            <div class="row group-switched group-transacts" style="display: none;">
-                <table class="datatable" id="transTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>User</th>
-                            <th>Amount</th>
-                            <th>Type</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for ($i = 1; $i <= 100; $i++) : ?>
-                            <tr>
-                                <td><?php echo $i; ?></td>
-                                <td>Jina Ya Mtu</td>
-                                <td><?php echo mt_rand(900, 99000); ?></td>
-                                <td>Deposit,<br /> Withdraw,<br />Loan</td>
-                                <td><?php echo date('d M, Y', strtotime('-' . ($i - mt_rand(0, 9)) . ' days')) ?></td>
-                                <td>Complete,<br />Pending,<br />Cancelled</td>
-                            </tr>
-                        <?php endfor; ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="row group-switched group-topup" style="display: none;">
-                <div class="col-sm-6 col-xs-12 text-center">
-                    <div class="group-balance-preview">
-                        <form>
-                            <div class="input-group">
-                                <input class="form-control" name="phone_number" />
-                                <?php
-                                $csrf = array(
-                                    'name' => $this->security->get_csrf_token_name(),
-                                    'hash' => $this->security->get_csrf_hash()
-                                );
-                                ?>
-                                <input type="hidden" name="<?= $csrf['name']; ?>" value="<?= $csrf['hash']; ?>" />
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xs-12">
-                    <div class="group-balance-preview">
-
-                    </div>
-                </div>
-            </div>
-            <div class="row group-switched group-more" style="display: none;">
-                More acrtions here
             </div>
         </div>
     </div>
