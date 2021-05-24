@@ -45,11 +45,13 @@ class Group extends CI_Controller
 
         $data['transactions'] = $transactions;
 
-        $data['group'] = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
+        $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
+
+        $data['group'] = $group;
         $data['currencies'] = $this->db->get('currency')->result_array();
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
         $data['page_name'] = 'group/group';
-        $data['page_title'] = 'Diani Vacation';
+        $data['page_title'] = $group->the_group_name;
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
         $this->load->view('index', $data);

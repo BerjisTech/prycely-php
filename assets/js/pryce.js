@@ -22,7 +22,7 @@ const reportError = (error) => {
         method: 'POST',
         data: error,
         success: () => { return false; },
-        error: (repsonse) => { reportError(response) }
+        error: (response) => { reportError(response) }
     })
 }
 
@@ -71,10 +71,11 @@ if (page.includes('createaccount') === true) {
                             $(`<p class="the_login_error bg-danger" style="padding: 10px;">${r}</p>`).insertBefore($('input[name="user_email"]'))
                         }
                     },
-                    error: () => {
+                    error: (response) => {
                         $(this).html('ERROR!')
                         console.log('Error')
                         $('<p class="error bg-danger" style="padding: 10px;">Something went wrong. Please try again!</p>').insertBefore($('input[name="user_email"]'))
+                        reportError(response)
                     }
                 })
             }
@@ -102,7 +103,8 @@ if (page.includes('createaccount') === true) {
                             $('<p class="error bg-danger" style="padding: 10px;">The code enetered isn\'t correct</p>').insertBefore($('input[name="user_code"]'))
                         }
                     },
-                    error: function () {
+                    error: function (response) {
+                        reportError(response)
                         $(this).html('LET\'S TRY THAT AGAIN')
                         $('<p class="error bg-danger" style="padding: 10px;">There\'s something went wrong, kindly try again</p>').insertBefore($('input[name="user_code"]'))
                     }
@@ -147,7 +149,7 @@ if (page.includes('createaccount') === true) {
                     }
                 },
                 error: (e) => {
-
+                    reportError(e)
                 }
             })
         }
@@ -306,6 +308,7 @@ if (page.includes('/onboarding') === true) {
                 }
             },
             error: (e) => {
+                reportError(e)
                 $('.startPhoto').show()
             }
         })
@@ -354,6 +357,7 @@ if (page.includes('/auth/login') === true) {
             },
             error: (r) => {
                 console.log(r)
+                reportError(r)
                 $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN');
                 $('.the_login_error').remove();
                 $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_submit"]'))
@@ -383,6 +387,7 @@ if (page.includes('/auth/recover') === true) {
             },
             error: (r) => {
                 console.log(r)
+                reportError(r)
                 $('button[name="the_submit"]').html('LET\'S TRY THAT AGAIN');
                 $('.the_login_error').remove();
                 $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_submit"]'))
@@ -410,6 +415,7 @@ if (page.includes('/auth/recover') === true) {
             },
             error: (r) => {
                 console.log(r)
+                reportError(r)
                 $('button[name="the_code_submit"]').html('LET\'S TRY THAT AGAIN');
                 $('.the_login_error').remove();
                 $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_code_submit"]'))
@@ -436,6 +442,7 @@ if (page.includes('/auth/recover') === true) {
             },
             error: (r) => {
                 console.log(r)
+                reportError(r)
                 $('button[name="the_password_submit"]').html('LET\'S TRY THAT AGAIN');
                 $('.the_login_error').remove();
                 $('<p class="the_login_error bg-danger" style="padding: 10px;">There has been an error</p>').insertBefore($('button[name="the_password_submit"]'))
@@ -540,6 +547,7 @@ if (page.includes('/wallet/view') === true) {
             error: (data) => {
                 $('.confirmTransDetailsPanel').html('')
                 console.error(data)
+                reportError(data)
             }
         })
         confirmTransDetails(choice)
@@ -628,6 +636,7 @@ if (page.includes('/wallet/view') === true) {
             error: (data) => {
                 $('.wallet-topup').html('')
                 console.error(data)
+                reportError(data)
             }
         })
     }
@@ -645,6 +654,7 @@ if (page.includes('/wallet/view') === true) {
             error: (response) => {
                 $('.tuPageContent').html('')
                 console.error(response)
+                reportError(response)
             }
         })
     }
@@ -658,6 +668,7 @@ if (page.includes('/wallet/view') === true) {
             error: (response) => {
                 $('.tuPageContent').html('')
                 console.error(response)
+                reportError(response)
             }
         })
     }
@@ -671,6 +682,7 @@ if (page.includes('/wallet/view') === true) {
             error: (response) => {
                 $('.tuPageContent').html('')
                 console.error(response)
+                reportError(response)
             }
         })
     }
@@ -742,6 +754,7 @@ if (page.includes('/group/g/') === true) {
             error: (data) => {
                 $('.confirmTransDetailsPanel').html('')
                 console.error(data)
+                reportError(data)
             }
         })
         confirmTransDetails(choice)
@@ -830,6 +843,7 @@ if (page.includes('/group/g/') === true) {
             error: (data) => {
                 $('.wallet-topup').html('')
                 console.error(data)
+                reportError(data)
             }
         })
     }
@@ -843,6 +857,7 @@ if (page.includes('/group/g/') === true) {
             error: (response) => {
                 $('.switch-transactions').html('')
                 console.error(response)
+                reportError(response)
             }
         })
     }
@@ -869,6 +884,7 @@ if (page.includes('/group/g/') === true) {
             error: (response) => {
                 $('.switch-transactions').html('')
                 console.error(response)
+                reportError(response)
             }
         })
     }
@@ -882,6 +898,7 @@ if (page.includes('/group/g/') === true) {
             error: (response) => {
                 $('.switch-transactions').html('')
                 console.error(response)
+                reportError(response)
             }
         })
     }
@@ -979,6 +996,7 @@ if (page.includes('/group/create') === true) {
                     }
                 }, error: (response) => {
                     console.log(response)
+                    reportError(response)
 
                 }
             })
