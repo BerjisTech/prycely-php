@@ -259,7 +259,8 @@ input[name="user_code"] {
     height         : auto;
     overflow-y     : auto;
     max-height     : 300px;
-    margin-top     : 50px;
+    margin-top     : 200px;
+    left           : 175px;
 }
 
 .goal-currency-drop input:first-of-type,

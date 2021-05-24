@@ -886,7 +886,8 @@ if (page.includes('/group/g/') === true) {
 }
 
 if (page.includes('/group/create') === true) {
-    let the_group_type = '', the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_description = ''
+    let the_group_type = '';
+    let the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_description = ''
 
     $('.user_type_chooser').on('click', function () {
         the_group_type = $(this).attr('data-type')
@@ -929,16 +930,66 @@ if (page.includes('/group/create') === true) {
         }
 
         if (this_step == 'goal') {
-            the_group_currency = $('input[name="group_goal"]').val()
             the_group_goal = $('input[name="group_goal"]').val()
 
-            if (the_group_goal == '') {
-                $(this).html('LET\'S TRY THAT AGAIN')
-                $('<p class="error bg-danger" style="padding: 10px;">Empty password</p>').insertBefore($('input[name="group_goal"]'))
-                return false
+            if (the_group_currency == '') {
+                $(this).html('NEXT')
+                $('<p class="error bg-danger" style="padding: 10px;">Kindly choose a currency first</p>').insertBefore($(this))
+                return;
             }
 
+            $.ajax({
+                url: `${base_url}group/create_new`,
+                method: 'POST',
+                data: {
+                    'the_group_type': the_group_type,
+                    'the_group_name': the_group_name,
+                    'the_group_goal': the_group_goal,
+                    'the_group_currency': the_group_currency,
+                    'the_group_description': the_group_description
+                },
+                success: (response) => {
+                    response = JSON.parse(response)
+                    console.log(response)
+                    if (response.status === 'done') {
+                        window.location.href = `${base_url}group/g/${response.group}`
+                    } else {
+                        $(this).html('NEXT')
+                        $(`<p class="error bg-danger" style="padding: 10px;">${response.message}</p>`).insertBefore($(this))
+                        return;
+                    }
+                }
+            })
+
         }
+    })
+
+    $('.goal-details').on('mouseover', () => {
+        $('.goal-currency-drop').show()
+        $('.goal-currency-drop').css('display', 'flex')
+        $('.goal-currency-drop input').on('input', () => {
+            let search_term = $('.goal-currency-drop input').val()
+            $.ajax({
+                url: base_url + 'p/search_currency/' + search_term,
+                success: (found_currencies) => {
+                    found_currencies = JSON.parse(found_currencies)
+                    $('.currency-select').remove()
+                    $(found_currencies).each((key, currency) => {
+                        let currency_name = currency['currency'];
+                        let currency_code = currency['code'];
+                        let currency_image = currency_code.substring(0, 2).toLowerCase()
+                        the_group_currency = currency_code;
+
+                        $('.goal-currency-drop').append(`
+                        <div class="currency-select" onclick="change_group_currency('${currency_code}', '${currency_name}', '${base_url}assets/images/flags/${currency_image}.svg')">
+                            <img src="${base_url}assets/images/flags/${currency_image}.svg" />
+                            <span>${currency_code}</span>
+                        </div>
+                        `)
+                    })
+                }
+            })
+        })
     })
 
     $('.back_link').on('click', function () {
@@ -964,11 +1015,13 @@ if (page.includes('/group/create') === true) {
         }
     })
 
-    $('.goal-details').on('mouseover', () => {
-        $('.goal-currency-drop').show()
-        $('.goal-currency-drop').css('display', 'flex')
-        $('body').on('click', () => { $('.goal-currency-drop').hide() })
-    })
+    function change_group_currency(code, currency, flag) {
+        the_group_currency = code;
+        $('.goal-details').attr('data-currency', code)
+        $('.goal-details img').attr('src', flag)
+        $('.goal-details span:first').html(code)
+        $('.goal-currency-drop').hide()
+    }
 }
 
 $('.switch-tab').on('click', function () {

@@ -62,39 +62,39 @@ class Group extends CI_Controller
         $this->load->view('group/create', $data);
     }
 
-    public function make_first()
+    public function create_new()
     {
-        $group_id = $this->db->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id + 1;
-
-        $group_data = array(
-            'the_group_id' => $group_id,
-            'the_group_name' => '',
-            'the_group_goal' => '',
-            'the_group_purpose' => '',
-            'the_group_currency' => '',
-            'the_group_creator' => '',
-            'the_group_date' => '',
-            'the_group_s1' => '',
-            'the_group_s2' => '',
-            'the_group_s3' => '',
-            'the_group_s4' => '',
-            'the_group_type' => '',
-            'the_group_photo' => ''
-        );
+        $_POST['the_group_creator'] = $this->session->the_person_id;
 
         $first_member = array(
             'the_member_id' => '',
-            'the_user_id' => '',
-            'the_member_status' => '',
-            'date_joined' => ''
+            'the_user_id' => $this->session->the_person_id,
+            'the_member_status' => 1,
+            'date_joined' => time()
         );
 
+        $this->db->insert('the_groups', $this->input->post());
+
+        $group_id = $this->db->where('the_group_creator', $this->session->the_person_id)->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id;
+
         if ($this->generate_group_table($group_id) == 'done') {
+            $this->db->insert('group_' . $group_id, $first_member);
+            $response = array(
+                'status' => 'done',
+                'message' => 'Group succesfully created',
+                'group' => $group_id
+            );
+            echo json_encode($response);
         } else {
+            $response = array(
+                'status' => 'failed',
+                'message' => 'There has been an error creating your group. Check your groups page to finish creating <strong>' . $this->input->post('the_group_name') . '</strong>',
+                'group' => $group_id
+            );
+            echo json_encode($response);
         }
 
         echo $this->db->last_query();
-        #$this->db->insert('shops', $first_member);
     }
 
     private function generate_group_table($group_id)
@@ -125,6 +125,11 @@ class Group extends CI_Controller
         );
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('the_member_id', true);
+        if ($this->db->table_exists('group_' . $group_id)) {
+            return 'exists';
+            exit;
+        }
+
         if ($this->dbforge->create_table('group_' . $group_id)) {
             return 'done';
         } else {

@@ -23,19 +23,6 @@
 <body>
     <script>
         let base_url = '<?php echo base_url(); ?>'
-        const currencies = <?php echo json_encode($currencies); ?>;
-
-        $(currencies).each((key, currency) => {
-            let currency_name = currency.currency;
-            let currency_code = currency.code;
-            let currency_image = currency_code.substring(0, 2).toLowerCase()
-
-            $(`<div class="currency-select" onclick="change_group_currency('${currency_code}', '${currency_name}', '${base_url}assets/images/flags/${currency_image}.svg')">
-                    <img src="${base_url}assets/images/flags/${currency_image}.svg" />
-                    <span>${currency_name}</span>
-                </div>
-            `).insertAfter($('[name="sCurrency"]'))
-        })
     </script>
 
     <div class="main_content">
@@ -111,7 +98,7 @@
                     <div class="col-xs-12 the_goal" style="display: none;">
                         <h3 class="the_title">Set a Goal</h3>
                         <span class="the_subtitle">How much do you and your group members intend to raise? This helps everyone keep track of the investment or saings progress</span>
-                        <div class="goal-block-panel">
+                        <div class="the_email_input">
                             <div class="goal-block">
                                 <div class="goal-details">
                                     <img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currencies[0]['code'], 0, 2)); ?>.svg" />
@@ -126,10 +113,17 @@
                                 </div>
                                 <div class="goal-currency-drop">
                                     <input type="search" name="sCurrency" data-wallet="" placeholder="Search currency" />
+                                    <?php foreach ($currencies as $currency) : ?>
+                                        <div class="currency-select" onclick="change_group_currency('<?php echo $currency['code']; ?>', '<?php $currency['currency'] ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg')">
+                                            <img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($currency['code'], 0, 2)); ?>.svg" />
+                                            <span><?php echo $currency['code']; ?></span>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
+                            <button class="ca_next" data-step="goal" type="submit">CREATE GROUP <span class="fal fa fa-arrow-next"></span></button>
+                            <span class="go_back"><a href="#" class="back_link" data-step="goal"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                         </div>
-                        <span class="go_back"><a href="#" class="back_link" data-step="goal"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
                 </div>
             </div>
