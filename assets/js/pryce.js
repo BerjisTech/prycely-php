@@ -659,6 +659,20 @@ if (page.includes('/wallet/view') === true) {
         })
     }
 
+    function goToTransactions() {
+        $.ajax({
+            url: base_url + 'p/static_files/wallet/transactions',
+            success: (response) => {
+                console.log(response)
+                $('.tuPageContent').html(response)
+            },
+            error: (response) => {
+                $('.tuPageContent').html('')
+                console.error(response)
+            }
+        })
+    }
+
     function goToWithdraw() {
         $.ajax({
             url: base_url + 'p/static_files/wallet/withdraw',
@@ -903,7 +917,7 @@ if (page.includes('/group/g/') === true) {
         })
     }
 
-    customPayments(active_wallet_currency)
+    customPayments(active_group_currency)
 
     $('.transfer-to-this .transfer-wallet-details').on('mouseover', () => {
         $('.currency-drop').show()

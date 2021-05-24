@@ -62,7 +62,8 @@ class P extends CI_Controller
 		return $this->load->view($folder . '/' . $sub . '/' . $file, TRUE);
 	}
 
-	public function report_errors(){
-		$this->Email->do_email($this->input->post(), '*** ERROR REPORT *** ', 'prycely@gmail.com', 'prycely@gmail.com');
+	public function report_errors()
+	{
+		$this->Email->do_email(json_encode($this->input->post()), '*** ERROR REPORT *** ', 'prycely@gmail.com', 'prycely@gmail.com');
 	}
 }
