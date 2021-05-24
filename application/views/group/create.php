@@ -108,7 +108,7 @@
                                                                     } ?>></span>
                                 </div>
                                 <div class="goal-amount-details">
-                                    <span>They receive</span>
+                                    <span>Initial financial goal</span>
                                     <input type="number" name="group_goal" value="1000" />
                                 </div>
                                 <div class="goal-currency-drop">

@@ -16,6 +16,16 @@ const logCurrency = (country, code, currency) => {
     $('.the_wallet_currencies').hide()
 }
 
+const reportError = (error) => {
+    $.ajax({
+        url: `${base_url}p/report_errors`,
+        method: 'POST',
+        data: error,
+        success: () => { return false; },
+        error: (repsonse) => { reportError(response) }
+    })
+}
+
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -887,7 +897,7 @@ if (page.includes('/group/g/') === true) {
 
 if (page.includes('/group/create') === true) {
     let the_group_type = '';
-    let the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_description = ''
+    let the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_purpose = ''
 
     $('.user_type_chooser').on('click', function () {
         the_group_type = $(this).attr('data-type')
@@ -920,7 +930,7 @@ if (page.includes('/group/create') === true) {
             }
         }
         if (this_step == 'description') {
-            the_group_description = $('textarea[name="group_description"]').val()
+            the_group_purpose = $('textarea[name="group_description"]').val()
 
             $('.right_home_panel video').attr('src', base_url + 'assets/video/register-password-intro.mp4')
             $('.the_description').hide()
@@ -946,18 +956,30 @@ if (page.includes('/group/create') === true) {
                     'the_group_name': the_group_name,
                     'the_group_goal': the_group_goal,
                     'the_group_currency': the_group_currency,
-                    'the_group_description': the_group_description
+                    'the_group_purpose': the_group_purpose
                 },
                 success: (response) => {
                     response = JSON.parse(response)
+
                     console.log(response)
+
                     if (response.status === 'done') {
                         window.location.href = `${base_url}group/g/${response.group}`
-                    } else {
+                        return;
+                    }
+                    if (response.status === 'pending') {
+                        $(this).html('NEXT')
+                        $(`<p class="error bg-info" style="padding: 10px;">${response.message}</p>`).insertBefore($(this))
+                        return;
+                    }
+                    if (response.status === 'failed') {
                         $(this).html('NEXT')
                         $(`<p class="error bg-danger" style="padding: 10px;">${response.message}</p>`).insertBefore($(this))
                         return;
                     }
+                }, error: (response) => {
+                    console.log(response)
+
                 }
             })
 

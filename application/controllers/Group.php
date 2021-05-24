@@ -47,7 +47,6 @@ class Group extends CI_Controller
 
         $data['group'] = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
         $data['currencies'] = $this->db->get('currency')->result_array();
-        $data['groups'] = $this->db->where('the_group_user', $this->session->the_person_id)->where('the_group_currency !=', $data['group']->the_group_currency)->get('the_groups')->result_array();
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
         $data['page_name'] = 'group/group';
         $data['page_title'] = 'Diani Vacation';
@@ -64,37 +63,87 @@ class Group extends CI_Controller
 
     public function create_new()
     {
-        $_POST['the_group_creator'] = $this->session->the_person_id;
+        if ($_SERVER['REQUEST_METHOD'] = 'POST' && isset($_POST) && count($_POST) !== 0) {
 
-        $first_member = array(
-            'the_member_id' => '',
-            'the_user_id' => $this->session->the_person_id,
-            'the_member_status' => 1,
-            'date_joined' => time()
-        );
+            if (
+                empty($this->input->post('the_group_type')) ||
+                empty($this->input->post('the_group_name')) ||
+                empty($this->input->post('the_group_goal')) ||
+                empty($this->input->post('the_group_currency'))
+            ) {
+                $response = array(
+                    'status' => 'failed',
+                    'message' => 'Some data is missing. Kindly ensure that you\'ve filled all fields',
+                    'group' => ''
+                );
+                echo json_encode($response);
+                exit;
+            }
 
-        $this->db->insert('the_groups', $this->input->post());
-
-        $group_id = $this->db->where('the_group_creator', $this->session->the_person_id)->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id;
-
-        if ($this->generate_group_table($group_id) == 'done') {
-            $this->db->insert('group_' . $group_id, $first_member);
-            $response = array(
-                'status' => 'done',
-                'message' => 'Group succesfully created',
-                'group' => $group_id
+            $group_data = array(
+                'the_group_type' => $this->input->post('the_group_type'),
+                'the_group_name' => $this->input->post('the_group_name'),
+                'the_group_goal' => $this->input->post('the_group_goal'),
+                'the_group_currency' => $this->input->post('the_group_currency'),
+                'the_group_purpose' => $this->input->post('the_group_purpose'),
+                'the_group_creator' => $this->session->the_person_id,
+                'the_group_date' => time()
             );
-            echo json_encode($response);
+
+            $first_member = array(
+                'the_member_id' => '',
+                'the_user_id' => $this->session->the_person_id,
+                'the_member_status' => 1,
+                'date_joined' => time()
+            );
+
+            if ($this->db->insert('the_groups', $group_data)) {
+                $group_id = $this->db->where('the_group_creator', $this->session->the_person_id)->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id;
+
+                if ($this->generate_group_table($group_id) == 'done') {
+                    if ($this->db->table_exists('group_' . $group_id)) {
+                        $this->db->insert('group_' . $group_id, $first_member);
+                        $response = array(
+                            'status' => 'done',
+                            'message' => 'Group succesfully created',
+                            'group' => $group_id
+                        );
+                        echo json_encode($response);
+                    } else {
+                        $response = array(
+                            'status' => 'pending',
+                            'message' => 'We couldn\'t add the first member data to <strong>' . $this->input->post('the_group_name') . '</strong>. Kindly go to ' . base_url('group/g/' . $group_id) . 'to finish setting up the group',
+                            'group' => $group_id
+                        );
+                        echo json_encode($response);
+                    }
+                } else {
+                    $response = array(
+                        'status' => 'failed',
+                        'message' => 'There has been an error creating your group. Check your groups page to finish creating <strong>' . $this->input->post('the_group_name') . '</strong>',
+                        'group' => $group_id
+                    );
+                    echo json_encode($response);
+                }
+                exit;
+            } else {
+                $response = array(
+                    'status' => 'failed',
+                    'message' => 'There was an error creating your group. Please check your information and try again',
+                    'group' => ''
+                );
+                echo json_encode($response);
+                exit;
+            }
         } else {
             $response = array(
                 'status' => 'failed',
-                'message' => 'There has been an error creating your group. Check your groups page to finish creating <strong>' . $this->input->post('the_group_name') . '</strong>',
-                'group' => $group_id
+                'message' => 'There was an error proccessing your data. Please reload the page and try again',
+                'group' => ''
             );
             echo json_encode($response);
+            exit;
         }
-
-        echo $this->db->last_query();
     }
 
     private function generate_group_table($group_id)
