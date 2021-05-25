@@ -11,7 +11,6 @@
 	let topup_currency = active_wallet_currency
 	let topup_amount = 1000
 	$('.tu-amount').val(topup_amount)
-	console.log(<?php echo json_encode($transactions); ?>)
 </script>
 <div class="row tuPageContent">
 	<div class="row wallet-switched wallet-overview">
@@ -63,7 +62,7 @@
 						<span>Total fees</span>
 						<span>1,000 KES</span>
 					</div>
-					<button>SEND MONEY</button>
+					<button>MAKE TRANSFER</button>
 				</div>
 			</div>
 		</div>
@@ -81,7 +80,7 @@
 		<div class="col-sm-4">
 			<div class="panelCard">
 				<?php if (count($transactions) < 1) : ?>
-					<span>You have no tracsations yet.</span>
+					<span>You have no transactions yet.</span>
 					<span onclick="goToTopUp();" class="back-text-arrow-buttons">Top up wallet</span>
 				<?php endif; ?>
 				<?php foreach ($transactions as $key => $date) : ?>
@@ -151,8 +150,8 @@
 				<?php for ($m = 30; $m > -1; $m--) : ?> {
 						<?php
 						$collection_date = date('dmY', strtotime('-' . $m . ' days'));
-						$deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 1 AND `the_transaction_wallet` = $wallet->the_wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
-						$withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 2 AND `the_transaction_wallet` = $wallet->the_wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+						$deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 1 AND `the_transaction_wallet` = $wallet->the_wallet_id AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+						$withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 2 AND `the_transaction_wallet` = $wallet->the_wallet_id AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
 						?>
 						y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
 							a: <?php if ($deposit == '') echo 0;

@@ -5,7 +5,7 @@
     <div class="col-sm-12">
         <div class="panelCard">
             <?php if (sizeof($transactions) < 1) : ?>
-                <span>You have no tracsations yet.</span>
+                <span>You have no transactions yet.</span>
                 <span onclick="goToTopUp();" class="back-text-arrow-buttons">Top up wallet</span>
             <?php endif; ?>
             <?php foreach ($transactions as $key => $date) : ?>

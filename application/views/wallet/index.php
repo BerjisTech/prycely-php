@@ -48,7 +48,7 @@
     <div class="col-sm-4 hidden-xs right-card">
 
         <?php if (count($transactions) < 1) : ?>
-            <span>You have no tracsations yet.</span>
+            <span>You have no transactions yet.</span>
             <span onclick="goToTopUp();" class="back-text-arrow-buttons">Top up wallet</span>
         <?php else : ?>
             <p class="transaction-title">Recent Transactions</p>

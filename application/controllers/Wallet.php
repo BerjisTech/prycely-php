@@ -99,6 +99,13 @@ class Wallet extends CI_Controller
 
 	public function view($wallet_id)
 	{
+		$wallet = $this->db->where('the_wallet_id', $wallet_id)->get('the_wallets')->row();
+		if ($wallet->the_wallet_user != $this->session->the_person_id) {
+			$this->session->sess_destroy();
+			redirect(base_url());
+			$this->db->close();
+			exit;
+		}
 		$dates = $this->db
 			->select('the_transaction_date')
 			->where('the_transaction_user', $this->session->the_person_id)
@@ -121,7 +128,7 @@ class Wallet extends CI_Controller
 
 		$data['transactions'] = $transactions;
 
-		$data['wallet'] = $this->db->where('the_wallet_id', $wallet_id)->get('the_wallets')->row();
+		$data['wallet'] = $wallet;
 		$data['currencies'] = $this->db->get('currency')->result_array();
 		$data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->where('the_wallet_currency !=', $data['wallet']->the_wallet_currency)->get('the_wallets')->result_array();
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');

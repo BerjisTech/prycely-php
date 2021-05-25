@@ -106,33 +106,17 @@
             <div class="col-sm-12 overviewGroups">
                 <p class="transaction-title">My Groups</p>
                 <table class="table transaction-table table-hover">
-                    <tr class="go_to_group" data-id="group_id">
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://www.capitalfm.co.ke/business/files/2017/07/Java-House.jpg');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">Diani Vacay</span>
-                            <span class="transaction-status">Complete</span>
-                        </td>
-                    </tr>
-                    <tr class="go_to_group" data-id="group_id">
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://pbs.twimg.com/profile_images/1269971823090978817/748sBk9P_400x400.jpg');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">Happy Sisters</span>
-                            <span class="transaction-status">Processing</span>
-                        </td>
-                    </tr>
-                    <tr class="go_to_group" data-id="group_id">
-                        <td class="t-img">
-                            <p class="transaction-image" style="background: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_google_adsense_color_1x_web_512dp.max-500x500.png');"></p>
-                        </td>
-                        <td class="transaction-details">
-                            <span class="transaction-title">Google Experts</span>
-                            <span class="transaction-status">Complete</span>
-                        </td>
-                    </tr>
+                    <?php foreach ($groups as $group) : ?>
+                        <tr class="go_to_group" data-id="<?php echo $group['the_group_id'] ?>">
+                            <td class="t-img">
+                                <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
+                            </td>
+                            <td class="transaction-details">
+                                <span class="transaction-title"><?php echo $group['the_group_name'] ?></span>
+                                <span class="transaction-status"><?php echo $group['the_group_currency'] ?></span>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
                 <span class="more_groups"><a href="<?php echo base_url('group'); ?>">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
             </div>

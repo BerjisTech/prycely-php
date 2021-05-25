@@ -31,6 +31,21 @@ class Group extends CI_Controller
 
     public function g($group_id)
     {
+        if (!$this->db->table_exists('group_' . $group_id)) {
+            $this->session->sess_destroy();
+            redirect(base_url());
+            $this->db->close();
+            exit;
+        }
+
+        $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
+        $group_members = $this->db->get('group_' . $group_id)->result_array();
+        if ($this->db->where('the_user_id', $this->session->the_person_id)->get('group_' . $group_id)->num_rows() != 1) {
+            $this->session->sess_destroy();
+            redirect(base_url());
+            $this->db->close();
+            exit;
+        }
         $dates = $this->db
             ->select('the_transaction_date')
             ->where('the_transaction_user', $this->session->the_person_id)
@@ -52,8 +67,6 @@ class Group extends CI_Controller
         }
 
         $data['transactions'] = $transactions;
-
-        $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
 
         $data['group'] = $group;
         $data['currencies'] = $this->db->get('currency')->result_array();
