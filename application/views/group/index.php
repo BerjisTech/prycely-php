@@ -33,45 +33,21 @@
                 </div>
             </div>
             <table class="table transaction-table table-hover">
-                <tr class="go_to_group" data-id="group_id">
-                    <td class="t-img">
-                        <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
-                    </td>
-                    <td class="transaction-details">
-                        <span class="transaction-title">Diani Vacay</span>
-                        <span class="transaction-status">KES</span>
-                    </td>
-                    <td class="transaction-td">
-                        <span class="transaction-amount complete">KES 230,000 (Total)</span>
-                        <span class="transaction-time">KES 2,300 (me)</span>
-                    </td>
-                </tr>
-                <tr class="go_to_group" data-id="group_id">
-                    <td class="t-img">
-                        <p class="transaction-image" style="background: url('<?php echo base_url('assets/images/flags/jm.svg'); ?>');"></p>
-                    </td>
-                    <td class="transaction-details">
-                        <span class="transaction-title">MonMax Investors</span>
-                        <span class="transaction-status">USD</span>
-                    </td>
-                    <td class="transaction-td">
-                        <span class="transaction-amount complete">$ 23,000 (total)</span>
-                        <span class="transaction-time">$ 200 (me)</span>
-                    </td>
-                </tr>
-                <tr class="go_to_group" data-id="group_id">
-                    <td class="t-img">
-                        <p class="transaction-image" style="background: url('https://cdn-us1.hash.ai/site/stonks.jpg');"></p>
-                    </td>
-                    <td class="transaction-details">
-                        <span class="transaction-title">GameStonks Autists</span>
-                        <span class="transaction-status">GBP</span>
-                    </td>
-                    <td class="transaction-td">
-                        <span class="transaction-amount complete">GBP 23.890 (total)</span>
-                        <span class="transaction-time">GBP 500 (me)</span>
-                    </td>
-                </tr>
+                <?php foreach ($groups as $group) : ?>
+                    <tr class="go_to_group" data-id="<?php echo $group['the_group_id'] ?>">
+                        <td class="t-img">
+                            <p class="transaction-image" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Diani_Beach_Sunrise_Kenya.jpg');"></p>
+                        </td>
+                        <td class="transaction-details">
+                            <span class="transaction-title"><?php echo $group['the_group_name'] ?></span>
+                            <span class="transaction-status"><?php echo $group['the_group_currency'] ?></span>
+                        </td>
+                        <td class="transaction-td">
+                            <span class="transaction-amount complete"><?php echo $group['the_group_currency'] . ' ' . $group['the_group_goal'] ?> (Total)</span>
+                            <span class="transaction-time">KES 2,300 (me)</span>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </table>
         </div>
     </div>

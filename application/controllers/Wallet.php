@@ -103,11 +103,13 @@ class Wallet extends CI_Controller
 			->select('the_transaction_date')
 			->where('the_transaction_user', $this->session->the_person_id)
 			->where('the_transaction_status !=', 2)
+			->where('the_transaction_wallet', $wallet_id)
 			->group_by('date_format(from_unixtime(the_transaction_date), "%d")')
 			->order_by('the_transaction_date', 'DESC')
 			->limit('6')
 			->get('the_transactions')->result_array();
 
+		$transactions = array();
 		foreach ($dates as $date) {
 			$limit = 6;
 			$collection_date = date('dmY', $date['the_transaction_date']);

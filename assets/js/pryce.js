@@ -660,15 +660,17 @@ if (page.includes('/wallet/view') === true) {
     }
 
     function goToTransactions() {
+        string_transcations = JSON.stringify(transactions)
         $.ajax({
             url: base_url + 'p/static_files/wallet/transactions',
+            method: 'POST',
+            data: { 'transactions': string_transcations },
             success: (response) => {
-                console.log(response)
                 $('.tuPageContent').html(response)
             },
             error: (response) => {
                 $('.tuPageContent').html('')
-                console.error(response)
+                reportError(response)
             }
         })
     }
@@ -797,7 +799,7 @@ if (page.includes('/group/g/') === true) {
             return false;
         }
 
-        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/user_${active_user_id}_wallet_${active_wallet_currency}_topup/user_${active_user_id}_wallet_${active_wallet_currency}_topup/1/${active_wallet_id}/Wallet Top Up`;
+        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/user_${active_user_id}_wallet_${active_group_currency}_topup/user_${active_user_id}_wallet_${active_group_currency}_topup/1/${active_group_id}/Wallet Top Up`;
 
         console.log(stk_url)
         $.ajax({
@@ -877,14 +879,17 @@ if (page.includes('/group/g/') === true) {
     }
 
     function goToTransactions() {
+        string_transcations = JSON.stringify(transactions)
         $.ajax({
             url: base_url + 'p/static_files/group/transactions',
+            method: 'POST',
+            data: { 'transactions': string_transcations },
             success: (response) => {
                 $('.switch-transactions').html(response)
             },
             error: (response) => {
                 $('.switch-transactions').html('')
-                console.error(response)
+                reportError(response)
             }
         })
     }
@@ -1086,10 +1091,6 @@ $('.switch-tab').on('click', function () {
         $(this).addClass('active')
     }
 })
-
-function log_errors(from, data, e) {
-
-}
 
 $('.switch-tab').on('click', function () {
     let to_be_switched = $(this).attr('data-hide')

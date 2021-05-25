@@ -6,10 +6,12 @@
 	const active_country_id = '<?php echo $this->session->the_person_id; ?>'
 	const wallet = <?php echo json_encode($wallet); ?>;
 	const currencies = <?php echo json_encode($currencies); ?>;
+	const transactions = <?php echo json_encode($transactions); ?>;
 
 	let topup_currency = active_wallet_currency
 	let topup_amount = 1000
 	$('.tu-amount').val(topup_amount)
+	console.log(<?php echo json_encode($transactions); ?>)
 </script>
 <div class="row tuPageContent">
 	<div class="row wallet-switched wallet-overview">
@@ -78,6 +80,10 @@
 		</div>
 		<div class="col-sm-4">
 			<div class="panelCard">
+				<?php if (count($transactions) < 1) : ?>
+					<span>You have no tracsations yet.</span>
+					<span onclick="goToTopUp();" class="back-text-arrow-buttons">Top up wallet</span>
+				<?php endif; ?>
 				<?php foreach ($transactions as $key => $date) : ?>
 					<span>
 						<?php

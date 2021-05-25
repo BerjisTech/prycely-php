@@ -1,6 +1,13 @@
-<div class="row wallet-switched wallet-transacts" style="display: none;">
+<?php if (gettype($transactions) != 'array') {
+    $transactions = json_decode($transactions, TRUE);
+} ?>
+<div class="row wallet-switched wallet-transacts">
     <div class="col-sm-12">
         <div class="panelCard">
+            <?php if (sizeof($transactions) < 1) : ?>
+                <span>You have no tracsations yet.</span>
+                <span onclick="goToTopUp();" class="back-text-arrow-buttons">Top up wallet</span>
+            <?php endif; ?>
             <?php foreach ($transactions as $key => $date) : ?>
                 <span>
                     <?php

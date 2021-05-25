@@ -54,12 +54,14 @@ class P extends CI_Controller
 
 	public function static_files($folder, $file)
 	{
-		return $this->load->view($folder . '/' . $file, TRUE);
+		$data = $this->input->post();
+		return $this->load->view($folder . '/' . $file, $data, FALSE);
 	}
 
 	public function static_sub_files($folder, $sub, $file)
 	{
-		return $this->load->view($folder . '/' . $sub . '/' . $file, TRUE);
+		$data = $this->input->post();
+		return $this->load->view($folder . '/' . $sub . '/' . $file, $data, FALSE);
 	}
 
 	public function report_errors()

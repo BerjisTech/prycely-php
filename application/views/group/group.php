@@ -6,6 +6,7 @@
     const active_country_id = '<?php echo $this->session->the_person_id; ?>'
     const group = <?php echo json_encode($group); ?>;
     const currencies = <?php echo json_encode($currencies); ?>;
+    const transactions = <?php echo json_encode($transactions); ?>;
 
     let topup_currency = active_group_currency
     let topup_amount = 1000

@@ -21,6 +21,11 @@ class Group extends CI_Controller
         $data['page_title'] = 'Group';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
+        $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
+        $my_groups =  explode(',', $my_groups);
+        foreach ($my_groups as $key => $group) {
+            $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
+        }
         $this->load->view('index', $data);
     }
 
@@ -29,17 +34,20 @@ class Group extends CI_Controller
         $dates = $this->db
             ->select('the_transaction_date')
             ->where('the_transaction_user', $this->session->the_person_id)
+            ->where('the_transaction_status !=', 2)
+            ->where('the_transaction_group', $group_id)
             ->group_by('date_format(from_unixtime(the_transaction_date), "%d")')
             ->order_by('the_transaction_date', 'DESC')
             ->limit('6')
             ->get('the_transactions')->result_array();
 
+        $transactions = array();
         foreach ($dates as $date) {
             $limit = 6;
             $collection_date = date('dmY', $date['the_transaction_date']);
             $collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
             $da_query = $this->db
-                ->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_group` = $group_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date ORDER BY `the_transaction_id` DESC LIMIT $limit");
+                ->query("SELECT * FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date AND `the_transaction_status` != 2 ORDER BY `the_transaction_id` DESC LIMIT $limit");
             $transactions[$collection_stamp] = $da_query->result_array();
         }
 
@@ -99,12 +107,15 @@ class Group extends CI_Controller
                 'date_joined' => time()
             );
 
+            $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
+
             if ($this->db->insert('the_groups', $group_data)) {
                 $group_id = $this->db->where('the_group_creator', $this->session->the_person_id)->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id;
 
                 if ($this->generate_group_table($group_id) == 'done') {
                     if ($this->db->table_exists('group_' . $group_id)) {
                         $this->db->insert('group_' . $group_id, $first_member);
+                        $this->add_to_my_groups($group_id, $my_groups);
                         $response = array(
                             'status' => 'done',
                             'message' => 'Group succesfully created',
@@ -185,6 +196,15 @@ class Group extends CI_Controller
             return 'done';
         } else {
             return 'error';
+        }
+    }
+
+    private function add_to_my_groups($group_id, $my_groups)
+    {
+        if ($my_groups == '') {
+            $this->db->where('the_person_id', $this->session->the_person_id)->set('the_person_groups', $group_id)->update('the_people');
+        } else {
+            $this->db->where('the_person_id', $this->session->the_person_id)->set('the_person_groups', $my_groups . ',' . $group_id)->update('the_people');
         }
     }
 }
