@@ -26,13 +26,13 @@
     <div class="topUpPanel">
         <span class="entypo-left-thin back-text-arrow-buttons wallet-switcher" data-show="wallet-overview" onclick="window.location.reload()"> Back to wallet</span>
         <div class="col-sm-12 panelCard">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
                 <p class="tu-title">Topup your group wallet</p>
                 <div class="tu-from-this">
                     <div class="tu-amount-details">
                         <span>Add</span>
-                        <input type="number" class="tu-amount" onchange="topup_amount = $(this).val()" value="1000" />
+                        <input type="number" class="tu-amount" oninput="get_conversion(active_group_currency, $('.twd').attr('data-currency'),$(this).val())" onchange="topup_amount = $(this).val()" value="1000" />
                     </div>
                     <div class="tu-wallet-details" data-currency="">
                         <img src="" />
@@ -73,7 +73,7 @@
                     <button class="goToPayChoice" onclick="goToPayChoice()">SEND MONEY</button>
                 </div>
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
         </div>
     </div>
 </div>

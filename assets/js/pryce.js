@@ -36,14 +36,15 @@ const get_conversion = (wallet_code, code, topup_amount) => {
         },
         method: 'POST',
         success: (response) => {
-            JSON.parse(response)
+            response = JSON.parse(response)
             console.log(response)
-            $('.bdPay .breakDownValue').html(topup_amount + ' ' + code)
+            $('.bdPay .breakDownValue').html(response.converted + ' ' + code)
             $('.bdFee .breakDownValue').html(response.fee + ' ' + code)
-            $('.bdConvert .breakDownValue').html(response.converted + ' ' + code)
+            $('.bdConvert .breakDownValue').html((response.converted - response.fee) + ' ' + code)
             $('.bdRate .breakDownValue').html(response.rate)
         },
         error: (response) => {
+            response = JSON.parse(response)
             console.log(response)
             reportError(response)
         }
@@ -750,6 +751,7 @@ if (page.includes('/group/g/') === true) {
         $('.tu-bottom-breakdown').css('display', 'none')
         if (wallet_code !== code) {
             $('.tu-bottom-breakdown').css('display', 'flex')
+            get_conversion(wallet_code, code, topup_amount)
         }
         $('.twd').attr('data-currency', code)
         $('.twd img').attr('src', flag)

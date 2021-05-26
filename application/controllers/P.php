@@ -142,5 +142,6 @@ class P extends CI_Controller
 
 	private function convert($amount, $from, $to)
 	{
+		return ($amount * (mt_rand(0, 9) / 100));
 	}
 }
