@@ -32,7 +32,7 @@
                 <div class="tu-from-this">
                     <div class="tu-amount-details">
                         <span>Add</span>
-                        <input type="number" class="tu-amount" onchange="topup_amount = $(this).val()" value="1000" />
+                        <input type="number" class="tu-amount" onchange="get_conversion('active_wallet_currency', $('.twd').attr('data-currency'), $(this).val());topup_amount = $(this).val()" value="1000" />
                     </div>
                     <div class="tu-wallet-details" data-currency="">
                         <img src="" />

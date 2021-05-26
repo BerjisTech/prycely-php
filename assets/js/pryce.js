@@ -36,7 +36,12 @@ const get_conversion = (wallet_code, code, topup_amount) => {
         },
         method: 'POST',
         success: (response) => {
+            JSON.parse(response)
             console.log(response)
+            $('.bdPay .breakDownValue').html(topup_amount + ' ' + code)
+            $('.bdFee .breakDownValue').html(response.fee + ' ' + code)
+            $('.bdConvert .breakDownValue').html(response.converted + ' ' + code)
+            $('.bdRate .breakDownValue').html(response.rate)
         },
         error: (response) => {
             console.log(response)
