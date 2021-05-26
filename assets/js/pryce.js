@@ -26,6 +26,25 @@ const reportError = (error) => {
     })
 }
 
+const get_conversion = (wallet_code, code, topup_amount) => {
+    $.ajax({
+        url: `${base_url}p/top_up_conversion`,
+        data: {
+            'amount': topup_amount,
+            'from_currency': wallet_code,
+            'to_currency': code
+        },
+        method: 'POST',
+        success: (response) => {
+            console.log(response)
+        },
+        error: (response) => {
+            console.log(response)
+            reportError(response)
+        }
+    })
+}
+
 /* On Boarding Page */
 if (page.includes('createaccount') === true) {
     const the_person_form = $('form[name="the_person_form"]')
@@ -502,6 +521,7 @@ if (page.includes('/wallet/view') === true) {
         $('.tu-bottom-breakdown').css('display', 'none')
         if (wallet_code !== code) {
             $('.tu-bottom-breakdown').css('display', 'flex')
+            get_conversion(wallet_code, code, topup_amount)
         }
         $('.twd').attr('data-currency', code)
         $('.twd img').attr('src', flag)

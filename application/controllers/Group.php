@@ -57,7 +57,7 @@ class Group extends CI_Controller
             ->get('the_transactions')->result_array();
 
         $transactions = array();
-        foreach ($dates as $date) {
+        foreach ($dates as $key => $date) {
             $limit = 6;
             $collection_date = date('dmY', $date['the_transaction_date']);
             $collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
