@@ -55,19 +55,19 @@
                     <div class="tu-bottom-breakdown">
                         <div class="bd bdPay">
                             <span class="breakDownTitle">You will pay</span>
-                            <span class="breakDownValue">1,616.41 KES</span>
+                            <span class="breakDownValue">0</span>
                         </div>
                         <div class="bd bdFee">
                             <span class="breakDownTitle">Total Fees</span>
-                            <span class="breakDownValue">-1,616.41 KES</span>
+                            <span class="breakDownValue">-0</span>
                         </div>
                         <div class="bd bdConvert">
                             <span class="breakDownTitle">Amount we'll convert</span>
-                            <span class="breakDownValue">1,616.41 KES</span>
+                            <span class="breakDownValue">0</span>
                         </div>
                         <div class="bd bdRate">
                             <span class="breakDownTitle">Guaranteed rate (for 20 hours)</span>
-                            <span class="breakDownValue">0.107</span>
+                            <span class="breakDownValue">0</span>
                         </div>
                     </div>
                     <button class="goToPayChoice" onclick="goToPayChoice()">SEND MONEY</button>
