@@ -15,7 +15,7 @@ class Email extends CI_Model
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_port' => 465,
             'smtp_user' => 'prycely@gmail.com',
-            'smtp_pass' => '890Berjis*()',
+            'smtp_pass' => 'Fankulo26@^',
             'mailtype' => 'html',
             'charset' => 'iso-8859-1'
         );
