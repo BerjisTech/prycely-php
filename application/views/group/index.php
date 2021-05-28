@@ -44,7 +44,7 @@
                         </td>
                         <td class="transaction-td">
                             <span class="transaction-amount complete"><?php echo $group['the_group_currency'] . ' ' . $group['the_group_goal'] ?> (Total)</span>
-                            <span class="transaction-time">KES 2,300 (me)</span>
+                            <span class="transaction-time"><?php echo $group['the_group_currency'] . ' ' . $group['so_far'] ?></span>
                         </td>
                     </tr>
                 <?php endforeach; ?>
