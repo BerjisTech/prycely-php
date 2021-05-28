@@ -22,8 +22,8 @@
         <div class="switch-transactions">
             <div class="row">
                 <div class="group-cover col-xs-12">
-                    <h3>Group Name</h3>
-                    <p class="group-goal">Group Goal here</p>
+                    <h3><?php echo $group->the_group_name; ?></h3>
+                    <p class="group-goal"><?php echo $group->the_group_purpose; ?></p>
                 </div>
             </div>
 
