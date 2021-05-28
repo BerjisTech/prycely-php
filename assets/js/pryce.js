@@ -21,7 +21,7 @@ const reportError = (error) => {
         url: `${base_url}p/report_errors`,
         method: 'POST',
         data: error,
-        success: () => { return false; },
+        success: (response) => { console.log(response); },
         error: (response) => { reportError(response) }
     })
 }
