@@ -149,9 +149,10 @@
 			data: [
 				<?php for ($m = 30; $m > -1; $m--) : ?> {
 						<?php
+						$user = $this->session->the_person_id;
 						$collection_date = date('dmY', strtotime('-' . $m . ' days'));
-						$deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 1 AND `the_transaction_wallet` = $wallet->the_wallet_id AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
-						$withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_type` = 2 AND `the_transaction_wallet` = $wallet->the_wallet_id AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+						$deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = $user AND `the_transaction_type` = 1 AND `the_transaction_wallet` = $wallet->the_wallet_id AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+						$withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_user` = $user AND `the_transaction_type` = 2 AND `the_transaction_wallet` = $wallet->the_wallet_id AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
 						?>
 						y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
 							a: <?php if ($deposit == '') echo 0;

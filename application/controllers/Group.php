@@ -75,6 +75,7 @@ class Group extends CI_Controller
         $data['transactions'] = $transactions;
 
         $data['group'] = $group;
+        $data['group_id'] = $group_id;
         $data['currencies'] = $this->db->get('currency')->result_array();
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
         $data['page_name'] = 'group/group';

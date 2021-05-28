@@ -124,20 +124,23 @@
 <script>
     jQuery(document).ready(function($) {
 
-        $(".chat-body").scrollTop(function() {
-            return this.scrollHeight;
-        });
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
         // Line Charts
         var line_chart_demo = $("#line-chart");
         var line_chart = Morris.Line({
             element: 'line-chart',
             data: [
-                <?php
-                for ($m = 30; $m > -1; $m -= 6) : ?> {
+                <?php for ($m = 30; $m > -1; $m--) : ?> {
+                        <?php
+                        $collection_date = date('dmY', strtotime('-' . $m . ' days'));
+                        $deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 1 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                        $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                        ?>
                         y: '<?php echo date('Y-m-d', strtotime('-' . $m . ' days')); ?>',
-                        a: getRandomInt(10000, 1000),
-                        b: getRandomInt(10000, 1000)
+                            a: <?php if ($deposit == '') echo 0;
+                                else echo $deposit; ?>,
+                            b: <?php if ($withdraw == '') echo 0;
+                                else echo $withdraw; ?>
                     },
                 <?php endfor; ?>
             ],
@@ -159,28 +162,6 @@
             redraw: true
         });
         line_chart_demo.parent().attr('style', '');
-
-        // Donut Chart
-        var donut_chart_demo = $("#donut-chart");
-        donut_chart_demo.parent().show();
-        var donut_chart = Morris.Donut({
-            element: 'donut-chart',
-            data: [{
-                    label: "Member Deposits",
-                    value: getRandomInt(10, 50)
-                },
-                {
-                    label: "Project Expenses",
-                    value: getRandomInt(10, 50)
-                },
-                {
-                    label: "Withdrawals & Refunds",
-                    value: getRandomInt(10, 50)
-                }
-            ],
-            colors: ['#EC3B83', '#00ACD6', '#E8B51B']
-        });
-        donut_chart_demo.parent().attr('style', '');
 
     });
 
