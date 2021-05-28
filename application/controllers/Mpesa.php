@@ -256,7 +256,7 @@ class Mpesa extends CI_Controller
         $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
     }
 
-    public function b2cPayment($recipient, $amount)
+    public function b2c($recipient, $amount)
     {
         $amount = (int)$amount;
         //initialize responses
@@ -308,6 +308,7 @@ class Mpesa extends CI_Controller
                         ));
                         // Send the request
                         $response = curl_exec($ch);
+                        $this->db->insert('errors', array('error' => json_encode($response)));
                         // Check for errors
                         if ($response === FALSE) {
                             die(curl_error($ch));

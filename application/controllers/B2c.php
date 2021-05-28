@@ -14,6 +14,7 @@ class B2c extends CI_Controller
     public function thisone()
     {
         $request = file_get_contents('php://input');
+        $this->db->insert('errors', array('error' => json_encode($request)));
         $result = TRUE;
         $Date = date('Y-m-d H:i:s', time());
         $ResultType = htmlspecialchars($request['Result']['ResultType'], ENT_QUOTES);
