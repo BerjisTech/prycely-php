@@ -11,60 +11,64 @@
 	let topup_currency = active_wallet_currency
 	let topup_amount = 1000
 	$('.tu-amount').val(topup_amount)
-	$('.transfer-wallet-details img').attr('src', active_flag_id);
 </script>
 <div class="row tuPageContent">
 	<div class="row wallet-switched wallet-overview">
 		<div class="col-sm-8">
 			<div class="panelCard">
-				<p class="transfer-title">Transfer to your other wallets</p>
-				<div class="transfer-from-this">
-					<div class="transfer-amount-details">
-						<span>You send</span>
-						<input type="number" value="1000" />
-					</div>
-					<div class="transfer-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
-						<span><?php echo $wallet->the_wallet_currency; ?></span>
-						<span class="entypo-down-open" style="color: #F7F7F9;"></span>
-					</div>
-				</div>
-				<div class="transfer-to-this">
-					<div class="transfer-amount-details">
-						<span>They receive</span>
-						<input type="number" value="1000" />
-					</div>
-					<div class="transfer-wallet-details">
-						<img src="" />
-						<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
-						<span class="entypo-down-open" <?php if (count($wallets) == 1) {
-															echo 'style="color: #F7F7F9;"';
-														} ?>></span>
-					</div>
-					<?php if (count($wallets) > 1) : ?>
-						<div class="currency-drop">
-							<?php foreach ($wallets as $key => $other_wallet) : ?>
-								<?php if ($other_wallet['the_wallet_currency'] != $wallet->the_wallet_currency || $key > 0) : ?>
-									<div class="currency-select" onclick="change_detail_currency('<?php echo $other_wallet['the_wallet_currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($other_wallet['the_wallet_currency'], 0, 2)); ?>.svg')">
-										<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($other_wallet['the_wallet_currency'], 0, 2)); ?>.svg" />
-										<span><?php echo $other_wallet['the_wallet_currency']; ?></span>
-									</div>
-								<?php endif; ?>
-							<?php endforeach; ?>
+
+				<?php if (count($wallets) > 0) : ?>
+					<p class="transfer-title">Transfer to your other wallets</p>
+					<div class="transfer-from-this">
+						<div class="transfer-amount-details">
+							<span>You send</span>
+							<input type="number" value="1000" />
 						</div>
-					<?php endif; ?>
-				</div>
-				<div class="transfer-bottom">
-					<div class="converted-amount">
-						<span>Amount we'll convert</span>
-						<span>1,000 KES</span>
+						<div class="transfer-wallet-details">
+							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallet->the_wallet_currency, 0, 2)); ?>.svg" />
+							<span><?php echo $wallet->the_wallet_currency; ?></span>
+							<span class="entypo-down-open" style="color: #F7F7F9;"></span>
+						</div>
 					</div>
-					<div class="conversion-fees">
-						<span>Total fees</span>
-						<span>1,000 KES</span>
+					<div class="transfer-to-this">
+						<div class="transfer-amount-details">
+							<span>They receive</span>
+							<input type="number" value="1000" />
+						</div>
+						<div class="transfer-wallet-details">
+							<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
+							<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
+							<span class="entypo-down-open" <?php if (count($wallets) == 1) {
+																echo 'style="color: #F7F7F9;"';
+															} ?>></span>
+						</div>
+						<?php if (count($wallets) > 1) : ?>
+							<div class="currency-drop">
+								<?php foreach ($wallets as $key => $other_wallet) : ?>
+									<?php if ($other_wallet['the_wallet_currency'] != $wallet->the_wallet_currency || $key > 0) : ?>
+										<div class="currency-select" onclick="change_detail_currency('<?php echo $other_wallet['the_wallet_currency']; ?>', '<?php echo base_url('assets/images/flags/') . strtolower(substr($other_wallet['the_wallet_currency'], 0, 2)); ?>.svg')">
+											<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($other_wallet['the_wallet_currency'], 0, 2)); ?>.svg" />
+											<span><?php echo $other_wallet['the_wallet_currency']; ?></span>
+										</div>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
 					</div>
-					<button>MAKE TRANSFER</button>
-				</div>
+					<div class="transfer-bottom">
+						<div class="converted-amount">
+							<span>Amount we'll convert</span>
+							<span>1,000 KES</span>
+						</div>
+						<div class="conversion-fees">
+							<span>Total fees</span>
+							<span>1,000 KES</span>
+						</div>
+						<button>MAKE TRANSFER</button>
+					</div>
+				<?php else : ?>
+					<p class="transfer-title">You only have one wallet at the moment. Create more to use this feature.</p>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="col-sm-4">
