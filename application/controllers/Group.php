@@ -80,7 +80,7 @@ class Group extends CI_Controller
         $data['transactions'] = $transactions;
 
         $data['group'] = $group;
-        $data['group']['balance'] = $this->db->where('the_transaction_group', $group_id)->where('the_transaction_status !=', 2)->get('the_transactions')->row()->total;
+        $data['group']['balance'] = $this->db->select('sum(the_transaction_amount) as total')->where('the_transaction_group', $group_id)->where('the_transaction_status !=', 2)->get('the_transactions')->row()->total;
         $data['group_id'] = $group_id;
         $data['currencies'] = $this->db->get('currency')->result_array();
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
