@@ -523,7 +523,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 $config['protocol']  = 'smtp';
-$config['smtp_host'] = 'ssl://smtp.googlemail.com';
+$config['smtp_host'] = 'ssl://smtp.gmail.com';
 $config['smtp_user'] = 'prycely@gmail.com';
 $config['smtp_pass'] = 'Fankulo26@^';
 $config['smtp_port'] = '465';
