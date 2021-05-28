@@ -124,6 +124,9 @@
 <script>
     jQuery(document).ready(function($) {
 
+        $(".chat-body").scrollTop(function() {
+            return this.scrollHeight;
+        });
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
         // Line Charts
         var line_chart_demo = $("#line-chart");
@@ -162,6 +165,40 @@
             redraw: true
         });
         line_chart_demo.parent().attr('style', '');
+
+        // Donut Chart
+        var donut_chart_demo = $("#donut-chart");
+        donut_chart_demo.parent().show();
+        var donut_chart = Morris.Donut({
+            element: 'donut-chart',
+            data: [{
+                    label: "Member Deposits",
+                    value: <?php
+                            $deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 1 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                            if ($deposit == '') echo 0;
+                            else echo $deposit;
+                            ?>
+                },
+                {
+                    label: "Project Expenses",
+                    value: <?php
+                            $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                            if ($withdraw == '') echo 0;
+                            else echo $withdraw;
+                            ?>
+                },
+                {
+                    label: "Withdrawals & Refunds",
+                    value: <?php
+                            $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                            if ($withdraw == '') echo 0;
+                            else echo $withdraw;
+                            ?>
+                }
+            ],
+            colors: ['#EC3B83', '#00ACD6', '#E8B51B']
+        });
+        donut_chart_demo.parent().attr('style', '');
 
     });
 
