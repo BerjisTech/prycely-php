@@ -31,7 +31,7 @@
                 <div class="col-sm-6 col-xs-12 text-center">
                     <div class="group-balance-preview group50Top">
                         <span class="gp-txt">Total balance</span>
-                        <span class="gp-bals"><sup><?php echo $group['the_group_currency']; ?></sup><?php echo $group['total']; ?></span>
+                        <span class="gp-bals"><sup><?php echo $group['the_group_currency']; ?></sup><?php echo $group_total; ?></span>
                         <span class="gp-grow"><span class="entypo-up-thin"></span> 4.76%</span>
                         <div class="topUp-withdraw">
                             <span onclick="goToTopUp()">Top Up</span>
