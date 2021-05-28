@@ -40,7 +40,7 @@ class Auth extends CI_Controller
             $view = 'email_templates/verify_code';
             $message = $this->load->view($view, $data, TRUE);
 
-            $this->Email->do_email($message, 'Prycely Verification Code', $email, 'support@sleekupsell.com');
+            $this->Email->do_email($message, 'Prycely Verification Code', $email, 'prycely@gmail.com');
             $this->session->the_create_account_code = $the_create_account_code;
 
             print_r('the_proceed');
