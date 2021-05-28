@@ -9,7 +9,6 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         /* cache control */
-        
     }
 
     public function index()
@@ -86,7 +85,7 @@ class Auth extends CI_Controller
             $view = 'email_templates/recover_code';
             $message = $this->load->view($view, $data, TRUE);
 
-            $this->Email->do_email($message, 'Password Recovery Code', $email, 'support@sleekupsell.com');
+            $this->Email->do_email($message, 'Password Recovery Code', $email, 'prycely@gmail.com');
             $this->session->the_create_account_code = $the_create_account_code;
             $this->session->the_person_temp_email = $email;
 
