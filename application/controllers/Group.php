@@ -28,7 +28,12 @@ class Group extends CI_Controller
             $my_groups =  explode(',', $my_groups);
             if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
                 foreach ($my_groups as $key => $group) {
-                    $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
+                    $data['groups'][$key] = $this->db
+                        ->select('*, sum(the_transaction_amount) as so_far')
+                        ->where('the_group_id', $group)
+                        ->join('the_transactions', 'the_transactoins.the_transaction_group = the_groups.the_group_id')
+                        ->where('the_transaction_status !=', 2)
+                        ->get('the_groups')->result_array()[0];
                 }
             }
         }
