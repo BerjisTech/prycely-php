@@ -21,10 +21,16 @@ class Group extends CI_Controller
         $data['page_title'] = 'Group';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
+        $data['groups'] = array();
+
         $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
-        $my_groups =  explode(',', $my_groups);
-        foreach ($my_groups as $key => $group) {
-            $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
+        if ($my_groups != '') {
+            $my_groups =  explode(',', $my_groups);
+            if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
+                foreach ($my_groups as $key => $group) {
+                    $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
+                }
+            }
         }
         $this->load->view('index', $data);
     }
