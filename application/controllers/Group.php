@@ -23,7 +23,8 @@ class Group extends CI_Controller
 
         $data['groups'] = array();
 
-        $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
+        $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->result_array()['the_person_groups'];
+
         if ($my_groups != '') {
             $my_groups =  explode(',', $my_groups);
             if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
