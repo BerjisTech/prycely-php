@@ -602,7 +602,7 @@ if (page.includes('/wallet/view') === true) {
             return false;
         }
 
-        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/Prycely Group TopUp/user ${active_user_id} wallet ${active_wallet_currency} topup/1/${active_wallet_id}/Wallet Top Up`;
+        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/Prycely Wallet TopUp/user ${active_user_id} wallet ${active_wallet_currency} topup/1/${active_wallet_id}/Wallet Top Up`;
 
         console.log(stk_url)
         $.ajax({
