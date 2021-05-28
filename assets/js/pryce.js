@@ -826,7 +826,7 @@ if (page.includes('/group/g/') === true) {
             return false;
         }
 
-        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/Prycely Group TopUp/user ${active_user_id} group ${active_group_currency} topup/1/${active_group_id}/Group Top Up`;
+        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/Prycely Group TopUp/user ${active_user_id} group ${active_group_currency} topup/2/${active_group_id}/Group Top Up`;
 
         console.log(stk_url)
         $.ajax({
