@@ -33,13 +33,15 @@ class Overview extends CI_Controller
                 ->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date AND `the_transaction_status` != 2 ORDER BY `the_transaction_id` DESC LIMIT 10")->result_array();
         }
 
+        $data['groups'] = array();
 
         $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
-        $my_groups =  explode(',', $my_groups);
-        $data['groups'] = array();
-        if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
-            foreach ($my_groups as $key => $group) {
-                $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
+        if ($my_groups != '') {
+            $my_groups =  explode(',', $my_groups);
+            if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
+                foreach ($my_groups as $key => $group) {
+                    $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
+                }
             }
         }
 
