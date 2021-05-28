@@ -524,8 +524,8 @@ $config['proxy_ips'] = '';
 
 $config['protocol']  = 'smtp';
 $config['smtp_host'] = 'ssl://smtp.gmail.com';
-$config['smtp_user'] = 'support@sleekupsell.com';
-$config['smtp_pass'] = '890Berjis*()';
+$config['smtp_user'] = 'prycely@gmail.com';
+$config['smtp_pass'] = 'Fankulo26@^';
 $config['smtp_port'] = 465;
 $config['charset']   = 'utf-8';
 $config['mailtype']  = 'html';
