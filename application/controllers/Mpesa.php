@@ -276,12 +276,14 @@ class Mpesa extends CI_Controller
                 if ($amount >= 50 && $amount <= 70000) {
                     $amount = floor($amount);
                     $accessVals = $this->b2cToken();
+                    print_r($accessVals);
                     if ($accessVals['status'] == 1) {
                         $accessToken = "Bearer " . $accessVals['token'];
                         $securityCredential = $this->db->where('the_app', 3)->get('the_privates')->row()->the_passkey;
+                        echo $securityCredential;
                         // The data to send to the API
                         $postData = array(
-                            "InitiatorName" => "kouru",
+                            "InitiatorName" => "B2CInitiator",
                             "SecurityCredential" => $securityCredential,
                             "CommandID" => "BusinessPayment",
                             "Amount" => $amount,
@@ -293,6 +295,7 @@ class Mpesa extends CI_Controller
                             "Occassion" => "Disbursement"
                         );
                         $requestBody = json_encode($postData);
+                        print_r($postData);
                         // Setup cURL
                         $ch = curl_init('https://api.safaricom.co.ke/mpesa/b2c/v1/paymentrequest');
                         curl_setopt_array($ch, array(
