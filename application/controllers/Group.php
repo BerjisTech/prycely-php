@@ -31,7 +31,7 @@ class Group extends CI_Controller
                     $data['groups'][$key] = $this->db
                         ->select('*, sum(the_transaction_amount) as so_far')
                         ->where('the_group_id', $group)
-                        ->join('the_transactions', 'the_transactoins.the_transaction_group = the_groups.the_group_id')
+                        ->join('the_transactions', 'the_transactions.the_transaction_group = the_groups.the_group_id')
                         ->where('the_transaction_status !=', 2)
                         ->get('the_groups')->result_array()[0];
                 }
