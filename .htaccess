@@ -4,7 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
 
 
-# AuthType Basic
-# AuthName "Restricted Content"
-# AuthUserFile /etc/apache2/.htpasswd
-# Require valid-user
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /etc/apache2/.htpasswd
+Require valid-user
