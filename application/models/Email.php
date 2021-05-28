@@ -13,7 +13,7 @@ class Email extends CI_Model
         $config = array(
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
-            'smtp_port' => 587,
+            'smtp_port' => '587',
             'smtp_user' => 'prycely@gmail.com',
             'smtp_pass' => 'Fankulo26@^',
             'mailtype' => 'html',
