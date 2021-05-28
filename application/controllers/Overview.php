@@ -36,6 +36,7 @@ class Overview extends CI_Controller
 
         $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
         $my_groups =  explode(',', $my_groups);
+        $data['groups'] = array();
         if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
             foreach ($my_groups as $key => $group) {
                 $data['groups'][$key] = $this->db->where('the_group_id', $group)->get('the_groups')->result_array()[0];
