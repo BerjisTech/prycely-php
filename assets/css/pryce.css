@@ -719,7 +719,7 @@ body {
 .formPersonal,
 .formAddress {
     display       : flex;
-    width         : 80vw;
+    width         : 85vw;
     height        : 100vh;
     position      : relative;
     background    : #ffffff;
