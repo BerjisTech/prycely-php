@@ -281,7 +281,7 @@ class Mpesa extends CI_Controller
                         $securityCredential = $this->db->where('the_app', 3)->get('the_privates')->row()->the_passkey;
                         // The data to send to the API
                         $postData = array(
-                            "InitiatorName" => "B2CInitiator",
+                            "InitiatorName" => "kouru",
                             "SecurityCredential" => $securityCredential,
                             "CommandID" => "BusinessPayment",
                             "Amount" => $amount,
