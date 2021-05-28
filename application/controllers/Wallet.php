@@ -100,6 +100,7 @@ class Wallet extends CI_Controller
 
 	public function view($wallet_id)
 	{
+		$me = $this->session->the_person_id;
 		$wallet = $this->db->where('the_wallet_id', $wallet_id)->get('the_wallets')->row();
 		if ($wallet->the_wallet_user != $this->session->the_person_id) {
 			$this->session->sess_destroy();
@@ -123,7 +124,7 @@ class Wallet extends CI_Controller
 			$collection_date = date('dmY', $date['the_transaction_date']);
 			$collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
 			$da_query = $this->db
-				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = 1 AND `the_transaction_wallet` = $wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date AND `the_transaction_status` != 2 ORDER BY `the_transaction_id` DESC LIMIT $limit");
+				->query("SELECT * FROM `the_transactions` WHERE `the_transaction_user` = $me AND `the_transaction_wallet` = $wallet_id AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date AND `the_transaction_status` != 2 ORDER BY `the_transaction_id` DESC LIMIT $limit");
 			$transactions[$collection_stamp] = $da_query->result_array();
 		}
 
