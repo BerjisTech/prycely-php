@@ -11,6 +11,7 @@
 	let topup_currency = active_wallet_currency
 	let topup_amount = 1000
 	$('.tu-amount').val(topup_amount)
+	$('.transfer-wallet-details img').attr('src', active_flag_id);
 </script>
 <div class="row tuPageContent">
 	<div class="row wallet-switched wallet-overview">
@@ -34,7 +35,7 @@
 						<input type="number" value="1000" />
 					</div>
 					<div class="transfer-wallet-details">
-						<img src="<?php echo base_url('assets/images/flags/') . strtolower(substr($wallets[0]['the_wallet_currency'], 0, 2)); ?>.svg" />
+						<img src="" />
 						<span><?php echo $wallets[0]['the_wallet_currency']; ?></span>
 						<span class="entypo-down-open" <?php if (count($wallets) == 1) {
 															echo 'style="color: #F7F7F9;"';
