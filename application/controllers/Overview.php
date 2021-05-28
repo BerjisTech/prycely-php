@@ -26,6 +26,7 @@ class Overview extends CI_Controller
             ->order_by('the_transaction_date', 'DESC')
             ->get('the_transactions')->result_array();
 
+        $transactions = array();
         foreach ($dates as $date) {
             $collection_date = date('dmY', $date['the_transaction_date']);
             $collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
