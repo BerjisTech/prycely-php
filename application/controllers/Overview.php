@@ -13,6 +13,10 @@ class Overview extends CI_Controller
         if (!isset($this->session->the_person_email)) {
             redirect(base_url('p/wrong_turn'));
         }
+
+        if (!isset($this->session->the_person_id)) {
+            redirect(base_url('auth/login'));
+        }
     }
 
     public function index()
@@ -27,7 +31,7 @@ class Overview extends CI_Controller
             ->get('the_transactions')->result_array();
 
         $transactions = array();
-        
+
         foreach ($dates as $date) {
             $collection_date = date('dmY', $date['the_transaction_date']);
             $collection_stamp = date('j\<\s\u\p\>S\<\/\s\u\p\> M', $date['the_transaction_date']);
