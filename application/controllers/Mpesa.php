@@ -55,6 +55,8 @@ class Mpesa extends CI_Controller
     public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
     {
 
+        $reference = urldecode($reference);
+        $description = urldecode($description);
         $group = NULL;
         $wallet = $which;
 
