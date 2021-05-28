@@ -16,7 +16,6 @@
 	<div class="row wallet-switched wallet-overview">
 		<div class="col-sm-8">
 			<div class="panelCard">
-
 				<?php if (count($wallets) > 0) : ?>
 					<p class="transfer-title">Transfer to your other wallets</p>
 					<div class="transfer-from-this">
@@ -67,7 +66,7 @@
 						<button>MAKE TRANSFER</button>
 					</div>
 				<?php else : ?>
-					<p class="transfer-title">You only have one wallet at the moment. Create more to use this feature.</p>
+					<p style="height: 300px;" class="transfer-title">You only have one wallet at the moment. Create more to use this feature.</p>
 				<?php endif; ?>
 			</div>
 		</div>
