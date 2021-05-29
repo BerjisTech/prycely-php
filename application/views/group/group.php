@@ -174,7 +174,7 @@
             data: [{
                     label: "Member Deposits",
                     value: <?php
-                            $deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 1 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                            $deposit = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 1 AND `the_transaction_status` != 2")->row()->total;
                             if ($deposit == '') echo 0;
                             else echo $deposit;
                             ?>
@@ -182,7 +182,7 @@
                 {
                     label: "Project Expenses",
                     value: <?php
-                            $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                            $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2")->row()->total;
                             if ($withdraw == '') echo 0;
                             else echo $withdraw;
                             ?>
@@ -190,7 +190,7 @@
                 {
                     label: "Withdrawals & Refunds",
                     value: <?php
-                            $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2 AND date_format(from_unixtime(the_transaction_date), '%d%m%Y') = $collection_date")->row()->total;
+                            $withdraw = $this->db->query("SELECT SUM(the_transaction_amount) as total FROM `the_transactions` WHERE `the_transaction_group` = $group_id AND `the_transaction_type` = 2 AND `the_transaction_status` != 2")->row()->total;
                             if ($withdraw == '') echo 0;
                             else echo $withdraw;
                             ?>
