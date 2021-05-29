@@ -28,7 +28,7 @@ class Group extends CI_Controller
         $data['groups'] = array();
 
         $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
-        
+
         if ($my_groups != '') {
             $my_groups =  explode(',', $my_groups);
             if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
@@ -55,7 +55,7 @@ class Group extends CI_Controller
         }
 
         $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
-        $group_members = $this->db->get('group_' . $group_id)->result_array();
+        $members = $this->db->get('group_' . $group_id);
         if ($this->db->where('the_user_id', $this->session->the_person_id)->get('group_' . $group_id)->num_rows() != 1) {
             $this->session->sess_destroy();
             redirect(base_url());
@@ -85,6 +85,8 @@ class Group extends CI_Controller
         $data['transactions'] = $transactions;
 
         $data['group'] = $group;
+        $data['group_members'] = $members->result_array();
+        $data['group_total_members'] = $members->num_rows();
         $data['group_total'] = $this->db->select('sum(the_transaction_amount) as total')->where('the_transaction_group', $group_id)->where('the_transaction_status !=', 2)->get('the_transactions')->row()->total;
         $data['group_id'] = $group_id;
         $data['currencies'] = $this->db->get('currency')->result_array();
@@ -188,6 +190,59 @@ class Group extends CI_Controller
             echo json_encode($response);
             exit;
         }
+    }
+
+    public function f($group_id, $feature)
+    {
+        $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
+
+        $page_name = 'group/features';
+
+        if ($feature != 'members' && !$this->db->table_exists('group_' . $group_id . '_' . $feature)) {
+            header('location: ' . base_url('group/activate/' . $feature . '/' . $group_id));
+            exit;
+        } else {
+            // $page_name = 'group/' . $feature;
+            $page_name = 'group/features';
+        }
+
+        switch ($feature):
+            case 'members':
+                break;
+            case 'projects':
+                break;
+            case 'activites':
+                break;
+            case 'income':
+                break;
+            case 'expense':
+                break;
+            case 'contributions':
+                break;
+            case 'assets':
+                break;
+            case 'loans':
+                break;
+            default:
+        endswitch;
+
+        $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+
+        $data['page_name'] = $page_name;
+        $data['page_title'] = $group->the_group_name . ' | ' . $feature;
+
+        $this->load->view('index', $data);
+    }
+
+    public function activate($feature, $group_id)
+    {
+        $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
+        $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
+
+        $data['page_name'] = 'group/features';
+        $data['page_title'] = $group->the_group_name . ' | ' . $feature;
+
+        $this->load->view('index', $data);
     }
 
     private function generate_group_table($group_id)

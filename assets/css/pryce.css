@@ -1438,3 +1438,49 @@ body {
     cursor         : pointer;
     border         : 1px solid #7D2AE8;
 }
+
+.featureSidePanel {
+    overflow-y: auto;
+}
+
+.featureCard {
+    margin        : 20px 20px 0px 20px;
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    background    : #ffffff;
+}
+
+.featureCard .featureDetails {
+    flex-grow     : 4;
+    padding       : 10px;
+    display       : flex;
+    flex-direction: column;
+}
+
+.featureCard .featureDetails span:first-of-type {
+    font-weight  : 600;
+    margin-bottom: 10px;
+}
+
+.featureCard .featureDetails span:last-of-type {
+    font-weight: 300;
+    opacity    : 0.7;
+}
+
+.featureCard .goFeature {
+    background     : #7D2AE8;
+    border-radius  : 5px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    padding        : 10px;
+    color          : #ffffff;
+    font-weight    : 500;
+    height         : 40px;
+    cursor         : pointer;
+}
+
+.featureSidePanel .transaction-title {
+    margin: 20px 20px 0px 30px;
+}

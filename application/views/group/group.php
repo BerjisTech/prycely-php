@@ -59,65 +59,67 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
-        <div class="chat-block">
-            <div class="input-group">
-                <span class="input-group-addon entypo-cancel btn-danger" onclick="$('.switch-tab[data-hide=\'switch-transactions\']').trigger('click');"></span>
-                <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
-                <span class="input-group-addon entypo-search"></span>
+    <div class="col-sm-4 hidden-xs right-card switch-card chat-card featureSidePanel">
+        <p class="transaction-title">Activated Group Features</p>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Members</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
             </div>
-            <div class="chat-body">
-                <div class="chat-bubble chat-out">
-                    <span class="chat-img"><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></span>
-                    <span class="chat-text">
-                        Guys what do you think about my new logo concept
-                    </span>
-                </div>
-                <div class="chat-bubble chat-in">
-                    <span class="chat-user">Xi Jin Ping</span>
-                    <span class="chat-img"><img src="https://i.imgur.com/5BBABri.gif" /></span>
-                    <span class="chat-text">
-                        My face better than your logo. ALSO Communisim is fyucha
-                    </span>
-                </div>
-                <div class="chat-bubble chat-out">
-                    <span class="chat-text">
-                        No, tentacles hentai is clearly the fyucha
-                    </span>
-                </div>
-                <div class="chat-bubble chat-in">
-                    <span class="chat-user">Kim Jong Un</span>
-                    <span class="chat-img"><img src="https://www.aljazeera.com/wp-content/uploads/2020/01/5725cee6113f42b4ad829dff628f13ce_18.jpeg?resize=770%2C513" /></span>
-                    <span class="chat-text">
-                        Wassuuuup
-                    </span>
-                </div>
-                <div class="chat-bubble chat-in">
-                    <span class="chat-user">Obama</span>
-                    <span class="chat-text">
-                        C'mon dude, keep your dick in your pants. Your wife just starved to death.
-                    </span>
-                </div>
-                <div class="chat-bubble chat-in">
-                    <span class="chat-user">Putin</span>
-                    <span class="chat-img"><img src="https://i.makeagif.com/media/5-08-2015/z2CvR6.gif" /></span>
-                    <span class="chat-text">
-                        Starving wiifffeee,
-                    </span>
-                </div>
-                <div class="chat-bubble chat-in">
-                    <span class="chat-user">Putin</span>
-                    <span class="chat-text">
-                        Wait you people have actual wives!!
-                    </span>
-                </div>
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon text-center;"><img src="<?php echo base_url('assets/images/the_emo.png'); ?>" class="the_emoji" /></span>
-                <textarea type="search" placeholder="Type something..." class="form-control input-lg"></textarea>
-                <span class="input-group-addon entypo-paper-plane"></span>
-            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/members'); ?>" class="goFeature">View</a>
         </div>
+        <div class="divider"></div>
+        <p class="transaction-title">Inactive Group Features</p>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Activities</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/activities'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Contributions</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/contributions'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Projects</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/projects'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Income</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/income'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Assets</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/assets'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Expenses</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/expenses'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div class="featureCard panelCard">
+            <div class="featureDetails">
+                <span>Loans</span>
+                <span>You currently have <?php echo $group_total_members; ?> members</span>
+            </div>
+            <a href="<?php echo base_url('group/f/' . $group_id . '/loans'); ?>" class="goFeature">ACTIVATE</a>
+        </div>
+        <div style="height: 50px;"></div>
     </div>
 
 </div>
@@ -229,3 +231,68 @@
 <?php ob_end_flush(); ?>
 <!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
 <script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script> -->
+
+<?php
+if (isset($dontShowChat)) :
+?>
+    <div class="col-sm-4 hidden-xs right-card switch-card chat-card">
+        <div class="chat-block">
+            <div class="input-group">
+                <span class="input-group-addon entypo-cancel btn-danger" onclick="$('.switch-tab[data-hide=\'switch-transactions\']').trigger('click');"></span>
+                <input type="search" placeholder="Search groups by name" class="form-control input-lg" />
+                <span class="input-group-addon entypo-search"></span>
+            </div>
+            <div class="chat-body">
+                <div class="chat-bubble chat-out">
+                    <span class="chat-img"><img src="<?php echo base_url('assets/images/logo.png'); ?>" /></span>
+                    <span class="chat-text">
+                        Guys what do you think about my new logo concept
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Xi Jin Ping</span>
+                    <span class="chat-img"><img src="https://i.imgur.com/5BBABri.gif" /></span>
+                    <span class="chat-text">
+                        My face better than your logo. ALSO Communisim is fyucha
+                    </span>
+                </div>
+                <div class="chat-bubble chat-out">
+                    <span class="chat-text">
+                        No, tentacles hentai is clearly the fyucha
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Kim Jong Un</span>
+                    <span class="chat-img"><img src="https://www.aljazeera.com/wp-content/uploads/2020/01/5725cee6113f42b4ad829dff628f13ce_18.jpeg?resize=770%2C513" /></span>
+                    <span class="chat-text">
+                        Wassuuuup
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Obama</span>
+                    <span class="chat-text">
+                        C'mon dude, keep your dick in your pants. Your wife just starved to death.
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Putin</span>
+                    <span class="chat-img"><img src="https://i.makeagif.com/media/5-08-2015/z2CvR6.gif" /></span>
+                    <span class="chat-text">
+                        Starving wiifffeee,
+                    </span>
+                </div>
+                <div class="chat-bubble chat-in">
+                    <span class="chat-user">Putin</span>
+                    <span class="chat-text">
+                        Wait you people have actual wives!!
+                    </span>
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon text-center;"><img src="<?php echo base_url('assets/images/the_emo.png'); ?>" class="the_emoji" /></span>
+                <textarea type="search" placeholder="Type something..." class="form-control input-lg"></textarea>
+                <span class="input-group-addon entypo-paper-plane"></span>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
