@@ -66,7 +66,7 @@ class P extends CI_Controller
 
 	public function report_errors()
 	{
-		$this->Email->do_email(json_encode($this->input->post()), '*** ERROR REPORT *** ', 'prycely@gmail.com', 'prycely@gmail.com');
+		$this->Email->do_email(json_encode($this->input->post()), '*** ERROR REPORT *** at ' . date('j\<\s\u\p\>S\<\/\s\u\p\> M, Y h:i:s a'), 'prycely@gmail.com', 'prycely@gmail.com');
 	}
 
 	public function top_up_conversion()
