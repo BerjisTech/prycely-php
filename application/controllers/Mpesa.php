@@ -220,8 +220,8 @@ class Mpesa extends CI_Controller
                 $this->db->insert('errors', array('error' => json_encode($stkRequest)));
 
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
-                $this->db->where('the_transaction_reference', $MerchantRequestID)->set('status', $statusRes)->update('the_transactions');
-                $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->set('status', $statusRes)->update('the_transactions');
+                $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', $statusRes)->update('the_transactions');
+                $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->set('the_transaction_status', $statusRes)->update('the_transactions');
             }
         } catch (\Throwable $th) {
             $this->db->insert('errors', array('error' => $th));
