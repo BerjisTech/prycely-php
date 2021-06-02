@@ -52,11 +52,8 @@ class Mpesa extends CI_Controller
         }
     }
 
-    public function stk($phone, $amount, $reference, $description, $level, $which, $purpose, $user = '')
+    public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
     {
-        if ($user == '') {
-            $user = $this->session->the_person_id;
-        }
 
         $reference = urldecode($reference);
         $description = urldecode($description);
