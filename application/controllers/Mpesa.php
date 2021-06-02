@@ -150,7 +150,7 @@ class Mpesa extends CI_Controller
 
             $currentTrans = array(
                 'the_transaction_id' => '',
-                'the_transaction_user' => $user,
+                'the_transaction_user' => $this->session->the_person_id,
                 'the_transaction_date' => time(),
                 'the_transaction_start' => time(),
                 'the_transaction_end' => time(),
