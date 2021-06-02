@@ -52,8 +52,11 @@ class Mpesa extends CI_Controller
         }
     }
 
-    public function stk($phone, $amount, $reference, $description, $level, $which, $purpose)
+    public function stk($phone, $amount, $reference, $description, $level, $which, $purpose, $user = '')
     {
+        if ($user == '') {
+            $user = $this->session->the_person_id;
+        }
 
         $reference = urldecode($reference);
         $description = urldecode($description);
@@ -150,7 +153,7 @@ class Mpesa extends CI_Controller
 
             $currentTrans = array(
                 'the_transaction_id' => '',
-                'the_transaction_user' => $this->session->the_person_id,
+                'the_transaction_user' => $user,
                 'the_transaction_date' => time(),
                 'the_transaction_start' => time(),
                 'the_transaction_end' => time(),
