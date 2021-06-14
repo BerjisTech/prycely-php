@@ -269,7 +269,7 @@ class Mpesa extends CI_Controller
             );
 
             $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
-            $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $transaction->the_transaction_purpose", $this->session->the_person_email, 'prycely@gmail.com');
+            
             echo json_encode(
                 array(
                     'status' => 200,
