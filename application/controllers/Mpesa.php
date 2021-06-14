@@ -282,7 +282,7 @@ class Mpesa extends CI_Controller
             echo json_encode(
                 array(
                     'status' => 500,
-                    'message' => 'This transaction hasn\'t been processed yet'
+                    'message' => 'We haven\'t received trhis transaction yet. Kindly try again after a few seconds'
                 )
             );
         }

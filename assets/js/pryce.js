@@ -845,7 +845,7 @@ if (page.includes('/group/g/') === true) {
             success: (r) => {
                 response = JSON.parse(r)
                 console.log(response)
-                
+
                 if (response.status == 200)
                     $(`
                         <div class="col-sm-12">
@@ -859,7 +859,7 @@ if (page.includes('/group/g/') === true) {
                 if (response.status == 500)
                     $(`
                         <div class="col-sm-12">
-                            <div class="alert alert-error paybillResponseMessage">
+                            <div class="alert alert-warning paybillResponseMessage">
                                 <strong>Uhm!</strong> ${response.message} 
                                 <span class="entypo-cancel pull-right" onclick="$('.paybillResponseMessage').remove()" style="cursor: pointer; margin-right: 20px;"></span>
                             </div>
