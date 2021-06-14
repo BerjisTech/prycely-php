@@ -1,6 +1,7 @@
 <script>
     const active_user_id = '<?php echo $this->session->the_person_id; ?>'
     const active_group_id = '<?php echo $group->the_group_id; ?>'
+    const active_group_name = '<?php echo $group->the_group_name; ?>'
     const active_group_currency = '<?php echo $group->the_group_currency; ?>'
     const active_flag_id = '<?php echo base_url('assets/images/flags/') . strtolower(substr($group->the_group_currency, 0, 2)); ?>.svg'
     const active_country_id = '<?php echo $this->session->the_person_id; ?>'

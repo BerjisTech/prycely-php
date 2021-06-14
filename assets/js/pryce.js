@@ -838,12 +838,31 @@ if (page.includes('/group/g/') === true) {
     }
 
     function paybill(MpesaCode, level) {
-        let paybill_url = base_url + `mpesa/paybill/${MpesaCode}/${active_wallet_id}/user_${active_user_id}_wallet_${active_wallet_currency}_topup/${level}`;
+        let paybill_url = base_url + `mpesa/paybill/${MpesaCode}/${active_group_id}/${active_group_name} Top Up/${level}`;
 
         $.ajax({
             url: paybill_url,
             success: (response) => {
                 console.log(response)
+                if (response.status == 200)
+                    $(`
+                        <div class="col-sm-12">
+                            <div class="alert alert-success paybillResponseMessage">
+                                <strong>SUCCESS</strong> ${response.message} 
+                                <span class="entypo-cancel pull-right" onclick="$('.paybillResponseMessage').remove()" style="cursor: pointer; margin-right: 20px;"></span>
+                            </div>
+                        </div>
+                    `).insertBefore('.ctdp-paybill')
+
+                if (response.status == 500)
+                    $(`
+                        <div class="col-sm-12">
+                            <div class="alert alert-error paybillResponseMessage">
+                                <strong>Uhm!</strong> ${response.message} 
+                                <span class="entypo-cancel pull-right" onclick="$('.paybillResponseMessage').remove()" style="cursor: pointer; margin-right: 20px;"></span>
+                            </div>
+                        </div>
+                    `).insertBefore('.ctdp-paybill')
             }
         })
     }

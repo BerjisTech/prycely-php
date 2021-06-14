@@ -171,6 +171,7 @@ class Mpesa extends CI_Controller
                 'the_transaction_comment' => 'Showing STK',
                 'the_transaction_mode' => 'Mpesa STK'
             );
+
             $stkRequest = $this->security->xss_clean($stkRequest);
             $currentTrans = $this->security->xss_clean($currentTrans);
 
@@ -226,6 +227,11 @@ class Mpesa extends CI_Controller
                 $this->db->where('merchant_req_id', $MerchantRequestID)->set($stkRequest)->update('the_stk');
                 $this->db->where('the_transaction_reference', $MerchantRequestID)->set('the_transaction_status', $statusRes)->update('the_transactions');
                 $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->set('the_transaction_status', $statusRes)->update('the_transactions');
+
+                $payment = $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->get('the_transactions')->row();
+
+                $data['payment'] = $payment;
+                $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $payment->the_transaction_purpose", $to = $this->session->the_person_email, $from = 'prycely@gmail.com');
             }
         } catch (\Throwable $th) {
             $this->db->insert('errors', array('error' => $th));
@@ -234,30 +240,49 @@ class Mpesa extends CI_Controller
 
     public function paybill($MpesaCode, $which, $purpose, $level)
     {
+        $transaction = $this->db->where('MpesaCode', $MpesaCode)->get('the_paybill')->row();
+        $data['payment'] = $transaction;
 
-        $group = 0;
-        $wallet = $which;
-        if ($level == '2') {
-            $group = $which;
-            $wallet = 0;
+        if ($transaction->num_rows() > 0) {
+            $group = 0;
+            $wallet = $which;
+            if ($level == '2') {
+                $group = $which;
+                $wallet = 0;
+            }
+
+            $currentTrans = array(
+                'the_transaction_user' => $this->session->the_person_id,
+                'the_transaction_end' => time(),
+                'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
+                'the_transaction_currency' => 'KES',
+                'the_transaction_reference' => $MpesaCode,
+                'the_transaction_level' => $level, // 2 group/ 1 personal
+                'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
+                'the_transaction_wallet' => $wallet,
+                'the_transaction_group' => $group,
+                'the_transaction_purpose' => $purpose,
+                'the_transaction_comment' => 'Paybill Payment',
+                'the_transaction_mode' => 'Mpesa Paybill'
+            );
+
+            $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
+
+            echo json_encode(
+                array(
+                    'status' => 200,
+                    'message' => 'The transaction has been processed',
+                )
+            );
+            $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $transaction->the_transaction_purpose", $this->session->the_person_email, 'prycely@gmail.com');
+        } else {
+            echo json_encode(
+                array(
+                    'status' => 500,
+                    'message' => 'This transaction hasn\'t been processed yet'
+                )
+            );
         }
-
-        $currentTrans = array(
-            'the_transaction_user' => $this->session->the_person_id,
-            'the_transaction_end' => time(),
-            'the_transaction_status' => 1, // 0 failed / 1 success / 2 pending / 3 error
-            'the_transaction_currency' => 'KES',
-            'the_transaction_reference' => $MpesaCode,
-            'the_transaction_level' => $level, // 2 group/ 1 personal
-            'the_transaction_type' => 1, // 1 deposit / 2 withdraw / 3 transfer / 4 send
-            'the_transaction_wallet' => $wallet,
-            'the_transaction_group' => $group,
-            'the_transaction_purpose' => $purpose,
-            'the_transaction_comment' => 'Paybill Payment',
-            'the_transaction_mode' => 'Mpesa Paybill'
-        );
-
-        $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
     }
 
     public function b2c($recipient, $amount)
