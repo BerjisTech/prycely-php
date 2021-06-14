@@ -1,1 +1,1 @@
-<?php echo $json_encode($payment);
+<?php echo json_encode($payment);
