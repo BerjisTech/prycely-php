@@ -20,5 +20,5 @@
         <li>Use the transaction code to cinfirm payment below</li>
     </ul>
     <input type="text" class="paybillConfirmationCode" placeholder="PDT7DMW2U3" value="">
-    <button class="ctdp-paybill" onclick="paybill($('.paybillConfirmationCode').val(), 1)">CONFIRM PAYMENT</button>
+    <button class="ctdp-paybill" onclick="paybill($('.paybillConfirmationCode').val(), 2)">CONFIRM PAYMENT</button>
 </div>
