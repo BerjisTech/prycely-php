@@ -240,7 +240,7 @@ class Mpesa extends CI_Controller
 
     public function paybill($MpesaCode, $which, $purpose, $level)
     {
-        $transaction = $this->db->where('MpesaCode', $MpesaCode)->get('the_paybill')->row();
+        $transaction = $this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions')->row();
         $data['payment'] = $transaction;
 
         if ($transaction->num_rows() > 0) {
