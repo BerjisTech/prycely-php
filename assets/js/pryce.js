@@ -842,7 +842,8 @@ if (page.includes('/group/g/') === true) {
 
         $.ajax({
             url: paybill_url,
-            success: (response) => {
+            success: (r) => {
+                response = JSON.parse(r)
                 console.log(response)
                 if (response.status == 200)
                     $(`

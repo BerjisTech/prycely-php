@@ -276,6 +276,7 @@ class Mpesa extends CI_Controller
                     'message' => 'The transaction has been processed',
                 )
             );
+            $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $transaction->the_transaction_purpose", $this->session->the_person_email, 'prycely@gmail.com');
         } else {
             echo json_encode(
                 array(

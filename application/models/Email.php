@@ -31,6 +31,6 @@ class Email extends CI_Model
         //Send email
         $this->email->send();
 
-        echo $this->email->print_debugger();
+        // echo $this->email->print_debugger();
     }
 }
