@@ -240,6 +240,7 @@ class Mpesa extends CI_Controller
 
     public function paybill($MpesaCode, $which, $purpose, $level)
     {
+        $purpose = urldecode($purpose);
         $transaction = $this->db->where('the_transaction_reference', $MpesaCode)->get('the_transactions');
 
         if ($transaction->num_rows() > 0) {
@@ -269,14 +270,14 @@ class Mpesa extends CI_Controller
             );
 
             $this->db->where('the_transaction_reference', $MpesaCode)->set($currentTrans)->update('the_transactions');
-            
+
             echo json_encode(
                 array(
                     'status' => 200,
                     'message' => 'The transaction has been processed',
                 )
             );
-            $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $transaction->the_transaction_purpose", $this->session->the_person_email, 'prycely@gmail.com');
+            $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $purpose", $this->session->the_person_email, 'prycely@gmail.com');
         } else {
             echo json_encode(
                 array(

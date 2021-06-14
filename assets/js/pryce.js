@@ -845,6 +845,7 @@ if (page.includes('/group/g/') === true) {
             success: (r) => {
                 response = JSON.parse(r)
                 console.log(response)
+                
                 if (response.status == 200)
                     $(`
                         <div class="col-sm-12">
