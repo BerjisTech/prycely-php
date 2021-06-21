@@ -230,7 +230,20 @@ class Mpesa extends CI_Controller
 
                 $payment = $this->db->where('the_transaction_reference', $MpesaReceiptNumber)->get('the_transactions')->row();
 
+                $currency = $payment->the_transaction_currency;
+                $amount = $payment->the_transaction_amount;
+
+                if ($payment->the_transaction_group) {
+                    $receiver = $this->db->where('the_group_id', $payment->the_transaction_group)->get('the_groups')->row()->the_group_name;
+                }
+                if ($payment->the_transaction_wallet) {
+                    $receiver = 'your ' . strtoupper($payment->the_transaction_currency) . ' wallet';
+                }
                 $data['payment'] = $payment;
+                $data['reference'] = $MpesaReceiptNumber;
+                $data['message'] = "$currency $amount to $receiver has been processed";
+                $data['name'] = $this->db->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_first_name;
+
                 $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $payment->the_transaction_purpose", $to = $this->session->the_person_email, $from = 'prycely@gmail.com');
             }
         } catch (\Throwable $th) {
@@ -277,6 +290,20 @@ class Mpesa extends CI_Controller
                     'message' => 'The transaction has been processed',
                 )
             );
+
+            $currency = $transaction->the_transaction_currency;
+            $amount = $transaction->the_transaction_amount;
+
+            if ($transaction->the_transaction_group) {
+                $receiver = $this->db->where('the_group_id', $transaction->the_transaction_group)->get('the_groups')->row()->the_group_name;
+            }
+            if ($transaction->the_transaction_wallet) {
+                $receiver = 'your ' . strtoupper($transaction->the_transaction_currency) . ' wallet';
+            }
+            $data['reference'] = $MpesaCode;
+            $data['message'] = "$currency $amount to $receiver has been processed";
+            $data['name'] = $this->db->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_first_name;
+
             $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $purpose", $this->session->the_person_email, 'prycely@gmail.com');
         } else {
             echo json_encode(

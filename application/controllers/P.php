@@ -16,8 +16,27 @@ class P extends CI_Controller
         $this->load->view($view, $data);
     }
 
-    public function transaction()
+    public function transaction($reference)
     {
+        $payment = $this->db->where('the_transaction_reference', $reference)->get('the_transactions')->row();
+
+        $currency = $payment->the_transaction_currency;
+        $amount = $payment->the_transaction_amount;
+
+        if ($payment->the_transaction_group) {
+            $receiver = $this->db->where('the_group_id', $payment->the_transaction_group)->get('the_groups')->row()->the_group_name;
+        }
+        if ($payment->the_transaction_wallet) {
+            $receiver = 'your ' . strtoupper($payment->the_transaction_currency) . ' wallet';
+        }
+
+        $data['payment'] = $payment;
+        $data['reference'] = $reference;
+        $data['message'] = "$currency $amount to $receiver has been processed";
+        $data['name'] = $this->db->where('the_person_id', $payment->the_transaction_user)->get('the_people')->row()->the_person_first_name;
+        $view = 'email_templates/processed';
+        $this->Email->do_email($this->load->view('email_templates/processed', $data, TRUE), "Payment processed for $payment->the_transaction_purpose", $this->session->the_person_email, 'prycely@gmail.com');
+        $this->load->view($view, $data);
     }
 
     public function currency()

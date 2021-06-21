@@ -25,38 +25,25 @@ class Group extends CI_Controller
         $data['page_title'] = 'Group';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
-        $data['groups'] = array();
+        $data['groups'] = $this
+            ->db
+            ->select('*, SUM(the_transaction_amount) so_far')
+            ->where('the_user_id', $this->session->the_person_id)
+            ->where('the_member_status', 1)
+            ->join('the_groups', 'the_groups.the_group_id = the_group_members.the_group_id')
+            ->join('the_transactions', 'the_transactions.the_transaction_group = the_groups.the_group_id')
+            ->get('the_group_members')
+            ->result_array();
 
-        $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
-
-        if ($my_groups != '') {
-            $my_groups =  explode(',', $my_groups);
-            if (count($my_groups) > 0 || sizeof($my_groups) > 0) {
-                foreach ($my_groups as $key => $group) {
-                    $data['groups'][$key] = $this->db
-                        ->select('*, sum(the_transaction_amount) as so_far')
-                        ->where('the_group_id', $group)
-                        ->join('the_transactions', 'the_transactions.the_transaction_group = the_groups.the_group_id')
-                        ->where('the_transaction_status !=', 2)
-                        ->get('the_groups')->result_array()[0];
-                }
-            }
-        }
         $this->load->view('index', $data);
     }
 
     public function g($group_id)
     {
-        if (!$this->db->table_exists('group_' . $group_id)) {
-            $this->session->sess_destroy();
-            redirect(base_url());
-            $this->db->close();
-            exit;
-        }
-
         $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
-        $members = $this->db->get('group_' . $group_id);
-        if ($this->db->where('the_user_id', $this->session->the_person_id)->get('group_' . $group_id)->num_rows() != 1) {
+        $members = $this->db->where('the_group_id', $group_id)->get('the_group_members');
+
+        if ($this->db->where('the_user_id', $this->session->the_person_id)->where('the_group_id', $group_id)->get('the_group_members')->num_rows() != 1) {
             $this->session->sess_destroy();
             redirect(base_url());
             $this->db->close();
@@ -133,40 +120,32 @@ class Group extends CI_Controller
                 'the_group_date' => time()
             );
 
-            $first_member = array(
-                'the_member_id' => '',
-                'the_user_id' => $this->session->the_person_id,
-                'the_member_status' => 1,
-                'date_joined' => time()
-            );
-
-            $my_groups = $this->db->select('the_person_groups')->where('the_person_id', $this->session->the_person_id)->get('the_people')->row()->the_person_groups;
-
             if ($this->db->insert('the_groups', $group_data)) {
-                $group_id = $this->db->where('the_group_creator', $this->session->the_person_id)->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id;
+                $group_id = $this->db->order_by('the_group_id', 'DESC')->limit('1')->get('the_groups')->row()->the_group_id;
 
-                if ($this->generate_group_table($group_id) == 'done') {
-                    if ($this->db->table_exists('group_' . $group_id)) {
-                        $this->db->insert('group_' . $group_id, $first_member);
-                        $this->add_to_my_groups($group_id, $my_groups);
-                        $response = array(
-                            'status' => 'done',
-                            'message' => 'Group succesfully created',
-                            'group' => $group_id
-                        );
-                        echo json_encode($response);
-                    } else {
-                        $response = array(
-                            'status' => 'pending',
-                            'message' => 'We couldn\'t add the first member data to <strong>' . $this->input->post('the_group_name') . '</strong>. Kindly go to ' . base_url('group/g/' . $group_id) . 'to finish setting up the group',
-                            'group' => $group_id
-                        );
-                        echo json_encode($response);
-                    }
+                if ($this->db->where('the_user_id', $this->session->the_person_id)->where('the_group_id', $group_id)->get('the_group_members')->num_rows == 0) {
+
+                    $first_member = array(
+                        'the_member_id' => '',
+                        'the_group_id' => $group_id,
+                        'the_user_id' => $this->session->the_person_id,
+                        'the_member_status' => 1,
+                        'the_member_joined' => time(),
+                        'the_member_exit' => 0
+                    );
+
+                    $this->db->insert('the_group_members', $first_member);
+
+                    $response = array(
+                        'status' => 'done',
+                        'message' => 'Group succesfully created',
+                        'group' => $group_id
+                    );
+                    echo json_encode($response);
                 } else {
                     $response = array(
-                        'status' => 'failed',
-                        'message' => 'There has been an error creating your group. Check your groups page to finish creating <strong>' . $this->input->post('the_group_name') . '</strong>',
+                        'status' => 'pending',
+                        'message' => 'We couldn\'t add the first member data to <strong>' . $this->input->post('the_group_name') . '</strong>. Kindly go to ' . base_url('group/g/' . $group_id) . 'to finish setting up the group',
                         'group' => $group_id
                     );
                     echo json_encode($response);
