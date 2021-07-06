@@ -173,7 +173,7 @@ class Group extends CI_Controller
 
     public function f($group_id, $feature)
     {
-        $group = $this->db->where('the_group_id', $group_id)->get('the_groups')->row();
+        $this->load->model('Group_model');
 
         $page_name = 'group/features';
 
@@ -182,11 +182,16 @@ class Group extends CI_Controller
             exit;
         } else {
             // $page_name = 'group/' . $feature;
-            $page_name = 'group/features';
+            $page_name = "group/$feature";
         }
 
         switch ($feature):
             case 'members':
+                $group_data = (object)$this->Group_model->get_members($group_id, 10, 0);
+
+                $data['member_count'] = $group_data->member_count;
+                $data['members'] = $group_data->members;
+                $data['page_title'] = "$group_data->the_group_name | $feature";
                 break;
             case 'projects':
                 break;
@@ -208,7 +213,6 @@ class Group extends CI_Controller
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
         $data['page_name'] = $page_name;
-        $data['page_title'] = $group->the_group_name . ' | ' . $feature;
 
         $this->load->view('index', $data);
     }
@@ -219,57 +223,8 @@ class Group extends CI_Controller
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
         $data['page_name'] = 'group/features';
-        $data['page_title'] = $group->the_group_name . ' | ' . $feature;
+        $data['page_title'] = "$group->the_group_name | $feature";
 
         $this->load->view('index', $data);
-    }
-
-    private function generate_group_table($group_id)
-    {
-        $this->load->dbforge();
-        $fields = array(
-            'the_member_id' => array(
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-                'auto_increment' => true,
-            ),
-            'the_user_id' => array(
-                'type' => 'INT',
-                'constraint' => 11,
-                'unique' => true,
-            ),
-            'the_member_status' => array(
-                'type' => 'TINYINT',
-                'constraint' => '1',
-                'default' => '0',
-            ),
-            'date_joined' => array(
-                'type' => 'INT',
-                'constraint' => 11,
-                'null' => true,
-            ),
-        );
-        $this->dbforge->add_field($fields);
-        $this->dbforge->add_key('the_member_id', true);
-        if ($this->db->table_exists('group_' . $group_id)) {
-            return 'exists';
-            exit;
-        }
-
-        if ($this->dbforge->create_table('group_' . $group_id)) {
-            return 'done';
-        } else {
-            return 'error';
-        }
-    }
-
-    private function add_to_my_groups($group_id, $my_groups)
-    {
-        if ($my_groups == '') {
-            $this->db->where('the_person_id', $this->session->the_person_id)->set('the_person_groups', $group_id)->update('the_people');
-        } else {
-            $this->db->where('the_person_id', $this->session->the_person_id)->set('the_person_groups', $my_groups . ',' . $group_id)->update('the_people');
-        }
     }
 }

@@ -6,9 +6,10 @@ class Overview_model extends CI_Model
     {
         $groups = $this
             ->db
-            ->where('the_user_id', $this->session->the_person_id)
+            ->where('the_user_id', $user)
             ->where('the_member_status', 1)
             ->join('the_groups', 'the_groups.the_group_id = the_group_members.the_group_id')
+            ->limit($limit, $offset)
             ->get('the_group_members')
             ->result_array();
 
