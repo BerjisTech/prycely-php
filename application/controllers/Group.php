@@ -227,4 +227,55 @@ class Group extends CI_Controller
 
         $this->load->view('index', $data);
     }
+
+    public function invite_member()
+    {
+    }
+
+    public function new_group_member()
+    {
+        if ($_SERVER['REQUEST_METHOD'] = 'POST' && isset($_POST) && count($_POST) !== 0) {
+            $group_member = array(
+                'the_member_id' => '',
+                'the_group_id' => $this->input->post('group'),
+                'the_user_id' => $this->session->the_person_id,
+                'the_member_status' => 1,
+                'the_member_joined' => time(),
+                'the_member_exit' => 0
+            );
+
+            $this->db->insert('the_group_members', $group_member);
+
+            $response = array(
+                'status' => 'done',
+                'message' => 'User succesfully added',
+                'group' => $this->input->post('group')
+            );
+            echo json_encode($response);
+        } else {
+            $response = array(
+                'status' => 'failed',
+                'message' => 'There was an error proccessing your data. Please reload the page and try again',
+                'group' => ''
+            );
+            echo json_encode($response);
+            exit;
+        }
+    }
+
+    public function accept_invite()
+    {
+    }
+
+    private function generate_invite_link()
+    {
+    }
+
+    private function send_email_invite()
+    {
+    }
+
+    private function send_sms_invite()
+    {
+    }
 }
