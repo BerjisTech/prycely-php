@@ -1534,18 +1534,19 @@ a:active {
 }
 
 .member-general-actions span {
-	text-align: center;
-	cursor    : pointer;
-	padding   : 10px;
+	text-align   : center;
+	cursor       : pointer;
+	padding      : 10px;
+	border-radius: 10px;
 }
 
 .member-general-actions span:hover {
-	background: rgb(31 38 135 / 37%);
+	background: rgb(31 38 135 / 17%);
 	transition: all 0.56s;
 }
 
 .member-general-actions span:first-of-type {
-	background: rgb(31 38 135 / 37%);
+	background: rgb(31 38 135 / 17%);
 }
 
 .member-search {
@@ -1562,7 +1563,7 @@ a:active {
 
 .search-input input {
 	border-radius: 5px !important;
-	border       : 2px solid rgb(31 38 135 / 7%);
+	border       : 2px solid rgb(31 38 135 / 17%);
 	padding      : 7px !important;
 	text-align   : left;
 	width        : auto !important;

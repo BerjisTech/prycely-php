@@ -182,7 +182,7 @@ class Group extends CI_Controller
             exit;
         } else {
             // $page_name = 'group/' . $feature;
-            $page_name = "group/$feature/index";
+            $page_name = "groups/$feature/index";
         }
 
         $the_group_name = $this->db->where('the_group_id', $group_id)->get('the_groups')->row()->the_group_name;
@@ -213,6 +213,7 @@ class Group extends CI_Controller
 
         $data['page_name'] = $page_name;
         $data['group_id'] = $group_id;
+        $data['for_the_statics'] = $data;
 
         $this->load->view('index', $data);
     }
@@ -225,7 +226,7 @@ class Group extends CI_Controller
         $data['member_count'] = $group_data->member_count;
         $data['members'] = $group_data->members;
 
-        return $this->load->view('group/member_list', $data, false);
+        return $this->load->view('groups/members/member_list', $data, false);
     }
 
     public function activate($feature, $group_id)
@@ -241,7 +242,6 @@ class Group extends CI_Controller
 
     public function invites()
     {
-
     }
 
     public function invite_member()

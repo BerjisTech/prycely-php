@@ -5,7 +5,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Date</th>
+            <th>Date Joined</th>
         </tr>
     </thead>
     <tbody>

@@ -1130,7 +1130,7 @@ if (page.includes('group/create') === true) {
     }
 }
 
-if (page.includes('group/members')) {
+if (page.includes('groups/members')) {
     function load_members(group_id, offset, search) {
         $('.members-table').html(`<img src="${base_url}assets/images/preloader.gif" />`)
         $.ajax({
@@ -1142,12 +1142,41 @@ if (page.includes('group/members')) {
         })
     }
 
-    load_members(group_id, '0', '')
+    function members_page() {
+        $('.members-page').html(`<img src="${base_url}assets/images/preloader.gif" />`)
+        $('.user-group-action').css('background', 'white')
+        $('.all').css('background', 'rgb(31 38 135 / 17%)')
+        $.ajax({
+            url: `${base_url}p/static_sub_files/groups/members/members_page`,
+            method: 'POST',
+            data: statics,
+            success: (members) => {
+                $('.members-page').html(members)
+                load_members(group_id, '0', '')
+                $('[name="search_members"]').on('input', () => {
+                    let search = $('[name="search_members"]').val()
+                    load_members(group_id, '0', search)
+                })
+            }
+        })
+    }
 
-    $('[name="search_members"]').on('input', () => {
-        search = $('[name="search_members"]').val()
-        load_members(group_id, '0', search)
-    })
+    function invites_page() {
+        $('.members-page').html(`<img src="${base_url}assets/images/preloader.gif" />`)
+        $('.user-group-action').css('background', 'white')
+        $('.invites').css('background', 'rgb(31 38 135 / 17%)')
+        $.ajax({
+            url: `${base_url}p/static_files/groups/invites`,
+            method: 'POST',
+            data: statics,
+            success: (members) => {
+                $('.members-page').html(members)
+            }
+        })
+    }
+
+    members_page()
+
 }
 
 $('.switch-tab').on('click', function () {
