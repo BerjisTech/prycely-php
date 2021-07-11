@@ -1,6 +1,26 @@
+<div class="member-general-actions">
+    <span>Active</span>
+    <span>New</span>
+    <span>Staff</span>
+    <span>Deregistered</span>
+    <span>Invite</span>
+    <span>Export</span>
+</div>
+<div class="member-search">
+    <div class="search-input">
+        <input type="search" />
+        <span class="material-icons">search</span>
+    </div>
+</div>
 <table class="table transaction-table table-hover">
     <thead>
-
+        <tr>
+            <th>Member ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+        </tr>
     </thead>
     <tbody>
         <?php foreach ($members as $member) : ?>
@@ -12,7 +32,13 @@
                 <td class="transaction-details">
                     <span class="transaction-title"><?php echo $member->the_person_first_name . ' ' . $member->the_person_last_name; ?></span>
                 </td>
-                <td class="transaction-td">
+                <td class="transaction-details">
+                    <?php echo $member->the_person_email; ?>
+                </td>
+                <td class="transaction-details">
+                    <?php echo $member->the_person_phone ? $member->the_person_phone : ($member->the_person_phone != 0 || $member->the_person_phone != ''); ?>
+                </td>
+                <td class="transaction-details">
                     <?php echo date('d M, Y', $member->the_date_joined); ?>
                 </td>
             </tr>
