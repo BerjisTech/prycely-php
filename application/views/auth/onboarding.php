@@ -22,7 +22,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body>
     <script>
-        let base_url = '<?php echo base_url(); ?>'
+        const base_url = '<?php echo base_url(); ?>'
+        const page = '<?php echo $page_name; ?>'
     </script>
     <div class="side_bar onboarder">
         <!-- 0% 13% 38% 63% 89% loading & save to db 100%; redirecting you -->
@@ -87,7 +88,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <form class="onboarding-pane formAddress">
                 <h2 class="ob_pane_title">Your personal info</h2>
 
-                <div class="col-sm-12">
+                <div class="col-12">
                     <div class="col-sm-4">
                         <label for="the_person_last_name">Street</label>
                         <input type="text" name="the_person_street" class="form-control" placeholder="Stage 26, Kamulu" required />
@@ -101,7 +102,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <input type="text" name="the_person_postal" class="form-control" placeholder="000-000" required />
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-12">
                     <div class="col-sm-4">
                         <label for="the_person_last_name">Country</label>
                         <select id="countries" name="the_person_country" class="form-control">

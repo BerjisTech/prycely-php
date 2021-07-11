@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-8 left-card">
         <div class="row slide-icons-parent top">
-            <div class="col-sm-12 slide-icons">
+            <div class="col-12 slide-icons">
                 <div class="slide-icon">
                     <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
                 </div>
@@ -19,10 +19,10 @@
                 </div>
             </div>
         </div>
-        <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
+        <!-- <div class="row row-tabs hidden-lg hidden-sm hidden-md visible-xs-*">
             <span class="switch-tab active" data-hide="switch-transactions">Groups</span>
             <span class="switch-tab" data-hide="switch-card">Invites</span>
-        </div>
+        </div> -->
         <div class="switch-transactions">
             <div class="row top">
                 <div class="col-md-8 col-sm-7 col-xs-6 transaction-title">

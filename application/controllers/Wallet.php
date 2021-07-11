@@ -41,7 +41,7 @@ class Wallet extends CI_Controller
 
 		$data['transactions'] = $transactions;
 
-		$data['page_name'] = 'wallet/index';
+		$data['page_name'] = 'wallets/index';
 		$data['page_title'] = 'Wallet';
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 		$data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->get('the_wallets')->result_array();
@@ -135,7 +135,7 @@ class Wallet extends CI_Controller
 		$data['currencies'] = $this->db->get('currency')->result_array();
 		$data['wallets'] = $this->db->where('the_wallet_user', $this->session->the_person_id)->where('the_wallet_currency !=', $data['wallet']->the_wallet_currency)->get('the_wallets')->result_array();
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
-		$data['page_name'] = 'wallet/wallet';
+		$data['page_name'] = 'wallets/wallet/index';
 		$data['page_title'] = 'Wallet';
 
 		$this->load->view('index', $data);

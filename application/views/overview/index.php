@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-sm-8">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-12">
                 <h3>Overview</h3>
                 <small>Hi Fraser, some unneccesary greetings text here</small>
                 <br /><br />
@@ -10,7 +10,7 @@
         </div>
 
         <div class="row slide-icons-parent">
-            <div class="col-sm-12 slide-icons">
+            <div class="col-12 slide-icons">
                 <div class="slide-icon">
                     <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
                 </div>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="row switch-transactions">
-            <div class="col-sm-12 transactions-card wallet-panel left-card">
+            <div class="col-12 transactions-card wallet-panel left-card">
                 <p class="transaction-title">Transactions</p>
                 <?php foreach ($transactions as $key => $date) : ?>
                     <span>
@@ -82,7 +82,7 @@
     </div>
     <div class="col-sm-4 wallet-panel right-card switch-card hidden-xs">
         <div class="row">
-            <div class="col-sm-12 overviewWallets">
+            <div class="col-12 overviewWallets">
                 <p class="transaction-title">My Wallets</p>
                 <table class="table transaction-table table-hover">
                     <?php foreach ($wallets as $key => $wallet) : ?>
@@ -103,7 +103,7 @@
                 </table>
                 <span class="more_groups"><a href="<?php echo base_url('wallet'); ?>">View all wallets<span class="fal fa fa-arrow-right"></span></a></span>
             </div>
-            <div class="col-sm-12 overviewGroups">
+            <div class="col-12 overviewGroups">
                 <p class="transaction-title">My Groups</p>
                 <table class="table transaction-table table-hover">
                     <?php foreach ($groups as $group) : ?>
@@ -120,7 +120,7 @@
                 </table>
                 <span class="more_groups"><a href="<?php echo base_url('group'); ?>">View all groups<span class="fal fa fa-arrow-right"></span></a></span>
             </div>
-            <div class="col-sm-12 overviewCards">
+            <div class="col-12 overviewCards">
                 <p class="transaction-title">Cards</p>
                 <div class="cc visa">
                     <svg style="width:100%; opacity: 0.3;">

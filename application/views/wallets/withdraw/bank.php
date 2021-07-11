@@ -1,4 +1,4 @@
-<div class="col-sm-12 panelCard">
+<div class="col-12 panelCard">
     <div class="col-sm-3"></div>
     <div class="col-sm-6 withdrawPanel">
         <span class="entypo-left-thin ctpd-title back-text-arrow-buttons" onclick="goToWithdraw()"> Back</span>
@@ -6,8 +6,12 @@
         <form class="withdrawForm mpesaWithdrawForm">
             <span>How much do you want to withdraw?</span>
             <input type="number" value="0.00" />
-            <span>Recepient paypal email</span>
-            <input type="email" placeholder="" />
+            <span>BANK</span>
+            <input type="text" placeholder="BANK" />
+            <span>ACCOUNT NUMBER</span>
+            <input type="number" placeholder="2547********" />
+            <span>Account user full name</span>
+            <input type="text" placeholder="" />
             <div class="withdrawProceedCancel">
                 <span class="back-text-arrow-buttons" onclick="window.location.reload()"> Cancel</span>
                 <button class="withdrawButton" type="submit">WITHDRAW</button>

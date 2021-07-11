@@ -2,7 +2,7 @@
     $transactions = json_decode($transactions, TRUE);
 } ?>
 <div class="row wallet-switched wallet-transacts">
-    <div class="col-sm-12">
+    <div class="col-12">
         <div class="panelCard">
             <?php if (sizeof($transactions) < 1) : ?>
                 <span>You have no transactions yet.</span>

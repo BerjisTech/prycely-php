@@ -16,10 +16,10 @@
 
 <div class="row">
     <div class="col-sm-8 left-card">
-        <div class="row row-tabs visible-xs">
+        <!-- <div class="row row-tabs hidden">
             <span class="switch-tab active" data-hide="switch-transactions">Group</span>
             <span class="switch-tab" data-hide="switch-card">Chats</span>
-        </div>
+        </div> -->
         <div class="switch-transactions">
             <div class="row">
                 <div class="group-cover col-12">
@@ -213,29 +213,6 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 </script>
-<?php ob_start(); ?>
-<link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
-<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script>
-<script>
-    let transTable = jQuery("#transTable");
-    transTable.DataTable({
-        //'aLengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        dom: 'Bfrtip',
-        buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5',
-            'print'
-        ]
-    });
-    // transTable.closest('.dataTables_wrapper').find('select').select2({
-    //     minimumResultsForSearch: -1
-    // });
-</script>
-<?php ob_end_flush(); ?>
-<!-- <link rel="stylesheet" href="<?php echo base_url('assets/js/datatables/datatables.css'); ?>" id="style-resource-1">
-<script src="<?php echo base_url('assets/js/datatables/datatables.js'); ?>" id="script-resource-8"></script> -->
 
 <?php
 if (isset($dontShowChat)) :

@@ -7,7 +7,6 @@ const base_check = (b64) => {
 }
 
 console.log('Go pryce')
-const page = window.location.pathname
 
 const logCurrency = (country, code, currency) => {
     console.log(`${country}, ${code}, ${currency}`)
@@ -203,7 +202,7 @@ if (page.includes('createaccount') === true) {
     })
 }
 
-if (page.includes('/onboarding') === true) {
+if (page.includes('onboarding') === true) {
 
     setTimeout(function () {
         $('.process-step .process-stepper:first').animate({ fontSize: "20px", fontWeight: "700" }, 300)
@@ -363,7 +362,7 @@ if (page.includes('/onboarding') === true) {
 
 }
 
-if (page.includes('/auth/login') === true) {
+if (page.includes('auth/login') === true) {
     $('form[name="the_login_form"]').on('submit', (e) => {
         e.preventDefault()
         $('button[name="the_submit"]').html(`<img src="${base_url}assets/images/loader.gif" alt="loader" style="width: 100px; height: auto" />`)
@@ -391,7 +390,7 @@ if (page.includes('/auth/login') === true) {
     })
 }
 
-if (page.includes('/auth/recover') === true) {
+if (page.includes('auth/recover') === true) {
     $('form[name="the_recover_form"]').on('submit', (e) => {
         e.preventDefault()
         $('.the_login_error').remove();
@@ -476,7 +475,7 @@ if (page.includes('/auth/recover') === true) {
     })
 }
 
-if (page.includes('/wallet/create') === true) {
+if (page.includes('wallet/create') === true) {
     $('.the_wallet_currencies').hide()
 
     $('.get_wallet_currency').on('input', () => {
@@ -514,7 +513,7 @@ if (page.includes('/wallet/create') === true) {
     })
 }
 
-if (page.includes('/wallet/view') === true) {
+if (page.includes('wallets/wallet') === true) {
 
     function change_detail_currency(currency, flag) {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
@@ -566,7 +565,7 @@ if (page.includes('/wallet/view') === true) {
         console.log(choice)
 
         $.ajax({
-            url: base_url + 'p/static_sub_files/wallet/topup/' + choice,
+            url: `${base_url}p/static_sub_files/wallets/topup/${choice}`,
             success: (data) => {
                 $('.confirmTransDetailsPanel').html(data)
             },
@@ -655,7 +654,7 @@ if (page.includes('/wallet/view') === true) {
 
     function goToPayChoice() {
         $.ajax({
-            url: base_url + 'p/static_files/wallet/paychoice',
+            url: `${base_url}p/static_files/wallets/topup/paychoice`,
             success: (data) => {
                 $('.wallet-topup').html(data)
             },
@@ -671,7 +670,7 @@ if (page.includes('/wallet/view') === true) {
         let data = [];
         data.push(wallet)
         $.ajax({
-            url: base_url + 'p/static_files/wallet/topup',
+            url: `${base_url}p/static_files/wallets/topup`,
             data: data,
             method: 'POST',
             success: (response) => {
@@ -688,7 +687,7 @@ if (page.includes('/wallet/view') === true) {
     function goToTransactions() {
         string_transcations = JSON.stringify(transactions)
         $.ajax({
-            url: base_url + 'p/static_files/wallet/transactions',
+            url: base_url + 'p/static_files/wallets/transactions',
             method: 'POST',
             data: { 'transactions': string_transcations },
             success: (response) => {
@@ -703,7 +702,7 @@ if (page.includes('/wallet/view') === true) {
 
     function goToWithdraw() {
         $.ajax({
-            url: base_url + 'p/static_files/wallet/withdraw',
+            url: base_url + 'p/static_files/wallets/withdraw',
             success: (response) => {
                 $('.tuPageContent').html(response)
             },
@@ -717,7 +716,7 @@ if (page.includes('/wallet/view') === true) {
 
     function withdrawChoice(choice) {
         $.ajax({
-            url: base_url + 'p/static_sub_files/wallet/withdraw/' + choice,
+            url: base_url + 'p/static_sub_files/wallets/withdraw/' + choice,
             success: (response) => {
                 $('.tuPageContent').html(response)
             },
@@ -738,7 +737,7 @@ if (page.includes('/wallet/view') === true) {
     })
 }
 
-if (page.includes('/group/g/') === true) {
+if (page.includes('groups/group/') === true) {
 
     function change_detail_currency(currency, flag) {
         $('.transfer-to-this .transfer-wallet-details img').attr('src', flag)
@@ -790,7 +789,7 @@ if (page.includes('/group/g/') === true) {
         console.log(choice)
 
         $.ajax({
-            url: base_url + 'p/static_sub_files/group/topup/' + choice,
+            url: `${base_url}p/static_sub_files/groups/topup/${choice}`,
             success: (data) => {
                 $('.confirmTransDetailsPanel').html(data)
             },
@@ -826,7 +825,7 @@ if (page.includes('/group/g/') === true) {
             return false;
         }
 
-        let stk_url = base_url + `mpesa/stk/${user_phone}/${user_amount}/Prycely Group TopUp/user ${active_user_id} group ${active_group_currency} topup/2/${active_group_id}/Group Top Up`;
+        let stk_url = `${base_url}mpesa/stk/${user_phone}/${user_amount}/Prycely Group TopUp/user ${active_user_id} group ${active_group_currency} topup/2/${active_group_id}/Group Top Up`;
 
         console.log(stk_url)
         $.ajax({
@@ -838,7 +837,7 @@ if (page.includes('/group/g/') === true) {
     }
 
     function paybill(MpesaCode, level) {
-        let paybill_url = base_url + `mpesa/paybill/${MpesaCode}/${active_group_id}/${active_group_name} Top Up/${level}`;
+        let paybill_url = `${base_url}mpesa/paybill/${MpesaCode}/${active_group_id}/${active_group_name} Top Up/${level}`;
 
         $.ajax({
             url: paybill_url,
@@ -848,7 +847,7 @@ if (page.includes('/group/g/') === true) {
 
                 if (response.status == 200)
                     $(`
-                        <div class="col-sm-12">
+                        <div class="col-12">
                             <div class="alert alert-success paybillResponseMessage">
                                 <strong>SUCCESS</strong> ${response.message} 
                                 <span class="entypo-cancel pull-right" onclick="$('.paybillResponseMessage').remove()" style="cursor: pointer; margin-right: 20px;"></span>
@@ -858,7 +857,7 @@ if (page.includes('/group/g/') === true) {
 
                 if (response.status == 500)
                     $(`
-                        <div class="col-sm-12">
+                        <div class="col-12">
                             <div class="alert alert-warning paybillResponseMessage">
                                 <strong>Uhm!</strong> ${response.message} 
                                 <span class="entypo-cancel pull-right" onclick="$('.paybillResponseMessage').remove()" style="cursor: pointer; margin-right: 20px;"></span>
@@ -900,7 +899,7 @@ if (page.includes('/group/g/') === true) {
 
     function goToPayChoice() {
         $.ajax({
-            url: base_url + 'p/static_files/group/paychoice',
+            url: `${base_url}p/static_sub_files/groups/topup/paychoice`,
             success: (data) => {
                 $('.wallet-topup').html(data)
             },
@@ -914,7 +913,7 @@ if (page.includes('/group/g/') === true) {
 
     function goToTopUp() {
         $.ajax({
-            url: base_url + 'p/static_files/group/topup',
+            url: `${base_url}p/static_files/groups/topup`,
             success: (response) => {
                 $('.switch-transactions').html(response)
             },
@@ -929,7 +928,7 @@ if (page.includes('/group/g/') === true) {
     function goToTransactions() {
         string_transcations = JSON.stringify(transactions)
         $.ajax({
-            url: base_url + 'p/static_files/group/transactions',
+            url: `${base_url}p/static_files/group/transactions`,
             method: 'POST',
             data: { 'transactions': string_transcations },
             success: (response) => {
@@ -944,7 +943,7 @@ if (page.includes('/group/g/') === true) {
 
     function goToWithdraw() {
         $.ajax({
-            url: base_url + 'p/static_files/group/withdraw',
+            url: `${base_url}p/static_files/groups/withdraw`,
             success: (response) => {
                 $('.switch-transactions').html(response)
             },
@@ -958,7 +957,7 @@ if (page.includes('/group/g/') === true) {
 
     function withdrawChoice(choice) {
         $.ajax({
-            url: base_url + 'p/static_sub_files/group/withdraw/' + choice,
+            url: `${base_url}p/static_sub_files/groups/withdraw/${choice}`,
             success: (response) => {
                 $('.switch-transactions').html(response)
             },
@@ -979,7 +978,7 @@ if (page.includes('/group/g/') === true) {
     })
 }
 
-if (page.includes('/group/create') === true) {
+if (page.includes('group/create') === true) {
     let the_group_type = '';
     let the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_purpose = ''
 
@@ -1131,6 +1130,26 @@ if (page.includes('/group/create') === true) {
     }
 }
 
+if (page.includes('group/members')) {
+    function load_members(group_id, offset, search) {
+        $('.members-table').html(`<img src="${base_url}assets/images/preloader.gif" />`)
+        $.ajax({
+            url: `${base_url}group/load_members/${group_id}/10/${offset}/${search}`,
+            method: 'POST',
+            success: (members) => {
+                $('.members-table').html(members)
+            }
+        })
+    }
+
+    load_members(group_id, '0', '')
+
+    $('[name="search_members"]').on('input', () => {
+        search = $('[name="search_members"]').val()
+        load_members(group_id, '0', search)
+    })
+}
+
 $('.switch-tab').on('click', function () {
     if ($(this).attr('class').includes('active')) {
         return
@@ -1163,7 +1182,7 @@ $('img').on('error', function () {
 
 $('.go_to_group').on('click', function () {
     let group_id = $(this).attr('data-id')
-    window.location.href = base_url + "group/g/" + group_id
+    window.location.href = `${base_url}group/g/${group_id}`
 })
 
 $('.group-entypo').on('click', function () {

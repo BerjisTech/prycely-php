@@ -21,7 +21,7 @@ class Group extends CI_Controller
 
     public function index()
     {
-        $data['page_name'] = 'group/index';
+        $data['page_name'] = 'groups/index';
         $data['page_title'] = 'Group';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
@@ -78,7 +78,7 @@ class Group extends CI_Controller
         $data['group_id'] = $group_id;
         $data['currencies'] = $this->db->get('currency')->result_array();
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
-        $data['page_name'] = 'group/group';
+        $data['page_name'] = 'groups/group/index';
         $data['page_title'] = $group->the_group_name;
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
@@ -182,16 +182,15 @@ class Group extends CI_Controller
             exit;
         } else {
             // $page_name = 'group/' . $feature;
-            $page_name = "group/$feature";
+            $page_name = "group/$feature/index";
         }
+
+        $the_group_name = $this->db->where('the_group_id', $group_id)->get('the_groups')->row()->the_group_name;
+
+        $data['page_title'] = "$the_group_name | $feature";
 
         switch ($feature):
             case 'members':
-                $group_data = (object)$this->Group_model->get_members($group_id, 10, 0);
-
-                $data['member_count'] = $group_data->member_count;
-                $data['members'] = $group_data->members;
-                $data['page_title'] = "$group_data->the_group_name | $feature";
                 break;
             case 'projects':
                 break;
@@ -213,8 +212,20 @@ class Group extends CI_Controller
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
         $data['page_name'] = $page_name;
+        $data['group_id'] = $group_id;
 
         $this->load->view('index', $data);
+    }
+
+    public function load_members($group_id, $limit, $offset, $search = '')
+    {
+        $this->load->model('Group_model');
+        $group_data = (object)$this->Group_model->get_members($group_id, $limit, $offset, $search);
+
+        $data['member_count'] = $group_data->member_count;
+        $data['members'] = $group_data->members;
+
+        return $this->load->view('group/member_list', $data, false);
     }
 
     public function activate($feature, $group_id)
@@ -226,6 +237,11 @@ class Group extends CI_Controller
         $data['page_title'] = "$group->the_group_name | $feature";
 
         $this->load->view('index', $data);
+    }
+
+    public function invites()
+    {
+
     }
 
     public function invite_member()

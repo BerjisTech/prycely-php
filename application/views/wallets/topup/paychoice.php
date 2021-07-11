@@ -1,7 +1,7 @@
 <script>
     customPayments()
 </script>
-<div class="col-sm-12 panelCard payChoicePanel">
+<div class="col-12 panelCard payChoicePanel">
     <div class="col-sm-7">
         <div class="payChoice">
             <span class="entypo-left-thin ctdp-title" onclick="goToTopUp()"> Back</span>

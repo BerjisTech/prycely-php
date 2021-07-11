@@ -20,7 +20,8 @@
 
 <body>
     <script>
-        let base_url = '<?php echo base_url(); ?>'
+        const base_url = '<?php echo base_url(); ?>'
+        const page = '<?php echo $page_name; ?>'
     </script>
     <div class="main_content">
         <div class="row main_row">

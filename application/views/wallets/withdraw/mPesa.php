@@ -1,4 +1,4 @@
-<div class="col-sm-12 panelCard">
+<div class="col-12 panelCard">
     <div class="col-sm-3"></div>
     <div class="col-sm-6 withdrawPanel">
         <span class="entypo-left-thin ctpd-title back-text-arrow-buttons" onclick="goToWithdraw()"> Back</span>

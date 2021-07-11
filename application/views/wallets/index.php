@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-8 left-card">
         <div class="row slide-icons-parent top">
-            <div class="col-sm-12 slide-icons">
+            <div class="col-12 slide-icons">
                 <div class="slide-icon">
                     <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
                 </div>

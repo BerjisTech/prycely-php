@@ -27,7 +27,8 @@ if (isset($user_details)) {
 
 <body>
     <script>
-        let base_url = '<?php echo base_url(); ?>'
+        const base_url = '<?php echo base_url(); ?>'
+        const page = '<?php echo $page_name; ?>'
     </script>
     <?php include('base/nav.php'); ?>
     <div class="main-content">

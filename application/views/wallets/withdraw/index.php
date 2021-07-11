@@ -1,5 +1,5 @@
 <div class="withdraw">
-    <div class="col-sm-12 withdrawChoices panelCard">
+    <div class="col-12 withdrawChoices panelCard">
         <div class="col-sm-3">
 
         </div>

@@ -19,37 +19,36 @@ body {
 
 /* Side Bar */
 
-.side_bar {
-	display                   : flex;
-	height                    : 100vh;
-	position                  : fixed;
-	top                       : 7.5vh;
-	width                     : 150px;
-	flex-direction            : column;
-	transition                : all 0.56s;
-	text-align                : center;
-	align-items               : center;
-	justify-content           : flex-start;
-	/* background             : rgba( 255, 255, 255, 0.30);
-    box-shadow             : 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter        : blur( 6.5px);
-    -webkit-backdrop-filter: blur( 6.5px);
-    border-radius          : 10px;
-    border                 : 1px solid rgba( 255, 255, 255, 0.18); */
-}
-
-.nav_menu {
+/* .side_bar {
 	display        : flex;
+	height         : 100vh;
+	position       : fixed;
+	width          : 150px;
 	flex-direction : column;
-	height         : 90vh;
-	box-shadow     : 0 8px 32px 0 rgb(31 38 135 / 27%);
-	background     : #fff;
-	border-radius  : 15px;
 	transition     : all 0.56s;
 	text-align     : center;
 	align-items    : center;
-	justify-content: flex-start;
-	padding-top    : 20px;
+	justify-content: center;
+}*/
+
+.side_bar {
+	position               : fixed;
+	display                : flex;
+	flex-direction         : column;
+	top                    : 5vh;
+	height                 : 90vh;
+	width                  : 100px;
+	transition             : all 0.56s;
+	text-align             : center;
+	align-items            : center;
+	justify-content        : flex-start;
+	padding-top            : 20px;
+	background             : rgba(255, 255, 255, 0.30);
+	box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter        : blur(6.5px);
+	-webkit-backdrop-filter: blur(6.5px);
+	border-radius          : 0 10px 10px 0;
+	border                 : 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .nav_logo {
@@ -94,14 +93,13 @@ a:active {
 }
 
 .user_icon {
-	width              : 70px;
-	height             : 70px;
+	width              : 50px;
 	border-radius      : 100%;
 	margin-bottom      : 10px;
 	background-position: 50% 50% !important;
 	background-repeat  : no-repeat !important;
 	background-size    : cover !important;
-	border             : 1px solid #ddd;
+	box-shadow         : 0 8px 32px 0 rgb(31 38 135 / 27%);
 }
 
 /* Main Content */
@@ -773,7 +771,7 @@ a:active {
 	padding-left  : 50px;
 }
 
-.formAddress .col-sm-12 {
+.formAddress .col-12 {
 	margin-top: 40px;
 }
 
@@ -1573,4 +1571,8 @@ a:active {
 
 .search-input span {
 	padding-left: 10px;
+}
+
+.members-table {
+	margin-top: 10px;
 }

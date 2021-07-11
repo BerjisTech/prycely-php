@@ -78,7 +78,7 @@ class P extends CI_Controller
     public function static_files($folder, $file)
     {
         $data = $this->input->post();
-        return $this->load->view($folder . '/' . $file, $data, FALSE);
+        return $this->load->view("$folder/$file/index", $data, FALSE);
     }
 
     public function static_sub_files($folder, $sub, $file)
