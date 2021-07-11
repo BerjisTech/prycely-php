@@ -21,19 +21,16 @@ class Group extends CI_Controller
 
     public function index()
     {
+        $this->load->model('Overview_model');
+
+        $me = $this->session->the_person_id;
+
         $data['page_name'] = 'groups/index';
         $data['page_title'] = 'Group';
         $data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 
-        $data['groups'] = $this
-            ->db
-            ->select('*, SUM(the_transaction_amount) so_far')
-            ->where('the_user_id', $this->session->the_person_id)
-            ->where('the_member_status', 1)
-            ->join('the_groups', 'the_groups.the_group_id = the_group_members.the_group_id')
-            ->join('the_transactions', 'the_transactions.the_transaction_group = the_groups.the_group_id')
-            ->get('the_group_members')
-            ->result_array();
+        $data['groups'] = array();
+        $data['groups'] = $this->Overview_model->get_groups(5, 0, $me);
 
         $this->load->view('index', $data);
     }
@@ -88,7 +85,8 @@ class Group extends CI_Controller
     public function create()
     {
         $data['currencies'] = $this->db->get('currency')->result_array();
-        $this->load->view('group/create', $data);
+        $data['page_name'] = 'groups/create/index';
+        $this->load->view('groups/create/index', $data);
     }
 
     public function create_new()
@@ -130,8 +128,8 @@ class Group extends CI_Controller
                         'the_group_id' => $group_id,
                         'the_user_id' => $this->session->the_person_id,
                         'the_member_status' => 1,
-                        'the_member_joined' => time(),
-                        'the_member_exit' => 0
+                        'the_date_joined' => time(),
+                        'the_date_exit' => 0
                     );
 
                     $this->db->insert('the_group_members', $first_member);
@@ -256,8 +254,8 @@ class Group extends CI_Controller
                 'the_group_id' => $this->input->post('group'),
                 'the_user_id' => $this->session->the_person_id,
                 'the_member_status' => 1,
-                'the_member_joined' => time(),
-                'the_member_exit' => 0
+                'the_date_joined' => time(),
+                'the_date_exit' => 0
             );
 
             $this->db->insert('the_group_members', $group_member);

@@ -52,7 +52,7 @@ class Wallet extends CI_Controller
 	public function create()
 	{
 		$data['currencies'] = $this->db->get('currency')->result_array();
-		$data['page_name'] = 'wallet/create';
+		$data['page_name'] = 'wallets/create/index';
 		$data['page_title'] = 'Create New Wallet';
 		$data['user_details'] = $this->Database->select_single('the_person_first_name, the_person_last_name', array('the_person_email' => $this->session->the_person_email), NULL, 'the_people');
 

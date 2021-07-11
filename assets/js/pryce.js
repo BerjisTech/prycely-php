@@ -51,7 +51,7 @@ const get_conversion = (wallet_code, code, topup_amount) => {
 }
 
 /* On Boarding Page */
-if (page.includes('createaccount') === true) {
+if (page.includes('auth/create_account') === true) {
     const the_person_form = $('form[name="the_person_form"]')
     let the_person = { 'type': '', 'email': '', 'password': '' }
     console.log('Create account')
@@ -202,7 +202,7 @@ if (page.includes('createaccount') === true) {
     })
 }
 
-if (page.includes('onboarding') === true) {
+if (page.includes('auth/onboarding') === true) {
 
     setTimeout(function () {
         $('.process-step .process-stepper:first').animate({ fontSize: "20px", fontWeight: "700" }, 300)
@@ -475,7 +475,7 @@ if (page.includes('auth/recover') === true) {
     })
 }
 
-if (page.includes('wallet/create') === true) {
+if (page.includes('wallets/create') === true) {
     $('.the_wallet_currencies').hide()
 
     $('.get_wallet_currency').on('input', () => {
@@ -978,7 +978,7 @@ if (page.includes('groups/group/') === true) {
     })
 }
 
-if (page.includes('group/create') === true) {
+if (page.includes('groups/create') === true) {
     let the_group_type = '';
     let the_group_name = '', the_group_goal = '', the_group_currency = '', the_group_purpose = ''
 

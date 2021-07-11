@@ -19,12 +19,14 @@ class Auth extends CI_Controller
 
     public function login()
     {
-        $this->load->view('auth/login');
+        $data['page_name'] = 'auth/login';
+        $this->load->view('auth/login', $data);
     }
 
     public function recover()
     {
-        $this->load->view('auth/recover');
+        $data['page_name'] = 'auth/recover';
+        $this->load->view('auth/recover', $data);
     }
 
     public function send_code()

@@ -14,7 +14,7 @@ class Overview_model extends CI_Model
             ->result_array();
 
         foreach ($groups as $key => $group) {
-            $group[$key]['the_transaction_amount'] = $this->db->select('SUM(the_transaction_amount) so_far')->where('the_transaction_group', $group['the_group_id'])->get('the_transactions')->row()->so_far;
+            $groups[$key]['the_transaction_amount'] = $this->db->select('SUM(the_transaction_amount) so_far')->where('the_transaction_group', $group['the_group_id'])->where('the_transaction_status', 1)->get('the_transactions')->row()->so_far + 0;
         }
 
         return $groups;

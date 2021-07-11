@@ -3,19 +3,19 @@
         <div class="row slide-icons-parent top">
             <div class="col-12 slide-icons">
                 <div class="slide-icon">
-                    <span><em class="fa fa-exchange"></em></span><span>Transfer</span>
+                    <span><em class="material-icons">import_export</em></span><span>Transfer</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-money"></em></span><span>Pay Bill</span>
+                    <span><em class="material-icons">price_change</em></span><span>Pay Bill</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-plus"></em></span><span>Top Up</span>
+                    <span><em class="material-icons">savings</em></span><span>Top Up</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-file-text-o"></em></span><span>Statement</span>
+                    <span><em class="material-icons">request_quote</em></span><span>Statement</span>
                 </div>
                 <div class="slide-icon">
-                    <span><em class="fa fa-dot-circle-o"></em></span><span>Subscription</span>
+                    <span><em class="material-icons">card_membership</em></span><span>Subscription</span>
                 </div>
             </div>
         </div>
@@ -43,8 +43,8 @@
                             <span class="transaction-status"><?php echo $group['the_group_currency'] ?></span>
                         </td>
                         <td class="transaction-td">
-                            <span class="transaction-amount complete"><?php echo $group['the_group_currency'] . ' ' . $group['the_group_goal'] ?> (Total)</span>
-                            <span class="transaction-time"><?php echo $group['the_group_currency'] . ' ' . $group['so_far'] ?> (so far)</span>
+                            <span class="transaction-amount complete"><?php echo $group['the_group_currency'] . ' ' . number_format($group['the_group_goal']); ?> (Goal)</span>
+                            <span class="transaction-time"><?php echo $group['the_group_currency'] . ' ' . number_format($group['the_transaction_amount']); ?> (so far)</span>
                         </td>
                     </tr>
                 <?php endforeach; ?>

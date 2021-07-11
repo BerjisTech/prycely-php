@@ -13,7 +13,8 @@ class Createaccount extends CI_Controller
 
     public function index()
     {
-        $this->load->view('auth/create_account');
+        $data['page_name'] = 'auth/create_account';
+        $this->load->view('auth/create_account', $data);
     }
 
     public function send_welcome($email)
