@@ -22,7 +22,7 @@
         </div>
         <div class="switch-transactions">
             <div class="row">
-                <div class="group-cover col-xs-12">
+                <div class="group-cover col-12">
                     <h3><?php echo $group->the_group_name; ?></h3>
                     <p class="group-goal"><?php echo $group->the_group_purpose; ?></p>
                 </div>
@@ -47,14 +47,14 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12">
-                    <div class="group-balance-chart">
-                        <div class="gbc-top">
+                <div class="col-12">
+                    <div class="group-balance-chart col-12">
+                        <div class="gbc-top col-12">
                             <span>Transaction Overview</span>
-                            <span><span class="entypo-record savings"></span> Savings</span>
-                            <span><span class="entypo-record expenses"></span> Expenses</span>
+                            <span><span class="material-icons savings">hdr_strong</span> Savings</span>
+                            <span><span class="material-icons expenses">hdr_weak</span> Expenses</span>
                         </div>
-                        <div id="line-chart" class="morrischart" style="height: 300px; position: relative;"></div>
+                        <div id="line-chart" class="morrischart col-12" style="height: 300px; position: relative;"></div>
                     </div>
                 </div>
             </div>
@@ -124,6 +124,10 @@
     </div>
 
 </div>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <script>
     jQuery(document).ready(function($) {
 

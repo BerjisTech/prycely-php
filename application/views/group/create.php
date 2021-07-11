@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 yourself">
+                    <div class="col-12 yourself">
                         <h3 class="the_title">Which type group are you creating</h3>
                         <div class="user_type">
                             <table>
@@ -73,7 +73,7 @@
                         </div>
                         <span class="go_back" onclick="window.history.back();"><span class="fal fa fa-arrow-left"></span> Go Back</span>
                     </div>
-                    <div class="col-xs-12 the_name" style="display: none;">
+                    <div class="col-12 the_name" style="display: none;">
                         <h3 class="the_title">Choose Group Name</h3>
                         <span class="the_subtitle">They don't have to be unique. Just something that describes your group</span>
                         <div class="the_email_input">
@@ -84,7 +84,7 @@
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="name"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-xs-12 the_description" style="display: none;">
+                    <div class="col-12 the_description" style="display: none;">
                         <h3 class="the_title">Add A Group Goal</h3>
                         <span class="the_subtitle">A goal is a milestone and can be one of many you will hit. It's the amount of cash you intend to raise.</span>
                         <div class="the_email_input">
@@ -95,7 +95,7 @@
                         </div>
                         <span class="go_back"><a href="#" class="back_link" data-step="description"><span class="fal fa fa-arrow-left"></span> Go Back</a></span>
                     </div>
-                    <div class="col-xs-12 the_goal" style="display: none;">
+                    <div class="col-12 the_goal" style="display: none;">
                         <h3 class="the_title">Set a Goal</h3>
                         <span class="the_subtitle">How much do you and your group members intend to raise? This helps everyone keep track of the investment or saings progress</span>
                         <div class="the_email_input">
