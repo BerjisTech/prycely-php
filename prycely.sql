@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2021 at 12:18 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jul 11, 2021 at 04:07 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -430,6 +430,22 @@ INSERT INTO `the_group_members` (`the_member_id`, `the_user_id`, `the_group_id`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `the_invites`
+--
+
+CREATE TABLE `the_invites` (
+  `invite_id` int(11) NOT NULL,
+  `invite_type` text NOT NULL,
+  `sent_to` text NOT NULL,
+  `sent_by` text NOT NULL,
+  `date_created` text NOT NULL,
+  `date_accepted` text NOT NULL,
+  `status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `the_logins`
 --
 
@@ -531,7 +547,11 @@ INSERT INTO `the_logins` (`the_login_attempt`, `the_login_user`, `the_login_time
 (82, 1, 1623071028, '197.237.24.130', 'yes', 'user_1_correct_password'),
 (83, 1, 1623618788, '102.140.223.229', 'yes', 'user_1_correct_password'),
 (84, 1, 1624971819, '41.90.7.139', 'yes', 'user_1_correct_password'),
-(85, 1, 1625571570, '::1', 'yes', 'user_1_correct_password');
+(85, 1, 1625571570, '::1', 'yes', 'user_1_correct_password'),
+(86, 1, 1625953618, '::1', 'yes', 'user_1_correct_password'),
+(87, 1, 1625965596, '::1', 'yes', 'user_1_correct_password'),
+(88, 1, 1625995057, '::1', 'no', '890Brejis*()'),
+(89, 1, 1625995062, '::1', 'yes', 'user_1_correct_password');
 
 -- --------------------------------------------------------
 
@@ -599,7 +619,7 @@ CREATE TABLE `the_people` (
   `the_person_id` int(11) NOT NULL,
   `the_person_email` varchar(1000) NOT NULL,
   `the_person_password` varchar(1000) NOT NULL,
-  `the_person_phone` int(11) NOT NULL,
+  `the_person_phone` text NOT NULL,
   `the_person_first_name` text NOT NULL,
   `the_person_last_name` text NOT NULL,
   `the_person_photo` varchar(1000) NOT NULL,
@@ -622,8 +642,8 @@ CREATE TABLE `the_people` (
 --
 
 INSERT INTO `the_people` (`the_person_id`, `the_person_email`, `the_person_password`, `the_person_phone`, `the_person_first_name`, `the_person_last_name`, `the_person_photo`, `the_person_join`, `the_person_details_date`, `the_person_deactivate_date`, `the_person_verified`, `the_person_country`, `the_person_county`, `the_person_city`, `the_person_street`, `the_person_address`, `the_person_postal`, `the_person_type`, `the_person_tour`) VALUES
-(1, 'bo.kouru@gmail.com', '$2y$10$Lu3NfYlARxwcK7jud2P9a.L2NuG84KV1swQgg/ZT096MpF2ZIb8Oa', 0, 'Benedict', 'Ouma', '356a192b7913b04c54574d18c28d46e6395428ab.png', 1617443092, 1618738452, NULL, 1, 'US', 'Colorado', 'Denver', 'Denver, Colorado', '271', '19808', 1, 0),
-(2, 'prycely@gmail.com', '$2y$10$7UZhHY0x7nwD2mGIX.dm3OaikoG8IC6Z2xpYlPMcCAayShLLJ/tsq', 0, 'Prycely', 'Admin', 'da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg', 1622202267, 1622202725, NULL, 1, 'KE', 'Province', 'State', 'street', 'address', 'code', 1, 0);
+(1, 'bo.kouru@gmail.com', '$2y$10$Lu3NfYlARxwcK7jud2P9a.L2NuG84KV1swQgg/ZT096MpF2ZIb8Oa', '+254725227513', 'Benedict', 'Ouma', '356a192b7913b04c54574d18c28d46e6395428ab.png', 1617443092, 1618738452, NULL, 1, 'US', 'Colorado', 'Denver', 'Denver, Colorado', '271', '19808', 1, 0),
+(2, 'prycely@gmail.com', '$2y$10$7UZhHY0x7nwD2mGIX.dm3OaikoG8IC6Z2xpYlPMcCAayShLLJ/tsq', '', 'Prycely', 'Admin', 'da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg', 1622202267, 1622202725, NULL, 1, 'KE', 'Province', 'State', 'street', 'address', 'code', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -795,7 +815,8 @@ INSERT INTO `the_stk` (`the_stk_id`, `mpesa_trans_id`, `merchant_req_id`, `check
 (103, '', '10883-20076506-1', 'ws_CO_03062021005058705858', '0', 'Success. Request accepted for processing', 'Success. Request accepted for processing', '1', '', '', '254715507801'),
 (104, '', '9088-20724283-1', 'ws_CO_03062021005245290836', '0', 'Success. Request accepted for processing', 'Success. Request accepted for processing', '1', '', '', '254114629931'),
 (105, '', '2517-20074629-1', 'ws_CO_03062021005318077178', '0', 'Success. Request accepted for processing', 'Success. Request accepted for processing', '1', '', '', '254114629931'),
-(106, 'PFE94C35H3', '81491-4401517-1', 'ws_CO_14062021034251236848', '0', 'Success. Request accepted for processing', 'Success. Request accepted for processing', '1', '0', 'The service request is processed successfully.', '254725227513');
+(106, 'PFE94C35H3', '81491-4401517-1', 'ws_CO_14062021034251236848', '0', 'Success. Request accepted for processing', 'Success. Request accepted for processing', '1', '0', 'The service request is processed successfully.', '254725227513'),
+(107, '', '7636-802576-1', 'ws_CO_11072021161128868316', '0', 'Success. Request accepted for processing', 'Success. Request accepted for processing', '1', '', '', '254725227513');
 
 -- --------------------------------------------------------
 
@@ -941,7 +962,8 @@ INSERT INTO `the_transactions` (`the_transaction_id`, `the_transaction_user`, `t
 (111, 1, 1622670766, 1622670766, 1622670766, 1000, 2, 'KES', '9088-20724283-1', 0, 1, 1, 1, 0, 'deposit', 'Showing STK', 'Mpesa STK'),
 (112, 1, 1622670798, 1622670798, 1622670798, 500, 2, 'KES', '2517-20074629-1', 0, 1, 1, 1, 0, 'deposit', 'Showing STK', 'Mpesa STK'),
 (113, 1, 1623625806, 1623625806, 1623631181, 10, 1, 'KES', 'pfe34btxmt', 0, 2, 1, 0, 1, 'Prycely Top Up', 'Paybill Payment', 'Mpesa Paybill'),
-(114, 1, 1623631371, 1623631371, 1623631378, 1000, 1, 'KES', 'PFE94C35H3', 0, 1, 1, 1, 0, 'Wallet Top Up', 'Showing STK', 'Mpesa STK');
+(114, 1, 1623631371, 1623631371, 1623631378, 1000, 1, 'KES', 'PFE94C35H3', 0, 1, 1, 1, 0, 'Wallet Top Up', 'Showing STK', 'Mpesa STK'),
+(115, 1, 1626009089, 1626009089, 1626009089, 1000, 2, 'KES', '7636-802576-1', 0, 2, 1, 0, 1, 'Group Top Up', 'Showing STK', 'Mpesa STK');
 
 -- --------------------------------------------------------
 
@@ -967,7 +989,8 @@ CREATE TABLE `the_wallets` (
 INSERT INTO `the_wallets` (`the_wallet_id`, `the_wallet_user`, `the_wallet_currency`, `the_wallet_balance`, `the_wallet_balance_pending`, `the_wallet_open_date`, `the_wallet_status`, `the_wallet_close_date`) VALUES
 (1, 1, 'KES', 1206, 89396, 1618844296, 1, 0),
 (2, 1, 'AUD', 0, 0, 1618844413, 1, 0),
-(4, 2, 'KES', 10, 0, 1622203778, 1, 0);
+(4, 2, 'KES', 10, 0, 1622203778, 1, 0),
+(5, 1, 'USD', 0, 0, 1625998456, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -1008,6 +1031,12 @@ ALTER TABLE `the_group_activities`
 --
 ALTER TABLE `the_group_members`
   ADD PRIMARY KEY (`the_member_id`);
+
+--
+-- Indexes for table `the_invites`
+--
+ALTER TABLE `the_invites`
+  ADD PRIMARY KEY (`invite_id`);
 
 --
 -- Indexes for table `the_logins`
@@ -1092,10 +1121,16 @@ ALTER TABLE `the_group_members`
   MODIFY `the_member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `the_invites`
+--
+ALTER TABLE `the_invites`
+  MODIFY `invite_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `the_logins`
 --
 ALTER TABLE `the_logins`
-  MODIFY `the_login_attempt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `the_login_attempt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `the_paybill`
@@ -1125,19 +1160,19 @@ ALTER TABLE `the_projects`
 -- AUTO_INCREMENT for table `the_stk`
 --
 ALTER TABLE `the_stk`
-  MODIFY `the_stk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `the_stk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `the_transactions`
 --
 ALTER TABLE `the_transactions`
-  MODIFY `the_transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `the_transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `the_wallets`
 --
 ALTER TABLE `the_wallets`
-  MODIFY `the_wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `the_wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
