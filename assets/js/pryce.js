@@ -1142,6 +1142,17 @@ if (page.includes('groups/members')) {
         })
     }
 
+    function load_invites(group_id, offset, search) {
+        $('.invites-table').html(`<img src="${base_url}assets/images/preloader.gif" />`)
+        $.ajax({
+            url: `${base_url}group/invites/${group_id}/10/${offset}/${search}`,
+            method: 'POST',
+            success: (invites) => {
+                $('.invites-table').html(invites)
+            }
+        })
+    }
+
     function members_page() {
         $('.members-page').html(`<img src="${base_url}assets/images/preloader.gif" />`)
         $('.user-group-action').css('background', 'white')
@@ -1171,6 +1182,7 @@ if (page.includes('groups/members')) {
             data: statics,
             success: (members) => {
                 $('.members-page').html(members)
+                load_invites(group_id, '0', '')
             }
         })
     }

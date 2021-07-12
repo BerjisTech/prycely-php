@@ -4,7 +4,6 @@ class Group_model extends CI_Model
 {
     public function get_members($group, $limit, $offset, $search = '')
     {
-        $data = array();
         $data['member_count'] = $this->db->where('the_group_id', $group)->get('the_group_members')->num_rows();
         $query = "SELECT * FROM `the_people` JOIN `the_group_members` ON `the_people`.`the_person_id` = `the_group_members`.`the_user_id` WHERE `the_group_id` = $group LIMIT 10 OFFSET $offset";
 
@@ -15,5 +14,16 @@ class Group_model extends CI_Model
         $data['members'] = $this->db->query($query)->result_array();
 
         return $data;
+    }
+
+    public function get_invites($group, $limit, $offset, $search = '')
+    {
+        $query = $this->db->where('group_id', $group)->limit(10, 0)->get('the_invites')->result_array();
+
+        if ($search != '') {
+            $query = $this->db->where('group_id', $group)->like('sent_to', $search)->limit(10, 0)->get('the_invites')->result_array();
+        }
+
+        return $query;
     }
 }

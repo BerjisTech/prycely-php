@@ -238,8 +238,12 @@ class Group extends CI_Controller
         $this->load->view('index', $data);
     }
 
-    public function invites()
+    public function invites($group, $limit, $offset, $search = '')
     {
+        $this->load->model('Group_model');
+        $data['invites'] = $this->Group_model->get_invites($group, $limit, $offset, $search);
+
+        return $this->load->view('groups/invites/invites', $data, false);
     }
 
     public function invite_member()

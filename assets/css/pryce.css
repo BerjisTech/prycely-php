@@ -1577,3 +1577,28 @@ a:active {
 .members-table {
 	margin-top: 10px;
 }
+
+.invite-search {
+	display        : flex;
+	align-items    : center;
+	justify-content: flex-end;
+}
+
+.invite-search-input {
+	display        : flex;
+	align-items    : center;
+	justify-content: flex-end;
+}
+
+.invite-search-input input {
+	border-radius: 5px !important;
+	border       : 2px solid rgb(31 38 135 / 17%);
+	padding      : 7px !important;
+	text-align   : left;
+	width        : auto !important;
+	max-width    : 70vw !important;
+}
+
+.invite-search-input span {
+	padding-left: 10px;
+}
