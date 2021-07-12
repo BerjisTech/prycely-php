@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2021 at 04:07 PM
+-- Generation Time: Jul 12, 2021 at 02:51 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -385,7 +385,8 @@ CREATE TABLE `the_groups` (
 
 INSERT INTO `the_groups` (`the_group_id`, `the_group_name`, `the_group_goal`, `the_group_purpose`, `the_group_currency`, `the_group_creator`, `the_group_date`, `the_group_s1`, `the_group_s2`, `the_group_s3`, `the_group_s4`, `the_group_type`, `the_group_photo`) VALUES
 (1, 'Prycely', '1000000', 'Testing all group features', 'KES', 1, 1622197883, 0, 0, 0, 0, 'sacco', ''),
-(2, 'Prycely Sacco', '1000', 'Further Tests', 'KES', 2, 1622204754, 0, 0, 0, 0, 'sacco', '');
+(2, 'Prycely Sacco', '1000', 'Further Tests', 'KES', 2, 1622204754, 0, 0, 0, 0, 'sacco', ''),
+(6, 'Afgan', '1000', 'sdfgsdfg', 'ALL', 1, 1626035931, 0, 0, 0, 0, 'personal', '');
 
 -- --------------------------------------------------------
 
@@ -425,7 +426,8 @@ CREATE TABLE `the_group_members` (
 
 INSERT INTO `the_group_members` (`the_member_id`, `the_user_id`, `the_group_id`, `the_date_joined`, `the_member_status`, `the_date_exit`, `the_member_designation`) VALUES
 (1, 1, 1, 1622197883, 1, 0, 'admin'),
-(2, 2, 2, 1622204754, 1, 0, 'admin');
+(2, 2, 2, 1622204754, 1, 0, 'admin'),
+(3, 1, 6, 1626035931, 1, 0, 'member');
 
 -- --------------------------------------------------------
 
@@ -435,12 +437,16 @@ INSERT INTO `the_group_members` (`the_member_id`, `the_user_id`, `the_group_id`,
 
 CREATE TABLE `the_invites` (
   `invite_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
   `invite_type` text NOT NULL,
   `sent_to` text NOT NULL,
   `sent_by` text NOT NULL,
   `date_created` text NOT NULL,
+  `last_sent` text NOT NULL,
   `date_accepted` text NOT NULL,
-  `status` text NOT NULL
+  `status` text NOT NULL,
+  `max_allowed` int(11) NOT NULL,
+  `expire_date` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -551,7 +557,8 @@ INSERT INTO `the_logins` (`the_login_attempt`, `the_login_user`, `the_login_time
 (86, 1, 1625953618, '::1', 'yes', 'user_1_correct_password'),
 (87, 1, 1625965596, '::1', 'yes', 'user_1_correct_password'),
 (88, 1, 1625995057, '::1', 'no', '890Brejis*()'),
-(89, 1, 1625995062, '::1', 'yes', 'user_1_correct_password');
+(89, 1, 1625995062, '::1', 'yes', 'user_1_correct_password'),
+(90, 1, 1626033988, '::1', 'yes', 'user_1_correct_password');
 
 -- --------------------------------------------------------
 
@@ -1106,7 +1113,7 @@ ALTER TABLE `the_activity_updates`
 -- AUTO_INCREMENT for table `the_groups`
 --
 ALTER TABLE `the_groups`
-  MODIFY `the_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `the_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `the_group_activities`
@@ -1118,7 +1125,7 @@ ALTER TABLE `the_group_activities`
 -- AUTO_INCREMENT for table `the_group_members`
 --
 ALTER TABLE `the_group_members`
-  MODIFY `the_member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `the_member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `the_invites`
@@ -1130,7 +1137,7 @@ ALTER TABLE `the_invites`
 -- AUTO_INCREMENT for table `the_logins`
 --
 ALTER TABLE `the_logins`
-  MODIFY `the_login_attempt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `the_login_attempt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `the_paybill`
